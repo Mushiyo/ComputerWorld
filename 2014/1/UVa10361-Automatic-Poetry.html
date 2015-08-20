@@ -1,0 +1,4925 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mushiyo">
+
+    <title>
+	
+    	
+           墨熹幽的電腦世界 : 〔UVa〕10361 - Automatic Poetry
+		
+	
+	</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/business-casual.css" rel="stylesheet">
+    <link href="../../css/picture_window95.css" rel="stylesheet">
+	<link href="../../css/tree.css" rel="stylesheet">
+	<link href="../../css/computerWorldDay.css" rel="stylesheet" id="theme_css">
+	
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+	
+	<!-- favicon -->
+	<link rel="Shortcut Icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	
+    <div class="brand"><a href="../../index.html">墨熹幽的電腦世界</a></div>
+    <div class="address-bar">你好，歡迎來到這裡<br>Welcome to Mushiyo's computer world</div>
+
+    <div class="container">
+        <header class="row">
+            <nav id="nav" class="navbar navbar-inverse" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                    <a class="navbar-brand" href="../../index.html">墨熹幽的電腦世界</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="../../index.html">首頁</a>
+                        </li>
+                        <li >
+                            <a href="../../archive.html">文章列表</a>
+                        </li>
+                        <!--<li >
+                            <a href="../../about.html">關於</a>
+                        </li>-->
+                        <li>
+                            <a id="toggle">OFF</a>
+                        </li>
+                        <li>
+                            <a href="../../feed.xml">RSS</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </header>
+        
+        <div class="row blog-body">          
+            <section class="col-sm-9">
+                <article>
+					
+                    <div class="post-date">
+                        <time datetime="2014-01-29">2014年01月29日 星期三</time>
+                    </div>
+					
+                    <div class="post-body">
+                        <h2 class="post-title">〔UVa〕10361 - Automatic Poetry </h2>
+                        <div class="post">
+                            
+題目：<a href="http://uva.onlinejudge.org/external/103/10361.html">http://uva.onlinejudge.org/external/103/10361.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10361.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10361 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   input.nextLine(); // eat change line<br />   <br /><br />   while (n &gt; 0) {<br />    String l1 = input.nextLine();<br />    String l2 = input.nextLine();<br /><br />    int leftBracket1 = l1.indexOf('&lt;');<br />    int rightBracket1 = l1.indexOf('&gt;', leftBracket1);<br />    int leftBracket2 = l1.indexOf('&lt;', rightBracket1);<br />    int rightBracket2 = l1.indexOf('&gt;', leftBracket2);<br /><br />    String s2 = l1.substring(leftBracket1 + 1, rightBracket1);<br />    String s3 = l1.substring(rightBracket1 + 1, leftBracket2);<br />    String s4 = l1.substring(leftBracket2 + 1, rightBracket2);<br />    String s5 = l1.substring(rightBracket2 + 1);<br />    <br />    String c1 = l1.replaceAll("&lt;|&gt;", "");<br />    String c2 = l2.replaceAll("\\.\\.\\.", s4 + s3 + s2 + s5);<br />    <br />    System.out.println(c1);<br />    System.out.println(c2);<br /><br />    --n;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>
+
+                        </div>
+                        
+                        <div class="post-footer">
+							
+							<p>張貼者： 
+                            
+                            <a href="#">Mushiyo</a>
+							
+							
+							 at <time datetime="04:35">下午04:35</time>
+                            
+							</p>
+							
+							
+							<p>分類: 
+								
+								   <a href="../../tags/【競賽＆解題】.html">【競賽＆解題】</a>, 
+								   
+								
+								   <a href="../../tags/〔UVa〕.html">〔UVa〕</a>
+								   
+								
+							</p>
+							
+							
+							
+                            <!-- post your comment system script here -->
+							
+                        </div>
+                    </div>
+                </article><!-- /.post -->
+                
+                <div class="col-lg-12 text-center">
+					<!--
+                    <ul class="pager">
+                        <li class="previous"><a href="#">&larr; Newer Posts</a>
+                        </li>
+                        <li class="next"><a href="#">Older Posts &rarr;</a>
+                        </li>
+                    </ul>-->
+                    
+                </div>
+            </section><!-- /.blog-main -->
+    
+            <aside class="col-sm-3 blog-sidebar">
+				<!--<div class="sidebar-module">
+					<h4>Translate this site</h4>
+                </div>
+				<div class="sidebar-module">
+					<h4>搜尋此網誌</h4>
+                </div> -->
+				<div class="sidebar-module">
+                    <h4>分類</h4>
+                    <ol class="list-unstyled">
+						
+							<li><a href="../../tags/【競賽＆解題】.html">【競賽＆解題】</a> (581)</li>
+						
+							<li><a href="../../tags/〔UVa〕.html">〔UVa〕</a> (248)</li>
+						
+							<li><a href="../../tags/〔高中生程式解題系統〕.html">〔高中生程式解題系統〕</a> (232)</li>
+						
+							<li><a href="../../tags/〔Timus〕.html">〔Timus〕</a> (45)</li>
+						
+							<li><a href="../../tags/〔大學生程式解題系統〕.html">〔大學生程式解題系統〕</a> (19)</li>
+						
+							<li><a href="../../tags/〔AOJ〕.html">〔AOJ〕</a> (16)</li>
+						
+							<li><a href="../../tags/〔USACO〕.html">〔USACO〕</a> (12)</li>
+						
+							<li><a href="../../tags/【給閱讀這個網誌的你】.html">【給閱讀這個網誌的你】</a> (10)</li>
+						
+							<li><a href="../../tags/筆記.html">筆記</a> (10)</li>
+						
+							<li><a href="../../tags/【程式設計】.html">【程式設計】</a> (8)</li>
+						
+							<li><a href="../../tags/〔線上解題系統(Online Judge)〕.html">〔線上解題系統(Online Judge)〕</a> (6)</li>
+						
+							<li><a href="../../tags/〔記錄〕.html">〔記錄〕</a> (6)</li>
+						
+							<li><a href="../../tags/〔紀念〕.html">〔紀念〕</a> (5)</li>
+						
+							<li><a href="../../tags/〔ACM-ICPC Live Archive〕.html">〔ACM-ICPC Live Archive〕</a> (4)</li>
+						
+							<li><a href="../../tags/〔更動〕.html">〔更動〕</a> (4)</li>
+						
+							<li><a href="../../tags/〔Python〕.html">〔Python〕</a> (3)</li>
+						
+							<li><a href="../../tags/〔開發誌〕.html">〔開發誌〕</a> (3)</li>
+						
+							<li><a href="../../tags/eclipse.html">eclipse</a> (2)</li>
+						
+							<li><a href="../../tags/GitHub.html">GitHub</a> (2)</li>
+						
+							<li><a href="../../tags/Ubuntu.html">Ubuntu</a> (2)</li>
+						
+							<li><a href="../../tags/【數學】.html">【數學】</a> (2)</li>
+						
+							<li><a href="../../tags/【書籍】.html">【書籍】</a> (2)</li>
+						
+							<li><a href="../../tags/〔Java〕.html">〔Java〕</a> (2)</li>
+						
+							<li><a href="../../tags/〔競賽〕.html">〔競賽〕</a> (2)</li>
+						
+							<li><a href="../../tags/工具.html">工具</a> (2)</li>
+						
+							<li><a href="../../tags/3D.html">3D</a> (1)</li>
+						
+							<li><a href="../../tags/Android.html">Android</a> (1)</li>
+						
+							<li><a href="../../tags/Bitbucket.html">Bitbucket</a> (1)</li>
+						
+							<li><a href="../../tags/NCPC.html">NCPC</a> (1)</li>
+						
+							<li><a href="../../tags/STL.html">STL</a> (1)</li>
+						
+							<li><a href="../../tags/Windows.html">Windows</a> (1)</li>
+						
+							<li><a href="../../tags/【其他】.html">【其他】</a> (1)</li>
+						
+							<li><a href="../../tags/〔C++〕.html">〔C++〕</a> (1)</li>
+						
+							<li><a href="../../tags/〔HTML〕.html">〔HTML〕</a> (1)</li>
+						
+							<li><a href="../../tags/〔JavaScript〕.html">〔JavaScript〕</a> (1)</li>
+						
+							<li><a href="../../tags/〔組合數學〕.html">〔組合數學〕</a> (1)</li>
+						
+							<li><a href="../../tags/免費資源.html">免費資源</a> (1)</li>
+						
+							<li><a href="../../tags/圖學.html">圖學</a> (1)</li>
+						
+							<li><a href="../../tags/影像處理.html">影像處理</a> (1)</li>
+						
+							<li><a href="../../tags/電子書.html">電子書</a> (1)</li>
+						
+                    </ol>
+                </div>
+				<div class="sidebar-module">
+                    <h4>網誌存檔</h4>
+                    
+                    
+                    <!-- for how the sidebar archive works, please refer to css/tree.css and js/tree.js -->
+					<ul id="archive">
+					
+						
+						
+							
+							<li>2015 <span>(63)</span>
+								<ul>
+							
+								<li>06 <span>(8)</span>
+								<ul>
+						
+									<li><a href="../../2015/6/List-of-Online-Judges-update-irregularly.html">線上解題系統列表（不定期更新） / List of Online Judges (update irregularly)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/Pythondocumentcoding-style.html">〔Python〕document中推薦的coding style</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/UVa12896-Mobile-SMS.html">〔UVa〕12896 - Mobile SMS</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/Timus1209-1-10-100-1000.html">〔Timus〕1209. 1, 10, 100, 1000...</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/Timus1131-Copying.html">〔Timus〕1131. Copying</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/Timus1792-Hamming-Code.html">〔Timus〕1792. Hamming Code</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/Timus1327-Fuses.html">〔Timus〕1327. Fuses</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/6/Timus1225-Flags.html">〔Timus〕1225. Flags</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>05 <span>(3)</span>
+								<ul>
+							
+						
+									<li><a href="../../2015/5/Timus1197-Lonesome-Knight.html">〔Timus〕1197. Lonesome Knight</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/5/EclipseGitHub-Page.html">使用Eclipse來建立GitHub Page</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/5/Eclipsegit-cloneGitHubgit-repository.html">使用Eclipse來git clone存放在GitHub上的git repository</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>04 <span>(9)</span>
+								<ul>
+							
+						
+									<li><a href="../../2015/4/a693.html">〔高中生程式解題系統〕a693: 吞食天地</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/Bitbucket.html">使用Bitbucket存放靜態網站</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/a647.html">〔高中生程式解題系統〕a647: 投資專家</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/a799.html">〔高中生程式解題系統〕a799: 正值國</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/a667.html">〔高中生程式解題系統〕a667: 可怕的除法</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/d786.html">〔高中生程式解題系統〕d786: 平均值</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/d212.html">〔高中生程式解題系統〕d212: 東東爬階梯</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/d171.html">〔高中生程式解題系統〕d171: 飛蛾撲火(二)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/4/d098-StringstreamC.html">〔高中生程式解題系統〕d098: Stringstream運用練習(C++)</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>03 <span>(10)</span>
+								<ul>
+							
+						
+									<li><a href="../../2015/3/Timus1243-Divorce-of-the-Seven-Dwarfs.html">〔Timus〕1243. Divorce of the Seven Dwarfs</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/Timus1893-A380.html">〔Timus〕1893. A380</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/Timus1263-Elections.html">〔Timus〕1263. Elections</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/Timus2012-About-Grisha-N.html">〔Timus〕2012. About Grisha N.</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/Timus2001-Mathematicians-and-Berries.html">〔Timus〕2001. Mathematicians and Berries</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/Timus1001-Reverse-Root.html">〔Timus〕1001. Reverse Root</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/a890-E.html">〔高中生程式解題系統〕a890: E. 數位文獻修復</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/UVa10170-The-Hotel-with-Infinite-Rooms.html">〔UVa〕10170 - The Hotel with Infinite Rooms</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/UVa1594-Ducci-Sequence.html">〔UVa〕1594 - Ducci Sequence</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/3/557820649.html">免費域名資源整理</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>02 <span>(8)</span>
+								<ul>
+							
+						
+									<li><a href="../../2015/2/UVa10763-Foreign-Exchange.html">〔UVa〕10763 - Foreign Exchange</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa10107-What-is-the-Median.html">〔UVa〕10107 - What is the Median?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa443-Humble-Numbers.html">〔UVa〕443 - Humble Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa136-Ugly-Numbers.html">〔UVa〕136 - Ugly Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa10815-Andys-First-Dictionary.html">〔UVa〕10815 - Andy's First Dictionary</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa12854-Automated-Checking-Machine.html">〔UVa〕12854 - Automated Checking Machine</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa1589-Xiangqi.html">〔UVa〕1589 - Xiangqi</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/2/UVa138-Street-Numbers.html">〔UVa〕138 - Street Numbers</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>01 <span>(25)</span>
+								<ul>
+							
+						
+									<li><a href="../../2015/1/UVa541-Error-Correction.html">〔UVa〕541 - Error Correction</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10813-Traditional-BINGO.html">〔UVa〕10813 - Traditional BINGO</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa11340-Newspaper.html">〔UVa〕11340 - Newspaper</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10310-Dog-and-Gopher.html">〔UVa〕10310 - Dog and Gopher</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa101-The-Blocks-Problem.html">〔UVa〕101 - The Blocks Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa612-DNA-Sorting.html">〔UVa〕612 - DNA Sorting</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa11462-Age-Sort.html">〔UVa〕11462 - Age Sort</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa11677-Alarm-Clock.html">〔UVa〕11677 - Alarm Clock</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/Windows.html">我的Windows軟體清單</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10019-Funny-Encryption-Method.html">〔UVa〕10019 - Funny Encryption Method</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10327-Flip-Sort.html">〔UVa〕10327 - Flip Sort</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/20092012-ACMICPC.html">2009~2012 ACM-ICPC臺灣賽區題目</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa133-The-Dole-Queue.html">〔UVa〕133 - The Dole Queue</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10295-Hay-Points.html">〔UVa〕10295 - Hay Points</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10282-Babelfish.html">〔UVa〕10282 - Babelfish</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa484-The-Department-of-Redundancy-Department.html">〔UVa〕484 - The Department of Redundancy Department</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa482-Permutation-Arrays.html">〔UVa〕482 - Permutation Arrays</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10469-To-Carry-or-not-to-Carry.html">〔UVa〕10469 - To Carry or not to Carry</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa1339-Ancient-Cipher.html">〔UVa〕1339 - Ancient Cipher</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa146-ID-Codes.html">〔UVa〕146 - ID Codes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa1368-DNA-Consensus-String.html">〔UVa〕1368 - DNA Consensus String</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa1587-Box.html">〔UVa〕1587 - Box</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa1586-Molar-mass.html">〔UVa〕1586 - Molar mass</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/UVa10432-Polygon-Inside-A-Circle.html">〔UVa〕10432 - Polygon Inside A Circle</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2015/1/permutation.html">一些多面體的點、線、面的permutation</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+							</ul></li><!-- end of a year -->
+									
+							<li>2014 <span>(165)</span>
+							<ul>
+								
+								<li>12 <span>(7)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/12/UVa10583-Ubiquitous-Religions.html">〔UVa〕10583 - Ubiquitous Religions</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/12/UVa793-Network-Connections.html">〔UVa〕793 - Network Connections</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/12/d636-bomb.html">〔高中生程式解題系統〕d636: 大爆炸bomb</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/12/d709.html">〔高中生程式解題系統〕d709: 判断质数（一）</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/12/UVa455-Periodic-Strings.html">〔UVa〕455 - Periodic Strings</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/12/UVa10079-Pizza-Cutting.html">〔UVa〕10079 - Pizza Cutting</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/12/1921899759.html">〔開發誌〕無限愛樂電台過去節目表查詢</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>11 <span>(2)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/11/20120.html">〔紀念〕總瀏覽量達20120人紀念</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/11/USACOSection-13-Combination-Lock.html">〔USACO〕Section 1.3 Combination Lock</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>10 <span>(3)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/10/UVa12646-Zero-or-One.html">〔UVa〕12646 - Zero or One</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/10/UVa12626-I-Pizza.html">〔UVa〕12626 - I ❤ Pizza</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/10/SyntaxHighlighter-Easy-Tool-v0875.html">〔開發誌〕SyntaxHighlighter Easy Tool v0.875</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>09 <span>(39)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/9/UVa12602-Nice-Licence-Plates.html">〔UVa〕12602 - Nice Licence Plates</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11936-The-Lazy-Lumberjacks.html">〔UVa〕11936 - The Lazy Lumberjacks</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11854-Egypt.html">〔UVa〕11854 - Egypt</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11878-Homework-Checker.html">〔UVa〕11878 - Homework Checker</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11614-Etruscan-Warriors-Never-Play-Chess.html">〔UVa〕11614 - Etruscan Warriors Never Play Chess </a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa12502-Three-Families.html">〔UVa〕12502 - Three Families</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11713-Abstract-Names.html">〔UVa〕11713 - Abstract Names</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11233-Deli-Deli.html">〔UVa〕11233 - Deli Deli</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11984-A-Change-in-Thermal-Unit.html">〔UVa〕11984 - A Change in Thermal Unit</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVaRanklist.html">〔記錄〕〔UVa〕在Ranklist上看到鋼琴</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11530-SMS-Typing.html">〔UVa〕11530 - SMS Typing</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11805-Bafana-Bafana.html">〔UVa〕11805 - Bafana Bafana</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11850-Alaska.html">〔UVa〕11850 - Alaska</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10424-Love-Calculator.html">〔UVa〕10424 - Love Calculator</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11192-Group-Reverse.html">〔UVa〕11192 - Group Reverse</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11777-Automate-the-Grades.html">〔UVa〕11777 - Automate the Grades</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa483-Word-Scramble.html">〔UVa〕483 - Word Scramble</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10530-Guessing-Game.html">〔UVa〕10530 - Guessing Game</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa499-Whats-The-Frequency-Kenneth.html">〔UVa〕499 - What's The Frequency, Kenneth?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa299-Train-Swapping.html">〔UVa〕299 - Train Swapping</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa1585-Score.html">〔UVa〕1585 - Score</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa1584-Circular-Sequence.html">〔UVa〕1584 - Circular Sequence</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa1583-Digit-Generator.html">〔UVa〕1583 - Digit Generator</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa152-Trees-a-Crowd.html">〔UVa〕152 - Tree's a Crowd</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa340-MasterMind-Hints.html">〔UVa〕340 - Master-Mind Hints</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa445-Marvelous-Mazes.html">〔UVa〕445 - Marvelous Mazes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa12157-Tariff-Plan.html">〔UVa〕12157 - Tariff Plan</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11942-Lumberjack-Sequencing.html">〔UVa〕11942 - Lumberjack Sequencing</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/d634-magic.html">〔高中生程式解題系統〕d634: 魔法卡magic</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/d256-11388-GCD-LCM.html">〔高中生程式解題系統〕d256: 11388 - GCD LCM</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa200AC.html">〔記錄〕〔UVa〕200題AC</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10070-Leap-Year-or-Not-Leap-Year-and.html">〔UVa〕10070 - Leap Year or Not Leap Year and …</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa530-Binomial-Showdown.html">〔UVa〕530 - Binomial Showdown</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa408-Uniform-Generator.html">〔UVa〕408 - Uniform Generator</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10050-Hartals.html">〔UVa〕10050 - Hartals</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10260-Soundex.html">〔UVa〕10260 - Soundex</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa11955-Binomial-Theorem.html">〔UVa〕11955 - Binomial Theorem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10784-Diagonal.html">〔UVa〕10784 - Diagonal</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/9/UVa10219-Find-the-ways.html">〔UVa〕10219 - Find the ways !</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>08 <span>(32)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/8/UVa10338-Mischievous-Children.html">〔UVa〕10338 - Mischievous Children</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa11879-Multiple-of-17.html">〔UVa〕11879 - Multiple of 17</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa516-Prime-Land.html">〔UVa〕516 - Prime Land</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10222-Decode-the-Mad-man.html">〔UVa〕10222 - Decode the Mad man</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/38202822.html">高中課本裡的數論相關內容</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa11371-Number-Theory-for-Newbies.html">〔UVa〕11371 - Number Theory for Newbies</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10168-Summation-of-Four-Primes.html">〔UVa〕10168 - Summation of Four Primes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10127-Ones.html">〔UVa〕10127 - Ones</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa11728-Alternate-Task.html">〔UVa〕11728 - Alternate Task</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10299-Relatives.html">〔UVa〕10299 - Relatives</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa294-Divisors.html">〔UVa〕294 - Divisors</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa583-Prime-Factors.html">〔UVa〕583 - Prime Factors</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10738-Riemann-vs-Mertens.html">〔UVa〕10738 - Riemann vs Mertens</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa498-Polly-the-Polynomial.html">〔UVa〕498 - Polly the Polynomial</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10179-Irreducable-Basic-Fractions.html">〔UVa〕10179 - Irreducable Basic Fractions</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10176-Ocean-Deep-Make-it-shallow.html">〔UVa〕10176 - Ocean Deep! Make it shallow!!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10931-Parity.html">〔UVa〕10931 - Parity</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10268-498bis.html">〔UVa〕10268 - 498-bis</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10042-Smith-Numbers.html">〔UVa〕10042 - Smith Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa640-Self-Numbers.html">〔UVa〕640 - Self Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa11466-Largest-Prime-Divisor.html">〔UVa〕11466 - Largest Prime Divisor</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10699-Count-the-factors.html">〔UVa〕10699 - Count the factors</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10579-Fibonacci-Numbers.html">〔UVa〕10579 - Fibonacci Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10394-Twin-Primes.html">〔UVa〕10394 - Twin Primes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa11849-CD.html">〔UVa〕11849 - CD</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa10013-Super-long-sums.html">〔UVa〕10013 - Super long sums</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa369-Combinations.html">〔UVa〕369 - Combinations</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa686-Goldbachs-Conjecture-II.html">〔UVa〕686 - Goldbach's Conjecture (II)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa543-Goldbachs-Conjecture.html">〔UVa〕543 - Goldbach's Conjecture</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa11388-GCD-LCM.html">〔UVa〕11388 - GCD LCM</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/UVa568-Just-the-Facts.html">〔UVa〕568 - Just the Facts</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/8/SyntaxHighlighter-Easy-Tool-v075.html">〔開發誌〕SyntaxHighlighter Easy Tool v0.75</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>07 <span>(6)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/7/Python.html">〔Python〕基本語法</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/7/a626-6-Prime-Directive.html">〔高中生程式解題系統〕a626: 6. Prime Directive</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/7/a781-3-Checkerboard.html">〔高中生程式解題系統〕a781: 3. Checkerboard</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/7/a780-2-Magnificent-Views.html">〔高中生程式解題系統〕a780: 2. Magnificent Views</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/7/a861-1-Secure-the-Perimeter.html">〔高中生程式解題系統〕a861: 1. Secure the Perimeter</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/7/a862-2-My-Dear-Friend-VIR.html">〔高中生程式解題系統〕a862: 2. My Dear Friend VIR</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>06 <span>(6)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/6/UbuntuJDK.html">在Ubuntu下更新JDK</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/6/a759-N.html">〔高中生程式解題系統〕a759: 三、N進位</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/6/a624-4-Password-Analyzer.html">〔高中生程式解題系統〕a624: 4. Password Analyzer</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/6/a779-1-Reversal-of-Field.html">〔高中生程式解題系統〕a779: 1. Reversal of Field</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/6/a863-3-Happy-Numbers.html">〔高中生程式解題系統〕a863: 3. Happy Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/6/a621-1-Powers-of-Two.html">〔高中生程式解題系統〕a621: 1. Powers of Two</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>05 <span>(1)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/5/1669607978.html">中英數學名詞對照表（不定期更新）</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>04 <span>(1)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/4/The-Python-Challenge.html">The Python Challenge</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>03 <span>(10)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/3/HTMLhtml-tag.html">〔HTML〕幾個基本的html tag</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa324-Factorial-Frequencies.html">〔UVa〕324 - Factorial Frequencies</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa623-500.html">〔UVa〕623 - 500!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa10919-Prerequisites.html">〔UVa〕10919 - Prerequisites?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa11687-Digits.html">〔UVa〕11687 - Digits</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa514-Rails.html">〔UVa〕514 - Rails</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa10945-Mother-bear.html">〔UVa〕10945 - Mother bear</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/UVa12279-Emoogle-Balance.html">〔UVa〕12279 - Emoogle Balance</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/SyntaxHighlighterMathJax.html">〔更動〕SyntaxHighlighter語法修改&新增MathJax</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/3/Virtual-Judge.html">Virtual Judge列表 (不定期更新)</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>02 <span>(20)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/2/UVa11821-HighPrecision-Number.html">〔UVa〕11821 - High-Precision Number</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10235-Simply-Emirp.html">〔UVa〕10235 - Simply Emirp</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa11830-Contract-Revision.html">〔UVa〕11830 - Contract Revision</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa355-The-Bases-Are-Loaded.html">〔UVa〕355 - The Bases Are Loaded</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa11287-Pseudoprime-Numbers.html"> 〔UVa〕11287 - Pseudoprime Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa11448-Who-said-crisis.html">〔UVa〕11448 - Who said crisis?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa1230-MODEX.html">〔UVa〕1230 - MODEX</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10473-Simple-Base-Conversion.html">〔UVa〕10473 - Simple Base Conversion</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10433-Automorphic-Numbers.html">〔UVa〕10433 - Automorphic Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10814-Simplifying-Fractions.html">〔UVa〕10814 - Simplifying Fractions</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10925-Krakovia.html">〔UVa〕10925 - Krakovia</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10551-Basic-Remains.html">〔UVa〕10551 - Basic Remains</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10464-Big-Big-Real-Numbers.html">〔UVa〕10464 - Big Big Real Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10954-Add-All.html">〔UVa〕10954 - Add All</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa11078-Open-Credit-System.html">〔UVa〕11078 - Open Credit System</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa10523-Very-Easy.html">〔UVa〕10523 - Very Easy !!!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa12372-Packing-for-Holiday.html">〔UVa〕12372 - Packing for Holiday</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa343-What-Base-Is-This.html">〔UVa〕343 - What Base Is This?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa439-Knight-Moves.html">〔UVa〕439 - Knight Moves</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/2/UVa784-Maze-Exploration.html">〔UVa〕784 - Maze Exploration</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>01 <span>(38)</span>
+								<ul>
+							
+						
+									<li><a href="../../2014/1/UVa11636-Hello-World.html">〔UVa〕11636 - Hello World!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa156-Ananagrams.html">〔UVa〕156 - Ananagrams</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa591-Box-of-Bricks.html">〔UVa〕591 - Box of Bricks</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10102-The-path-in-the-colored-fie.html">〔UVa〕10102 - The path in the colored fie</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa454-Anagrams.html">〔UVa〕454 - Anagrams</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10361-Automatic-Poetry.html">〔UVa〕10361 - Automatic Poetry</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10474-Where-is-the-Marble.html">〔UVa〕10474 - Where is the Marble?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa893-Y3K-Problem.html">〔UVa〕893 - Y3K Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10878-Decode-the-tape.html">〔UVa〕10878 - Decode the tape</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa624-CD.html">〔UVa〕624 - CD</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa644-Immediate-Decodability.html">〔UVa〕644 - Immediate Decodability</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa409-Excuses-Excuses.html">〔UVa〕409 - Excuses, Excuses!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa574-Sum-It-Up.html">〔UVa〕574 - Sum It Up</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa401-Palindromes.html">〔UVa〕401 - Palindromes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10041-Vitos-Family.html">〔UVa〕10041 - Vito's Family</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa673-Parentheses-Balance.html">〔UVa〕673 - Parentheses Balance</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa12403-Save-Setu.html">〔UVa〕12403 - Save Setu</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa11332-Summing-Digits.html">〔UVa〕11332 - Summing Digits</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa927-Integer-Sequences-from-Additi.html">〔UVa〕927 - Integer Sequences from Additi</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa410-Station-Balance.html">〔UVa〕410 - Station Balance</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa489-Hangman-Judge.html">〔UVa〕489 - Hangman Judge</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa488-Triangle-Wave.html">〔UVa〕488 - Triangle Wave</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa735-DartaMania.html">〔UVa〕735 - Dart-a-Mania</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10487-Closest-Sums.html">〔UVa〕10487 - Closest Sums</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVaUVa-Online-JudgeC11.html">〔UVa〕UVa Online Judge開始支援C++11</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10220-I-Love-Big-Numbers.html">〔UVa〕10220 - I Love Big Numbers !</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa575-Skew-Binary.html">〔UVa〕575 - Skew Binary</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa113-Power-of-Cryptography.html">〔UVa〕113 - Power of Cryptography</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa458-The-Decoder.html">〔UVa〕458 - The Decoder</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10684-The-jackpot.html"> 〔UVa〕10684 - The jackpot</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa11608-No-Problem.html">〔UVa〕11608 - No Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa12289-OneTwoThree.html">〔UVa〕12289 - One-Two-Three</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa713-Adding-Reversed-Numbers.html">〔UVa〕713 - Adding Reversed Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa10018-Reverse-and-Add.html"> 〔UVa〕10018 - Reverse and Add</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa441-Lotto.html">〔UVa〕441 - Lotto</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa11057-Exact-Sum.html">〔UVa〕11057 - Exact Sum</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa11240-Antimonotonicity.html">〔UVa〕11240 - Antimonotonicity</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2014/1/UVa103AC.html">〔記錄〕〔UVa〕103題AC</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+							</ul></li><!-- end of a year -->
+									
+							<li>2013 <span>(161)</span>
+							<ul>
+								
+								<li>12 <span>(18)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/12/317134106.html">〔更動〕標題下方新增「布告」頁面 & 一個修改</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/d238.html">〔高中生程式解題系統〕d238: "<<"運算子真好用</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/d218.html">〔高中生程式解題系統〕d218: 加法與次方的奧妙</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/d202-ab.html">〔高中生程式解題系統〕d202: a+b??</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/a845-B.html">〔高中生程式解題系統〕a845: B.奶罐小馬買東西</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa11532-Simple-Adjacency-Maximization.html"> 〔UVa〕11532 - Simple Adjacency Maximization</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa10494-If-We-Were-a-Child-Again.html">〔UVa〕10494 - If We Were a Child Again</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa374-Big-Mod.html">〔UVa〕374 - Big Mod</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa465-Overflow.html">〔UVa〕465 - Overflow</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa11242-Tour-de-France.html">〔UVa〕11242 - Tour de France</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa382-Perfection.html">〔UVa〕382 - Perfection</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa11520-Fill-the-Square.html">〔UVa〕11520 - Fill the Square</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa10773-Back-to-Intermediate-Math.html">〔UVa〕10773 - Back to Intermediate Math</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa1260-Sales.html">〔UVa〕1260 - Sales </a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa1237-Expert-Enough.html">〔UVa〕1237 - Expert Enough?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa1225-Digit-Counting.html">〔UVa〕1225 - Digit Counting</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa11875-Brick-Game.html">〔UVa〕11875 - Brick Game</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/12/UVa532-Dungeon-Master.html">〔UVa〕532 - Dungeon Master</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>11 <span>(33)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/11/UVa657-The-die-is-cast.html"> 〔UVa〕657 - The die is cast</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10279-Mine-Sweeper.html">〔UVa〕10279 - Mine Sweeper</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10004-Bicoloring.html">〔UVa〕10004 - Bicoloring</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10026-Shoemakers-Problem.html">〔UVa〕10026 - Shoemaker's Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa12405-Scarecrow.html">〔UVa〕12405 - Scarecrow</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11389-The-Bus-Driver-Problem.html">〔UVa〕11389 - The Bus Driver Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVaUVa-Management-Tool.html">〔UVa〕UVa Management Tool</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/1010954378.html">〔更動〕二個新增、一個修改</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa80100AC.html">〔記錄〕〔UVa〕80題／100次AC</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa621-Secret-Research.html">〔UVa〕621 - Secret Research</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10976-Fractions-Again.html">〔UVa〕10976 - Fractions Again?!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10340-All-in-All.html">〔UVa〕10340 - All in All</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10189-Minesweeper.html">〔UVa〕10189 - Minesweeper</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10370-Above-Average.html">〔UVa〕10370 - Above Average</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10035-Primary-Arithmetic.html">〔UVa〕10035 - Primary Arithmetic</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10656-Maximum-Sum-II.html">〔UVa〕10656 - Maximum Sum (II)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11100-The-Trip-2007.html">〔UVa〕11100 - The Trip, 2007</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11991-Easy-Problem-from-Rujia-Liu.html">〔UVa〕11991 - Easy Problem from Rujia Liu?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa10895-Matrix-Transpose.html">〔UVa〕10895 - Matrix Transpose</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVaRanklistliouzhou_101.html">〔記錄〕〔UVa〕在Ranklist上看到liouzhou_101</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVaRanklistACRushXDD.html">〔記錄〕〔UVa〕在Ranklist上排在ACRush的附近XDD</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa12543-Longest-Word.html">〔UVa〕12543 - Longest Word</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa12541-Birthdates.html">〔UVa〕12541 - Birthdates</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11559-Event-Planning.html">〔UVa〕11559 - Event Planning</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa12210-A-Match-Making-Problem.html">〔UVa〕12210 - A Match Making Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11044-Searching-for-Nessy.html">〔UVa〕11044 - Searching for Nessy</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11364-Parking.html">〔UVa〕11364 - Parking</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa12577-HajjeAkbar.html">〔UVa〕12577 - Hajj-e-Akbar</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11799-Horror-Dash.html">〔UVa〕11799 - Horror Dash</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/UVa11547-Automatic-Answer.html">〔UVa〕11547 - Automatic Answer</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/Timus1786-Sandros-Biography.html">〔Timus〕1786. Sandro's Biography</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/Timus1982-Electrification-Plan.html">〔Timus〕1982. Electrification Plan</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/11/ACMICPC-Live-Archive2681-Celebrity-jeopardy.html">〔ACM-ICPC Live Archive〕2681 - Celebrity jeopardy</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>10 <span>(22)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/10/UVa1152-4-Values-whose-Sum-is-0.html">〔UVa〕1152 - 4 Values whose Sum is 0</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa11498-Division-of-Nlogonia.html">〔UVa〕11498 - Division of Nlogonia</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa1124-Celebrity-jeopardy.html">〔UVa〕1124 - Celebrity jeopardy</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa11727-Cost-Cutting.html">〔UVa〕11727 - Cost Cutting</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa900-Brick-Wall-Patterns.html">〔UVa〕900 - Brick Wall Patterns</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa11150-Cola.html">〔UVa〕11150 - Cola</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa572-Oil-Deposits.html">〔UVa〕572 - Oil Deposits</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa10922-2-the-9s.html">〔UVa〕10922 - 2 the 9s</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa10298-Power-Strings.html">〔UVa〕10298 - Power Strings</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa256-Quirksome-Squares.html"> 〔UVa〕256 - Quirksome Squares</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa748-Exponentiation.html">〔UVa〕748 - Exponentiation</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa11734-Big-Number-of-Teams-will-Solve-This.html">〔UVa〕11734 - Big Number of Teams will Solve This</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa12468-Zapping.html">〔UVa〕12468 - Zapping</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/CSTLmap.html">〔C++〕STL的map的使用</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/ACMICPC-Live-Archive6047-Perfect-Matching.html">〔ACM-ICPC Live Archive〕6047 - Perfect Matching</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/ACMICPC-Live-Archive6040-Stop-Growing.html">〔ACM-ICPC Live Archive〕6040 - Stop Growing!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa10420-List-of-Conquests.html">〔UVa〕10420 - List of Conquests</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa11827-Maximum-GCD.html">〔UVa〕11827 - Maximum GCD</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/10514.html"> 〔紀念〕總瀏覽量達10514人紀念</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa350-PseudoRandom-Numbers.html">〔UVa〕350 - Pseudo-Random Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa10115-Automatic-Editing.html">〔UVa〕10115 - Automatic Editing</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/10/UVa490-Rotating-Sentences.html">〔UVa〕490 - Rotating Sentences</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>09 <span>(14)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/9/UVa414-Machined-Surfaces.html">〔UVa〕414 - Machined Surfaces</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa11292-Dragon-of-Loowater.html"> 〔UVa〕11292 - Dragon of Loowater</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa579-ClockHands.html">〔UVa〕579 - ClockHands</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa10110-Light-more-light.html">〔UVa〕10110 - Light, more light</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa10106-Product.html">〔UVa〕10106 - Product</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa10499-The-Land-of-Justice.html">〔UVa〕10499 - The Land of Justice</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa10161-Ant-on-a-Chessboard.html"> 〔UVa〕10161 - Ant on a Chessboard</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa694-The-Collatz-Sequence.html">〔UVa〕694 - The Collatz Sequence</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa10082-WERTYU.html">〔UVa〕10082 - WERTYU</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVa272-TEX-Quotes.html">〔UVa〕272 - TEX Quotes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/10000.html">〔紀念〕總瀏覽量破10000紀念</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/1820281777.html">維基百科的簡易編輯語法（未完成）</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/LOOKING-FOR-PROGRAMMING-CHALLENGES.html">LOOKING FOR PROGRAMMING CHALLENGES?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/9/UVauHuntAndroid-APP.html">〔UVa〕uHunt的Android APP</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>08 <span>(19)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/8/AOJ0019-Factorial.html">〔AOJ〕0019:   Factorial</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0018-Sorting-Five-Numbers.html">〔AOJ〕0018:   Sorting Five Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0011-Drawing-Lots.html">〔AOJ〕0011:   Drawing Lots</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0013-Switching-Railroad-Cars.html">〔AOJ〕0013:   Switching Railroad Cars</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0001-List-of-Top-3-Hills.html">〔AOJ〕0001:   List of Top 3 Hills</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0002-Digit-Number.html">〔AOJ〕0002:   Digit Number</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/d018-2007-A.html">〔大學生程式解題系統〕 d018: 2007 程式達人 A - 克林貢人的血腥遊戲</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0010-Circumscribed-Circle-of-a-Triangle.html">〔AOJ〕0010:   Circumscribed Circle of a Triangle</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ1000-A-B-Problem.html">〔AOJ〕1000:   A + B Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/d022-2007-E.html">〔大學生程式解題系統〕 d022: 2007 程式達人 E - 冷氣機自動估算程式</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0016-Treasure-Hunt.html">〔AOJ〕0016:   Treasure Hunt</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0000-QQ.html">〔AOJ〕0000:   QQ</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0020-Capitalize.html">〔AOJ〕0020:   Capitalize</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0006-Reverse-Sequence.html">〔AOJ〕0006:   Reverse Sequence</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0009-Prime-Number.html">〔AOJ〕0009:   Prime Number</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0003-Is-it-a-Right-Triangle.html">〔AOJ〕0003:   Is it a Right Triangle?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0022-Maximum-Sum-Sequence.html">〔AOJ〕0022:   Maximum Sum Sequence</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/AOJ0014-Integral.html">〔AOJ〕0014:   Integral</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/8/Online-Judge.html">〔更動〕標籤更名：【線上解題系統(Online Judge)】→【競賽＆解題】</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>07 <span>(13)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/7/d044.html">〔大學生程式解題系統〕d044: 鐵路堆疊</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d048.html">〔大學生程式解題系統〕d048: 中位數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d014-2006-A-Square-the-World.html">〔大學生程式解題系統〕d014: 2006 程式達人 A - Square the World</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d074-SIG-2009-Winter-Warmup-3.html">〔大學生程式解題系統〕d074: SIG 2009 Winter Warmup 3 - 字串反轉</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d041.html">〔大學生程式解題系統〕d041: 排序</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d212-2011-SIG-WINTER-WarmUp-B.html">〔大學生程式解題系統〕d212: 2011 SIG WINTER WarmUp B</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d211-2011-SIG-WINTER-WarmUp-A.html">〔大學生程式解題系統〕d211: 2011 SIG WINTER WarmUp A</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d006-2006-E-GoGoGo.html">〔大學生程式解題系統〕d006: 2006 程式達人 E - 出團GoGoGo</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d073-SIG-2009-Winter-Warmup-2.html">〔大學生程式解題系統〕d073: SIG 2009 Winter Warmup 2 - 倍數判斷</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d072-SIG-2009-Winter-Warmup-1.html">〔大學生程式解題系統〕d072: SIG 2009 Winter Warmup 1 - 偽大數加法</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d036.html">〔大學生程式解題系統〕d036: 計算數字和</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/d039.html">〔大學生程式解題系統〕d039: 判斷質數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/7/3D.html">免費、免注冊的3D模型網站</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>05 <span>(23)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/5/d217-Q489-Hangman-Judge.html"> 〔高中生程式解題系統〕d217: Q489: Hangman Judge</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/c114-Excuses-Excuses.html">〔高中生程式解題系統〕c114: Excuses, Excuses!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/c121-Fibonacci-Freeze.html">〔高中生程式解題系統〕c121: Fibonacci Freeze</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d182-Q256-Quirksome-Squares.html">〔高中生程式解題系統〕d182: Q256: Quirksome Squares</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/c082-Mutant-Flatworld-Explorers.html">〔高中生程式解題系統〕c082: Mutant Flatworld Explorers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d056-10013-Super-long-sums.html">〔高中生程式解題系統〕d056: 10013 - Super long sums</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/a223-10298-Power-Strings.html">〔高中生程式解題系統〕a223: 10298 - Power Strings</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d492-10226-Hardwood-species.html">〔高中生程式解題系統〕d492: 10226 - Hardwood species</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/c012-Tell-me-the-frequencies.html">〔高中生程式解題系統〕c012: Tell me the frequencies!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d672-10922-2-the-9s.html">〔高中生程式解題系統〕d672: 10922 - 2 the 9s</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/a589-B.html">〔高中生程式解題系統〕a589: B. 老蚯的寶物</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/c129-Oil-Deposits.html">〔高中生程式解題系統〕c129: Oil Deposits</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d189-11150-Cola.html">〔高中生程式解題系統〕d189: 11150 - Cola</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d038-00900-Brick-Wall-Patterns.html">〔高中生程式解題系統〕d038: 00900 - Brick Wall Patterns</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/c039-00100-The-3n-1-problem.html">〔高中生程式解題系統〕c039: 00100 - The 3n + 1 problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d532.html">〔高中生程式解題系統〕d532: 文文的求婚 (三)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/a065.html">〔高中生程式解題系統〕a065: 提款卡密碼</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d072-Case.html">〔高中生程式解題系統〕d072: 文文的求婚--續集 (Case 版)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d070-0.html">〔高中生程式解題系統〕d070: 文文的求婚--續集 (0 尾版)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d071-EOF.html">〔高中生程式解題系統〕d071: 文文的求婚--續集 (EOF 版)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d069-n.html">〔高中生程式解題系統〕d069: 文文的求婚--續集 (n 行版)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/d067-1.html">〔高中生程式解題系統〕d067: 文文的求婚--續集 (1 行版)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/5/a528.html">〔高中生程式解題系統〕a528: 大數排序</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>04 <span>(2)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/4/a225.html">〔高中生程式解題系統〕a225: 明明愛排列</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/4/a271.html">〔高中生程式解題系統〕a271: 彩色蘿蔔</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>03 <span>(12)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/3/a216.html">〔高中生程式解題系統〕a216: 數數愛明明</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/a224.html">〔高中生程式解題系統〕a224: 明明愛明明</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/a040.html">〔高中生程式解題系統〕a040: 阿姆斯壯數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/a059.html">〔高中生程式解題系統〕a059: 完全平方和</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/a121.html">〔高中生程式解題系統〕a121: 質數又來囉</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/d115.html">〔高中生程式解題系統〕d115: 數字包牌</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/b187-972.html">〔高中生程式解題系統〕b187: 97七區資訊學科2(改編)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/d535.html">〔高中生程式解題系統〕d535: 第二題：密碼驗證與擷取</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/d095-579-ClockHands.html">〔高中生程式解題系統〕d095: 579 - ClockHands</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/d111-10110-Light-more-light.html">〔高中生程式解題系統〕d111: 10110 - Light, more light</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/Ubuntuzip.html">解決Ubuntu下解壓縮zip檔時的亂碼問題</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/3/Virtual-Online-Contests.html">Virtual Online Contests</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>02 <span>(5)</span>
+								<ul>
+							
+						
+									<li><a href="../../2013/2/Java.html">近幾年的原文Java圖學&影像處理書籍</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/2/d043.html">〔大學生程式解題系統〕d043: 最大公因數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/2/d011.html">〔大學生程式解題系統〕d011: 字串比對</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/2/d001.html">〔大學生程式解題系統〕d001: 字串反轉</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2013/2/11991740.html">恢復運作啟事</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+							</ul></li><!-- end of a year -->
+									
+							<li>2012 <span>(93)</span>
+							<ul>
+								
+								<li>09 <span>(6)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/9/633919732.html">休站啟事</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/9/UVa10071-Back-to-High-School-Physics.html">〔UVa〕10071 - Back to High School Physics</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/9/d281-10499-The-Land-of-Justice.html">〔高中生程式解題系統〕d281: 10499 - The Land of Justice</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/9/c048-Ant-on-a-Chessboard.html">〔高中生程式解題系統〕c048: Ant on a Chessboard</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/9/c127-Artificial-Intelligence.html">〔高中生程式解題系統〕c127: Artificial Intelligence</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/9/d420-Q694-The-Collatz-Sequence.html">〔高中生程式解題系統〕d420: Q694: The Collatz Sequence</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>08 <span>(7)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/8/AndroidAVD.html">對應各種搭載Android系統的裝置的AVD設置參數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/8/c054-WERTYU.html">〔高中生程式解題系統〕c054: WERTYU</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/8/UVa494-Kindergarten-Counting-Game.html">〔UVa〕494 - Kindergarten Counting Game</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/8/d226-10071-Back-to-High-School-Physics.html">〔高中生程式解題系統〕d226: 10071 - Back to High School Physics</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/8/c007-TeX-Quotes.html">〔高中生程式解題系統〕c007: TeX Quotes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/8/Yahoo.html"> 悼Yahoo!奇摩站長工具</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/8/Timus1876-Centipedes-Morning.html">〔Timus〕1876. Centipede's Morning</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>07 <span>(1)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/7/97.html">9.7吋電子書閱讀器列表</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>06 <span>(1)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/6/UVa11063-B2Sequence.html">〔UVa〕11063 - B2-Sequence</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>05 <span>(6)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/5/UVa10008-Whats-Cryptanalysis.html">〔UVa〕10008 - What's Cryptanalysis?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/5/UVa10055-Hashmat-the-Brave-Warrior.html">〔UVa〕10055 - Hashmat the Brave Warrior</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/5/UVa100-The-3n-1-problem.html">〔UVa〕100 - The 3n + 1 problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/5/d526-Binary-Search-Tree-BST.html">〔高中生程式解題系統〕d526: Binary Search Tree (BST)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/5/Timus1567-SMSspam.html">〔Timus〕1567. SMS-spam</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/5/Timus1880-Psych-Ups-Eigenvalues.html">〔Timus〕1880. Psych Up's Eigenvalues</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>04 <span>(2)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/4/Timus1877-Bicycle-Codes.html">〔Timus〕1877. Bicycle Codes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/4/Timus1820-Ural-Steaks.html">〔Timus〕1820. Ural Steaks</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>02 <span>(10)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/2/d122-Oh-My-Zero.html">〔高中生程式解題系統〕d122: Oh! My Zero!!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d881.html">〔高中生程式解題系統〕d881: 作業苦多</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d693.html">〔高中生程式解題系統〕d693: 最小公倍數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d573-CRC.html">〔高中生程式解題系統〕d573: CRC騎士團</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d985-Gran-Turismo-5.html">〔高中生程式解題系統〕d985: Gran Turismo 5</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d887-1chain.html">〔高中生程式解題系統〕d887: 1.山脈種類(chain)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d951-B.html">〔高中生程式解題系統〕d951: B. 好吃的麵包</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/b112-5.html">〔高中生程式解題系統〕b112: 5. 高中運動會</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d950-A.html">〔高中生程式解題系統〕d950: A. 帕斯卡三角形</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/2/d277.html">〔高中生程式解題系統〕d277: 矩形对角线</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>01 <span>(60)</span>
+								<ul>
+							
+						
+									<li><a href="../../2012/1/USACOSection-13-Barn-Repair.html">〔USACO〕Section 1.3 Barn Repair</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/c089-Basically-Speaking.html">〔高中生程式解題系統〕c089: Basically Speaking</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d588-A.html">〔高中生程式解題系統〕d588: A. 樹上的松鼠</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d593-F.html">〔高中生程式解題系統〕d593: F. 生命靈數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d329-Q713-Adding-Reversed-Numbers.html">〔高中生程式解題系統〕d329: Q713: Adding Reversed Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d660-11764-Jumping-Mario.html">〔高中生程式解題系統〕d660: 11764 - Jumping Mario</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d670-10921-Find-the-Telephone.html">〔高中生程式解題系統〕d670: 10921 - Find the Telephone</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/c079-Peters-Smokes.html">〔高中生程式解題系統〕c079: Peter's Smokes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/USACOSection-13-Mixing-Milk.html">〔USACO〕Section 1.3 Mixing Milk</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d379-446-Kibbles-n-Bits-n-Bits-n-Bits.html">〔高中生程式解題系統〕d379: 446 - Kibbles `n' Bits `n' Bits `n' Bits</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d306-10193-All-You-Need-Is-Love.html">〔高中生程式解題系統〕d306: 10193 - All You Need Is Love</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/a130-12015-Google-is-Feeling-Lucky.html">〔高中生程式解題系統〕a130: 12015 - Google is Feeling Lucky</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d053-10970-Big-Chocolate.html">〔高中生程式解題系統〕d053: 10970 - Big Chocolate</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b085-F.html">〔高中生程式解題系統〕b085: F. 數格子點</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b082-C.html">〔高中生程式解題系統〕b082: C. 國家寶藏</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d586.html">〔高中生程式解題系統〕d586: 哈密瓜美語</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d710-parking-lot.html">〔高中生程式解題系統〕d710: parking lot</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d681-BinaryCount.html">〔高中生程式解題系統〕d681: BinaryCount</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b203-B.html">〔高中生程式解題系統〕b203: B. 首領的名字</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d929-A.html">〔高中生程式解題系統〕d929: A. 迴文</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b146-NOIP2004-1.html">〔高中生程式解題系統〕b146: NOIP2004 1.不高兴的津津</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d255-11417-GCD.html">〔高中生程式解題系統〕d255: 11417 - GCD</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/USACOSection-12-Dual-Palindromes.html">〔USACO〕Section 1.2 Dual Palindromes</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/USACOSection-12-Palindromic-Squares.html">〔USACO〕Section 1.2 Palindromic Squares</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/USACOSection-12-Name-That-Number.html">〔USACO〕Section 1.2 Name That Number</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/USACOSection-12-Transformations.html">〔USACO〕Section 1.2 Transformations</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/a111-12149-Feynman.html">〔高中生程式解題系統〕a111: 12149 - Feynman</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/a275.html">〔高中生程式解題系統〕a275: 字串變變變</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d267-11577-Letter-Frequency.html">〔高中生程式解題系統〕d267: 11577 - Letter Frequency</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d041-11219-How-old-are-you.html">〔高中生程式解題系統〕d041: 11219 - How old are you?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d057-11494-Queen.html">〔高中生程式解題系統〕d057: 11494 - Queen</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d980-11479-Is-this-the-easiest-problem.html">〔高中生程式解題系統〕d980: 11479 - Is this the easiest problem?</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d150-11369-Shopaholic.html">〔高中生程式解題系統〕d150: 11369 - Shopaholic</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d318-11185-Ternary.html">〔高中生程式解題系統〕d318: 11185 - Ternary</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d235-Q10929-You-can-say-11.html">〔高中生程式解題系統〕d235: Q10929: You can say 11</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/c022-10783-Odd-Sum.html">〔高中生程式解題系統〕c022: 10783 - Odd Sum</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d117-10924-Prime-Words.html">〔高中生程式解題系統〕d117: 10924 - Prime Words</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d097-10038-Jolly-Jumpers.html">〔高中生程式解題系統〕d097: 10038 - Jolly Jumpers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/c015-Reverse-and-Add.html">〔高中生程式解題系統〕c015: Reverse and Add</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d096-913-Joana-and-the-Odd-Numbers.html">〔高中生程式解題系統〕d096: 913 - Joana and the Odd Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/c067-Box-of-Bricks.html">〔高中生程式解題系統〕c067: Box of Bricks</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b081-B.html">〔高中生程式解題系統〕b081: B. 友好數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b080-A.html">〔高中生程式解題系統〕b080: A. 畢氏定理</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b227-F.html">〔高中生程式解題系統〕b227: F. 優惠方案Ⅱ</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d889-2jack.html">〔高中生程式解題系統〕d889: 2.黑傑克(jack)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b079-F.html">〔高中生程式解題系統〕b079: F. 鬧鐘</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/USACOSection-12-Milking-Cows.html">〔USACO〕Section 1.2 Milking Cows</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d732.html">〔高中生程式解題系統〕d732: 二分搜尋法</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b075-A.html">〔高中生程式解題系統〕b075: A. 霍格華茲特快車</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/d646-I2A.html">〔高中生程式解題系統〕d646: I2A的陰謀</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/a135-12250-Language-Detection.html">〔高中生程式解題系統〕a135: 12250 - Language Detection</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b072-D.html">〔高中生程式解題系統〕b072: D. 打不倒的空氣人</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b030-E.html">〔高中生程式解題系統〕b030: E. 達文西密碼</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b033-B.html">〔高中生程式解題系統〕b033: B. 幼稚</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b027-A.html">〔高中生程式解題系統〕b027: A. 幼稚鬼的把戲</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b102-B.html">〔高中生程式解題系統〕b102: B. 節約尺</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b103-C.html">〔高中生程式解題系統〕b103: C. 怪物辨識</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b104-D.html">〔高中生程式解題系統〕b104: D. 似曾相識</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b095-A.html">〔高中生程式解題系統〕b095: A. 測謊機</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2012/1/b098-D.html">〔高中生程式解題系統〕b098: D. 秘密</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+							</ul></li><!-- end of a year -->
+									
+							<li>2011 <span>(128)</span>
+							<ul>
+								
+								<li>12 <span>(34)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/12/b101-A.html">〔高中生程式解題系統〕b101: A. 收集凱蒂貓</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d018.html">〔高中生程式解題系統〕d018: 字串讀取練習</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b223-B.html">〔高中生程式解題系統〕b223: B. 外星人的訊息</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b096-B.html">〔高中生程式解題系統〕b096: B. 生死鬥</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d190-11462-Age-Sort.html">〔高中生程式解題系統〕d190: 11462 - Age Sort</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b222-A.html">〔高中生程式解題系統〕b222: A. 犯人的編號</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d649.html">〔高中生程式解題系統〕d649: 數字三角形</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/a282.html">〔高中生程式解題系統〕a282: 認真念書</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d807.html">〔高中生程式解題系統〕d807: 方方</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1082-Gaby-Ivanushka.html">〔Timus〕1082. Gaby Ivanushka</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1723-Sandros-Book.html">〔Timus〕1723. Sandro's Book</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/USACOSection-11-Broken-Necklace.html">〔USACO〕Section 1.1  Broken Necklace</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b204-C.html">〔高中生程式解題系統〕b204: C. 電費系統</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d466.html">〔高中生程式解題系統〕d466: 今天是第幾天呢</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b205-D.html">〔高中生程式解題系統〕b205: D. 沙之國</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1712-Cipher-Grille.html">〔Timus〕1712. Cipher Grille</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1607-Taxi.html">〔Timus〕1607. Taxi</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/c013-Triangle-Wave.html">〔高中生程式解題系統〕c013: Triangle Wave</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1563-Bayan.html">〔Timus〕1563. Bayan</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1636-Penalty-Time.html">〔Timus〕1636. Penalty Time</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/Timus1025-Democracy-in-Danger.html">〔Timus〕1025. Democracy in Danger</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d673-11608-No-Problem.html">〔高中生程式解題系統〕d673: 11608 - No Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/a244-for-if.html">〔高中生程式解題系統〕a244: 新手訓練 ~ for + if</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b097-C.html">〔高中生程式解題系統〕b097: C. 數數字</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/USACOSection-11-Friday-the-Thirteenth.html">〔USACO〕Section 1.1 Friday the Thirteenth</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b078-E.html">〔高中生程式解題系統〕b078: E. 白飯</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/USACOSection-11-Greedy-Gift-Givers.html">〔USACO〕Section 1.1 Greedy Gift Givers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/USACOSection-11-Your-Ride-Is-Here.html">〔USACO〕Section 1.1 Your Ride Is Here</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b115-TOI2008-2.html">〔高中生程式解題系統〕b115: TOI2008 2. 大數運算</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d153.html">〔高中生程式解題系統〕d153: 六、智力测验</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/b004.html">〔高中生程式解題系統〕b004: 繩子上吃草的牛</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/c034-Integer-Inquiry.html">〔高中生程式解題系統〕c034: Integer Inquiry</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/c005.html">〔高中生程式解題系統〕c005: 環保獎金</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/12/d086.html">〔高中生程式解題系統〕d086: 態度之重要的證明</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>11 <span>(2)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/11/1111.html">〔紀念〕總瀏覽量達1111人</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/11/100.html">教育部100年度全國大專電腦軟體設計競賽──得獎隊伍</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>10 <span>(6)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/10/Timus1617-Flat-Spots.html">〔Timus〕1617. Flat Spots</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/10/Timus1349-Farm.html">〔Timus〕1349. Farm</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/10/Timus1654-Cipher-Message.html">〔Timus〕1654. Cipher Message</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/10/b209-B.html">〔高中生程式解題系統〕b209: B. 幼稚國王去旅行</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/10/d594-G.html">〔高中生程式解題系統〕d594: G. 總共需要多少錢</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/10/d590-C.html">〔高中生程式解題系統〕d590: C. 一定中大樂透</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>09 <span>(4)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/9/d155-A.html">〔高中生程式解題系統〕d155: 序章-永夜抄-A</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/9/a215.html">〔高中生程式解題系統〕a215: 明明愛數數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/9/d827.html">〔高中生程式解題系統〕d827: 買鉛筆</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/9/d584-skill.html">〔高中生程式解題系統〕d584: 技能點數skill</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>08 <span>(30)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/8/b138-NOIP2005-1.html">〔高中生程式解題系統〕b138: NOIP2005 1.陶陶摘苹果</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/d411.html">〔高中生程式解題系統〕d411: 算了好久......</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1493-One-Step-from-Happiness.html">〔Timus〕1493. One Step from Happiness</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1787-Turn-for-MEGA.html">〔Timus〕1787. Turn for MEGA</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1545-Hieroglyphs.html">〔Timus〕1545. Hieroglyphs</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1585-Penguins.html">〔Timus〕1585. Penguins</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1496-Spammer.html">〔Timus〕1496. Spammer</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1313-Some-Words-about-Sport.html">〔Timus〕1313. Some Words about Sport</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1319-Hotel.html">〔Timus〕1319. Hotel</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1581-Teamwork.html">〔Timus〕1581. Teamwork</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1639-Chocolate-2.html">〔Timus〕1639. Chocolate 2</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1083-Factorials.html">〔Timus〕1083. Factorials!!!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/d143-Q11172-Relational-Operators.html">〔高中生程式解題系統〕d143: Q11172: Relational Operators</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1264-Workdays.html">〔Timus〕1264. Workdays</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1293-Eniya.html">〔Timus〕1293. Eniya</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1785-Lost-in-Localization.html">〔Timus〕1785. Lost in Localization</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/d126.html">〔高中生程式解題系統〕d126: 一、牧场围栏</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1409-Two-Gangsters.html">〔Timus〕1409. Two Gangsters</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1068-Sum.html">〔Timus〕1068. Sum</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/Timus1000-AB-Problem.html">〔Timus〕1000. A+B Problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/d010.html">〔高中生程式解題系統〕d010: 盈數、虧數和完全數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/c009-Simple-Base-Conversion.html">〔高中生程式解題系統〕c009: Simple Base Conversion</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/b186-971.html">〔高中生程式解題系統〕b186: 97七區資訊學科1(改編)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/b035-D.html">〔高中生程式解題系統〕b035: D. 海加爾山之戰</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/a149.html">〔高中生程式解題系統〕a149: 乘乘樂</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/a148-You-Cannot-Pass.html">〔高中生程式解題系統〕a148: You Cannot Pass?!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/c004-Beat-the-Spread.html">〔高中生程式解題系統〕c004: Beat the Spread!</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/a147-Print-it-all.html">〔高中生程式解題系統〕a147: Print it all</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/d186-11461-Square-Numbers.html">〔高中生程式解題系統〕d186: 11461 - Square Numbers</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/8/d635-777luck.html">〔高中生程式解題系統〕d635: 幸運777？luck</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>07 <span>(47)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/7/d266.html">〔高中生程式解題系統〕d266: 退休的福利</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d659-11727-Cost-Cutting.html">〔高中生程式解題系統〕d659: 11727 - Cost Cutting</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d614.html">〔高中生程式解題系統〕d614: 簡易加法運算</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d380-10106-Product.html">〔高中生程式解題系統〕d380: 10106 - Product</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/b077-C.html">〔高中生程式解題系統〕b077: C. 不公平的人，是誰？</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a132-10931-Parity.html">〔高中生程式解題系統〕a132: 10931 - Parity</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/b202-A.html">〔高中生程式解題系統〕b202: A. 優惠方案</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d587.html">〔高中生程式解題系統〕d587: 參貳壹真好吃</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d583.html">〔高中生程式解題系統〕d583: 幼稚的企鵝</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d579.html">〔高中生程式解題系統〕d579: 兩條線</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d564.html">〔高中生程式解題系統〕d564: 整數編號輸出</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d559.html">〔高中生程式解題系統〕d559: 班號</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d507.html">〔高中生程式解題系統〕d507: 三角形的判斷</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d511.html">〔高中生程式解題系統〕d511: 小明的作業</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d581.html">〔高中生程式解題系統〕d581: 三條線</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/c002-f91.html">〔高中生程式解題系統〕c002: f91</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d493-1.html">〔高中生程式解題系統〕d493: 入门求幂题(求幂系列题1)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d498.html">〔高中生程式解題系統〕d498: 我不說髒話</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d471-0-1.html">〔高中生程式解題系統〕d471: 0 與 1 的遊戲</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d461.html">〔高中生程式解題系統〕d461: 班際籃球賽</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d124-3.html">〔高中生程式解題系統〕d124: 3的倍数</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d074.html">〔高中生程式解題系統〕d074: 電腦教室</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d073.html">〔高中生程式解題系統〕d073: 分組報告</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d068.html">〔高中生程式解題系統〕d068: 該減肥了！</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d066.html">〔高中生程式解題系統〕d066: 上學去吧！</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d065.html">〔高中生程式解題系統〕d065: 三人行必有我師</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d064.html">〔高中生程式解題系統〕d064: ㄑㄧˊ 數？</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d063-0-1.html">〔高中生程式解題系統〕d063: 0 與 1</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d060.html">〔高中生程式解題系統〕d060: 還要等多久啊？</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d059.html">〔高中生程式解題系統〕d059: 數學函數練習</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d058-BASIC-SGN.html">〔高中生程式解題系統〕d058: BASIC 的 SGN 函數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d051.html">〔高中生程式解題系統〕d051: 糟糕，我發燒了！</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d050.html">〔高中生程式解題系統〕d050: 妳那裡現在幾點了？</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/d049.html">〔高中生程式解題系統〕d049: 中華民國萬歲！</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a104.html">〔高中生程式解題系統〕a104: 排序</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a058-MOD3.html">〔高中生程式解題系統〕a058: MOD3</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a010.html">〔高中生程式解題系統〕a010: 因數分解</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a053-Sagits.html">〔高中生程式解題系統〕a053: Sagit's 計分程式</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a042.html">〔高中生程式解題系統〕a042: 平面圓形切割</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a038.html">〔高中生程式解題系統〕a038: 數字翻轉</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a034.html">〔高中生程式解題系統〕a034: 二進位制轉換</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a024-GCD.html">〔高中生程式解題系統〕a024: 最大公因數(GCD)</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a022.html">〔高中生程式解題系統〕a022: 迴文</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a021.html">〔高中生程式解題系統〕a021: 大數運算</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a020.html">〔高中生程式解題系統〕a020: 身分證檢驗</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a015.html">〔高中生程式解題系統〕a015: 矩陣的翻轉</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/7/a012-Hashmat.html">〔高中生程式解題系統〕a012: Hashmat的戰役</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>05 <span>(4)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/5/a011.html">〔高中生程式解題系統〕a011: 幼稚園的算數遊戲</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/5/a009.html">〔高中生程式解題系統〕a009: 解碼器</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/5/a007.html">〔高中生程式解題系統〕a007: 判斷質數</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2011/5/a006.html">〔高中生程式解題系統〕a006: 一元二次方程式</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+								<li>04 <span>(1)</span>
+								<ul>
+							
+						
+									<li><a href="../../2011/4/a005-Eva.html">〔高中生程式解題系統〕a005: Eva 的回家作業</a></li>
+						
+					
+						
+						
+							
+								</ul></li><!-- end of a month -->
+								
+							</ul></li><!-- end of a year -->
+									
+							<li>2010 <span>(5)</span>
+							<ul>
+								
+								<li>10 <span>(5)</span>
+								<ul>
+							
+						
+									<li><a href="../../2010/10/a004.html">〔高中生程式解題系統〕a004: 文文的求婚</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2010/10/d148-The-3n-1-problem.html">〔大學生程式解題系統〕d148: The 3n + 1 problem</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2010/10/a003.html">〔高中生程式解題系統〕a003: 兩光法師占卜術</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2010/10/d012.html">〔大學生程式解題系統〕d012: 迴文</a></li>
+						
+					
+						
+						
+							
+						
+									<li><a href="../../2010/10/a002.html">〔高中生程式解題系統〕a002: 簡易加法</a></li>
+						
+					
+					</ul></li><!-- end of last month-->
+					</ul></li><!-- end of last year-->
+					</ul><!-- end of all-->
+                </div>
+				<!--<div class="sidebar-module">
+					<h4>瀏覽量</h4>
+                </div>-->
+                <div class="sidebar-module">
+                    <h4>推薦使用Firefox</h4>
+                    <a href="http://gfx.tw/mushiyo" title="連到我的抓火狐推薦頁！"><img style="border: none; height: 90px; width: 165px" src="http://gfx.tw/userstickers/0/b57/smallsticker2.png" alt="連到我的抓火狐推薦頁！"/></a>
+                </div>
+				<div class="sidebar-module">
+                    <h4>技術提供</h4>
+                    <ol class="list-unstyled">
+						<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+                        <li><a href="http://jbake.org/">JBake</a></li>
+                        <li><a href="https://jquery.com/">jQUery</a></li>
+						<li><a href="http://www.mathjax.org">
+							<img title="Powered by MathJax"
+							src="//cdn.mathjax.org/mathjax/badge/mj_logo.png"
+							border="0" alt="Powered by MathJax" /></a>
+						</li>
+						<li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a></li>
+                    </ol>
+                </div>
+            </aside>
+        </div><!-- /.row -->
+        
+        <footer class="row blog-footer">
+            <div class="col-lg-12 text-center">
+                <p>Picture Window template for <a href="http://jbake.org/">JBake</a><br>
+                   Inspired by Josh Peterson's Picture Window template for Blogger<br>
+                   Modify from Start Bootsrtap's <a href="http://startbootstrap.com/template-overviews/business-casual/">Business Casual</a> template
+                   and Bootstrap's <a href="http://getbootstrap.com/examples/blog/">Blog</a> template<br>
+				   Background image credit: <a href="www.wanpug.com">無料イラスト 【イラストわんパグ】</a><br>
+				   This blog is baked with <a href="http://jbake.org">JBake v2.4.0</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+	
+    <!-- jQuery -->
+    <script src="../../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../js/bootstrap.min.js"></script>
+	
+	<!-- Tree View for the archive-->
+	<script src="../../js/tree.js"></script>
+	
+	<!-- switch theme -->
+	<script>
+		var isDay = true;
+		document.getElementById('toggle').onclick = function () {
+			if (isDay){
+				document.getElementById('theme_css').href = '../../css/computerWorldNight.css';
+				document.getElementById('toggle').innerHTML = "ON";
+				isDay = false;
+			} else {
+				document.getElementById('theme_css').href = '../../css/computerWorldDay.css';
+				document.getElementById('toggle').innerHTML = "OFF";
+				isDay = true;
+			}
+		};
+	</script>
+	
+	<!-- MathJax -->
+	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+	
+	<!-- Syntax Highlighter -->
+	<link href='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shCore.css' rel='stylesheet' type='text/css'/>
+	<link href='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/>
+
+	<script src='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/scripts/shCore.js' type='text/javascript'></script>
+	<script src='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/scripts/shAutoloader.js' type='text/javascript'></script>
+
+	<script type='text/javascript'>
+	//<![CDATA[
+		  function path()
+		  {
+			var args = arguments,
+				result = []
+				;
+				 
+			for(var i = 0; i < args.length; i++)
+				result.push(args[i].replace('@', 'http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/scripts/'));
+				 
+			return result
+		  };
+		   
+		  SyntaxHighlighter.autoloader.apply(null, path(
+			'applescript            @shBrushAppleScript.js',
+			'actionscript3 as3      @shBrushAS3.js',
+			'bash shell             @shBrushBash.js',
+			'coldfusion cf          @shBrushColdFusion.js',
+			'cpp c                  @shBrushCpp.js',
+			'c# c-sharp csharp      @shBrushCSharp.js',
+			'css                    @shBrushCss.js',
+			'delphi pascal          @shBrushDelphi.js',
+			'diff patch pas         @shBrushDiff.js',
+			'erl erlang             @shBrushErlang.js',
+			'groovy                 @shBrushGroovy.js',
+			'java                   @shBrushJava.js',
+			'jfx javafx             @shBrushJavaFX.js',
+			'js jscript javascript  @shBrushJScript.js',
+			'perl pl                @shBrushPerl.js',
+			'php                    @shBrushPhp.js',
+			'text plain             @shBrushPlain.js',
+			'py python              @shBrushPython.js',
+			'ruby rails ror rb      @shBrushRuby.js',
+			'sass scss              @shBrushSass.js',
+			'scala                  @shBrushScala.js',
+			'sql                    @shBrushSql.js',
+			'vb vbnet               @shBrushVb.js',
+			'xml xhtml xslt html    @shBrushXml.js'
+		  ));
+
+		 SyntaxHighlighter.config.bloggerMode = true;
+		 SyntaxHighlighter.all()
+	//]]>
+	</script>
+</body>
+</html>
