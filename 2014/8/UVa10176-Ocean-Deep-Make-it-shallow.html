@@ -22,7 +22,11 @@
     <link href="../../css/business-casual.css" rel="stylesheet">
     <link href="../../css/picture_window95.css" rel="stylesheet">
 	<link href="../../css/tree.css" rel="stylesheet">
-	<link href="../../css/computerWorldDay.css" rel="stylesheet" id="theme_css">
+	<link href="../../css/computerWorldDay.css" rel="stylesheet" id="blogTheme">
+	
+	<!-- Syntax Highlighter -->
+	<link href='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shCore.css' rel='stylesheet' type='text/css'/>
+	<link href='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shThemeDefault.css' rel='stylesheet' type='text/css' id="shTheme"/>
 	
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -126,7 +130,9 @@ Problem：<a href="http://uva.onlinejudge.org/external/101/10176.html">http://uv
 							
 							
 							
-                            <!-- post your comment system script here -->
+							<p>張貼留言 | Post a comment</p>
+                            <script data-isso="http://cw-comment.mushiyo.cf/" src="http://cw-comment.mushiyo.cf/js/embed.min.js"></script>
+							<section id="isso-thread"></section>
 							
                         </div>
                     </div>
@@ -4855,11 +4861,13 @@ Problem：<a href="http://uva.onlinejudge.org/external/101/10176.html">http://uv
 		var isDay = true;
 		document.getElementById('toggle').onclick = function () {
 			if (isDay){
-				document.getElementById('theme_css').href = '../../css/computerWorldNight.css';
+				document.getElementById('blogTheme').href = '../../css/computerWorldNight.css';
+				document.getElementById('shTheme').href = 'http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shThemeEmacs.css';
 				document.getElementById('toggle').innerHTML = "ON";
 				isDay = false;
 			} else {
-				document.getElementById('theme_css').href = '../../css/computerWorldDay.css';
+				document.getElementById('blogTheme').href = '../../css/computerWorldDay.css';
+				document.getElementById('shTheme').href = 'http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shThemeDefault.css';
 				document.getElementById('toggle').innerHTML = "OFF";
 				isDay = true;
 			}
@@ -4870,9 +4878,6 @@ Problem：<a href="http://uva.onlinejudge.org/external/101/10176.html">http://uv
 	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 	
 	<!-- Syntax Highlighter -->
-	<link href='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shCore.css' rel='stylesheet' type='text/css'/>
-	<link href='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/>
-
 	<script src='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/scripts/shCore.js' type='text/javascript'></script>
 	<script src='http://dl.dropbox.com/u/46484098/blog_script/syntaxhighlighter_3.0.83/scripts/shAutoloader.js' type='text/javascript'></script>
 
