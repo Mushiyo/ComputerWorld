@@ -1,0 +1,10 @@
+title=〔AOJ〕0016:   Treasure Hunt
+date=2013-08-16 17:08
+full_date=2013-08-16T17:08:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0016">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0016</a><br /><!--more--><br />解題雜記：<br />　　將起點設定為(0, 0)，面向90度的方向（也就是面向y軸正向），然後不斷的依照輸入所給的數值操作：向前d單位，然後順時鐘轉t度。假設目前的所在位置為(x, y)，面向w度方向，則往前d單位後，新的位置會是(x + d * cos(w), y + d * sin(w))；順時鐘轉t度後，會變成面向w-t度方向。注意&lt;cmath&gt;中cos跟sin預設傳入的參數是弳度(radian)不是度度(degree)，所以在用cos跟sin之前要先把度度轉成弳度。另外就是題目要求的是輸出最後位置的整數部份，這邊直接把位置轉換成int輸出就好。如果用printf("%.0f", x)這樣的方式輸出的話，結果會變成輸出四捨五入到整數位的x，就WA QQ。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0016.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;stdio.h&gt;<br />#include &lt;cmath&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> double x = 0, y = 0;<br /> int direction = 90;<br /> int d = 0, t = 0;<br /><br /> while (scanf("%d, %d", &amp;d, &amp;t) == 2) {<br />  if (d == 0 &amp;&amp; t == 0) {<br />   break;<br />  }<br /><br />  double dx = d * cos(direction * M_PI / 180.0);<br />  double dy = d * sin(direction * M_PI / 180.0);<br /><br />  x += dx;<br />  y += dy;<br /><br />  direction -= t;<br />  direction %= 360;<br />  if (direction &lt; 0) {<br />   direction += 360;<br />  }<br /> }<br /><br /> printf("%d\n", (int)x);<br /> printf("%d\n", (int)y);<br /><br /> return 0;<br />}<br /><br /></pre>

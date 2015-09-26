@@ -1,0 +1,10 @@
+title=〔AOJ〕0013:   Switching Railroad Cars
+date=2013-08-28 23:15
+full_date=2013-08-28T23:15:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0013">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0013</a><br /><!--more--><br />解題雜記：<br />　　用stack來存放進鐵軌的列車。當輸入是非0的數字時，就把數字壓入stack；當輸入是0時，就把stack最頂端的數字pop掉。如此模擬即可。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0013.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;stack&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int num = 0;<br /> stack&lt;int&gt; car;<br /><br />    while(cin &gt;&gt; num){<br />        if(num == 0){<br />         cout &lt;&lt; car.top() &lt;&lt; endl;<br />         car.pop();<br />        }<br />        else{<br />         car.push(num);<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

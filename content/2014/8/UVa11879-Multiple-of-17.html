@@ -1,0 +1,10 @@
+title=〔UVa〕11879 - Multiple of 17
+date=2014-08-31 00:09
+full_date=2014-08-31T00:09:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/118/11879.html">http://uva.onlinejudge.org/external/118/11879.html</a><br /><!--more--><br />Solution Note:<br />When using Java, this problem can be easily solved wtih the BigInteger class.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11879.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.math.BigInteger;<br />import java.util.Scanner;<br /><br />public class UVa11879 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final BigInteger big17 = BigInteger.valueOf(17);<br /><br />  while (input.hasNext()) {<br />   BigInteger num = input.nextBigInteger();<br />   <br />   if(num.equals(BigInteger.ZERO)){<br />    break;<br />   }<br />   <br />   if(num.mod(big17).equals(BigInteger.ZERO)){<br />    System.out.println(1);<br />   }<br />   else{<br />    System.out.println(0);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

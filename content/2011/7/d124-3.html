@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d124: 3的倍数
+date=2011-07-15 22:51
+full_date=2011-07-15T22:51:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d124">http://zerojudge.tw/ShowProblem?problemid=d124</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d124 "3的倍数" from                                               */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (136ms, 5776KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-12 23:14:01                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d124 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String num = input.nextLine();<br />   <br />   if(isThreeMultiple(num)){<br />    System.out.println("yes");<br />   }<br />   else{<br />    System.out.println("no");<br />   }<br />  }<br /> }<br /><br /> public static boolean isThreeMultiple(String num){<br />  if(num.startsWith("-")){<br />   num = num.substring(1);<br />  }   <br />  <br />  int sumOfDigits = 0;<br />  <br />  for(int i = 0; i &lt; num.length(); ++i){<br />   sumOfDigits += Character.getNumericValue(num.charAt(i));<br />  }<br />  <br />  if(sumOfDigits % 3 != 0){<br />   return false;<br />  }<br />  else{<br />   return true;<br />  }<br /> }<br />}<br /></pre>

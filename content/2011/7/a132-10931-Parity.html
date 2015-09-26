@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a132: 10931 - Parity
+date=2011-07-26 22:39
+full_date=2011-07-26T22:39:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a132">http://zerojudge.tw/ShowProblem?problemid=a132</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a132 "10931 - Parity" from UVa ACM 10931                             */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (216ms, 6184KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-15 17:04:12                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a132 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  int I = input.nextInt();<br />  while(I != 0){<br />   System.out.print("The parity of " + Integer.toBinaryString(I) + " is ");<br />   System.out.println(Integer.bitCount(I) + " (mod 2).");<br />   <br />   I = input.nextInt();<br />  }<br /> }<br /><br />}<br /></pre>

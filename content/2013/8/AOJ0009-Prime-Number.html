@@ -1,0 +1,10 @@
+title=〔AOJ〕0009:   Prime Number
+date=2013-08-09 23:55
+full_date=2013-08-09T23:55:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0009">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0009</a><br /><!--more--><br />解題雜記：<br />　　建質數表，然後檢查質數表中小於n的共有多少個數。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0009.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cmath&gt;<br />#include &lt;vector&gt;<br /><br />using namespace std;<br /><br />const int size = 999999 + 1;<br />bool isPrime[size];<br />vector&lt;int&gt; prime;<br /><br />void sieveOfEratosthenes() {<br /> for (int i = 2; i &lt; size; ++i) {<br />  isPrime[i] = true;<br /> }<br /><br /> int sqrtSize = sqrt(size) + 1;<br /><br /> for (int i = 2; i &lt; sqrtSize; ++i) {<br />  if (isPrime[i] == true) {<br />   for (int j = i * i; j &lt; size; j += i) {<br />    isPrime[j] = false;<br />   }<br />  }<br /> }<br /><br /> for (int i = 2; i &lt; size; ++i) {<br />  if (isPrime[i]) {<br />   prime.push_back(i);<br />  }<br /> }<br />}<br /><br />int main() {<br /> sieveOfEratosthenes();<br /><br /> int n = 0;<br /><br /> while (cin &gt;&gt; n) {<br />  int countPrime = 0;<br /><br />  for(int i = 0; i &lt; prime.size(); ++i){<br />   if(prime[i] &gt; n){<br />    break;<br />   }<br />   else{<br />    ++countPrime;<br />   }<br />  }<br /><br />  cout &lt;&lt; countPrime &lt;&lt; endl;<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10298 - Power Strings
+date=2013-10-27 14:10
+full_date=2013-10-27T14:10:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/102/10298.html">http://uva.onlinejudge.org/external/102/10298.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10298 {<br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String s = input.next();<br /><br />   if (s.equals(".")) {<br />    break;<br />   }<br /><br />   StringBuilder a = new StringBuilder();<br />   for (int i = 0; i &lt; s.length(); ++i) {<br />    a.append(s.charAt(i));<br /><br />    if (s.length() % a.length() != 0) {<br />     continue;<br />    }<br /><br />    boolean isPowerStrFound = true;<br />    for (int j = 0; j &lt; s.length(); j += a.length()) {<br />     if (!s.substring(j, j + a.length()).equals(a.toString())) {<br />      isPowerStrFound = false;<br />      break;<br />     }<br />    }<br /><br />    if (isPowerStrFound) {<br />     break;<br />    }<br />   }<br /><br />   System.out.println(s.length() / a.length());<br />  }<br /> }<br />}<br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

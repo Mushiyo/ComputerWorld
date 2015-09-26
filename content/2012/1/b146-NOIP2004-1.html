@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b146: NOIP2004 1.不高兴的津津
+date=2012-01-28 17:56
+full_date=2012-01-28T17:56:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b146">http://zerojudge.tw/ShowProblem?problemid=b146</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b146 "NOIP2004 1.不高兴的津津" from NOIP2004 普及組         */<br />/*  Language: JAVA (733 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-28 16:56:49                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b146 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] classTime = new int[8];<br />  int schoolTime = 0;<br />  int cramTime = 0;<br />  <br />  while(input.hasNext()){<br />   for(int i = 1; i &lt; classTime.length; ++i){<br />    schoolTime = input.nextInt();<br />    cramTime = input.nextInt();<br />    classTime[i] = schoolTime + cramTime;<br />   }<br />   <br />   int maxClassTime = 0;<br />   for(int i = 1; i &lt; classTime.length; ++i){<br />    if(classTime[i] &gt; maxClassTime){<br />     maxClassTime = classTime[i];<br />    }<br />   }<br />   <br />   for(int i = 1; i &lt; classTime.length; ++i){<br />    if(classTime[i] == maxClassTime){<br />     System.out.println(i);<br />     break;<br />    }<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

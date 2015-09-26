@@ -1,0 +1,10 @@
+title=〔UVa〕11850 - Alaska
+date=2014-09-08 23:43
+full_date=2014-09-08T23:43:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/118/11850.html">http://uva.onlinejudge.org/external/118/11850.html</a><br /><!--more--><br />Solution Description:<br />The problem told us that "Her car can travel up to 200 miles once charged at a special charging station." which means the limitation of the car's electricity container is equals the electricity which makes it traveled 200 miles. So, we only need to find out if there's any adjacent station whose distance is more than 200, or distance between the last station and Delta Junction (at location 1422) is more than 100. ( Note there may be no charging station in Delta Junction) <br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11850.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Arrays;<br />import java.util.Scanner;<br /><br />public class UVa11850 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   if (n == 0) {<br />    break;<br />   }<br /><br />   int[] station = new int[n];<br />   for (int i = 0; i &lt; station.length; ++i) {<br />    station[i] = input.nextInt();<br />   }<br /><br />   Arrays.sort(station);<br /><br />   boolean isPossible = true;<br />   for (int i = 1; i &lt; station.length; ++i) {<br />    if (station[i] - station[i - 1] &gt; 200) {<br />     isPossible = false;<br />    }<br />   }<br /><br />   if ((1422 - station[station.length - 1]) * 2 &gt; 200) {<br />    isPossible = false;<br />   }<br /><br />   if (isPossible) {<br />    System.out.println("POSSIBLE");<br />   } else {<br />    System.out.println("IMPOSSIBLE");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

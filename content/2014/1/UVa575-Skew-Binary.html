@@ -1,0 +1,10 @@
+title=〔UVa〕575 - Skew Binary
+date=2014-01-10 17:24
+full_date=2014-01-10T17:24:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/5/575.html">http://uva.onlinejudge.org/external/5/575.html</a><br /><!--more--><br />解題雜記：<br />　　待補。<a href="http://uva.onlinejudge.org/external/5/575.html"></a><br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa575.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa575 {<br /> static int MAX_DIGIT = 31;<br /> static int[] base = new int[MAX_DIGIT];<br /><br /> public static void main(String[] args) {<br />  buildBase();<br />  <br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String skewBinary = input.next();<br />   if(skewBinary.equals("0")){<br />    break;<br />   }<br />   <br />   System.out.println(skewToDecimal(skewBinary));<br />  }<br /> }<br /> <br /> public static void buildBase(){<br />  long twoExp = 2;<br />  for(int i = 0; i &lt; MAX_DIGIT; ++i){<br />   base[i] = (int)(twoExp - 1);<br />   twoExp *= 2;<br />  }<br /> }<br /><br /> public static int skewToDecimal(String skewBinary){<br />  int decimal = 0;<br />  for(int i = skewBinary.length() - 1, j = 0; i &gt;= 0; --i, ++j){<br />   decimal += (skewBinary.charAt(i) - '0') * base[j];<br />  }<br />  <br />  return decimal;<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

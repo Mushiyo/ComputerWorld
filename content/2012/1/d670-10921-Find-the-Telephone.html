@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d670: 10921 - Find the Telephone
+date=2012-01-30 22:58
+full_date=2012-01-30T22:58:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d670">http://zerojudge.tw/ShowProblem?problemid=d670</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d670 "10921 - Find the Telephone" from UVa ACM 10921                 */<br />/*  Language: JAVA (794 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-30 21:10:36                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d670 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] charVal = new int[26];<br />  int assignVal = 6;<br />  for(int i = 0; i &lt; charVal.length; ++i){<br />   if((char)(i + 'A') == 'P'){<br />    charVal[i] = 7;<br />    continue;<br />   }<br />   <br />   if((char)(i + 'A') == 'W'){<br />    charVal[i] = 9;<br />    continue;<br />   }<br />   charVal[i] = assignVal / 3;<br />   ++assignVal;<br />  }<br />  <br />  while(input.hasNext()){<br />   String phoneNum = input.nextLine();<br />   <br />   for(int i = 0; i &lt; phoneNum.length(); ++i){<br />    if(Character.isLetter(phoneNum.charAt(i))){<br />     System.out.print(charVal[phoneNum.charAt(i) - 'A']);<br />    }<br />    else{<br />     System.out.print(phoneNum.charAt(i));<br />    }<br />   }<br />   <br />   System.out.println();<br />  }<br /> }<br /><br />}<br /><br /></pre>

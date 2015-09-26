@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d673: 11608 - No Problem
+date=2011-12-07 20:25
+full_date=2011-12-07T20:25:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d673">http://zerojudge.tw/ShowProblem?problemid=d673</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d673 "11608 - No Problem" from UVa ACM 11608                         */<br />/*  Language: JAVA (816 Bytes)                                                    */<br />/*  Result: AC(88ms, 2.9MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2011-12-02 20:40:57                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d673 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br />  <br />  while(input.hasNext()){<br />   int S = input.nextInt();<br />   <br />   if(S == -1){<br />    break;<br />   }<br />   System.out.println("Case " + caseNum + ":");<br />   <br />   int[] newProblem = new int[12];<br />   for(int i = 0; i &lt; newProblem.length; ++i){<br />    newProblem[i] = input.nextInt(); <br />   }<br />   <br />   int[] needProblem = new int[12];<br />   for(int i = 0; i &lt; needProblem.length; ++i){<br />    needProblem[i] = input.nextInt();<br />    <br />    if(S &lt; needProblem[i]){<br />     System.out.println("No problem. :(");<br />    }<br />    else{<br />     System.out.println("No problem! :D");<br />     S -= needProblem[i];<br />    }<br />    <br />    S += newProblem[i];<br />   }<br />   <br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /></pre>

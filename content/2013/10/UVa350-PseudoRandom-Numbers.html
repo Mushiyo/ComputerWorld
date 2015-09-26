@@ -1,0 +1,10 @@
+title=〔UVa〕350 - Pseudo-Random Numbers
+date=2013-10-06 22:25
+full_date=2013-10-06T22:25:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/3/350.html">http://uva.onlinejudge.org/external/3/350.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java"><br />import java.util.Scanner;<br /><br />public class u350 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br />  <br />  while(input.hasNext()){<br />   int Z = input.nextInt();<br />   int I = input.nextInt();<br />   int M = input.nextInt();<br />   int L = input.nextInt();<br />   <br />   if(Z == 0 &amp;&amp; I == 0 &amp;&amp; M == 0 &amp;&amp; L == 0){<br />    break;<br />   }<br />   <br />   int[] discoverTime = new int [10005];<br />   <br />   int currentTime = 1;<br />   while(discoverTime[L] == 0){<br />    discoverTime[L] = currentTime;<br />    L = (Z * L + I) % M;<br />    ++currentTime;<br />   }<br />   <br />   int cycleLen = currentTime - discoverTime[L];<br />   System.out.println("Case " + caseNum + ": " + cycleLen);<br />   <br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /><br /></pre>

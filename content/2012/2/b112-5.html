@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b112: 5. 高中運動會
+date=2012-02-09 20:03
+full_date=2012-02-09T20:03:00.035+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b112">http://zerojudge.tw/ShowProblem?problemid=b112</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b112 "5. 高中運動會" from 93全國資訊學科能力決賽      */<br />/*  Language: JAVA (749 Bytes)                                                    */<br />/*  Result: AC(88ms, 2.9MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-01 17:21:39                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b112 {<br /><br /> public static void main(String[] args) {<br />   Scanner input = new Scanner(System.in);<br /><br />   while (input.hasNext()) {<br />      int N = input.nextInt();<br />      int[] people = new int[N];<br /><br />   for (int i = 0; i &lt; people.length; ++i) {<br />      people[i] = input.nextInt();<br />   }<br />   <br />   int maxTeamNum = people[0];<br />   for (int i = 0; i &lt; people.length; ++i) {<br />       maxTeamNum = gcd(maxTeamNum, people[i]);<br />   }<br />   <br />   System.out.println(maxTeamNum);<br />  }<br /> }<br /><br /> public static int gcd(int a, int b) {<br />  while (Math.min(a, b) != 0) {<br />   if (a &gt;= b) {<br />    int r = a % b;<br />    a = b;<br />    b = r;<br />   }<br />   else {<br />    int r = b % a;<br />    b = a;<br />    a = r;<br />   }<br />  }<br />  <br />  return Math.max(a, b);<br /> }<br /><br />}<br /><br /></pre>

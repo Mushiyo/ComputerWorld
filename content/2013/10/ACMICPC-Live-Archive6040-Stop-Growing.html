@@ -1,0 +1,10 @@
+title=〔ACM-ICPC Live Archive〕6040 - Stop Growing!
+date=2013-10-13 22:06
+full_date=2013-10-13T22:06:00.004+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔ACM-ICPC Live Archive〕
+status=published
+~~~~~~
+
+題目：<a href="https://icpcarchive.ecs.baylor.edu/external/60/6040.html">https://icpcarchive.ecs.baylor.edu/external/60/6040.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">待補，有需要請留言</pre><br />C++： <br /><pre class="brush:c">/*Filename: la6040.cpp<br /> *Author: Mushiyo<br /> */<br />#include &lt;iostream&gt;<br />#include &lt;climits&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int T = 0;<br /><br /> while (cin &gt;&gt; T) {<br />  int caseNum = 1;<br /><br />  while (T &gt; 0) {<br />   int int5[5];<br />   int sumCurr = 0;<br /><br />   for (int i = 0; i &lt; 5; ++i) {<br />    cin &gt;&gt; int5[i];<br />    sumCurr += int5[i];<br />   }<br /><br />   int M = 0;<br />   cin &gt;&gt; M;<br /><br />   int sumPrev = INT_MIN;<br />   int r = 0;<br />   bool notFound = false;<br /><br />   while (sumCurr &lt; M) {<br />    if (sumCurr &lt;= sumPrev) {<br />     notFound = true;<br />     break;<br />    } else {<br />     sumPrev = sumCurr;<br />     sumCurr *= 2;<br />     ++r;<br />    }<br />   }<br /><br />   cout &lt;&lt; "Case #" &lt;&lt; caseNum &lt;&lt; ": ";<br />   if (notFound) {<br />    cout &lt;&lt; "-1" &lt;&lt; endl;<br />   } else {<br />    cout &lt;&lt; r &lt;&lt; endl;<br />   }<br /><br />   ++caseNum;<br />   --T;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /><br /></pre>

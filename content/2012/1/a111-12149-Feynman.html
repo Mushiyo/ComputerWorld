@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a111: 12149 - Feynman
+date=2012-01-27 21:11
+full_date=2012-01-27T21:11:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a111">http://zerojudge.tw/ShowProblem?problemid=a111</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a111 "12149 - Feynman" from UVa ACM 12149                            */<br />/*  Language: JAVA (475 Bytes)                                                    */<br />/*  Result: AC(96ms, 3.5MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-27 15:46:25                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a111 {<br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   if(N == 0){<br />    break;<br />   }<br />   <br />   System.out.println(countSquare(N));<br />   <br />  }<br /> }<br /> <br /> public static int countSquare(int N){<br />  int[] sol = new int[N + 1];<br />  <br />  for(int i = 1; i &lt; sol.length; ++i){<br />   sol[i] = sol[i - 1] + i * i;<br />  }<br />  <br />  return sol[N];<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕640 - Self Numbers
+date=2014-08-18 18:08
+full_date=2014-08-18T18:08:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/6/640.html">http://uva.onlinejudge.org/external/6/640.html</a><br /><!--more--><br />Solution Description:<br />Just find all the self numbers below 1000000, then output them all.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa640.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Arrays;<br /><br />public class UVa640 {<br /> static int size = 1000000 + 1;<br /> static boolean[] isSelfNum = new boolean[size];<br /><br /> public static void findSelfNum() {<br />  Arrays.fill(isSelfNum, true);<br /><br />  for (int i = 1; i &lt; isSelfNum.length; ++i) {<br />   if (isSelfNum[i]) {<br />    int current = i + digitSum(i);<br /><br />    while (current &lt; size &amp;&amp; isSelfNum[current] != false) {<br />     isSelfNum[current] = false;<br />     current += digitSum(current);<br />    }<br />   }<br />  }<br /> }<br /><br /> public static int digitSum(int n) {<br />  int sum = 0;<br /><br />  while (n != 0) {<br />   sum += n % 10;<br />   n /= 10;<br />  }<br /><br />  return sum;<br /> }<br /><br /> public static void main(String[] args) {<br />  findSelfNum();<br />  <br />  StringBuilder out = new StringBuilder();<br />  for (int i = 1; i &lt; isSelfNum.length; ++i) {<br />   if (isSelfNum[i]) {<br />    out.append(i + "\n");<br />   }<br />  }<br />  <br />  System.out.print(out);<br /> }<br /><br />}<br /><br /></pre>

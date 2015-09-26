@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d588: A. 樹上的松鼠
+date=2012-01-30 23:01
+full_date=2012-01-30T23:01:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d588">http://zerojudge.tw/ShowProblem?problemid=d588</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d588 "A. 樹上的松鼠" from 2009 NPSC 國中組初賽             */<br />/*  Language: JAVA (625 Bytes)                                                    */<br />/*  Result: AC(620ms, 38.7MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-01-30 22:13:56                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d588 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  <br />  while(T &gt; 0){<br />   int N = input.nextInt();<br />   int maxHeight = 0;<br />   <br />   while(N &gt; 0){<br />    input.nextInt();<br />    input.nextInt();<br />    int h1 = input.nextInt();    <br />    input.nextInt();<br />    input.nextInt();<br />    int h2 = input.nextInt();<br />    <br />    if(maxHeight &lt; h1){<br />     maxHeight = h1;<br />    }<br />    <br />    if(maxHeight &lt; h2){<br />     maxHeight = h2;<br />    }<br />    <br />    --N;<br />   }<br />   <br />   System.out.println(maxHeight);<br />   <br />   --T;<br />  }<br /> }<br /><br />}<br /><br /></pre>

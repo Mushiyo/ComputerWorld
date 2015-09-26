@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d066: 上學去吧！
+date=2011-07-11 23:42
+full_date=2011-07-11T23:42:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d066">http://zerojudge.tw/ShowProblem?problemid=d066</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d066 "上學去吧！" from 板橋高中                             */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (107ms, 5588KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-05 21:27:40                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d066 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int hh = input.nextInt();<br />  int mm = input.nextInt();<br />  <br />  if(hh &gt;= 7 &amp;&amp; hh &lt; 17){<br />   if(hh == 7 &amp;&amp; mm &lt; 30){<br />    System.out.println("Off School");<br />   }<br />   else{<br />    System.out.println("At School");<br />   }<br />  }<br />  else{<br />   System.out.println("Off School");<br />  }<br /> }<br /><br />}<br /></pre>

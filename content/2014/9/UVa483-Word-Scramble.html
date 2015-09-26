@@ -1,0 +1,10 @@
+title=〔UVa〕483 - Word Scramble
+date=2014-09-06 23:28
+full_date=2014-09-06T23:28:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/483.html">http://uva.onlinejudge.org/external/4/483.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa483.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa483 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String seq = input.nextLine();<br />   StringBuilder word = new StringBuilder();<br />   StringBuilder output = new StringBuilder();<br />   <br />   for(int i = 0; i &lt; seq.length(); ++i){<br />    if(seq.charAt(i) != ' '){<br />     word.append(seq.charAt(i));<br />    }<br />    else{<br />     output.append(word.reverse());<br />     output.append(seq.charAt(i));<br />     word = new StringBuilder();<br />    }<br />   }<br />   output.append(word.reverse());<br />   <br />   System.out.println(output);<br />  }<br /> }<br /><br />}<br /><br /></pre>

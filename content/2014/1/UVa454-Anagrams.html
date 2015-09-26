@@ -1,0 +1,10 @@
+title=〔UVa〕454 - Anagrams
+date=2014-01-29 16:36
+full_date=2014-01-29T16:36:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/4/454.html">http://uva.onlinejudge.org/external/4/454.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa454.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Arrays;<br />import java.util.Scanner;<br /><br />public class UVa454 {<br /><br /> public static void main(String[] args) {<br />  final int MAX_SIZE = 100;<br />  String[] phases = new String[MAX_SIZE];<br />  int[][] countChar = new int[MAX_SIZE][128];<br /><br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int numOfCase = input.nextInt();<br />   input.nextLine(); // eat change line<br />   input.nextLine(); // eat blank line<br /><br />   while (numOfCase &gt; 0) {<br />    int N = 0;<br />    while (input.hasNextLine()) {<br />     String phase = input.nextLine();<br /><br />     if (phase.equals("")) {<br />      break;<br />     }<br /><br />     phases[N++] = phase;<br />    }<br /><br />    Arrays.sort(phases, 0, N);<br />    <br />    for(int i = 0; i &lt; N; ++i){<br />     Arrays.fill(countChar[i], 0);<br />     <br />     String phaseI = phases[i];<br />     for(int j = 0; j &lt; phaseI.length(); ++j){<br />      if(phaseI.charAt(j) != ' '){<br />       ++countChar[i][phaseI.charAt(j)];<br />      }<br />     }     <br />    }<br />    <br />    for(int i = 0; i &lt; N; ++i){<br />     for(int j = i + 1; j &lt; N; ++j){<br />      if(Arrays.equals(countChar[i], countChar[j])){<br />       System.out.println(phases[i] + " = " + phases[j]);<br />      }<br />     }<br />    }<br />    <br />    if(numOfCase &gt; 1){<br />     System.out.println();<br />    }<br /><br />    --numOfCase;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

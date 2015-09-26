@@ -1,0 +1,10 @@
+title=〔UVa〕11063 - B2-Sequence
+date=2012-06-03 15:35
+full_date=2012-06-03T15:35:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2004">http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2004</a><br /><!--more--><br />解題雜記：<br />　　要記得1.檢查數列中有無小於1的項，2.檢查是否為嚴格遞增數列。剩的暴力解決就好。<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br /><br />public class u11063 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br /><br />  while (input.hasNext()) {<br />   boolean isB2 = true;   <br />   int N = input.nextInt();<br />   int[] seq = new int[N];<br />   <br />   for(int i = 0; i &lt; seq.length; ++i){<br />    seq[i] = input.nextInt();<br />    if(seq[i] &lt; 1){<br />     isB2 = false;<br />    }<br />    <br />    if(i &gt; 0){<br />     if(seq[i] &lt; seq[i - 1]){<br />      isB2 = false;<br />     }<br />    }<br />   }<br />   <br />   Set&lt;Integer&gt; sum = new HashSet&lt;Integer&gt;(N * N);<br />   <br />   for(int i = 0; i &lt; seq.length; ++i){<br />    for(int j = 0; j &lt;= i; ++j){<br />     if(sum.add(seq[i] + seq[j]) == false){<br />      isB2 = false;<br />      break;<br />     }<br />    }<br />    <br />    if(isB2 == false){<br />     break;<br />    }<br />   }<br />   <br />   System.out.print("Case #" + caseNum);<br />   if(isB2){<br />    System.out.println(": It is a B2-Sequence.");<br />   }<br />   else{<br />    System.out.println(": It is not a B2-Sequence.");<br />   }<br />   <br />   System.out.println();<br />   <br />   ++caseNum;<br />  }<br /> }<br />}<br /><br /></pre>

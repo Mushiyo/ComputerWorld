@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d074: SIG 2009 Winter Warmup 3 - 字串反轉
+date=2013-07-30 22:28
+full_date=2013-07-30T22:28:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d074">http://judge.nccucs.org/ShowProblem?problemid=d074</a><br /><!--more--><br />解題雜記：<br />　　這題要利用getline來把字串切成一個個的token，再判斷這些token是數字還是字串來決定要不要反向輸出。由於getline用來切字串的分隔符號只能設一個，所以前面用了<a href="http://www.cplusplus.com/reference/sstream/istringstream/istringstream/" target="_blank">istringstream</a>先拿掉前後的括號，再做為輸入送給getline來切字串。<br /><br />C++： <br /><pre class="brush:c">/*Filename: d074.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;sstream&gt;<br />#include &lt;string&gt;<br />#include &lt;cctype&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> string s;<br /><br /> while (getline(cin, s)) {<br />  istringstream iss(s.substr(1, s.size() - 2));<br />  string token;<br /><br />  bool isFirstToken = true;<br />  cout &lt;&lt; "{";<br />  while (getline(iss, token, ',')) {<br />   if (isFirstToken == false) {<br />    cout &lt;&lt; ",";<br />   } else {<br />    isFirstToken = false;<br />   }<br /><br />   if (isdigit(token[0])) {<br />    cout &lt;&lt; token;<br />   } else {<br />    for (int i = token.size() - 1; i &gt;= 0; --i) {<br />     cout &lt;&lt; token[i];<br />    }<br />   }<br />  }<br />  cout &lt;&lt; "}" &lt;&lt; endl;<br /><br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

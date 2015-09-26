@@ -1,0 +1,10 @@
+title=〔UVa〕11799 - Horror Dash
+date=2013-11-10 14:08
+full_date=2013-11-10T14:08:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/117/11799.html">http://uva.onlinejudge.org/external/117/11799.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11799 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int T = input.nextInt();<br />   <br />   for(int caseNum = 1; caseNum &lt;= T; ++caseNum){<br />    int N = input.nextInt();<br />    <br />    int[] c = new int[N];<br />    int max = Integer.MIN_VALUE;<br />    for(int i = 0; i &lt; c.length; ++i){<br />     c[i] = input.nextInt();<br />     <br />     if(max &lt; c[i]){<br />      max = c[i];<br />     }<br />    }<br />    <br />    System.out.println("Case " + caseNum + ": " + max);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11799.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;climits&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int T = 0;<br /><br />    while(cin &gt;&gt; T){<br />        for(int caseNum = 1; caseNum &lt;= T; ++caseNum){<br />         int N = 0;<br />         cin &gt;&gt; N;<br /><br />         int c[N];<br />         int max = INT_MIN;<br />         for(int i = 0; i &lt; N; ++i){<br />          cin &gt;&gt; c[i];<br /><br />          if(max &lt; c[i] ){<br />           max = c[i];<br />          }<br />         }<br /><br />         cout &lt;&lt; "Case " &lt;&lt; caseNum &lt;&lt; ": " &lt;&lt; max &lt;&lt; endl;<br />        }<br />    }<br /><br /> return 0;<br />}</pre>

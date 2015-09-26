@@ -1,0 +1,40 @@
+title=〔Timus〕1787. Turn for MEGA
+date=2011-08-12 14:50
+full_date=2011-08-12T14:50:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1787">http://acm.timus.ru/problem.aspx?space=1&amp;num=1787</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;
+<br />
+<br />public class t1787 {
+<br />
+<br />	public static void main(String[] args) {
+<br />		Scanner input = new Scanner(System.in);
+<br />		
+<br />		while(input.hasNext()){
+<br />			int k = input.nextInt();
+<br />			int n = input.nextInt();
+<br />			
+<br />			int inJam = 0;
+<br />			while(n &gt; 0){
+<br />				int ai = input.nextInt();
+<br />				
+<br />				inJam += ai;
+<br />				inJam -= k;
+<br />				
+<br />				if(inJam &lt; 0){
+<br />					inJam = 0;
+<br />				}
+<br />				
+<br />				--n;
+<br />			}
+<br />			
+<br />			System.out.println(inJam);			
+<br />		}
+<br />	}
+<br />
+<br />}
+<br /></pre>

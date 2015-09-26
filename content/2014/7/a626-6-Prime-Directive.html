@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a626: 6. Prime Directive
+date=2014-07-20 23:31
+full_date=2014-07-20T23:31:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a626">http://zerojudge.tw/ShowProblem?problemid=a626</a> <br /><!--more--><br />解題雜記：<br />建質數表，然後照著題目要求的格式及範圍輸出即可。<br /><br />Java：<br /><pre class="brush:java">/* Filename: a626.java<br /> * Author: Mushiyo<br /> */<br />package CONTEST;<br /><br />import java.util.ArrayList;<br />import java.util.Collections;<br />import java.util.List;<br />import java.util.Scanner;<br /><br />public class a626 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final List&lt;Integer&gt; primes = primeListOfRange(1100);<br />  // in case index out of bound, declare 1100 instead 1000 here<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   int currentPrime = primes.get(0);<br />   int primeCount = 1;<br />   <br />   while(currentPrime &lt;= N){<br />    for(int i = 0; i &lt; 5 &amp;&amp; currentPrime &lt;= N; ++i){<br />     System.out.printf("%10d", currentPrime);<br />     currentPrime = primes.get(primeCount);<br />     ++primeCount;<br />    }<br />    System.out.println();<br />   }<br />  }<br /> }<br /> <br /> public static ArrayList&lt;Integer&gt; primeListOfRange(int upperbound) {<br />  boolean[] isPrime = new boolean[upperbound];<br /><br />  for (int i = 2; i &lt; upperbound; ++i) {<br />   isPrime[i] = true;<br />  }<br /><br />  int sqrtSize = (int) Math.sqrt(upperbound) + 1;<br /><br />  for (int i = 2; i &lt; sqrtSize; ++i) {<br />   if (isPrime[i] == true) {<br />    for (int j = i * i; j &lt; upperbound; j += i) {<br />     isPrime[j] = false;<br />    }<br />   }<br />  }<br /><br />  ArrayList&lt;Integer&gt; prime = new ArrayList&lt;Integer&gt;();<br />  for (int i = 2; i &lt; upperbound; ++i) {<br />   if (isPrime[i]) {<br />    prime.add(i);<br />   }<br />  }<br /><br />  return prime;<br /> }<br /><br />}<br /></pre>

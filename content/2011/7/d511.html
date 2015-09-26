@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d511: 小明的作業
+date=2011-07-19 21:34
+full_date=2011-07-19T21:34:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d511">http://zerojudge.tw/ShowProblem?problemid=d511</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d511 "小明的作業" from 板橋高中                             */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (110ms, 5592KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-09 23:12:33                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d511 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int days = 5;<br />  int score = 0;<br />  <br />  while(days &gt; 0){<br />   int side1 = input.nextInt();<br />   int side2 = input.nextInt();<br />   int side3 = input.nextInt();<br />   if((side1 + side2 &gt; side3) &amp;&amp; (Math.abs(side1 - side2) &lt; side3)){<br />    ++score;<br />   }<br />   <br />   --days;<br />  }<br />  <br />  System.out.println(score);<br /> }<br /><br />}<br /></pre>

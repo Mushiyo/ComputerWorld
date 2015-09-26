@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d587: 參貳壹真好吃
+date=2011-07-24 16:12
+full_date=2011-07-24T16:12:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d587">http://zerojudge.tw/ShowProblem?problemid=d587</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d587 "參貳壹真好吃" from jack1                                 */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (196ms, 6006KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-15 16:11:37                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.*;<br /><br />public class d587 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int[] array = new int[n];<br />   <br />   for(int i = 0; i &lt; array.length; ++i){<br />    array[i] = input.nextInt();<br />   }<br />   <br />   Arrays.sort(array);<br />   <br />   System.out.print(array[0]);<br />   for(int i = 1; i &lt; array.length; ++i){<br />    System.out.print(" " + array[i]);    <br />   }<br />   <br />   System.out.println();<br />  }<br /> }<br /><br />}<br /></pre>

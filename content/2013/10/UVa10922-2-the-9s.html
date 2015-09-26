@@ -1,0 +1,10 @@
+title=〔UVa〕10922 - 2 the 9s
+date=2013-10-27 14:16
+full_date=2013-10-27T14:16:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/109/10922.html">http://uva.onlinejudge.org/external/109/10922.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10922 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String N = input.nextLine();<br /><br />   if (N.equals("0")) {<br />    break;<br />   }<br /><br />   int digitSum = 0;<br />   for (int i = 0; i &lt; N.length(); ++i) {<br />    digitSum += N.charAt(i) - '0';<br />   }<br /><br />   if (digitSum % 9 != 0) {<br />    System.out.println(N + " is not a multiple of 9.");<br />   } else {<br />    int nineDegree = 1;<br /><br />    while ((digitSum % 9 == 0) &amp;&amp; (digitSum &gt; 10)) {<br />     String S = String.valueOf(digitSum);<br /><br />     digitSum = 0;<br />     for (int i = 0; i &lt; S.length(); ++i) {<br />      digitSum += S.charAt(i) - '0';<br />     }<br /><br />     ++nineDegree;<br />    }<br /><br />    System.out.println(N + " is a multiple of 9 and has 9-degree "<br />      + nineDegree + ".");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

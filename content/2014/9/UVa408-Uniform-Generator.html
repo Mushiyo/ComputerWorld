@@ -1,0 +1,10 @@
+title=〔UVa〕408 - Uniform Generator
+date=2014-09-01 23:45
+full_date=2014-09-01T23:45:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/408.html">http://uva.onlinejudge.org/external/4/408.html</a><br /><!--more--><br />Solution Description:<br />If gcd(STEP, MOD) = 1, then it's good choice, else bad choice.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa408.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa408 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int STEP = input.nextInt();<br />   int MOD = input.nextInt();<br />   <br />   if(gcd(STEP, MOD) != 1){<br />    System.out.printf("%10d%10d    Bad Choice\n\n", STEP, MOD);<br />   }<br />   else{<br />    System.out.printf("%10d%10d    Good Choice\n\n", STEP, MOD);<br />   }<br />  }<br /> }<br /><br /> public static int gcd(int a, int b) {<br />  return b == 0 ? a : gcd(b, a % b);<br /> }<br />}<br /><br /></pre>

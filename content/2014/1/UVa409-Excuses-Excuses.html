@@ -1,0 +1,10 @@
+title=〔UVa〕409 - Excuses, Excuses!
+date=2014-01-26 22:45
+full_date=2014-01-26T22:45:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/4/409.html">http://uva.onlinejudge.org/external/4/409.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa409.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br /><br />public class UVa409 {<br /><br /> public static void main(String[] args) {<br />  int setNum = 1;<br />  Set&lt;String&gt; keyword = new HashSet&lt;String&gt;();<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   <br />   int K = input.nextInt();<br />   int E = input.nextInt();<br />   input.nextLine(); // eat change line<br />      <br />   keyword.clear();<br />   for(int i = 0; i &lt; K; ++i){<br />    keyword.add(input.nextLine());<br />   }<br />      <br />   String[] excuse = new String[E];<br />   for(int i = 0; i &lt; E; ++i){<br />    excuse[i] = input.nextLine();<br />   }<br />   <br />   int maxKeyword = 0;<br />   int[] countKeyword = new int[E];<br />   for(int i = 0; i &lt; E; ++i){<br />    String[] excuseWords = excuse[i].toLowerCase().split("\\W+");<br />        <br />    for(int j = 0; j &lt; excuseWords.length; ++j){<br />     if(keyword.contains(excuseWords[j])){<br />      ++countKeyword[i];<br />     }<br />    }<br />    <br />    maxKeyword = Math.max(maxKeyword, countKeyword[i]);<br />   }<br />      <br />   System.out.printf("Excuse Set #%d\n", setNum);<br />   for(int i = 0; i &lt; E; ++i){<br />    if(countKeyword[i] == maxKeyword){<br />     System.out.println(excuse[i]);<br />    }<br />   }<br />   System.out.println();<br />   <br />   ++setNum;<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

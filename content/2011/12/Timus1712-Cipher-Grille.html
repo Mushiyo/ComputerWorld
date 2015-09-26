@@ -1,0 +1,10 @@
+title=〔Timus〕1712. Cipher Grille
+date=2011-12-09 16:01
+full_date=2011-12-09T16:01:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1712">http://acm.timus.ru/problem.aspx?space=1&amp;num=1712</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1712 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   char[][] cipherGrille = new char[4][4];<br />   char[][] cipherPass = new char[4][4];<br />   <br />   //catch input<br />   for(int i = 0; i &lt; cipherGrille.length; ++i){<br />    cipherGrille[i] = input.nextLine().toCharArray();<br />   }<br />   <br />   for(int i = 0; i &lt; cipherPass.length; ++i){<br />    cipherPass[i] = input.nextLine().toCharArray();<br />   }<br />   <br />   for(int spinTimes = 0; spinTimes &lt; 4; ++spinTimes){<br />    for(int i = 0; i &lt; cipherGrille.length; ++i){<br />     for(int j = 0; j &lt; cipherGrille[0].length; ++j){<br />      if(cipherGrille[i][j] == &#39;X&#39;){<br />       System.out.print(cipherPass[i][j]);<br />      }<br />     }<br />    }<br />    cipherGrille = turnClockwise90(cipherGrille);<br />   }<br />   <br />      System.out.println();<br />  }<br /> }<br /> <br /> public static char[][] turnClockwise90(char[][] cipherGrille){<br />  char[][] turnedGrille = new char[4][4];<br />  <br />  for(int i = 0, v = cipherGrille.length - i - 1; i &lt; cipherGrille.length; ++i, --v){<br />   for(int j = 0, u = 0; j &lt; cipherGrille[0].length; ++j, ++u){<br />    turnedGrille[u][v] = cipherGrille[i][j];<br />   }<br />  }<br />  <br />  return turnedGrille;<br /> }<br /><br />}<br /></pre>

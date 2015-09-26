@@ -1,0 +1,10 @@
+title=〔Timus〕1209. 1, 10, 100, 1000...
+date=2015-06-06 17:48
+full_date=2015-06-06T17:48:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1209">http://acm.timus.ru/problem.aspx?space=1&amp;num=1209</a><br /><!--more--><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus1209.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br /><br />public class Timus1209 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   for(int i = 0; i &lt; N; ++i){<br />    if(i &gt; 0){<br />     System.out.print(" ");<br />    }<br />    <br />    long k = input.nextLong();<br />    double root = (1 + Math.sqrt(1 - 4 * 1 * (-2) * (k - 1))) / 2;<br />    <br />    if(isInteger(root)){<br />     System.out.print(1);<br />    } else{<br />     System.out.print(0);<br />    }<br />   }<br />   System.out.println();<br />  }<br /> }<br /><br /> private static boolean isInteger(double n){<br />  return Math.ceil(n) == Math.floor(n);<br /> }<br />}<br /><br /></pre>

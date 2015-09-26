@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d660: 11764 - Jumping Mario
+date=2012-01-30 22:58
+full_date=2012-01-30T22:58:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d660">http://zerojudge.tw/ShowProblem?problemid=d660</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d660 "11764 - Jumping Mario" from ACM 11764                          */<br />/*  Language: JAVA (840 Bytes)                                                    */<br />/*  Result: AC(136ms, 4.4MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-30 21:30:37                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d660 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  int caseNum = 1;<br />  <br />  while(T &gt; 0){<br />   int N = input.nextInt();<br />   int[] wallHeight = new int[N];<br />   for(int i = 0; i &lt; wallHeight.length; ++i){<br />    wallHeight[i] = input.nextInt();<br />   }<br />   <br />   System.out.print("Case " + caseNum + ": ");<br />   if(N == 1){<br />    System.out.println("0 0");<br />   }<br />   else{<br />    int highJump = 0;<br />    int lowJump = 0;<br />    <br />    for(int i = 1; i &lt; wallHeight.length; ++i){<br />     if(wallHeight[i] &gt; wallHeight[i - 1]){<br />      ++highJump;<br />     }<br />     else if(wallHeight[i] &lt; wallHeight[i - 1]){<br />      ++lowJump;<br />     }<br />    }<br />    <br />    System.out.println(highJump + " " + lowJump);<br />   }<br />   <br />   ++caseNum;<br />   --T;<br />  }<br /> }<br /><br />}<br /><br /></pre>

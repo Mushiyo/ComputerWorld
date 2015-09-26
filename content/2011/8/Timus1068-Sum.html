@@ -1,0 +1,10 @@
+title=〔Timus〕1068. Sum
+date=2011-08-07 16:24
+full_date=2011-08-07T16:24:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1068">http://acm.timus.ru/problem.aspx?space=1&amp;num=1068</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1068 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   <br />   System.out.println(sumOneToN(N));<br />  }<br /> }<br /> <br /> public static int sumOneToN(int N){<br />  int sum = 0;<br />  if(Math.max(1, N) != 1){<br />   for(int i = 1; i &lt;= N; ++i){<br />    sum += i;<br />   }<br />  }<br />  else{<br />   for(int i = N; i &lt;= 1; ++i){<br />    sum += i;<br />   }<br />  }<br />  <br />  return sum;<br /> }<br /><br />}</pre>

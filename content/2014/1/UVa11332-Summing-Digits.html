@@ -1,0 +1,10 @@
+title=〔UVa〕11332 - Summing Digits
+date=2014-01-20 20:49
+full_date=2014-01-20T20:49:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/113/11332.html">http://uva.onlinejudge.org/external/113/11332.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11332.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11332 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   if(n == 0){<br />    break;<br />   }<br />   <br />   while(n / 10 &gt; 0){<br />    int sumDigit = 0;<br />    <br />    while(n &gt; 0){<br />     sumDigit += n % 10;<br />     n /= 10;<br />    }<br />    <br />    n = sumDigit;<br />   }<br />   <br />   System.out.println(n);<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

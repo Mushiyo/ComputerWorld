@@ -1,0 +1,10 @@
+title=〔UVa〕1585 - Score
+date=2014-09-06 00:36
+full_date=2014-09-06T00:36:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/15/1585.html">http://uva.onlinejudge.org/external/15/1585.html</a><br /><!--more--><br />Solution Note:<br />Use a variable the count how many continuous 'O'.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa1585.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa1585 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  int T = input.nextInt();<br />  input.nextLine(); // eat change line<br /><br />  while (T &gt; 0) {<br />   String testResult = input.nextLine();<br /><br />   int score = 0;<br />   int streak = 0;<br /><br />   for (int i = 0; i &lt; testResult.length(); ++i) {<br />    if (testResult.charAt(i) == 'O') {<br />     ++streak;<br />     score += streak;<br />    } else {<br />     streak = 0;<br />    }<br />   }<br /><br />   System.out.println(score);<br /><br />   --T;<br />  }<br /><br /> }<br /><br />}<br /><br /></pre>

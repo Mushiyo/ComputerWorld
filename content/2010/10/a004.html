@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a004: 文文的求婚
+date=2010-10-24 21:56
+full_date=2010-10-24T21:56:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a004">http://zerojudge.tw/ShowProblem?problemid=a004</a><br /><!--more-->Ｃ： <br /><pre class="brush:c">/**********************************************************************************/<br />/*  Problem: a004 "文文的求婚"                                               */<br />/*  Language: C                                                                   */<br />/*  Result: AC (4ms, 242KB) on ZeroJudge                                          */<br />/*  Author: mushiyo at 2010-02-08 15:04:14                                        */<br />/**********************************************************************************/<br /><br /><br />#include &lt;stdio.h&gt;<br /><br />int main(){<br />    int year;<br />    while(scanf("%d",&amp;year)==1){<br />        if( !(year % 4) &amp;&amp; year % 100 || !(year % 400)){<br />            printf("閏年\n");<br />        }<br />        else{<br />            printf("平年\n");<br />        }<br />    }<br /><br />    return 0;<br />}</pre>

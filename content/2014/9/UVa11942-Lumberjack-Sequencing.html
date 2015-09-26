@@ -1,0 +1,10 @@
+title=〔UVa〕11942 - Lumberjack Sequencing
+date=2014-09-04 23:14
+full_date=2014-09-04T23:14:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/119/11942.html">http://uva.onlinejudge.org/external/119/11942.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa11942.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11942 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  System.out.println("Lumberjacks:");<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   input.nextLine(); // eat change line<br />   <br />   while(N &gt; 0){<br />    String[] beardLenStr = input.nextLine().split(" ");<br />    int[] beardLen = new int[beardLenStr.length];<br />    <br />    for(int i = 0; i &lt; beardLen.length; ++i){<br />     beardLen[i] = Integer.valueOf(beardLenStr[i]);<br />    }<br />    <br />    boolean isIncreasing = true;<br />    // check increaseing<br />    for(int i = 1; i &lt; beardLen.length; ++i){<br />     if(beardLen[i] &lt; beardLen[i -1]){<br />      isIncreasing = false;<br />      break;<br />     }<br />    }<br />    <br />    // check decreaseing<br />    boolean isDecreasing = true;<br />    for(int i = 1; i &lt; beardLen.length; ++i){<br />     if(beardLen[i] &gt; beardLen[i -1]){<br />      isDecreasing = false;<br />      break;<br />     }<br />    }<br />    <br />    if(isIncreasing || isDecreasing){<br />     System.out.println("Ordered");<br />    }<br />    else{<br />     System.out.println("Unordered");<br />    }<br />    <br />    --N;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

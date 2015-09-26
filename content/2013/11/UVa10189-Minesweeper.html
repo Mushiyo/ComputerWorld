@@ -1,0 +1,10 @@
+title=〔UVa〕10189 - Minesweeper
+date=2013-11-17 16:20
+full_date=2013-11-17T16:20:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/101/10189.html">http://uva.onlinejudge.org/external/101/10189.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u10189.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cstring&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> bool isFirstField = true;<br /> int countField = 1;<br /> int n = 0, m = 0;<br /><br /> while (cin &gt;&gt; n &gt;&gt; m) {<br />  if (n == 0 &amp;&amp; m == 0) {<br />   break;<br />  }<br /><br />  char field[n + 2][m + 2];<br />  memset(field, '.', sizeof(field));<br /><br />  for (int i = 1; i &lt;= n; ++i) {<br />   for (int j = 1; j &lt;= m; ++j) {<br />    cin &gt;&gt; field[i][j];<br />   }<br />  }<br /><br />  for (int i = 1; i &lt;= n; ++i) {<br />   for (int j = 1; j &lt;= m; ++j) {<br />    if (field[i][j] == '*') {<br />     continue;<br />    } else {<br />     int countBomb = 0;<br /><br />     for (int di = -1; di &lt;= 1; ++di) {<br />      for (int dj = -1; dj &lt;= 1; ++dj) {<br />       if (field[i + di][j + dj] == '*') {<br />        ++countBomb;<br />       }<br />      }<br />     }<br /><br />     field[i][j] = '0' + countBomb;<br />    }<br />   }<br />  }<br /><br />  if (isFirstField) {<br />   isFirstField = false;<br />  } else {<br />   cout &lt;&lt; endl;<br />  }<br /><br />  cout &lt;&lt; "Field #" &lt;&lt; countField &lt;&lt; ":" &lt;&lt; endl;<br />  for (int i = 1; i &lt;= n; ++i) {<br />   for (int j = 1; j &lt;= m; ++j) {<br />    cout &lt;&lt; field[i][j];<br />   }<br />   cout &lt;&lt; endl;<br />  }<br /><br />  ++countField;<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

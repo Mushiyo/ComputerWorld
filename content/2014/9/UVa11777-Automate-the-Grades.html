@@ -1,0 +1,10 @@
+title=〔UVa〕11777 - Automate the Grades
+date=2014-09-07 21:14
+full_date=2014-09-07T21:14:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/117/11777.html">http://uva.onlinejudge.org/external/117/11777.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa11777.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11777 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   for(int caseNum = 1; caseNum &lt;= T; ++caseNum){<br />    int term1 = input.nextInt();<br />    int term2 = input.nextInt();<br />    int finalExam = input.nextInt();<br />    int attendance = input.nextInt();<br />    int test1 = input.nextInt();<br />    int test2 = input.nextInt();<br />    int test3 = input.nextInt();<br />    int minTest = Math.min(test3, Math.min(test1, test2));<br />    double classTest = (test1 + test2 +test3 - minTest) / 2.0;<br />    double score = term1 + term2 + finalExam + attendance + classTest; <br />    char grade;<br />    <br />    if(score &gt;= 90){<br />     grade = 'A';<br />    }else if (score &gt;= 80){<br />     grade = 'B';<br />    }else if(score &gt;= 70){<br />     grade = 'C';<br />    }else if(score &gt;= 60){<br />     grade = 'D';<br />    }else{<br />     grade = 'F';<br />    }<br />    <br />    <br />    System.out.printf("Case %d: %c\n", caseNum, grade);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

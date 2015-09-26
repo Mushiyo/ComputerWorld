@@ -1,0 +1,10 @@
+title=〔UVa〕10579 - Fibonacci Numbers
+date=2014-08-16 18:02
+full_date=2014-08-16T18:02:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/105/10579.html">http://uva.onlinejudge.org/external/105/10579.html</a><br /><!--more--><br />Solution Description:<br />Use BigInteger to calculate all the fibonacci numbers below 1000 digits.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10579.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.math.BigInteger;<br />import java.util.ArrayList;<br />import java.util.Scanner;<br /><br />public class UVa10579 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  ArrayList&lt;BigInteger&gt; fibs = new ArrayList&lt;BigInteger&gt;();<br />  fibs.add(BigInteger.valueOf(0));<br />  fibs.add(BigInteger.valueOf(1));<br />  int fibsSize = 2;<br />  <br />  while(true){<br />   fibs.add(fibs.get(fibsSize - 1).add(fibs.get(fibsSize - 2)));<br />   ++fibsSize;<br />   if(fibs.get(fibsSize - 1).toString().length() &gt; 1000){<br />    break;<br />   }<br />  }<br /><br />  while (input.hasNext()) {<br />   System.out.println(fibs.get(input.nextInt()));<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10473 - Simple Base Conversion
+date=2014-02-15 21:51
+full_date=2014-02-15T21:51:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/104/10473.html">http://uva.onlinejudge.org/external/104/10473.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10473.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10473 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String number = input.next();<br />   <br />   if(number.startsWith("0x")){<br />    System.out.println(Long.parseLong(number.substring(2), 16));<br />   }<br />   else{<br />    int decimal = Integer.parseInt(number);<br />    if(decimal &lt; 0){<br />     break;<br />    }<br />    <br />    System.out.printf("0x%X\n", decimal);<br />   }   <br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10310 - Dog and Gopher
+date=2015-01-31 23:04
+full_date=2015-01-31T23:04:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/103/10310.html">http://uva.onlinejudge.org/external/103/10310.html</a><br /><!--more--><br />Solution Description:<br />Since the speed of dog is twice as the speed of the gopher, in the same time t, the distance which the dog runs is also twice as the distance the gopher runs. Hence, if the distance between the gopher and the hole is large than the distance between the dog and the hole, the gopher will be gobbled. Note when the gopher and the dog reach the hole at the same time, the gopher is safe.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10310.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.awt.geom.Point2D;<br /><br />public class UVa10310 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   Point2D gopherPos = new Point2D.Double(input.nextDouble(),<br />     input.nextDouble());<br />   Point2D dogPos = new Point2D.Double(input.nextDouble(),<br />     input.nextDouble());<br /><br />   boolean canEscape = false;<br />   Point2D nearestHole = new Point2D.Double();<br />   for (int i = 0; i &lt; n; ++i) {<br />    Point2D hole = new Point2D.Double(input.nextDouble(),<br />      input.nextDouble());<br /><br />    if (canEscape == false &amp;&amp; 2 * hole.distance(gopherPos) &lt;= hole.distance(dogPos)) {<br />     canEscape = true;<br />     nearestHole = hole;<br />    }<br />   }<br /><br />   if (canEscape) {<br />    System.out<br />      .printf("The gopher can escape through the hole at (%.3f,%.3f).\n",<br />        nearestHole.getX(), nearestHole.getY());<br />   } else {<br />    System.out.println("The gopher cannot escape.");<br />   }<br /><br />  }<br /> }<br /><br />}<br /><br /></pre>

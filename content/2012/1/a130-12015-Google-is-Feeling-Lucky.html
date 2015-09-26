@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a130: 12015 - Google is Feeling Lucky
+date=2012-01-29 17:25
+full_date=2012-01-29T17:25:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=a130">http://www.zerojudge.tw/ShowProblem?problemid=a130</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a130 "12015 - Google is Feeling Lucky" from UVa ACM 12015            */<br />/*  Language: JAVA (724 Bytes)                                                    */<br />/*  Result: AC(160ms, 5MB) judge by this@ZeroJudge                                */<br />/*  Author: mushiyo at 2012-01-29 16:20:07                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a130 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  int caseNum = 1;<br />  <br />  while(T &gt; 0){<br />   String[] site = new String[10];<br />   int[] relatedVal = new int[10];<br />   int maxRelatedVal = 0;<br />   <br />   for(int i = 0; i &lt; 10; ++i){<br />    site[i] = input.next();<br />    relatedVal[i] = input.nextInt();<br />    if(maxRelatedVal &lt; relatedVal[i]){<br />     maxRelatedVal = relatedVal[i];<br />    }<br />   }<br />   <br />   System.out.println("Case #" + caseNum + ":");<br />   for(int i = 0; i &lt; 10; ++i){<br />    if(relatedVal[i] == maxRelatedVal){<br />     System.out.println(site[i]);<br />    }<br />   }<br />   <br />   ++caseNum;<br />   --T;<br />  }<br />  <br /> }<br /><br />}<br /><br /></pre>

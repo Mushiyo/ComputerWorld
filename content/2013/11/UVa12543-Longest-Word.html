@@ -1,0 +1,10 @@
+title=〔UVa〕12543 - Longest Word
+date=2013-11-10 15:11
+full_date=2013-11-10T15:11:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/125/12543.html">http://uva.onlinejudge.org/external/125/12543.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補，有需要請留言<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u12541.cpp<br /> *Author: Mushiyo<br /> */<br /><br /><br />#include &lt;iostream&gt;<br />#include &lt;climits&gt;<br /><br />using namespace std;<br /><br />struct Person {<br /> string name;<br /> int d, m, y;<br />};<br /><br />int main() {<br /><br /> int n = 0;<br /> while (cin &gt;&gt; n) {<br />  Person youngest;<br />  youngest.d = youngest.m = youngest.y = INT_MIN;<br /><br />  Person oldest;<br />  oldest.d = oldest.m = oldest.y = INT_MAX;<br /><br />  for (int i = 0; i &lt; n; ++i) {<br />   Person p;<br />   cin &gt;&gt; p.name &gt;&gt; p.d &gt;&gt; p.m &gt;&gt; p.y;<br /><br />   if (p.y &gt; youngest.y) {<br />    youngest = p;<br />   } else if (p.y == youngest.y) {<br />    if (p.m &gt; youngest.m) {<br />     youngest = p;<br />    } else if (p.m == youngest.m) {<br />     if (p.d &gt; youngest.d) {<br />      youngest = p;<br />     }<br />    }<br />   }<br /><br />   if (p.y &lt; oldest.y) {<br />    oldest = p;<br />   } else if (p.y == oldest.y) {<br />    if (p.m &lt; oldest.m) {<br />     oldest = p;<br />    } else if (p.m == oldest.m) {<br />     if (p.d &lt; oldest.d) {<br />      oldest = p;<br />     }<br />    }<br />   }<br />  }<br /><br />  cout &lt;&lt; youngest.name &lt;&lt; endl;<br />  cout &lt;&lt; oldest.name &lt;&lt; endl;<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

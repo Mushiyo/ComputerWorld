@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d036: 計算數字和
+date=2013-07-27 23:46
+full_date=2013-07-27T23:46:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d036">http://judge.nccucs.org/ShowProblem?problemid=d036</a><br /><!--more--><br />解題雜記：<br />　　依照下面的提示，用<br /><pre class="brush:c">scanf("%*[^0-9]%d", &amp;n);<br /></pre>來抓出字串中的數字。然而，如果直接把這招套在while迴圈裡抓數字，在檔案的最開頭是數字時是不管用的（抓不到開頭的數字）。下面的程式碼對付這種情況的方法，是先用一個scanf看看是不是能在開頭抓到數字，然後再用前述的方法抓出其他剩下的數字。<br /><br />C++：<br /><pre class="brush:c">/*Filename: d036.cpp<br />&nbsp;*Author: Mushiyo<br />&nbsp;*/<br /><br />#include &lt;stdio.h&gt;<br /><br />using namespace std;<br /><br />int main() {<br />&nbsp;&nbsp; &nbsp;long long sum = 0;<br />&nbsp;&nbsp; &nbsp;int num = 0;<br />&nbsp;&nbsp; &nbsp;bool isFirstNum = true;<br /><br />&nbsp;&nbsp; &nbsp;// check if the file begins with number<br />&nbsp;&nbsp; &nbsp;int initialNum = 0;<br />&nbsp;&nbsp; &nbsp;bool isInitialNum = scanf("%d", &amp;initialNum);<br />&nbsp;&nbsp; &nbsp;if (isInitialNum == true) {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("%d", initialNum);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;sum += initialNum;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;isFirstNum = false;<br />&nbsp;&nbsp; &nbsp;}<br /><br />&nbsp;&nbsp; &nbsp;while (scanf("%*[^0-9]%d", &amp;num) == 1) {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (isFirstNum == false) {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("+");<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} else {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;isFirstNum = false;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;printf("%d", num);<br /><br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;sum += num;<br />&nbsp;&nbsp; &nbsp;}<br /><br />&nbsp;&nbsp; &nbsp;printf("=%ld\n", sum);<br /><br />&nbsp;&nbsp; &nbsp;return 0;<br />}<br /></pre>

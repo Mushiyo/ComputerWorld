@@ -1,0 +1,10 @@
+title=〔UVa〕12577 - Hajj-e-Akbar
+date=2013-11-10 14:16
+full_date=2013-11-10T14:16:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/125/12577.html">http://uva.onlinejudge.org/external/125/12577.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java"><br />import java.util.Scanner;<br /><br />public class u12577 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br />  <br />  while(input.hasNext()){<br />   String s = input.next();<br />   <br />   if(s.equals("*")){<br />    break;<br />   }<br />   <br />   System.out.print("Case " + caseNum + ": ");<br />   if(s.equals("Hajj")){<br />    System.out.println("Hajj-e-Akbar");<br />   }<br />   else {<br />    System.out.println("Hajj-e-Asghar");<br />   }<br />   <br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u12577.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int caseNum = 1;<br /> string s;<br /><br />    while(cin &gt;&gt; s){<br />        if(s == "*"){<br />         break;<br />        }<br /><br />        cout &lt;&lt; "Case " &lt;&lt; caseNum &lt;&lt; ": ";<br />        if(s == "Hajj"){<br />         cout &lt;&lt; "Hajj-e-Akbar" &lt;&lt; endl;<br />        }<br />        else{<br />         cout &lt;&lt; "Hajj-e-Asghar" &lt;&lt; endl;<br />        }<br />        <br />        ++caseNum;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕644 - Immediate Decodability
+date=2014-01-26 22:46
+full_date=2014-01-26T22:46:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/6/644.html">http://uva.onlinejudge.org/external/6/644.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa644.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.List;<br />import java.util.ArrayList;<br /><br />public class UVa644 {<br /><br /> public static void main(String[] args) {<br />  int setNum = 1;<br />  List&lt;String&gt; record = new ArrayList&lt;String&gt;();<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder output = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   record.clear();<br />   <br />   while(true){<br />    String code = input.nextLine();<br />    <br />    if(code.equals("9")){<br />     break;<br />    }<br />    else{<br />     record.add(code);<br />    }<br />   }<br />   <br />   boolean isImmediatelyDecodable = true;<br />   for(int i = 0; i &lt; record.size() &amp;&amp; isImmediatelyDecodable; ++i){<br />    String recordI = record.get(i);<br />    <br />    for(int j = i + 1; j &lt; record.size(); ++j){<br />     String recordJ = record.get(j);<br />     <br />     if(recordI.startsWith(recordJ) || recordJ.startsWith(recordI)){<br />      isImmediatelyDecodable = false;<br />      break;<br />     }<br />    }<br />   }<br />   <br />   if(isImmediatelyDecodable){<br />    output.append(String.format("Set %d is immediately decodable\n", setNum));<br />   }<br />   else{<br />    output.append(String.format("Set %d is not immediately decodable\n", setNum));<br />   }<br />   <br />   ++setNum;<br />  }<br />  <br />  System.out.print(output);<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

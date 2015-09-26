@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a528: 大數排序
+date=2013-05-09 16:39
+full_date=2013-05-09T16:39:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a528">http://zerojudge.tw/ShowProblem?problemid=a528</a><br /><!--more--><br />解題雜記：<br />用內建的BigInteger開陣列，然後再用Arrays.sort()排序就好了。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a528 &quot;大數排序&quot; from                                             */<br />/*  Language: JAVA (518 Bytes)                                                    */<br />/*  Result: AC(316ms, 6.6MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2013-05-08 21:39:13                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br />import java.util.Arrays;<br />import java.math.BigInteger;<br /><br />public class a528 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   BigInteger[] numbers = new BigInteger[N];<br />   <br />   for(int i = 0; i &lt; N; ++i){<br />    numbers[i] = input.nextBigInteger();<br />   }<br />   <br />   Arrays.sort(numbers);<br />   <br />   for(BigInteger i: numbers){<br />    System.out.println(i);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

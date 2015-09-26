@@ -1,0 +1,10 @@
+title=〔Python〕基本語法
+date=2014-07-23 19:02
+full_date=2014-07-23T19:02:00.000+08:00
+type=post
+allowComment=true
+tags=【程式設計】, 〔Python〕
+status=published
+~~~~~~
+
+這篇算是給自己的備忘筆記。<br />雖然有學過Python，但由於平常不是很常用的關係，很容易忘記。<br />所以決定把基礎語法的部份整理一下，方便日後要用Python時可以參考。<br /><br /><!--more--><br /><br />首先不免俗的來Hello World!一下<br /><pre class="brush: py">print "Hello World!"<br /></pre>Python是靠換行來斷句的，而print的效果就是Java的println<br /><br /><b>變數形態及宣告</b><br /><pre class="brush: py">aInt = 7<br />aFloat = 1.23<br />abool = True<br /></pre>Python只要宣告變數名稱，不用宣告形態，它會自己根據變數的值來判斷形態為何<br />注意變數名稱是case sensitive<br /><br /><b>函數宣告</b><br /><pre class="brush: py">def spam():<br />    eggs = 12<br />    return eggs<br /></pre>Python是靠縮排來判斷scope的<br />跟宣告變數一樣，宣告function也不用宣告形態<br /><br /><b>單行註解及多行註解</b><br /><pre class="brush: py">#single line comment<br /><br />"""<br />multiple<br />line<br />comment<br />"""<br /></pre><br /><br /><b>運算子</b><br /><pre class="brush: py">addition = 1 + 2<br />subtraction = 3 - 4<br />multiplication = 5 * 6<br />division = 7 / 8<br />power = 9**10<br /># i.e. power will be 9^10<br />mod = 11 % 12<br /></pre>除了平常常見的運算子外，Python還有指數運算<br />另外值得一提的是，所有運算子都支援大數運算

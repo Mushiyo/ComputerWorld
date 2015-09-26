@@ -1,0 +1,10 @@
+title=〔UVa〕12403 - Save Setu
+date=2014-01-20 20:57
+full_date=2014-01-20T20:57:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/124/12403.html">http://uva.onlinejudge.org/external/124/12403.html</a><br /><!--more--><br />解題雜記：<br />　　很難過的發現這題的故事是真的ˊˋ。參見<a href="http://news.priyo.com/education/2012/04/19/du-student-rahaduzzaman-passes-49911.html" target="_blank">這篇新聞</a>和<a href="http://www.daily-sun.com/details_yes_19-04-2012_DU-student-dies-of-chest-diseases_119_3_10_1_22.html" target="_blank">這篇新聞</a>。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; Sadly found out the story in this problem is true :(.<br />References:<br />1. <a href="http://news.priyo.com/education/2012/04/19/du-student-rahaduzzaman-passes-49911.html">DU student Rahaduzzaman passes away</a><br />2. <a href="http://www.daily-sun.com/details_yes_19-04-2012_DU-student-dies-of-chest-diseases_119_3_10_1_22.html" target="_blank">DU student dies of chest diseases</a><br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12403.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12403 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   int account = 0;<br />   <br />   while(T &gt; 0){<br />    String operation = input.next();<br />    <br />    if(operation.equals("donate")){<br />     int K = input.nextInt();     <br />     account += K;<br />    }<br />    else{ //operation.equals("report")<br />     System.out.println(account);<br />    }<br />    <br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

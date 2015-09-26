@@ -1,0 +1,10 @@
+title=〔Timus〕1876. Centipede's Morning
+date=2012-08-14 22:37
+full_date=2012-08-14T22:37:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1876">http://acm.timus.ru/problem.aspx?space=1&amp;num=1876</a><br /><!--more--><br />解題雜想：<br />　　這題需要考慮二個case，再從這二個case中找出最差的那一個就好了。至於這二個case是什麼樣的情形已寫在下面的code中，故這邊就不再敘述了。最後感謝<a href="http://acm.timus.ru/forum/thread.aspx?id=27395&amp;upd=634731260359570044" target="_blank">討論區</a>的<a href="http://acm.timus.ru/author.aspx?id=114490" target="_blank">ONU_1785</a>大大提供詳細的分析，不然我應該不會知道自己錯在哪裡。 <br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1876 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int a = input.nextInt();<br />   int b = input.nextInt();<br />   //Case 1: 40 right feet (40 * 2 = 80 sec) + throw all other right shoes ((b - 40) * 2 sec)<br />   //       + 40 left feet (40 * 1 = 40 sec)<br />   int case1Time = 40 * 2 + (b - 40) * 2 + 40;<br />   //Since the problem says that 40 ≦ b, it is OK to write (b - 40) here<br />   <br />   //Case 2: 39 right feet (39 * 2 = 78 sec) + 40 left feet (40 * 1 = 40 sec)<br />   //       + throw all other left shoes ((a - 40) * 2 sec) + the last one right feet (1 sec)<br />   int case2Time = 39 * 2 + 40 + (a - 40) * 2 + 1;<br />   //Since the problem says that 40 ≦ a, it is OK to write (a - 40) here<br />   <br />   //The final result is the worst among the two cases<br />   int worstCaseTime = Math.max(case1Time, case2Time);<br />   <br />   System.out.println(worstCaseTime);<br />  }<br /> }<br /><br />}<br /></pre>

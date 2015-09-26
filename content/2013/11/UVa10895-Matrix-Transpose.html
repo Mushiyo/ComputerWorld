@@ -1,0 +1,10 @@
+title=〔UVa〕10895 - Matrix Transpose
+date=2013-11-17 14:28
+full_date=2013-11-17T14:28:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/108/10895.html">http://uva.onlinejudge.org/external/108/10895.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補，有需要請留言<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u10895.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;vector&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int m = 0, n = 0;<br /><br /> while (cin &gt;&gt; m &gt;&gt; n) {<br />  vector&lt;int&gt; adjancyMatrix[n];<br />  vector&lt;int&gt; val[n];<br /><br />  for (int row = 1; row &lt;= m; ++row) {<br />   int r = 0;<br />   cin &gt;&gt; r;<br /><br />   if (r == 0) {<br />    continue;<br />   }<br /><br />   int neighborOfRow[r];<br />   for (int i = 0; i &lt; r; ++i) {<br />    cin &gt;&gt; neighborOfRow[i];<br />   }<br /><br />   int element;<br />   for (int i = 0; i &lt; r; ++i) {<br />    cin &gt;&gt; element;<br /><br />    adjancyMatrix[neighborOfRow[i] - 1].push_back(row);<br />    val[neighborOfRow[i] - 1].push_back(element);<br />   }<br />  }<br /><br />  cout &lt;&lt; n &lt;&lt; " " &lt;&lt; m &lt;&lt; endl;<br />  for (int col = 0; col &lt; n; ++col) {<br />   int r = adjancyMatrix[col].size();<br /><br />   cout &lt;&lt; r;<br />   if (r == 0) {<br />    cout &lt;&lt; endl &lt;&lt; endl;<br />    continue;<br />   }<br /><br />   for (int i = 0; i &lt; r; ++i) {<br />    cout &lt;&lt; " " &lt;&lt; adjancyMatrix[col][i];<br />   }<br />   cout &lt;&lt; endl;<br /><br />   for (int i = 0; i &lt; r; ++i) {<br />    cout &lt;&lt; val[col][i];<br /><br />    if(i &lt; r - 1){<br />     cout &lt;&lt; " ";<br />    }<br />   }<br />   cout &lt;&lt; endl;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

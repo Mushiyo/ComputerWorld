@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a020: 身分證檢驗
+date=2011-07-03 15:38
+full_date=2011-07-03T15:38:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a020">http://zerojudge.tw/ShowProblem?problemid=a020</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a020 "身分證檢驗"                                               */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (112ms, 5332KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-06-30 22:43:28                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a020 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] correspondNum = { 10, 11, 12, 13, 14, 15, 16, 17, 34, 18, 19, 20,<br />    21, 22, 35, 23, 24, 25, 26, 27, 28, 29, 32, 30, 31, 33 };<br />  <br />  while(input.hasNext()){<br />   String ID = input.next();<br />   char initialChar = ID.charAt(0);<br />   int[] IDNum = new int[9];<br />   <br />   for(int i = 0; i &lt; IDNum.length; ++i){<br />    IDNum[i] = Character.getNumericValue(ID.charAt(i + 1));<br />   }<br />   <br />   int checkCode = (correspondNum[initialChar - 'A'] / 10) + (correspondNum[initialChar - 'A'] % 10) * 9;<br />   for(int i = 0; i &lt; IDNum.length - 1; ++i){<br />    checkCode += IDNum[i] * (8 - i);<br />   }<br />   checkCode += IDNum[IDNum.length - 1];<br />   <br />   if(checkCode % 10 != 0){<br />    System.out.println("fake");<br />   }<br />   else{<br />    System.out.println("real");<br />   }<br />  }<br /><br /> }<br /><br />}<br /></pre>

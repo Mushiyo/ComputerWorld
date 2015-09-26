@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a647: 投資專家
+date=2015-04-01 23:00
+full_date=2015-04-01T23:00:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=a647">http://zerojudge.tw/ShowProblem?problemid=a647</a><br /><!--more--><br />解題雜記：<br />\[ 獲利率x = \frac{目前價值p - 投資金額m}{投資金額m} \]<br />依照這個公式算出獲利率後，再根據這個值輸出對應的字串（keep或dispose）即可。<br /><br />Java：<br /><pre class="brush:java">/* Filename: a647.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class a647 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   while(n &gt; 0){<br />    int m = input.nextInt();<br />    int p = input.nextInt();<br />    double rate = (p - m) * 100.0 / m;<br />    <br />    if(rate &gt;= 10.0 || rate &lt;= -7.0){<br />     System.out.printf("%.2f%% dispose\n", rate);<br />    } else {<br />     System.out.printf("%.2f%% keep\n", rate);<br />    }<br />    <br />    <br />    --n;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

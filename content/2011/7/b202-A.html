@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b202: A. 優惠方案
+date=2011-07-24 16:14
+full_date=2011-07-24T16:14:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b202">http://zerojudge.tw/ShowProblem?problemid=b202</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b202 "A. 優惠方案" from 2008 NPSC 國中組初賽                */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (116ms, 5680KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-15 16:54:42                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.*;<br /><br />public class b202 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int k = input.nextInt();<br />  <br />  while(k &gt; 0){<br />   Set&lt;Integer&gt; price = new HashSet&lt;Integer&gt;();<br />   for(int i  = 1; i &lt;= 3; ++i){<br />    price.add(input.nextInt());<br />   }<br />   <br />   if(price.size() &lt; 3){<br />    System.out.println("NO");<br />   }<br />   else{<br />    System.out.println("YES");<br />   }<br />   --k;<br />  }<br /> }<br /><br />}<br /></pre>

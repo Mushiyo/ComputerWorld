@@ -1,0 +1,10 @@
+title=〔UVa〕1584 - Circular Sequence
+date=2014-09-06 00:34
+full_date=2014-09-06T00:34:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/15/1584.html">http://uva.onlinejudge.org/external/15/1584.html</a><br /><!--more--><br />Solution Description:<br />Let the length of the DNA sequence be n. Concatenate the DNA sequence with itself, then each substring with length n is a linear representation of the circular sequence. Just find the lexicographically smallest substring and output it.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa1584.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa1584 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   input.nextLine(); // eat change line<br />   <br />   while(T &gt; 0){<br />    String DNA = input.nextLine();<br />    int DNALen = DNA.length();<br />    String minSeq = DNA;<br />    <br />    DNA += DNA;<br />    <br />    for(int i = 0; i &lt; DNALen; ++i){<br />     String currSeq = DNA.substring(i, i + DNALen);<br />     <br />     if(currSeq.compareTo(minSeq) &lt; 0){<br />      minSeq = currSeq;<br />     }<br />    }<br />    <br />    System.out.println(minSeq);<br />    <br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

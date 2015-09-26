@@ -1,0 +1,10 @@
+title=〔AOJ〕0014:   Integral
+date=2013-08-08 16:33
+full_date=2013-08-08T16:33:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0014">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0014</a><br /><!--more--><br />解題雜記：<br />　　照所給的公式算出s即可。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0014.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int d = 0;<br /><br />    while(cin &gt;&gt; d){<br />     int s = 0;<br /><br />        for(int i = d; i &lt; 600; i += d){<br />         s += d * (i * i);<br />        }<br />        <br />        cout &lt;&lt; s &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

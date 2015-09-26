@@ -1,0 +1,10 @@
+title=〔AOJ〕0022:   Maximum Sum Sequence
+date=2013-08-08 17:22
+full_date=2013-08-08T17:22:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0022">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0022</a><br /><!--more--><br />解題雜記：<br />　　用sum[i]代表a[0] + ... + a[i]，然後跑迴圈找出sum[0]，…，sum[i]的最小值。假設這個值是sum[x]，如果在它之後的sum[x+1]~sum[n - 1]減掉它會變大，就表示a[0]~a[i]不會在Maximum Sum Sequence中，不要取它們。用這個想法可以在O(n)的複雜度找出最大子序列和。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0022.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cmath&gt;<br />#include &lt;climits&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int n = 0;<br /><br />    while(cin &gt;&gt; n){<br />     if(n == 0){<br />      break;<br />     }<br /><br />        int a[n];<br />        for(int i = 0; i &lt; n; ++i){<br />         cin &gt;&gt; a[i];<br />        }<br /><br />        int sum[n];<br />        sum[0] = a[0];<br />        for(int i = 1; i &lt; n; ++i){<br />         sum[i] = sum[i - 1] + a[i];<br />        }<br /><br />        int maxSum = INT_MIN;<br />        int minSum = 0;<br />        for(int i = 0; i &lt; n; ++i){<br />         maxSum = max(maxSum, sum[i] - minSum);<br />         minSum = min(minSum, sum[i]);<br />        }<br />        <br />        cout &lt;&lt; maxSum &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

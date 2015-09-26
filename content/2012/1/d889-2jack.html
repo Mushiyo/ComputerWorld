@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d889: 2.黑傑克(jack)
+date=2012-01-15 15:51
+full_date=2012-01-15T15:51:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d889">http://zerojudge.tw/ShowProblem?problemid=d889</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d889 "2.黑傑克(jack)" from 99北市賽                            */<br />/*  Language: JAVA (952 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-15 13:46:39                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d889 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   boolean[] timeline = new boolean[10001];<br />   int nextStartTime = 0;<br />   <br />   while(N &gt; 0){<br />    int arriveTime = input.nextInt();<br />    if(arriveTime &lt; nextStartTime){<br />     arriveTime = nextStartTime;<br />    }<br />    <br />    for(int i = arriveTime; i &lt; arriveTime + 5; ++i){<br />     timeline[i] = true;<br />    }<br />    nextStartTime = arriveTime + 5;<br />    <br />    --N;<br />   }<br />   <br />   int time = 0;<br />   while(true){<br />    while(timeline[time]){<br />     ++time;<br />    }<br />    <br />    int noPatientArriveTime = 0;<br />    <br />    while(!timeline[time]){<br />     ++time;<br />     ++noPatientArriveTime;<br />     if(noPatientArriveTime &gt;= 30){<br />      break;<br />     }<br />    }<br />    <br />    if(noPatientArriveTime &gt;= 30){<br />     break;<br />    }<br />   }<br />   <br />   System.out.println(time);<br />  }<br /> }<br /><br />}<br /><br /></pre>

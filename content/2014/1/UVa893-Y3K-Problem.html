@@ -1,0 +1,10 @@
+title=〔UVa〕893 - Y3K Problem
+date=2014-01-29 16:34
+full_date=2014-01-29T16:34:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/8/893.html">http://uva.onlinejudge.org/external/8/893.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa893.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.GregorianCalendar;<br /><br />public class UVa893 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int days = input.nextInt();<br />   int DD = input.nextInt();<br />   int MM = input.nextInt();<br />   int YYYY = input.nextInt();<br />   <br />   if(days == 0 &amp;&amp; DD == 0 &amp;&amp; MM == 0 &amp;&amp; YYYY == 0){<br />    break;<br />   }<br />   <br />   GregorianCalendar date = new GregorianCalendar(YYYY, MM - 1, DD);<br />   date.add(GregorianCalendar.DATE, days);<br />   <br />   System.out.println(date.get(GregorianCalendar.DATE) + " " + (date.get(GregorianCalendar.MONTH) + 1) + " " + date.get(GregorianCalendar.YEAR));<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

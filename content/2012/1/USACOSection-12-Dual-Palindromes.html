@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.2 Dual Palindromes
+date=2012-01-28 17:49
+full_date=2012-01-28T17:49:00.000+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br />ID: mushiyo1<br />LANG: JAVA<br />TASK: dualpal<br />*/<br />import java.util.Scanner;<br />import java.io.*;<br /><br />public class dualpal {<br /><br /> public static void main(String[] args) throws Exception {<br />  Scanner input = new Scanner(new File("dualpal.in"));<br />  PrintWriter output = new PrintWriter(new File("dualpal.out"));<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   int S = input.nextInt();<br />   <br />   int printedDualPal = 0;<br />   while(printedDualPal &lt; N){<br />    ++S;<br />    if(dualPalindrom(S)){<br />     output.println(S);<br />     ++printedDualPal;<br />    }    <br />   }<br />  }<br />  <br />  input.close();<br />  output.close();<br /> }<br /> <br /> public static boolean dualPalindrom(int S){<br />  int palindromTimes = 0;<br />  for(int base = 2; base &lt;= 10; ++base){<br />   if(isPalindrom(Integer.toString(S, base))){<br />    ++palindromTimes;<br />   }<br />   <br />   if(palindromTimes &gt;= 2){<br />    return true;<br />   }<br />  }<br />  <br />  return false;<br /> }<br /> <br /> public static boolean isPalindrom(String str){<br />  int strLen = str.length();<br />  <br />  for(int i = 0; i &lt; strLen / 2; ++i){<br />   if(str.charAt(i) != str.charAt(strLen - 1 - i)){<br />    return false;<br />   }<br />  }<br />  <br />  return true;<br /> }<br />}<br /><br /></pre>

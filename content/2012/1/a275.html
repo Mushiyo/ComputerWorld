@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a275: 字串變變變
+date=2012-01-27 21:11
+full_date=2012-01-27T21:11:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a275">http://zerojudge.tw/ShowProblem?problemid=a275</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a275 "字串變變變" from                                          */<br />/*  Language: JAVA (767 Bytes)                                                    */<br />/*  Result: AC(357ms, 16.7MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-01-27 21:07:16                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a275 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String str1 = input.nextLine();<br />   if(str1.equals("STOP!!")){<br />    break;<br />   }<br />   <br />   int[] countChar = new int[94];<br />   for(int i = 0; i &lt; str1.length(); ++i){<br />    ++countChar[str1.charAt(i) - 33];<br />   }<br />   <br />   String str2 = input.nextLine();<br />   boolean isRearranged = true;<br />   for(int i = 0; i &lt; str2.length(); ++i){<br />    --countChar[str2.charAt(i) - 33];<br />    if(countChar[str2.charAt(i) - 33] &lt; 0){<br />     isRearranged = false;<br />     break;<br />    }<br />   }<br />   <br />   if(isRearranged){<br />    System.out.println("yes");<br />   }<br />   else{<br />    System.out.println("no");<br />   }   <br />  }<br /> }<br /><br />}<br /><br /></pre>

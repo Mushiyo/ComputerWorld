@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a021: 大數運算
+date=2011-07-03 21:08
+full_date=2011-07-03T21:08:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a021">http://zerojudge.tw/ShowProblem?problemid=a021</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a021 "大數運算"                                                  */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (112ms, 5552KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-03 14:52:50                                        */<br />/**********************************************************************************/<br /><br /><br />import java.math.BigInteger;<br />import java.util.Scanner;<br /><br />public class a021 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   BigInteger operand1 = new BigInteger(input.next());<br />   char operator = input.next().charAt(0);<br />   BigInteger operand2 = new BigInteger(input.next());<br /><br />   switch (operator) {<br />   case '+':<br />    System.out.println(operand1.add(operand2));<br />    break;<br />   case '-':<br />    System.out.println(operand1.add(operand2.negate()));<br />    break;<br />   case '*':<br />    System.out.println(operand1.multiply(operand2));<br />    break;<br />   default:<br />    System.out.println(operand1.divide(operand2));<br />    break;<br /><br />   }<br /><br />  }<br /> }<br /><br />}<br /></pre>

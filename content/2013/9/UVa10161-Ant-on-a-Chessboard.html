@@ -1,0 +1,10 @@
+title= 〔UVa〕10161 - Ant on a Chessboard
+date=2013-09-20 22:56
+full_date=2013-09-20T22:56:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/101/10161.html">http://uva.onlinejudge.org/external/101/10161.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10161 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int N = input.nextInt();<br />  <br />  while(N != 0){<br />   int areaNum = 1;<br />   while(areaNum * areaNum &lt; N){<br />    ++areaNum;    <br />   }<br />   <br />   int middleNumInArea = areaNum * areaNum - (areaNum - 1);<br />   int x = 1, y = 1;<br />   if(areaNum % 2 == 0){<br />    if(N &lt; middleNumInArea){<br />     x = areaNum - Math.abs(middleNumInArea - N);<br />     y = areaNum;<br />    }<br />    else if(N &gt; middleNumInArea){<br />     x = areaNum;<br />     y = areaNum - Math.abs(middleNumInArea - N);<br />    }<br />    else{<br />     x = y = areaNum;<br />    }<br />   }<br />   else{<br />    if(N &gt; middleNumInArea){<br />     x = areaNum - Math.abs(middleNumInArea - N);<br />     y = areaNum;<br />    }<br />    else if(N &lt; middleNumInArea){<br />     x = areaNum;<br />     y = areaNum - Math.abs(middleNumInArea - N);<br />    }<br />    else{<br />     x = y = areaNum;<br />    }<br />   }<br />   <br />   System.out.println(x + " " + y);<br />   <br />   N = input.nextInt();<br />  }<br />  <br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title= 〔UVa〕11532 - Simple Adjacency Maximization
+date=2013-12-28 23:57
+full_date=2013-12-28T23:57:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/115/11532.html">http://uva.onlinejudge.org/external/115/11532.html</a> <br /><!--more--><br />解題雜記：<br />　　性質一告訴我們：要盡可能的把1往右擺，把0往左擺（這樣造出來的數字才會是最小的）。性質二告訴我們：要盡可能造出很多個"101"並把它們都串接在一起，即<br />101 101 101 ...這樣的形式。造完之後，如果還有0剩下來的話，此時若有剩餘的1（若有，一定只會剩一個），就把它放到放才造出的(101)*的左邊，即1(101)*這樣的形式，即為最佳解（1.剩的0都放到最左邊，為leading zero，故可忽略。 2.這樣才有符合性質二「與0相接的1要盡可能的多」）；若沒有0剩下來的話，就把所有的1都放到(101)*右邊，即(101)*1*這樣的形式，即為最佳解。<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11532.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11532 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int C = input.nextInt();<br />   <br />   while (C &gt; 0) {<br />    int P = input.nextInt();<br />    int Q = input.nextInt();<br />    StringBuilder bitNum = new StringBuilder();<br /><br />    while (P &gt;= 2 &amp;&amp; Q &gt; 0) {<br />     bitNum.append("101");<br />     P -= 2;<br />     --Q;<br />    }<br /><br />    if (P &gt; 0 &amp;&amp; Q &gt; 0) {<br />     bitNum.insert(0, 1);<br />     --P;<br />     --Q;<br />    }<br /><br />    while (P &gt; 0) {<br />     bitNum.append(1);<br />     --P;<br />    }<br /><br />    bitNum.insert(0, 0);<br /><br />    System.out.println(Long.valueOf(bitNum.toString(), 2));<br /><br />    --C;<br />   }<br />  }<br /><br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

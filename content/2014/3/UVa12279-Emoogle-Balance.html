@@ -1,0 +1,10 @@
+title=〔UVa〕12279 - Emoogle Balance
+date=2014-03-08 15:17
+full_date=2014-03-08T15:17:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/122/12279.html">http://uva.onlinejudge.org/external/122/12279.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12279.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12279 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   if(N == 0){<br />    break;<br />   }<br />   <br />   int treatCount = 0;<br />   <br />   for(int i = 0; i &lt; N; ++i){<br />    int event = input.nextInt();<br />    <br />    if(event == 0){<br />     ++treatCount;<br />    }<br />   }<br />   <br />   int emoogleBalance = (N - treatCount) - treatCount;<br />   System.out.printf("Case %d: %d\n", caseNum, emoogleBalance);<br />   <br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

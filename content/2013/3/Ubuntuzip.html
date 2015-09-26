@@ -1,0 +1,10 @@
+title=解決Ubuntu下解壓縮zip檔時的亂碼問題
+date=2013-03-09 00:23
+full_date=2013-03-09T00:23:00.000+08:00
+type=post
+allowComment=true
+tags=Ubuntu, 筆記
+status=published
+~~~~~~
+
+據說zip檔不含編碼資訊，因此有時候解壓縮會亂碼。<br />網路上查到的很多方法都是叫人安裝7-zip，或是一些解壓縮程式來設定編碼後解壓縮，但是這些招術我試了都不管用冏。<br />最後找到的，也是最好用的方法，其實就是回歸最原始的下command line！<br /><!--more-->指令如下所示：<br /><pre class="brush:plain">UNZIP="-O targetCharSet" unzip -x yourfilename.zip<br /></pre><br />如果是要解壓縮中文，targetCharSet那邊就打cp936 or GBK or GB18030。<br />如果是日文，就打cp932。<br /><br />如果你想要「預覽」一下解壓縮出來的檔名長怎麼樣，就打<br /><pre class="brush:plain">UNZIP="-O targetCharSet" unzip -l yourfilename.zip&nbsp;</pre><br />這樣就可以省去解出一堆怪東西後，還要再刪掉它們的麻煩了。<br /><br />參考資料：<br /><ol><li><a href="http://utauarianna.altervista.org/tutorials/unzipping-japanese-encoded-archive/?doing_wp_cron=1362756032.4267249107360839843750">http://utauarianna.altervista.org/tutorials/unzipping-japanese-encoded-archive/?doing_wp_cron=1362756032.4267249107360839843750</a></li><li><a href="http://rritw.com/a/caozuoxitong/Linux/20121229/280701.html">http://rritw.com/a/caozuoxitong/Linux/20121229/280701.html</a></li></ol>

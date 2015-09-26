@@ -1,0 +1,10 @@
+title=〔UVa〕10050 - Hartals
+date=2014-09-01 23:43
+full_date=2014-09-01T23:43:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/100/10050.html">http://uva.onlinejudge.org/external/100/10050.html</a><br /><!--more--><br />Solution Description:<br />Use sieve method, then count how many hartals are there.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10050.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10050 {<br /> final static boolean HARTAL = true;<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   while(T &gt; 0){<br />    --T;<br />    <br />    int N = input.nextInt();<br />    boolean[] day = new boolean[N];<br />    int P = input.nextInt();<br />    <br />    for(int i = 0; i &lt; P; ++i){<br />     int h = input.nextInt();<br />     <br />     for(int j = h - 1; j &lt; day.length; j += h){<br />      day[j] = HARTAL;<br />     }<br />    }<br />    <br />    int hartalDay = 0;<br />    for(int i = 0; i &lt; day.length; ++i){<br />     if(day[i] == HARTAL &amp;&amp; i % 7 != 5 &amp;&amp; i % 7 != 6){<br />      ++hartalDay;     <br />     }<br />    }<br />    <br />    System.out.println(hartalDay);<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

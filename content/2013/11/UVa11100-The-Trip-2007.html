@@ -1,0 +1,10 @@
+title=〔UVa〕11100 - The Trip, 2007
+date=2013-11-17 14:58
+full_date=2013-11-17T14:58:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/111/11100.html">http://uva.onlinejudge.org/external/111/11100.html</a> <br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11100.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int n = 0;<br /> bool isFirstCase = true;<br /><br /> while (cin &gt;&gt; n) {<br />  if (n == 0) {<br />   break;<br />  }<br /><br />  int dimensionOfBag[n];<br />  for (int i = 0; i &lt; n; ++i) {<br />   cin &gt;&gt; dimensionOfBag[i];<br />  }<br /><br />  sort(dimensionOfBag, dimensionOfBag + n);<br /><br />  int k = 0;<br />  int countCurrentDimension = 0;<br />  int prevDimension = 0;<br />  for (int i = 0; i &lt; n; ++i) {<br />   if (dimensionOfBag[i] == prevDimension) {<br />    ++countCurrentDimension;<br />   } else {<br />    prevDimension = dimensionOfBag[i];<br /><br />    if (k &lt; countCurrentDimension) {<br />     k = countCurrentDimension;<br />    }<br /><br />    countCurrentDimension = 1;<br />   }<br />  }<br /><br />  if (k &lt; countCurrentDimension) {<br />   k = countCurrentDimension;<br />  }<br /><br />  if (isFirstCase) {<br />   isFirstCase = false;<br />  } else {<br />   cout &lt;&lt; endl;<br />  }<br /><br />  cout &lt;&lt; k &lt;&lt; endl;<br />  for (int i = 0; i &lt; k; ++i) {<br />   bool isFirst = true;<br /><br />   for (int j = i; j &lt; n; j += k) {<br />    if (isFirst) {<br />     isFirst = false;<br />     cout &lt;&lt; dimensionOfBag[j];<br />    } else {<br />     cout &lt;&lt; " " &lt;&lt; dimensionOfBag[j];<br />    }<br />   }<br /><br />   cout &lt;&lt; endl;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

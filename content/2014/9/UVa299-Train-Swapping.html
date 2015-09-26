@@ -1,0 +1,10 @@
+title=〔UVa〕299 - Train Swapping
+date=2014-09-06 00:40
+full_date=2014-09-06T00:40:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/2/299.html">http://uva.onlinejudge.org/external/2/299.html</a><br /><!--more--><br />Solution Note:<br />The optimal swapping takes the same times as using bubble sort to sort the carriage.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa299.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa299 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   while(N &gt; 0){<br />    int L = input.nextInt();<br />    int[] carriage = new int[L];<br />    <br />    for(int i = 0; i &lt; carriage.length; ++i){<br />     carriage[i] = input.nextInt();<br />    }<br />    <br />    int swap = 0;<br />    for(int i = 0; i &lt; carriage.length; ++i){<br />     for(int j = i + 1; j &lt; carriage.length; ++j){<br />      if(carriage[i] &gt; carriage[j]){<br />       ++swap;<br />      }<br />     }<br />    }<br />    <br />    System.out.printf("Optimal train swapping takes %d swaps.\n", swap);<br />    <br />    --N;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

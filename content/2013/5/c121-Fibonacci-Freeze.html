@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c121: Fibonacci Freeze
+date=2013-05-23 22:13
+full_date=2013-05-23T22:13:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=c121">http://zerojudge.tw/ShowProblem?problemid=c121</a><br /><!--more--><br />解題雜記：<br />　　用大數加法算費式數列即可。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c121 "Fibonacci Freeze" from ACM 495                                 */<br />/*  Language: JAVA (739 Bytes)                                                    */<br />/*  Result: AC(1.9s, 74MB) judge by this@ZeroJudge                                */<br />/*  Author: mushiyo at 2013-05-23 22:07:48                                        */<br />/**********************************************************************************/<br /><br /><br />package UVa;<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class c121 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   <br />   System.out.println("The Fibonacci number for " + n + " is " + fibN(n));<br />  }<br /> }<br /> <br /> public static BigInteger fibN(int n){<br />  BigInteger term1 = new BigInteger("0");<br />  BigInteger term2 = new BigInteger("1");<br />  <br />  if(n == 0){<br />   return term1;<br />  }<br />  else if(n == 1){<br />   return term2;<br />  }<br />  else{<br />   for(int i = 2; i &lt;= n; ++i){<br />    BigInteger tmp = new BigInteger(term2.toString());<br />    <br />    term2 = term2.add(term1);<br />    term1 = tmp;<br />   }<br />  }<br />  <br />  return term2;<br /> }<br />}<br /><br /></pre>

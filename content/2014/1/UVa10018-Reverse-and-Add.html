@@ -1,0 +1,10 @@
+title= 〔UVa〕10018 - Reverse and Add
+date=2014-01-02 18:37
+full_date=2014-01-02T18:37:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/100/10018.html">http://uva.onlinejudge.org/external/100/10018.html</a><br /><!--more--><br />解題雜記：<br />　　照著題目敘述的模擬過程即可。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; Just do as the problem states.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10018.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10018 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int N = input.nextInt();<br /><br />  while (N &gt; 0) {<br />   StringBuilder num = new StringBuilder(input.next());<br />   StringBuilder numRev = new StringBuilder(num).reverse();<br /><br />   int plusTimes = 0;<br />   do {<br />    long sum = Long.valueOf(num.toString())<br />      + Long.valueOf(numRev.toString());<br />    num = new StringBuilder(Long.toString(sum));<br />    numRev = new StringBuilder(num).reverse();<br /><br />    ++plusTimes;<br />   } while (!num.toString().matches(numRev.toString()));<br /><br />   System.out.println(plusTimes + " " + num);<br /><br />   --N;<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

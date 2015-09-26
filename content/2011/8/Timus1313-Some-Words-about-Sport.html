@@ -1,0 +1,40 @@
+title=〔Timus〕1313. Some Words about Sport
+date=2011-08-11 21:14
+full_date=2011-08-11T21:14:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1313">http://acm.timus.ru/problem.aspx?space=1&amp;num=1313</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;
+<br />
+<br />public class t1313 {
+<br />
+<br />	public static void main(String[] args) {
+<br />		Scanner input = new Scanner(System.in);
+<br />
+<br />		while (input.hasNext()) {
+<br />			int N = input.nextInt();
+<br />			int[][] imageUsual = new int[N][N];
+<br />
+<br />			for (int row = 0; row &lt; imageUsual.length; ++row) {
+<br />				for (int col = 0; col &lt; imageUsual[0].length; ++col) {
+<br />					imageUsual[row][col] = input.nextInt();
+<br />				}
+<br />			}
+<br />
+<br />			for (int i = 0; i &lt;= 2 * (N - 1); ++i) {
+<br />				for (int j = 0; j &lt;= i; ++j) {
+<br />					if ((i - j) &lt; imageUsual.length &amp;&amp; j &lt; imageUsual[0].length) {
+<br />						System.out.print(imageUsual[i - j][j] + " ");
+<br />					}
+<br />				}
+<br />			}
+<br />			
+<br />			System.out.println();
+<br />		}
+<br />	}
+<br />
+<br />}
+<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕11727 - Cost Cutting
+date=2013-10-27 15:31
+full_date=2013-10-27T15:31:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/117/11727.html">http://uva.onlinejudge.org/external/117/11727.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br />import java.util.Arrays;<br /><br />public class u11727 {<br /><br /> public static void main(String[] args) {<br />  final int EMPLOYEE_NUM = 3;<br />  int[] employee = new int[EMPLOYEE_NUM];<br />  <br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int T = input.nextInt();<br />   <br />   for(int caseNum = 1; caseNum &lt;= T; ++caseNum){<br />    for(int i = 0; i &lt; EMPLOYEE_NUM; ++i){<br />     employee[i] = input.nextInt();<br />    }<br />    <br />    Arrays.sort(employee);<br />    <br />    System.out.println("Case " + caseNum + ": " + employee[1]);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11727.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> const int EMPLOYEE_NUM = 3;<br /> int employee[EMPLOYEE_NUM];<br /> int T = 0;<br /><br /> while (cin &gt;&gt; T) {<br />  for (int caseNum = 1; caseNum &lt;= T; ++caseNum) {<br />   for (int i = 0; i &lt; EMPLOYEE_NUM; ++i) {<br />    cin &gt;&gt; employee[i];<br />   }<br /><br />   sort(employee, employee + EMPLOYEE_NUM);<br /><br />   cout &lt;&lt; "Case " &lt;&lt; caseNum &lt;&lt; ": " &lt;&lt; employee[1] &lt;&lt; endl;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

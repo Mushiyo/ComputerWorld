@@ -1,0 +1,10 @@
+title=〔Timus〕1001. Reverse Root
+date=2015-03-22 20:45
+full_date=2015-03-22T20:45:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1001">http://acm.timus.ru/problem.aspx?space=1&amp;num=1001</a><br /><!--more--><br />Solution Note:<br />I tried to solve this problem with the following code in 2011 and get TLE. However, I get AC with the same code today (2015.3.22). I guess the code works faster because Timus Online Judge server has some hardware improvement in the past years.<br /><br />Java：<br /><pre class="brush:java">import java.util.*;<br /><br />public class Timus1001 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  ArrayList&lt;Long&gt; num = new ArrayList&lt;Long&gt;();<br />  <br />  while(input.hasNext()){<br />   num.add(input.nextLong());<br />  }<br />  <br />  for(int i = num.size() - 1; i &gt;=0; --i) {<br />   System.out.printf("%.4f\n", Math.sqrt(num.get(i)));<br />  }<br /> }<br /><br />}<br /><br /></pre>

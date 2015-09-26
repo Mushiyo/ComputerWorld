@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b204: C. 電費系統
+date=2011-12-11 14:08
+full_date=2011-12-11T14:08:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b204">http://zerojudge.tw/ShowProblem?problemid=b204</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b204 "C. 電費系統" from 2008 NPSC 國中組初賽                */<br />/*  Language: JAVA (703 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2011-12-07 13:41:37                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b204 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   if(N == 0){<br />    break;<br />   }<br />   <br />   int[] stoppedFloor = new int[N];<br />   for(int i = 0; i &lt; stoppedFloor.length; ++i){<br />    stoppedFloor[i] = input.nextInt();<br />   }<br />   <br />   int cost = 0;<br />   for(int i = 0; i &lt; stoppedFloor.length - 1; ++i){<br />    if(stoppedFloor[i] &lt; stoppedFloor[i + 1]){<br />     cost += (stoppedFloor[i + 1] - stoppedFloor[i]) * 20;<br />    }<br />    else{<br />     cost += (stoppedFloor[i] - stoppedFloor[i + 1]) * 10;<br />    }<br />   }<br />   <br />   System.out.println(cost);<br />   <br />  }<br />  <br /> }<br /><br />}<br /></pre>

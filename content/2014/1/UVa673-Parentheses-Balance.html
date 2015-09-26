@@ -1,0 +1,10 @@
+title=〔UVa〕673 - Parentheses Balance
+date=2014-01-20 20:58
+full_date=2014-01-20T20:58:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/6/673.html">http://uva.onlinejudge.org/external/6/673.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa673.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Stack;<br /><br />public class UVa673 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   input.nextLine(); // eat change line<br /><br />   while (n &gt; 0) {<br />    String parentheses = input.nextLine();<br />    Stack&lt;Character&gt; checker = new Stack&lt;Character&gt;();<br /><br />    boolean notMatch = false;<br />    for (int i = 0; notMatch == false &amp;&amp; i &lt; parentheses.length(); ++i) {<br />     char bracket = parentheses.charAt(i);<br />     <br />     switch (bracket) {<br />     case '(':<br />     case '[':<br />      checker.push(bracket);<br />      break;<br />      <br />     case ')':<br />      if (checker.empty() == false) {<br />       if (checker.peek() == '(') {<br />        checker.pop();<br />       }<br />      }<br />      else{<br />       notMatch = true;<br />      }<br />      break;<br /><br />     case ']':<br />      if (checker.empty() == false) {<br />       if (checker.peek() == '[') {<br />        checker.pop();<br />       }<br />      }<br />      else{<br />       notMatch = true;<br />      }<br />      break;<br />     }<br />    }<br />    <br />    if(notMatch || checker.empty() == false){<br />     System.out.println("No");<br />    }<br />    else{<br />     System.out.println("Yes");<br />    }<br /><br />    --n;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

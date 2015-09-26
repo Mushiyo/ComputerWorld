@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a009: 解碼器
+date=2011-05-04 00:01
+full_date=2011-05-04T00:01:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a009">http://zerojudge.tw/ShowProblem?problemid=a009</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a009 "解碼器" from ACM 458                                        */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (120ms, 6084KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-04-30 22:18:37                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br />public class a009 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String s = input.nextLine();<br />   <br />   for(int i = 0; i &lt; s.length(); ++i){<br />    System.out.printf("%c", s.charAt(i) - 7);<br />   }<br />   System.out.println();<br />  }<br /><br /> }<br /><br />}<br /></pre>

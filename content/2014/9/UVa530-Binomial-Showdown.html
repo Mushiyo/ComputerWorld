@@ -1,0 +1,10 @@
+title=〔UVa〕530 - Binomial Showdown
+date=2014-09-01 23:47
+full_date=2014-09-01T23:47:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/5/530.html">http://uva.onlinejudge.org/external/5/530.html</a><br /><!--more--><br />Solution Description:<br />Just output the combinations.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa530.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa530 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   int k = input.nextInt();<br />   <br />   if(n == 0 &amp;&amp; k == 0){<br />    break;<br />   }<br />   <br />   System.out.println(combination(n, k));<br />  }<br /> }<br /><br /> public static long combination(int n, int m) {<br />  long c = 1;<br /><br />  for (int i = Math.max(m, n - m) + 1, j = 1; i &lt;= n; ++i, ++j) {<br />   c = (c * i) / j;<br />  }<br /><br />  return c;<br /> }<br />}<br /><br /></pre>

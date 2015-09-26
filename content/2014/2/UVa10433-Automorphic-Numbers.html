@@ -1,0 +1,10 @@
+title=〔UVa〕10433 - Automorphic Numbers
+date=2014-02-15 21:50
+full_date=2014-02-15T21:50:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/104/10433.html">http://uva.onlinejudge.org/external/104/10433.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10433.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa10433 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String number = input.next();<br />   BigInteger numSquare = new BigInteger(number).pow(2);<br />   <br />   if(numSquare.toString().endsWith(number)){<br />    System.out.printf("Automorphic number of %d-digit.\n", number.toString().length());<br />   }<br />   else{<br />    System.out.println("Not an Automorphic number.");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

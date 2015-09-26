@@ -1,0 +1,10 @@
+title=〔UVa〕1594 - Ducci Sequence
+date=2015-03-21 22:14
+full_date=2015-03-21T22:14:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/15/1594.html">http://uva.onlinejudge.org/external/15/1594.html</a><br /><!--more--><br />Solution Description:<br />Just keep finding the next n-tuple until a zeros tuple or a periodic loop appears.  <br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa1594.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br />import java.util.Arrays;<br /><br />public class UVa1594 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final int MAX_N = 15;<br />  int[] ducciSeq = new int[MAX_N];<br />  Set&lt;Integer&gt; appearedSeq = new HashSet&lt;Integer&gt;();<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br /><br />   while (T &gt; 0) {<br />    int n = input.nextInt();<br />    appearedSeq.clear();<br /><br />    for (int i = 0; i &lt; n; ++i) {<br />     ducciSeq[i] = input.nextInt();<br />    }<br /><br />    int hashCode = Arrays.hashCode(ducciSeq);<br />    while (appearedSeq.contains(hashCode) == false) {<br />     appearedSeq.add(hashCode);<br /><br />     int ducciSeq0 = ducciSeq[0];<br />     for (int i = 0; i &lt; n - 1; ++i) {<br />      ducciSeq[i] = Math.abs(ducciSeq[i] - ducciSeq[i + 1]);<br />     }<br />     ducciSeq[n - 1] = Math.abs(ducciSeq[n - 1] - ducciSeq0);<br /><br />     hashCode = Arrays.hashCode(ducciSeq);<br />    }<br /><br />    if (isAllZero(ducciSeq, n)) {<br />     System.out.println("ZERO");<br />    } else {<br />     System.out.println("LOOP");<br />    }<br /><br />    --T;<br />   }<br />  }<br /> }<br /><br /> private static boolean isAllZero(int[] ducciSeq, int size) {<br />  for (int i = 0; i &lt; size; ++i) {<br />   if (ducciSeq[i] != 0) {<br />    return false;<br />   }<br />  }<br /><br />  return true;<br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d646: I2A的陰謀
+date=2012-01-14 17:02
+full_date=2012-01-14T17:02:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d646">http://zerojudge.tw/ShowProblem?problemid=d646</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d646 "I2A的陰謀" from jack1                                       */<br />/*  Language: JAVA (374 Bytes)                                                    */<br />/*  Result: AC(72ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-14 16:48:00                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class d646 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   BigInteger num1 = new BigInteger(input.next(), 2);<br />   BigInteger num2 = new BigInteger(input.next(), 2);<br />   System.out.println(num1.gcd(num2).toString(2));<br />  }<br /> }<br /><br />}<br /><br /></pre>

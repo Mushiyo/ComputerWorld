@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a781: 3. Checkerboard
+date=2014-07-20 23:29
+full_date=2014-07-20T23:29:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a781">http://zerojudge.tw/ShowProblem?problemid=a781</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: a781.java<br /> * Author: Mushiyo<br /> */<br />package CONTEST;<br /><br />import java.util.Scanner;<br /><br />public class a781 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final int BOUND = 8;<br />  final String[] BLACK = { "", "#", "##", "###", "####", "#####",<br />    "######", "#######", "########", "#########" };<br />  final String[] WHITE = { "", ".", "..", "...", "....", ".....",<br />    "......", ".......", "........", "........." };<br />  boolean firstBoard = true;<br /><br />  while (input.hasNext()) {<br />   int size = input.nextInt();<br /><br />   if (size == 0) {<br />    break;<br />   }<br />   <br />   if(firstBoard){<br />    firstBoard = false;<br />   }<br />   else{<br />    System.out.println();<br />   }<br /><br />   for (int row = 0; row &lt; BOUND; ++row) {<br />    for (int i = 0; i &lt; size; ++i) {<br />     for (int col = 0; col &lt; BOUND; ++col) {<br />      if ((row + col) % 2 == 0) {<br />       System.out.print(BLACK[size]);<br />      }<br />      else{<br />       System.out.print(WHITE[size]);<br />      }<br />     }<br />     System.out.println();<br />    }<br />   }<br />  }<br /> }<br /><br />}<br /></pre>

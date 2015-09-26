@@ -1,0 +1,10 @@
+title=〔AOJ〕0003:   Is it a Right Triangle?
+date=2013-08-09 23:54
+full_date=2013-08-09T23:54:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0003">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0003</a><br /><!--more--><br />解題雜記：<br />　　使用<a href="http://zh.wikipedia.org/wiki/畢氏定理" target="_blank">畢氏定理</a>來判斷是否為正三角形。在套公式前記得先將邊的大小排序過。 <br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0003.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cmath&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />const int a = 0;<br />const int b = 1;<br />const int c = 2;<br /><br />int main() {<br /> int n = 0;<br /><br /> while (cin &gt;&gt; n) {<br />  while (n &gt; 0) {<br />   int side[3];<br />   for (int i = 0; i &lt; 3; ++i) {<br />    cin &gt;&gt; side[i];<br />   }<br />   sort(side, side + 3);<br /><br />   if (side[a] * side[a] + side[b] * side[b] == side[c] * side[c]) {<br />    cout &lt;&lt; "YES" &lt;&lt; endl;<br />   } else {<br />    cout &lt;&lt; "NO" &lt;&lt; endl;<br />   }<br />   --n;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

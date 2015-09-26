@@ -1,0 +1,10 @@
+title=〔UVa〕1583 - Digit Generator
+date=2014-09-04 23:34
+full_date=2014-09-04T23:34:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/15/1583.html">http://uva.onlinejudge.org/external/15/1583.html</a><br /><!--more--><br />Solution Description:<br />Find the generator of each number in advance.<br />Then output the number corresponds to the input.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa1583.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa1583 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] generate = new int[1000000];<br />  <br />  for(int i = 1; i &lt;= 1000000; ++i){<br />   int generateByI = digitSum(i);<br />   <br />   if(generateByI &lt; 1000000){<br />    if(generate[generateByI] == 0){<br />     generate[generateByI] = i;<br />    }<br />   }<br />  }<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   while(T &gt; 0){<br />    int N = input.nextInt();<br />    <br />    System.out.println(generate[N]);<br />    <br />    --T;<br />   }<br />  }<br /> }<br /><br /> static int digitSum(int n){<br />  int sum = n;<br />  <br />  while(n &gt; 0){<br />   sum += n % 10;<br />   n /= 10;<br />  }<br />  <br />  return sum;<br /> }<br />}<br /><br /></pre>

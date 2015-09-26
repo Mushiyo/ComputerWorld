@@ -1,0 +1,10 @@
+title=〔UVa〕10878 - Decode the tape
+date=2014-01-26 22:50
+full_date=2014-01-26T22:50:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/108/10878.html">http://uva.onlinejudge.org/external/108/10878.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10878.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10878 {<br /> static int[] val = { 0, 0, 1 &lt;&lt; 6, 1 &lt;&lt; 5, 1 &lt;&lt; 4, 1 &lt;&lt; 3, 0, 1 &lt;&lt; 2, 2, 1,<br />   0 };<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder output = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   String record = input.nextLine();<br />   if (!record.equals("___________")) {<br />    output.append(decode(record));<br />   }<br />  }<br />  System.out.print(output);<br /> }<br /><br /> public static char decode(String record) {<br />  char ascii = 0;<br /><br />  for (int i = 0; i &lt; record.length(); ++i) {<br />   if (record.charAt(i) == 'o') {<br />    ascii += val[i];<br />   }<br />  }<br /><br />  return ascii;<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕1339 - Ancient Cipher
+date=2015-01-04 16:34
+full_date=2015-01-04T16:34:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/13/1339.html">http://uva.onlinejudge.org/external/13/1339.html</a><br /><!--more--><br />Solution Description:<br />Count the frequency of the characters in the two string respectively, record it in an array. Sort the two arrays and check if they are the same. If they are the same, then  the first string could be the result of encrypting the second string.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa1339.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Arrays;<br /><br />public class UVa1339 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  int[] countPlateChar = new int[26];<br />  int[] countOriginalChar = new int[26];<br />  while (input.hasNext()) {<br />   String plateMessage = input.nextLine();<br />   String origianlMessage = input.nextLine();<br />   <br />   Arrays.fill(countPlateChar, 0);<br />   Arrays.fill(countOriginalChar, 0);<br />   <br />   for(int i = 0; i &lt; plateMessage.length(); ++i){<br />    ++countPlateChar[plateMessage.charAt(i) - 'A'];<br />    ++countOriginalChar[origianlMessage.charAt(i) - 'A'];<br />   }<br />   <br />   Arrays.sort(countPlateChar);<br />   Arrays.sort(countOriginalChar);<br />   <br />   if(Arrays.equals(countPlateChar, countOriginalChar)){<br />    System.out.println("YES");<br />   } else{<br />    System.out.println("NO");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

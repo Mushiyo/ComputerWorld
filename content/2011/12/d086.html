@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d086: 態度之重要的證明
+date=2011-12-02 20:03
+full_date=2011-12-02T20:03:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d086">http://zerojudge.tw/ShowProblem?problemid=d086</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d086 &quot;態度之重要的證明&quot; from 成功電研20th~21st C++ ～最後的競賽～ */<br />/*  Language: JAVA (663 Bytes)                                                    */<br />/*  Result: AC(74ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2011-11-23 22:16:34                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d086 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String word = input.next();<br />   if(word.equals(&quot;0&quot;)){<br />    break;<br />   }<br />   <br />   word = word.toLowerCase();<br />   <br />   int wordVal = 0;<br />   boolean isValid = true;<br />   <br />   for(int i = 0; i &lt; word.length(); ++i){<br />    if(Character.isLetter(word.charAt(i))){<br />     wordVal += word.charAt(i) - &#39;a&#39; + 1;<br />    }<br />    else{<br />     isValid = false;<br />     break;<br />    }<br />   }<br />   <br />   if(isValid){<br />    System.out.println(wordVal);<br />   }<br />   else{<br />    System.out.println(&quot;Fail&quot;);<br />   }<br />  }<br /> }<br /><br />}<br /></pre>

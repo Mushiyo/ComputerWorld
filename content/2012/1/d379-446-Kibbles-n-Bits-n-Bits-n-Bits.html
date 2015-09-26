@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d379: 446 - Kibbles `n' Bits `n' Bits `n' Bits
+date=2012-01-29 17:27
+full_date=2012-01-29T17:27:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=d379">http://www.zerojudge.tw/ShowProblem?problemid=d379</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d379 "446 - Kibbles `n' Bits `n' Bits `n' Bits" from Uva 446         */<br />/*  Language: JAVA (909 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-29 17:17:48                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d379 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int N = input.nextInt();<br />  <br />  while(N &gt; 0){<br />   int num1 = Integer.parseInt(input.next(), 16);<br />   String operator = input.next();<br />   int num2 = Integer.parseInt(input.next(), 16);<br />   <br />   int result = 0;<br />   if(operator.equals("+")){<br />    result = num1 + num2;<br />    <br />   }<br />   else{<br />    result = num1 - num2;<br />   }<br />   <br />   System.out.print(toBinWith0(num1) + " " + operator);<br />   System.out.println(" " + toBinWith0(num2) + " = " + result);<br />   <br />   --N;<br />  }<br /> }<br /> <br /> public static String toBinWith0(int num){<br />  String binNo0 = Integer.toBinaryString(num);<br />  StringBuilder withLeading0 = new StringBuilder();<br />  <br />  for(int i = 0; i + binNo0.length() &lt; 13; ++i){<br />   withLeading0.append(0);<br />  }<br />  <br />  return withLeading0.append(binNo0).toString();<br /> }<br /><br />}<br /><br /></pre>

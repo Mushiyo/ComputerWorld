@@ -1,0 +1,10 @@
+title=〔UVa〕10656 - Maximum Sum (II)
+date=2013-11-17 16:17
+full_date=2013-11-17T16:17:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/106/10656.html">http://uva.onlinejudge.org/external/106/10656.html</a> <br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u10656.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;vector&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int N = 0;<br /><br />    while(cin &gt;&gt; N){<br />        if(N == 0){<br />         break;<br />        }<br /><br />        vector&lt;int&gt; maxSubsequence;<br />        for(int i = 0; i &lt; N; ++i){<br />         int num;<br />         cin &gt;&gt; num;<br /><br />         if(num &gt; 0){<br />          maxSubsequence.push_back(num);<br />         }<br />        }<br /><br />        if(maxSubsequence.size() == 0){<br />         cout &lt;&lt; 0 &lt;&lt; endl;<br />        }<br />        else{<br />         cout &lt;&lt; maxSubsequence[0];<br />         for(int i = 1; i &lt; maxSubsequence.size(); ++i){<br />          cout &lt;&lt; " " &lt;&lt; maxSubsequence[i];<br />         }<br />         cout &lt;&lt; endl;<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

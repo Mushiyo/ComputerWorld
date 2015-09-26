@@ -1,0 +1,10 @@
+title=〔UVa〕12157 - Tariff Plan
+date=2014-09-04 23:15
+full_date=2014-09-04T23:15:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/121/12157.html">http://uva.onlinejudge.org/external/121/12157.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa12157.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12157 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br /><br />   for (int caseNum = 1; caseNum &lt;= T; ++caseNum) {<br />    int N = input.nextInt();<br />    int[] callDuration = new int[N];<br />    int Mile = 0;<br />    int Juice = 0;<br />    for (int i = 0; i &lt; callDuration.length; ++i) {<br />     callDuration[i] = input.nextInt();<br /><br />     Mile += (Math.floor((double)callDuration[i] / 30) + 1) * 10;<br />     Juice += (Math.floor((double)callDuration[i] / 60) + 1) * 15;<br />    }<br /><br />    System.out.printf("Case %d: ", caseNum);<br />    if(Mile == Juice){<br />     System.out.printf("Mile Juice %d\n", Mile);<br />    }<br />    else if (Mile &lt; Juice) {<br />     System.out.printf("Mile %d\n", Mile);<br />    } else {<br />     System.out.printf("Juice %d\n", Juice);<br />    }<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

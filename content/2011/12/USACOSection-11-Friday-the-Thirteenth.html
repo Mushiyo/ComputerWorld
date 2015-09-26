@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.1 Friday the Thirteenth
+date=2011-12-06 20:05
+full_date=2011-12-06T20:05:00.001+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：  見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br />ID: mushiyo1<br />LANG: JAVA<br />TASK: friday<br />*/<br /><br />import java.util.Scanner;<br />import java.io.*;<br /><br />public class friday {<br /><br /> public static void main(String[] args) throws FileNotFoundException {<br />  Scanner input = new Scanner(new File("friday.in"));<br />  PrintWriter output = new PrintWriter(new File("friday.out"));<br />  int[] countThirteen = new int[7];<br />  int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   int day = 2;<br />   <br />   for(int i = 0; i &lt; N; ++i){<br />    if(isLeapYear(1900 + i)) daysInMonth[1] = 29;<br />    else daysInMonth[1] = 28;<br />    <br />    for(int month = 1; month &lt;= 12; ++month){<br />     for(int date = 1; date &lt;= daysInMonth[month - 1]; ++date){<br />      if(date == 13){<br />       ++countThirteen[day];<br />      }<br />      ++day;<br />      day %= 7;<br />     }<br />    }<br />   }<br />   <br />   output.print(countThirteen[0]);<br />   for(int j = 1; j &lt; countThirteen.length; ++j){<br />    output.print(" " + countThirteen[j]);<br />   }<br />   output.println();<br />  }<br />  <br />  input.close();<br />  output.close();<br /> }<br /><br /> public static boolean isLeapYear(int year){<br />  if(year % 400 == 0) return true;<br />  if(year % 100 == 0) return false;<br />  if(year % 4 == 0) return true;<br />  <br />  return false;<br /> }<br />}<br /></pre>

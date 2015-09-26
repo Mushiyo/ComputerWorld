@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a149: 乘乘樂
+date=2011-08-05 20:45
+full_date=2011-08-05T20:45:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a149">http://zerojudge.tw/ShowProblem?problemid=a149</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a149 "乘乘樂" from                                                */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (108ms, 5544KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-31 21:41:18                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a149 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  <br />  while(T &gt; 0){<br />   String numStr = input.next();<br />   int product = 1;<br />   <br />   for(int i = 0; i &lt; numStr.length(); ++i){<br />    product *= Character.digit(numStr.charAt(i), 10);<br />   }<br />   System.out.println(product);<br />   <br />   --T;<br />  }<br /> }<br /><br />}<br /></pre>

@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d012: 迴文
+date=2010-10-21 18:51
+full_date=2010-10-21T18:51:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d012">http://judge.nccucs.org/ShowProblem?problemid=d012</a><br /><br /><!--more-->Ｃ＋＋：<br /><pre class="brush:cpp">#include &lt;iostream&gt;<br />#include &lt;string&gt;<br />using namespace std;<br /><br />bool isPalindrome(string s);<br /><br />int main()<br />{<br />    string str;<br />    while(cin &gt;&gt; str){<br />        if(isPalindrome(str)){<br />            cout &lt;&lt; "Yes\n";<br />        }<br />        else{<br />            cout &lt;&lt; "No\n";<br />        }<br />    }<br />    return 0;<br />}<br /><br />bool isPalindrome(string s)<br />{<br />    int length = s.length();<br />    <br />    <br />    if (length == 1){<br />        return true;<br />    }<br />    else if(length == 2){<br />        if(s.at(0) == s.at(1)){<br />            return true;<br />        }<br />        else{<br />            return false;<br />        }<br />    }<br />    else if(s.at(0) == s.at(length - 1)){<br />        s = s.substr (1,length - 2);<br />        return isPalindrome(s);<br />    }<br />    else{<br />        return false;<br />    }<br />        <br />}<br /></pre>

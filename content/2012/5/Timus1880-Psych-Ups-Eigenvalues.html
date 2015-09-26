@@ -1,0 +1,10 @@
+title=〔Timus〕1880. Psych Up's Eigenvalues
+date=2012-05-05 16:20
+full_date=2012-05-05T16:20:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1880">http://acm.timus.ru/problem.aspx?space=1&amp;num=1880</a><br /><!--more--><br /><br />解題雜記：<br />　　題目裡面所說的eigenvalue並不是指線性代數的eigenvalue，而是指別的東西（定義請詳閱題目），所以別搞錯方向喔。知道這點就差不多可以快樂AC了^_^<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br /><br />public class t1880 {<br /> static Scanner input = new Scanner(System.in);<br /> <br /> public static void main(String[] args) {<br />  <br />  int n = input.nextInt();<br />  Set&lt;integer&gt; eigenvalue = new HashSet&lt;integer&gt;(n);<br />  <br />  addToSet(n, eigenvalue);<br />  <br />  while(input.hasNext()){<br />   n = input.nextInt();<br />   Set&lt;integer&gt; nextBlock = new HashSet&lt;integer&gt;(n);<br />   <br />   addToSet(n, nextBlock);<br />   <br />   eigenvalue.retainAll(nextBlock);<br />  }<br />  <br />  System.out.println(eigenvalue.size());<br /> }<br />    <br /> static void addToSet(int n, Set&lt;integer&gt; set){<br />  while(n &amp;gt; 0){<br />   set.add(input.nextInt());<br />   --n;<br />  }<br /> }<br />}<br /></pre>

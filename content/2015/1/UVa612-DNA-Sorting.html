@@ -1,0 +1,10 @@
+title=〔UVa〕612 - DNA Sorting
+date=2015-01-31 22:35
+full_date=2015-01-31T22:35:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/6/612.html">http://uva.onlinejudge.org/external/6/612.html</a><br /><!--more--><br />Solution Description:<br />Sort the strings with the number of inversions, i.e. the "sortedness" in the problem.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa612.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Arrays;<br /><br />public class UVa612 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int M = input.nextInt();<br />   boolean isFirstOutput = true;<br />   <br />   while (M &gt; 0){<br />    int n = input.nextInt();<br />    int m = input.nextInt();<br />    <br />    DNA[] sequences = new DNA[m];<br />    for(int i = 0; i &lt; sequences.length; ++i){<br />     sequences[i] = new DNA(input.next());<br />    }<br />    <br />    Arrays.sort(sequences);<br />    <br />    if(isFirstOutput){<br />     isFirstOutput = false;<br />    } else {<br />     System.out.println();<br />    }<br />    <br />    for(int i = 0; i &lt; sequences.length; ++i){<br />     System.out.println(sequences[i].sequence);<br />    }<br />    <br />    --M;<br />   }<br />  }<br /> }<br /> <br /> private static class DNA implements Comparable&lt;DNA&gt;{<br />  String sequence;<br />  int inversion;<br />  <br />  DNA(String seq){<br />   sequence = seq;<br />   <br />   inversion = 0;<br />   for(int i = 0; i &lt; sequence.length(); ++i){<br />    for(int j = i + 1; j &lt; sequence.length(); ++j){<br />     if(sequence.charAt(i) &gt; sequence.charAt(j)){<br />      ++inversion;<br />     }<br />    }<br />   }<br />  }<br />  <br />  @Override<br />  public int compareTo(DNA o) {<br />   return this.inversion - o.inversion;<br />  }<br />  <br /> }<br />}<br /><br /></pre>

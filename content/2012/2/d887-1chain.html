@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d887: 1.山脈種類(chain)
+date=2012-02-11 21:43
+full_date=2012-02-11T21:43:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d887">http://zerojudge.tw/ShowProblem?problemid=d887</a><br /><!--more--><br />解題雜記： <br />思路一：參考<a href="https://sites.google.com/a/hpsh.co.cc/code/ti-mu/d887-1chain">https://sites.google.com/a/hpsh.co.cc/code/ti-mu/d887-1chain</a>，底下的解法就是這個做法。<br />思路二：參考<a href="http://mypaper.pchome.com.tw/zerojudge/post/1322224679">http://mypaper.pchome.com.tw/zerojudge/post/1322224679</a><br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d887 "1.山脈種類(chain)" from 99北市賽                        */<br />/*  Language: JAVA (584 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-11 21:22:48                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d887 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  long[] mtKinds = new long[26];<br />  mtKinds[0] = 1;<br />  <br />  for(int i = 1 ; i &lt; mtKinds.length; ++i){<br />   countKind(mtKinds, i);<br />  }<br />  <br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   <br />   System.out.println(mtKinds[N]);<br />  }<br /> }<br /> <br /> public static void countKind(long[] mtKinds, int N){<br />  long kinds = 0;<br />  <br />  for(int i = 0; i &lt; N; ++i){<br />   kinds += mtKinds[i] * mtKinds[N - i - 1];<br />  }<br />  <br />  mtKinds[N] = kinds;<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕482 - Permutation Arrays
+date=2015-01-09 20:14
+full_date=2015-01-09T20:14:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/482.html">http://uva.onlinejudge.org/external/4/482.html</a><br /><!--more--><br /><br />Solution Description:<br />Move the float point values to position corresponds to the index, then output.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa482.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa482 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br /><br />   boolean isFirstOutput = true;<br />   while (T &gt; 0) {<br />    input.nextLine(); // eat change line<br />    input.nextLine(); // eat change line<br /><br />    String[] index = input.nextLine().split("\\W+");<br />    String[] number = new String[index.length];<br /><br />    for (int i = 0; i &lt; index.length; ++i) {<br />     number[Integer.parseInt(index[i]) - 1] = input.next();<br />    }<br /><br />    if (isFirstOutput) {<br />     isFirstOutput = false;<br />    } else {<br />     System.out.println();<br />    }<br /><br />    for (int i = 0; i &lt; number.length; ++i) {<br />     System.out.println(number[i]);<br />    }<br /><br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

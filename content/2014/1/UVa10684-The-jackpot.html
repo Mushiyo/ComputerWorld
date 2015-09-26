@@ -1,0 +1,10 @@
+title= 〔UVa〕10684 - The jackpot
+date=2014-01-04 22:05
+full_date=2014-01-04T22:05:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/106/10684.html">http://uva.onlinejudge.org/external/106/10684.html</a><br /><!--more--><br />解題雜記：<br />　　用DP解的，複雜度是O(n)（如果用暴力法一段一段找，複雜度是O(n^2)，會TLE）。這題其實就是一維最大連續元素和這個經典題型，網路上能找到的資源很多，故這邊就不對解法多加描述了。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; Solve by O(n) DP method. If solved by O(n^2) brute-force (in Java), it will be TLE. The problem is actually a classical problem called maximum contiguous subsequence sum.<br /><br />Java：<br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class UVa10684 {<br /><br /> public static void main(String[] args) {<br />  final int MAX_N = 10000;<br />  int[] bet = new int[MAX_N];<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   if(N == 0){<br />    break;<br />   }   <br />   <br />   for(int i = 0; i &lt; N; ++i){<br />    bet[i] = input.nextInt(); <br />   }<br />   <br />   int minJackpot = bet[0];<br />   int maxJackpot = bet[0];<br />   int jackpot = bet[0];<br />   for(int i = 1; i &lt; N; ++i){<br />    jackpot += bet[i];<br />    minJackpot = Math.min(jackpot, minJackpot);<br />    maxJackpot = Math.max(maxJackpot, jackpot - minJackpot);<br />   }<br />   <br />   if(maxJackpot &lt;= 0){<br />    System.out.println("Losing streak.");<br />   }<br />   else{<br />    System.out.println("The maximum winning streak is " + maxJackpot + ".");<br />   }<br />  }<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

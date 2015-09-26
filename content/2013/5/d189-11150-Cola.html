@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d189: 11150 - Cola
+date=2013-05-15 15:16
+full_date=2013-05-15T15:16:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=d189">http://www.zerojudge.tw/ShowProblem?problemid=d189</a><br /><!--more--><br />解題雜記：<br />　　不斷的兌換可樂，直到不能再換為止。不論一開始有多少瓶可樂，最後的剩餘狀況都只有兩種：即，1瓶或2瓶。如果最後剩的是二個空瓶，則跟朋友借一個空瓶，再把最後換得的空瓶還給他；若剩的是一個空瓶，則理所當然的結束兌換。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d189 "11150 - Cola" from UVa ACM 11150                               */<br />/*  Language: JAVA (659 Bytes)                                                    */<br />/*  Result: AC(108ms, 3.7MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2013-05-13 11:23:35                                        */<br />/**********************************************************************************/<br /><br /><br />package UVa;<br /><br />import java.util.Scanner;<br /><br />public class d189 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   <br />   System.out.println(maxDrinkedCola(N));<br />  }<br /> }<br /> <br /> public static int maxDrinkedCola(int initialCola){<br />  int totalDrinked = 0;<br />  <br />  while(initialCola &gt; 2){<br />   int currentDrinked = initialCola / 3;<br />   totalDrinked += currentDrinked * 3;<br />   <br />   initialCola %= 3;<br />   initialCola += currentDrinked;<br />  }<br />  <br />  if(initialCola == 2){<br />   totalDrinked += 3;<br />  }<br />  else{<br />   ++totalDrinked;<br />  }<br />  <br />  return totalDrinked;<br /> }<br /><br />}<br /><br /></pre>

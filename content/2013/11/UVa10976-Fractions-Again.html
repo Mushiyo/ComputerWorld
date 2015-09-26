@@ -1,0 +1,10 @@
+title=〔UVa〕10976 - Fractions Again?!
+date=2013-11-17 16:23
+full_date=2013-11-17T16:23:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/109/10976.html">http://uva.onlinejudge.org/external/109/10976.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u10976.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;vector&gt;<br />#include &lt;cstdio&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int k = 0;<br /><br />    while(scanf("%d", &amp;k) == 1){<br />        int y = k + 1;<br />        int x = (k * y) / (y - k);<br /><br />        vector&lt;int&gt; xList;<br />        vector&lt;int&gt; yList;<br /><br />        while(x &gt;= y){<br />         if((k * y) % (y - k) == 0){<br />          xList.push_back(x);<br />          yList.push_back(y);<br />         }<br /><br />         ++y;<br />         x = (k * y) / (y - k);<br />        }<br />        <br />        printf("%d\n", xList.size());<br />        for(int i = 0; i &lt; xList.size(); ++i){<br />         printf("1/%d = 1/%d + 1/%d\n", k, xList[i], yList[i]);<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

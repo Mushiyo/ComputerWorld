@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d182: Q256: Quirksome Squares
+date=2013-05-22 13:25
+full_date=2013-05-22T13:25:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d182">http://zerojudge.tw/ShowProblem?problemid=d182</a><br /><!--more--><br />解題雜記：<br />　　觀察題目中對quirksome number的定義，我們可以發現當一個數是quirksome number，則它也一定完全平方數。因此若要找出所N位數的quirksome number，只要檢查1、4、9……(10^(N/2) - 1) * (10^(N/2) - 1)這幾個數是不是quirksome number就好，不需要枚舉出所有1 ~ ((10 ^ N) - 1)來檢查（事實上，根據某人的親身試驗，枚舉出所有的數會TLE……）。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d182 "Q256: Quirksome Squares" from ACM 256                          */<br />/*  Language: JAVA (634 Bytes)                                                    */<br />/*  Result: AC(84ms, 2MB) judge by this@ZeroJudge                                 */<br />/*  Author: mushiyo at 2013-05-22 12:01:51                                        */<br />/**********************************************************************************/<br /><br /><br />package UVa;<br /><br />import java.util.Scanner;<br /><br />public class d182 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   //int upperBound = (int)Math.pow(10, N);<br />   int halfBound = (int)Math.pow(10, N / 2);<br />   <br />   for(int i = 0; i &lt; halfBound; ++i){<br />    int squareI = i * i;<br />    int leftHalf = squareI / halfBound;<br />    int rightHalf = squareI % halfBound;<br />    <br />    if(Math.pow(leftHalf + rightHalf, 2) == squareI){<br />     System.out.println(String.format("%" + N + "d", squareI).replace(' ', '0'));<br />    }<br />   }<br />   <br />  }<br /> }<br /><br />}<br /><br /></pre>

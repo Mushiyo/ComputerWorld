@@ -1,0 +1,10 @@
+title=〔UVa〕11466 - Largest Prime Divisor
+date=2014-08-18 18:06
+full_date=2014-08-18T18:06:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/114/11466.html">http://uva.onlinejudge.org/external/114/11466.html</a><br /><!--more--><br /><br />Solution Description:<br />The method is a simple modification of finding prime factors.<br />Note that when N is not divisible by more than one prime number, which means<br />1. N is a prime. or<br />2. N is a power of a prime.<br />Both of the two cases should output -1.<br />And also note that N maybe negative.<br />In this case, just use the absolute value to find the LPD.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11466.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11466 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   long N = input.nextLong();<br /><br />   if (N == 0) {<br />    break;<br />   }<br /><br />   System.out.println(largestPrimeDivisor(Math.abs(N)));<br />  }<br /> }<br /><br /> public static long largestPrimeDivisor(long n) {<br />  int sqrtN = (int) Math.sqrt(n);<br />  long largestPrimeDivisor = -1;<br />  int primeDivisorNum = 0;<br /><br />  if (n != 2) {<br />   if (n % 2 == 0) {<br />    ++primeDivisorNum;<br />    largestPrimeDivisor = 2;<br />    while (n % 2 == 0) {<br />     n /= 2;<br />    }<br />   }<br />  }<br /><br />  for (int i = 3; i &lt;= sqrtN &amp;&amp; n != 1; i += 2) {<br />   if (n % i == 0) {<br />    ++primeDivisorNum;<br />    largestPrimeDivisor = i;<br />    while (n % i == 0) {<br />     n /= i;<br />    }<br />   }<br />  }<br /><br />  if (n != 1 &amp;&amp; largestPrimeDivisor != -1) {<br />   return n;<br />  } else if (primeDivisorNum == 1) {<br />   return -1;<br />  } else {<br />   return largestPrimeDivisor;<br />  }<br /> }<br />}<br /><br /></pre>

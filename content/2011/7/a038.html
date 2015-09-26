@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a038: 數字翻轉
+date=2011-07-04 22:50
+full_date=2011-07-04T22:50:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a038">http://zerojudge.tw/ShowProblem?problemid=a038</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a038 "數字翻轉"                                                  */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (112ms, 5384KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-03 17:18:31                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a038 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   StringBuilder num = new StringBuilder(input.next());<br />   num = deleteLeadingZero(num).reverse(); //將字串去掉開頭的0後反轉 <br />   num = deleteLeadingZero(num);//將反轉後的字串去掉開頭的0<br /><br />   System.out.println(num);<br />  }<br /> }<br /> <br /> public static StringBuilder deleteLeadingZero(StringBuilder num){<br />  int startIndex = countLeadingZero(num);<br />  <br />  return new StringBuilder(num.substring(startIndex));<br />  <br /> }<br /><br /> public static int countLeadingZero(StringBuilder num) {<br />  int leadingZero = 0;<br />  for (int i = 0; i &lt; num.length(); ++i) {<br />   if (num.charAt(i) != '0') {<br />    break;<br />   } else {<br />    ++leadingZero;<br />   }<br />  }<br /><br />  return leadingZero;<br /> }<br /><br />}<br /></pre>

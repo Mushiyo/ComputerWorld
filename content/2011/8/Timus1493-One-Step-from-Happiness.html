@@ -1,0 +1,62 @@
+title=〔Timus〕1493. One Step from Happiness
+date=2011-08-13 21:53
+full_date=2011-08-13T21:53:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1493">http://acm.timus.ru/problem.aspx?space=1&amp;num=1493</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;
+<br />
+<br />public class t1493 {
+<br />
+<br />	public static void main(String[] args) {
+<br />		Scanner input = new Scanner(System.in);
+<br />
+<br />		while (input.hasNext()) {
+<br />			int ticketNum = input.nextInt();
+<br />			int previousNum = ticketNum - 1;
+<br />			int nextNum = ticketNum + 1;
+<br />
+<br />			if (isLuckyTicket(previousNum) || isLuckyTicket(nextNum)) {
+<br />				System.out.println("Yes");
+<br />			}
+<br />			else {
+<br />				System.out.println("No");
+<br />			}
+<br />		}
+<br />	}
+<br />
+<br />	public static boolean isLuckyTicket(int ticketNum) {
+<br />		String stringTicketNum = Integer.toString(ticketNum);
+<br />		//不足6位數補0
+<br />		while(stringTicketNum.length() &lt; 6){
+<br />			stringTicketNum = "0" + stringTicketNum;
+<br />		}
+<br />		
+<br />		String firstHalf = stringTicketNum.substring(0, 3);
+<br />		String secondHalf = stringTicketNum.substring(3);
+<br />
+<br />		int sumOfFirst = 0;
+<br />
+<br />		for (int i = 0; i &lt; firstHalf.length(); ++i) {
+<br />			sumOfFirst += firstHalf.charAt(i) - '0';
+<br />		}
+<br />
+<br />		int sumOfSecond = 0;
+<br />
+<br />		for (int i = 0; i &lt; secondHalf.length(); ++i) {
+<br />			sumOfSecond += secondHalf.charAt(i) - '0';
+<br />		}
+<br />
+<br />		if (sumOfFirst != sumOfSecond) {
+<br />			return false;
+<br />		}
+<br />		else {
+<br />			return true;
+<br />		}
+<br />	}
+<br />
+<br />}
+<br /></pre>

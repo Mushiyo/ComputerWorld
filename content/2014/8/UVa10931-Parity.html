@@ -1,0 +1,10 @@
+title=〔UVa〕10931 - Parity
+date=2014-08-18 18:21
+full_date=2014-08-18T18:21:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/109/10931.html">http://uva.onlinejudge.org/external/109/10931.html</a><br /><!--more--><br />Solution Note:<br />If you are using Java, this problem can be solved easily with Integer.toBinaryString() and Integer.bitCount().<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10931.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10931 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int I = input.nextInt();<br />   <br />   if(I == 0){<br />    break;<br />   }<br />   <br />   System.out.printf("The parity of %s is %d (mod 2).\n", Integer.toBinaryString(I), Integer.bitCount(I));<br />  }<br /> }<br /><br />}<br /><br /></pre>

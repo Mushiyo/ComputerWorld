@@ -1,0 +1,10 @@
+title=〔Timus〕1617. Flat Spots
+date=2011-10-02 17:43
+full_date=2011-10-02T17:43:00.010+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1617">http://acm.timus.ru/problem.aspx?space=1&amp;num=1617</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1617 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   <br />   int[] tire = new int[101];<br />   while(n &gt; 0){<br />    ++tire[input.nextInt() - 600];<br />    --n;<br />   }<br />   <br />   int wheelSet = 0;<br />   for(int i = 0; i &lt; tire.length; ++i){<br />    wheelSet += (tire[i] / 4);<br />   }<br />   <br />   System.out.println(wheelSet);<br />  }<br /> }<br /><br />}<br /></pre>

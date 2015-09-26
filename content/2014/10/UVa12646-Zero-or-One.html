@@ -1,0 +1,10 @@
+title=〔UVa〕12646 - Zero or One
+date=2014-10-26 17:13
+full_date=2014-10-26T17:13:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/126/12646.html">http://uva.onlinejudge.org/external/126/12646.html</a><br /><!--more--><br />Solution Note:<br />Just enumerate all the possibilities and output the corresponding result of the input.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12646.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12646 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int A = input.nextInt();<br />   int B = input.nextInt();<br />   int C = input.nextInt();<br /><br />   if (A == B &amp;&amp; B == C) {<br />    System.out.println("*");<br />   } else if (A == B &amp;&amp; B != C) {<br />    System.out.println("C");<br />   } else if (A == C &amp;&amp; B != C) {<br />    System.out.println("B");<br />   } else if (B == C &amp;&amp; A != C) {<br />    System.out.println("A");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

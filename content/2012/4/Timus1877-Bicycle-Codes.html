@@ -1,0 +1,10 @@
+title=〔Timus〕1877. Bicycle Codes
+date=2012-04-24 21:37
+full_date=2012-04-24T21:37:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1877">http://acm.timus.ru/problem.aspx?space=1&amp;num=1877</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1877 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int lock1 = input.nextInt();<br />   int lock2 = input.nextInt();   <br /><br />   if((lock1 % 2 == 1) &amp;&amp; (lock2 % 2 == 0)){<br />    System.out.println("no");<br />   }<br />   else{<br />    System.out.println("yes");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

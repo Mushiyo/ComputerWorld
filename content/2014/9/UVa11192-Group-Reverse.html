@@ -1,0 +1,10 @@
+title=〔UVa〕11192 - Group Reverse
+date=2014-09-07 21:15
+full_date=2014-09-07T21:15:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/111/11192.html">http://uva.onlinejudge.org/external/111/11192.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa11192.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11192 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int G = input.nextInt();<br />   <br />   if(G == 0){<br />    break;<br />   }<br />   <br />   String str = input.next();<br />   int groupLen = str.length() / G;<br />   StringBuilder groupRev = new StringBuilder(str.length());<br />   <br />   for(int i = 0; i &lt; str.length(); i += groupLen){<br />    groupRev.append(new StringBuilder(str.substring(i, i + groupLen)).reverse());<br />   }<br />   <br />   System.out.println(groupRev);<br />  }<br /> }<br /><br />}<br /><br /></pre>

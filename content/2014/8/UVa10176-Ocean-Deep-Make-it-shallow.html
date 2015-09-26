@@ -1,0 +1,10 @@
+title=〔UVa〕10176 - Ocean Deep! Make it shallow!!
+date=2014-08-20 00:37
+full_date=2014-08-20T00:37:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/101/10176.html">http://uva.onlinejudge.org/external/101/10176.html</a><br /><!--more--><br /><br />Solution Note:<br />Note the "#" may not be single.<br />(I got several RE because of this.)<br />If you are using Java, you can use BigInteger.mod() to solve this problem easily.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10176.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.math.BigInteger;<br />import java.util.Scanner;<br /><br />public class UVa10176 {<br /><br /> public static void main(String[] args) {<br />  BigInteger mod = BigInteger.valueOf(131071);<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder inputStr = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   inputStr.append(input.next());<br />  }<br />  <br />  String[] binNum = inputStr.toString().split("\\D+");<br />  for(int i = 0; i &lt; binNum.length; ++i){<br />   BigInteger number = new BigInteger(binNum[i], 2);<br /><br />   if (number.mod(mod).equals(BigInteger.ZERO)) {<br />    System.out.println("YES");<br />   } else {<br />    System.out.println("NO");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

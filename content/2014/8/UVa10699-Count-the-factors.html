@@ -1,0 +1,10 @@
+title=〔UVa〕10699 - Count the factors
+date=2014-08-18 17:56
+full_date=2014-08-18T17:56:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/106/10699.html">http://uva.onlinejudge.org/external/106/10699.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa10699.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10699 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int num = input.nextInt();<br />   <br />   if(num == 0){<br />    break;<br />   }<br />   <br />   System.out.printf("%d : %d\n", num, countPrimeFactor(num));<br />  }<br /> }<br /> <br /> public static int countPrimeFactor(int num){<br />  int primeFactorNum = 0;<br />  <br />  if(num % 2 == 0){<br />   ++primeFactorNum;<br />   <br />   while(num % 2 == 0){<br />    num /= 2;<br />   }<br />  }<br />  <br />  for(int i = 3; num != 1; i += 2){<br />   if(num % i == 0){<br />    ++primeFactorNum;<br />    while(num % i == 0){<br />     num /= i;<br />    }<br />   }<br />  }<br />  <br />  return primeFactorNum;<br /> }<br /><br />}<br /><br /></pre>

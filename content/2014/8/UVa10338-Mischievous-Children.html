@@ -1,0 +1,10 @@
+title=〔UVa〕10338 - Mischievous Children
+date=2014-08-31 00:18
+full_date=2014-08-31T00:18:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/103/10338.html">http://uva.onlinejudge.org/external/103/10338.html</a><br /><!--more--><br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10338.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10338 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int caseNum = input.nextInt();<br />   <br />   for(int dataSet = 1; dataSet &lt;= caseNum; ++dataSet){<br />    String word = input.next();<br />    int[] count = new int[26];<br />    <br />    long ways = 1;<br />    for(int i = 1; i &lt;= word.length(); ++i){<br />     ++count[word.charAt(i - 1) - 'A'];<br />     <br />     ways *= i;<br />     ways /= count[word.charAt(i - 1) - 'A'];<br />    }<br />    <br />    System.out.printf("Data set %d: %d\n", dataSet, ways);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

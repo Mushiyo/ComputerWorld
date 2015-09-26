@@ -1,0 +1,10 @@
+title=〔UVa〕10082 - WERTYU
+date=2013-09-20 22:52
+full_date=2013-09-20T22:52:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/100/10082.html">http://uva.onlinejudge.org/external/100/10082.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10082 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  String keyboard = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";<br /><br />  while (input.hasNext()) {<br />   char[] str = input.nextLine().toCharArray();<br /><br />   for (int i = 0; i &lt; str.length; ++i) {<br />    for (int j = 0; j &lt; keyboard.length(); ++j) {<br />     if (str[i] == keyboard.charAt(j)) {<br />      str[i] = keyboard.charAt(j - 1);<br />     }<br />    }<br />   }<br /><br />   System.out.println(new String(str));<br />  }<br /> }<br /><br />}<br /><br /></pre>

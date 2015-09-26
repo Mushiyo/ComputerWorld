@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a845: B.奶罐小馬買東西
+date=2013-12-31 20:52
+full_date=2013-12-31T20:52:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a845">http://zerojudge.tw/ShowProblem?problemid=a845</a><br /><!--more--><br />解題雜記：<br />　　這題只要會基本的陣列操作就可以了。<br /><br />Java：<br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a845 "B.奶罐小馬買東西" from 102-1延平資研社練習題    */<br />/*  Language: JAVA (625 Bytes)                                                    */<br />/*  Result: AC(92ms, 2.8MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-12-31 16:47:42                                        */<br />/**********************************************************************************/<br /><br /><br />/* Filename: a845.java<br /> * Author: Mushiyo<br /> */<br />package ORIGINAL;<br /><br />import java.util.Scanner;<br /><br />public class a845 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   int[] drinkPrice = new int[N];<br />   <br />   for(int i = 0; i &lt; drinkPrice.length; ++i){<br />    drinkPrice[i] = input.nextInt();<br />   }<br />   <br />   int T = input.nextInt();<br />   while(T &gt; 0){<br />    int x = input.nextInt();<br />    int y = input.nextInt();<br />    <br />    int R = drinkPrice[x] + drinkPrice[y];<br />    <br />    System.out.println(R);<br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕11608 - No Problem
+date=2014-01-04 21:03
+full_date=2014-01-04T21:03:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/116/11608.html">http://uva.onlinejudge.org/external/116/11608.html</a><br /><!--more--><br />解題雜記：<br />　　直接做模擬即可。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; Just do simulation.<br /><br />Java：<br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class UVa11608 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br />  <br />  while(input.hasNext()){<br />   int S = input.nextInt();<br />   <br />   if(S &lt; 0){<br />    break;<br />   }<br />   System.out.println("Case " + caseNum + ":");<br />   <br />   int[] newProblem = new int[12];<br />   for(int i = 0; i &lt; newProblem.length; ++i){<br />    newProblem[i] = input.nextInt(); <br />   }<br />   <br />   int[] needProblem = new int[12];<br />   for(int i = 0; i &lt; needProblem.length; ++i){<br />    needProblem[i] = input.nextInt();<br />    <br />    if(S &lt; needProblem[i]){<br />     System.out.println("No problem. :(");<br />    }<br />    else{<br />     System.out.println("No problem! :D");<br />     S -= needProblem[i];<br />    }<br />    <br />    S += newProblem[i];<br />   }<br />   <br />   ++caseNum;<br />  }<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

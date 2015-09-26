@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d614: 簡易加法運算
+date=2011-07-31 14:35
+full_date=2011-07-31T14:35:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d614">http://zerojudge.tw/ShowProblem?problemid=d614</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d614 "簡易加法運算" from 葆葆                                */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (152ms, 5980KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-16 23:32:55                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.*;<br /><br />public class d614 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  int T = Integer.parseInt(input.nextLine());<br />  //如果用nextInt抓，則接下來的nextLine()會抓到空字串(這是debug時看到的，我不清楚為什麼會這樣)，所以這裡採用這種方式<br />  while (T &gt; 0) {<br />   StringTokenizer arithmeticExpression = new StringTokenizer(<br />     input.nextLine(), "+");<br /><br />   long sum = 0;<br /><br />   while (arithmeticExpression.hasMoreTokens()) {<br />    String num = arithmeticExpression.nextToken().trim();<br />    sum += Long.parseLong(num);<br />   }<br /><br />   System.out.println(sum);<br /><br />   --T;<br />  }<br /> }<br /><br />}<br /></pre>

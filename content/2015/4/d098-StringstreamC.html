@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d098: Stringstream運用練習(C++)
+date=2015-04-01 21:58
+full_date=2015-04-01T21:58:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=d098">http://zerojudge.tw/ShowProblem?problemid=d098</a><br /><!--more--><br />解題雜記：<br />　　字串讀取的基本題。由於我比較熟Java，所以用Java寫。<br />首先一次讀取一行字串，再用String的split來切token。split的分隔符號設成"\s+"，也就是以任何連續的空白符號（如空白、tab、……等）做為分隔符號。接著對個token，檢查其是否只由數字組成（用String的matches，regular expression設成"\d+"，表示連續的數字組成的字串）。若是的話，再用Integer的parseInt來把它轉換為int加總起來。全部的token都檢查過後，輸出總和就完成了。<br /><br /><br />Java：<br /><pre class="brush:java">/* Filename: d098.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class d098 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String[] line = input.nextLine().split("\\s+");<br />   <br />   int sum = 0;<br />   for(int i = 0; i &lt; line.length; ++i){<br />    if(line[i].matches("\\d+")){<br />     sum += Integer.parseInt(line[i]);<br />    }<br />   }<br />   <br />   System.out.println(sum);<br />  }<br /> }<br /><br />}<br /><br /></pre>

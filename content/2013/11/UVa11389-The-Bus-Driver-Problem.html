@@ -1,0 +1,10 @@
+title=〔UVa〕11389 - The Bus Driver Problem
+date=2013-11-24 14:32
+full_date=2013-11-24T14:32:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/113/11389.html">http://uva.onlinejudge.org/external/113/11389.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java：<br /><pre class="brush:java">待補，有需要請留言<br /></pre><br />C++：<br /><pre class="brush:c">/*Filename: u11389.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int n = 0, d = 0, r = 0;<br /><br /> while (cin &gt;&gt; n &gt;&gt; d &gt;&gt; r) {<br />  if (n == 0 &amp;&amp; d == 0 &amp;&amp; r == 0) {<br />   break;<br />  }<br /><br />  int morningLen[n];<br />  for (int i = 0; i &lt; n; ++i) {<br />   cin &gt;&gt; morningLen[i];<br />  }<br /><br />  sort(morningLen, morningLen + n);<br /><br />  int eveningLen[n];<br />  for (int i = 0; i &lt; n; ++i) {<br />   cin &gt;&gt; eveningLen[i];<br />  }<br /><br />  sort(eveningLen, eveningLen + n, greater&lt;int&gt;());<br /><br />  int paid = 0;<br />  for (int i = 0; i &lt; n; ++i) {<br />   int totalLen = morningLen[i] + eveningLen[i];<br /><br />   if (totalLen &gt; d) {<br />    paid += (totalLen - d) * r;<br />   }<br />  }<br /><br />  cout &lt;&lt; paid &lt;&lt; endl;<br /> }<br /><br /> return 0;<br />}<br /><br /><br /></pre>

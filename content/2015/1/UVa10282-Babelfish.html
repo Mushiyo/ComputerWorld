@@ -1,0 +1,10 @@
+title=〔UVa〕10282 - Babelfish
+date=2015-01-09 20:24
+full_date=2015-01-09T20:24:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/102/10282.html">http://uva.onlinejudge.org/external/102/10282.html</a><br /><!--more--><br />Solution Description:<br />Use HashMap to build the dictionary, then check if there's corresponding word of the input query.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10282.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Map;<br />import java.util.HashMap;<br /><br />public class UVa10282 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder out = new StringBuilder(); <br />  Map&lt;String, String&gt; dict = new HashMap&lt;String, String&gt;();<br /><br />  while (input.hasNext()) {<br />   String entry = input.nextLine();<br />   <br />   if(entry.isEmpty()){<br />    break;<br />   }<br />   <br />   int spaceIndex = entry.indexOf(" ");<br />   String en = entry.substring(0, spaceIndex);<br />   String foreign = entry.substring(spaceIndex + 1);<br />   <br />   dict.put(foreign, en);<br />  }<br />  <br />  while(input.hasNext()){<br />   String word = input.next();<br />   <br />   if(dict.containsKey(word)){<br />    out.append(dict.get(word));<br />   } else{<br />    out.append("eh");<br />   }<br />   out.append('\n');<br />  }<br />  <br />  System.out.print(out);<br /> }<br /><br />}<br /><br /></pre>

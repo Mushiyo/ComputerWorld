@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a024: 最大公因數(GCD)
+date=2011-07-04 22:47
+full_date=2011-07-04T22:47:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a024">http://zerojudge.tw/ShowProblem?problemid=a024</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a024 "最大公因數(GCD)"                                          */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (128ms, 5964KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-03 15:19:34                                        */<br />/**********************************************************************************/<br /><br /><br />import java.math.BigInteger;<br />import java.util.Scanner;<br /><br />public class a024 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while (input.hasNext()) {<br />   BigInteger int1 = new BigInteger(input.next());<br />   BigInteger int2 = new BigInteger(input.next());<br />   System.out.println(int1.gcd(int2));<br />  }<br /> }<br /><br />}<br /></pre>

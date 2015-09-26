@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d095: 579 - ClockHands
+date=2013-03-13 22:11
+full_date=2013-03-13T22:11:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d095">http://zerojudge.tw/ShowProblem?problemid=d095</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d095 &quot;579 - ClockHands&quot; from Uva ACM 579                             */<br />/*  Language: JAVA (738 Bytes)                                                    */<br />/*  Result: AC(208ms, 5MB) judge by this@ZeroJudge                                */<br />/*  Author: mushiyo at 2012-09-08 14:58:08                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br />import java.util.StringTokenizer;<br /><br />public class d095 {<br /><br />	public static void main(String[] args) {<br />		Scanner input = new Scanner(System.in);<br />		<br />		while(input.hasNext()){<br />			String time = input.next();<br />			<br />			if(time.equals(&quot;0:00&quot;)){<br />				break;<br />			}<br />			<br />			StringTokenizer tok = new StringTokenizer(time, &quot;:&quot;);<br />			int H = Integer.parseInt(tok.nextToken());<br />			int M = Integer.parseInt(tok.nextToken());<br />			<br />            //let 12 be 0&#176;, 3 be 90&#176; ...<br />			double angleBetweenHM = Math.abs(M * 6 - ((H % 12) * 30 + 0.5 * M));<br />			if(angleBetweenHM &gt; 180){<br />				System.out.printf(&quot;%.3f\n&quot;, 360 - angleBetweenHM);<br />			}<br />			else{<br />				System.out.printf(&quot;%.3f\n&quot;, angleBetweenHM);<br />			}<br />		}<br />	}<br /><br />}<br /><br /></pre>

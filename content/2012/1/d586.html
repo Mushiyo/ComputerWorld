@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d586: 哈密瓜美語
+date=2012-01-29 17:22
+full_date=2012-01-29T17:22:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=d586">http://www.zerojudge.tw/ShowProblem?problemid=d586</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d586 "哈密瓜美語" from jack1                                    */<br />/*  Language: JAVA (932 Bytes)                                                    */<br />/*  Result: AC(752ms, 18.6MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-01-29 14:17:24                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d586 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  String numToEn = "mjqhofawcpnsexdkvgtzblryui";<br />  int n = input.nextInt();<br />  <br />  while(n &gt; 0){<br />   int length = input.nextInt();//吃掉數字<br />   <br />   if(input.hasNextInt()){<br />    while(length  &gt; 0){<br />     System.out.print(numToEn.charAt(input.nextInt() - 1));<br />     --length;<br />    }<br />    System.out.println();<br />   }<br />   else{<br />    String cipher = input.nextLine().replace(" ", "");<br />    System.out.println(dicipher(cipher));<br />   }<br />   <br />   --n;<br />  }<br /> }<br /> <br /> public static int dicipher(String cipher){<br />  String sumEnToNum = "uzrmatifxopnhwvbslekycqjgd";<br />  int sum = 0;<br />  <br />  for(int i = 0; i &lt; cipher.length(); ++i){<br />   for(int j = 0; j &lt; sumEnToNum.length(); ++j){<br />    if(sumEnToNum.charAt(j) == cipher.charAt(i)){<br />     sum += (j + 1);<br />    }<br />   }<br />  }<br />  <br />  return sum;<br /> }<br /><br />}<br /><br /></pre>

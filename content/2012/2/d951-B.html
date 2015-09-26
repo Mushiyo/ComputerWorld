@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d951: B. 好吃的麵包
+date=2012-02-09 20:04
+full_date=2012-02-09T20:04:00.018+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d951">http://zerojudge.tw/ShowProblem?problemid=d951</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d951 "B. 好吃的麵包" from 2010 NPSC 國中組決賽             */<br />/*  Language: JAVA (443 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.3MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-01 19:16:51                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b951 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  <br />  while(T &gt; 0){<br />   int N = input.nextInt();<br />   int X = input.nextInt();<br />   int Y = input.nextInt();<br />   int M = input.nextInt();<br />   int a = (N - M * Y) / (X - Y);<br />   int b = (N - M * X) / -(X - Y);<br />   <br />   System.out.println(a + " " + b);<br />   <br />   --T;<br />  }<br /> }<br /><br />}<br /><br /></pre>

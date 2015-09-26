@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d065: 三人行必有我師
+date=2011-07-11 23:40
+full_date=2011-07-11T23:40:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d065">http://zerojudge.tw/ShowProblem?problemid=d065</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d065 "三人行必有我師" from 板橋高中                       */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (103ms, 5690KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-05 21:18:19                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d065 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] solvedProblem = new int[3];<br />  <br />  solvedProblem[0] = input.nextInt();<br />  solvedProblem[1] = input.nextInt();<br />  solvedProblem[2] = input.nextInt();<br />  <br />  java.util.Arrays.sort(solvedProblem);<br />  System.out.println(solvedProblem[2]);<br /> }<br /><br />}<br /></pre>

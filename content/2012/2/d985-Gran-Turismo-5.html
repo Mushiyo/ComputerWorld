@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d985: Gran Turismo 5
+date=2012-02-11 23:48
+full_date=2012-02-11T23:48:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d985">http://zerojudge.tw/ShowProblem?problemid=d985</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d985 "Gran Turismo 5" from 學姊                                    */<br />/*  Language: JAVA (905 Bytes)                                                    */<br />/*  Result: AC(82ms, 1.7MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-11 23:46:42                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d985 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int N = input.nextInt();<br />  int caseNum = 1;<br />  <br />  while(N &gt; 0){<br />   int M = input.nextInt();<br />   int bestTime = 60 * 60 + 60 + 1;<br />   int totalTime = 0;<br />   int currentTime = 0;<br />   <br />   for(int i = 1; i &lt;= M; ++i){<br />    int A = input.nextInt();<br />    int B = input.nextInt();<br />    currentTime = A * 60 + B;<br />    totalTime += currentTime;<br />    <br />    if(currentTime &lt; bestTime){<br />     bestTime = currentTime;<br />    }<br />   }<br />   <br />   System.out.println("Track " + caseNum + ":");<br />   System.out.println("Best Lap: " + bestTime / 60 + " minute(s) " + bestTime % 60 + " second(s).");<br />   System.out.println("Average: " + (totalTime / M) / 60 + " minute(s) " + (totalTime / M) % 60 + " second(s).");<br />   System.out.println();<br />   <br />   ++caseNum;<br />   --N;<br />  }  <br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10551 - Basic Remains
+date=2014-02-15 21:47
+full_date=2014-02-15T21:47:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/105/10551.html">http://uva.onlinejudge.org/external/105/10551.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10551.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa10551 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int b = input.nextInt();<br />   <br />   if(b == 0){<br />    break;<br />   }<br />   <br />   BigInteger p = new BigInteger(input.next(), b);<br />   BigInteger m = new BigInteger(input.next(), b);<br />   <br />   System.out.println(p.mod(m).toString(b));<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

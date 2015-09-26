@@ -1,0 +1,10 @@
+title=〔UVa〕498 - Polly the Polynomial
+date=2014-08-20 00:53
+full_date=2014-08-20T00:53:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/498.html">http://uva.onlinejudge.org/external/4/498.html</a><br /><!--more--><br />Solution Note:<br />The coefficients and the values of x may be seperate by multiple spaces.<br />I got a RE because of this...<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa498.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa498 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder out = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   String[] cs = input.nextLine().split("\\s+");<br />   int[] c = new int[cs.length];<br />   for(int i = 0; i &lt; c.length; ++i){<br />    c[i] = Integer.valueOf(cs[i]);<br />   }<br />   <br />   String[] xs = input.nextLine().split("\\s+");<br />   <br />   for(int i = 0; i &lt; xs.length; ++i){<br />    int value = 0;<br />    int x = Integer.valueOf(xs[i]);<br />    <br />    for(int j = c.length - 1, powX = 1; j &gt;= 0; --j, powX *= x){<br />     value += c[j] * powX;<br />    }<br />    <br />    if(i != 0){<br />     out.append(" " + value);<br />    }<br />    else{<br />     out.append(value);<br />    }<br />   }<br />   out.append('\n');<br />  }<br />  <br />  System.out.print(out);<br /> }<br /><br />}<br /><br /></pre>

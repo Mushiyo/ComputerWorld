@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a693: 吞食天地
+date=2015-04-05 00:02
+full_date=2015-04-05T00:02:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=a693">http://zerojudge.tw/ShowProblem?problemid=a693</a><br /><!--more--><br />解題雜記：<br />　　假設我們有n個食物的飽足度\(f_1, f_2, \cdots, f_n\)。現在定義數列S<sub>j</sub>，0≦j≦n，其中S<sub>0</sub>=0，而對於1≦j≦n，\(S_j = f_1 + f_2 + \cdots + f_j = \sum_{i=1}^{j}f_i \)。<br />不難看出當1≦l＜r≦n，<br />&nbsp;\[ \begin{eqnarray}<br />S_r - S_{l-1} &amp;=&amp; (f_1 + f_2 + \cdots + f_r) - (f_1 + f_2 + \cdots + f_{l-1}) \\ &amp;=&amp; f_l + f_{l+1} + \cdots + f_r<br />\end{eqnarray}\]<br />因此，每當我們要計算第l個到r個食物的飽足度的總和時，我們只要計算S<sub>r</sub>-S<sub>l-1</sub>即可。<br /><br />Java：<br /><pre class="brush:java">/* Filename: a693.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class a693 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final int MAX_N = 100000 + 1;<br />  int[] food = new int[MAX_N];<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   int m = input.nextInt();<br />   <br />   for(int i = 1; i &lt;= n; ++i){<br />    food[i] = food[i - 1] + input.nextInt();<br />   }<br />   <br />   while(m &gt; 0){<br />    int l = input.nextInt();<br />    int r = input.nextInt();<br />    <br />    System.out.println(food[r] - food[l - 1]);<br />    <br />    --m;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔更動〕SyntaxHighlighter語法修改&新增MathJax
+date=2014-03-06 23:55
+full_date=2014-03-06T23:55:00.003+08:00
+type=post
+allowComment=true
+tags=〔更動〕, 【給閱讀這個網誌的你】
+status=published
+~~~~~~
+
+這二天做了這二件事：<br /><br />1. <a href="http://alexgorbatchev.com/SyntaxHighlighter/" target="_blank">SyntaxHighlighter</a>改採用<a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/api/autoloader.html" target="_blank">autoloader</a>的方式載入brush<br />這裡的程式碼都是用SyntaxHighlighter來上色的。<br />最初我是按<a href="http://wupinny.blogspot.tw/2010/05/blogger-syntaxhighlighter.html" target="_blank">這篇</a>裡面的方式來安裝，這個方式會一次載入所有種類的brush，但是通常一篇文章裡所用到的brush種類（也可說是程式語言種類）不會太多，所以這樣會造成網頁載入時間不必要的增加。<br />SyntaxHighlighter在第三版增加了autoloader功能，可以根據網頁當下所用來的brush種類來決定要載入哪些brush，如此就不會載入不必要的檔案，網頁開啟完成的時間就會變短。<br />雖然當初安裝時就是裝目前最新的3.0.83版，可是一直到幾個月前爬官方文件時才發現有這個功能（汗）<br />昨天終於有空把它改成用autoloader的方式了！<br />雖然研究了好久才改成功，但是效果非常顯著所以非常值得。<br />尤其是對script放在dropbox上，電腦網速又不快的我而言，開啟的速度真的快了不少。<br />然後，網路上有關autoloader的使用這部份的謬誤很多（爬了一堆文結果都沒用= =），或許哪天我會生一篇有關SyntaxHighlighter的文章（？）<br /><br />2.&nbsp;加入<a href="http://www.mathjax.org/" target="_blank">MathJax</a><br />有時候會有在文章裡用數學式的需求。<br />先前都是透過<a href="http://www.codecogs.com/latex/eqneditor.php" target="_blank">Online LaTeX Equation EditorOnline</a>這個網站來完成的，<br />不過由於那邊生出來的式子會以gif檔的方式呈現，要複製或修改皆不太方便，再加上圖片是放在對方那邊，要是哪天網站關了或出了什麼意外，那我這邊的內容也就跟著GG了。<br />於是便希望有一個能不用依靠外部網站也能漂亮顯示數學式的方案。<br />很幸運的經過搜尋後找到MathJax，<br />雖然目前只完成了最基本的設定，接下來還得花些時間爬文件，<br />但是現在在這裡用\(\LaTeX\)的語法就能漂亮的顯示數學式了^^<br />例如說，我在寫文章時打上：<br /><pre class="brush:plain">\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]</pre>結果就會顯示為： <br />\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]<br />據說這對留言板的留言也是有效的，有興趣的讀者歡迎留言試試看XD<br /><br />3.<br />因為MathJax有提供<a href="http://www.mathjax.org/community/mathjax-badge/" target="_blank">badges</a>給使用者放在網頁上，所以我在側欄新增了一個「技術提供」區塊來放上它，同時也放上了SyntaxHighlighter的連結，以表示我對這二個好用工具的感謝和支持。<br />嗯……是說SyntaxHighlighter用了這麼久才放，是不是虧待它太多了呢……<br /><br />最後，我覺得我該找時間好好讀\(\LaTeX\)了（無誤）

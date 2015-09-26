@@ -1,0 +1,10 @@
+title=〔UVa〕11854 - Egypt
+date=2014-09-21 17:43
+full_date=2014-09-21T17:43:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/118/11854.html">http://uva.onlinejudge.org/external/118/11854.html</a><br /><!--more--><br />Solution Description:<br />Let a, b, c be the three sides of the triangle, where c is the largest side, then check if \( a^2 + b^2 = c^2 \). If true, then the triangle is a right triangle.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11854.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11854 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int side1 = input.nextInt();<br />   int side2 = input.nextInt();<br />   int side3 = input.nextInt();<br />   <br />   if(side1 == 0 &amp;&amp; side2 == 0 &amp;&amp; side3 == 0){<br />    break;<br />   }<br /><br />   if (isRightTriangle(side1, side2, side3)) {<br />    System.out.println("right");<br />   } else {<br />    System.out.println("wrong");<br />   }<br />  }<br /> }<br /><br /> static boolean isRightTriangle(int side1, int side2, int side3) {<br />  int sideSum = side1 + side2 + side3;<br />  int maxSide = Math.max(Math.max(side1, side2), side3);<br />  int minSide = Math.min(Math.min(side1, side2), side3);<br />  int midSide = sideSum - maxSide - minSide;<br /><br />  return Math.hypot(minSide, midSide) == maxSide;<br /> }<br /><br />}<br /><br /></pre>

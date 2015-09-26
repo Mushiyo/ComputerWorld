@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b078: E. 白飯
+date=2011-12-05 21:55
+full_date=2011-12-05T21:55:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b078">http://zerojudge.tw/ShowProblem?problemid=b078</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b078 "E. 白飯" from 2007 NPSC 國中組初賽                      */<br />/*  Language: JAVA (657 Bytes)                                                    */<br />/*  Result: AC(132ms, 4.3MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2011-11-29 21:06:40                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b078 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   if(n == 0){<br />    break;<br />   }<br />   <br />   int[] studentScore = new int[n];<br />   int sum = 0;<br />   <br />   for(int i = 0; i &lt; studentScore.length; ++i){<br />    studentScore[i] = input.nextInt();<br />    sum += studentScore[i];<br />   }<br />   <br />   double avg = (double)sum / n;<br />   int belowAvg = 0;<br />   <br />   for(int i = 0; i &lt; studentScore.length; ++i){<br />    if(studentScore[i] &lt; avg){<br />     ++belowAvg;<br />    }<br />   }<br />   <br />   System.out.println(belowAvg);<br />  } <br />  <br /> }<br /><br />}<br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d153: 六、智力测验
+date=2011-12-04 14:53
+full_date=2011-12-04T14:53:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d153"><b>http://zerojudge.tw/ShowProblem?problemid=d153</b></a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d153 &quot;六、智力测验&quot; from 科技冬令营信息学（计算机）奥林匹克竞赛样题*/<br />/*  Language: JAVA (547 Bytes)                                                    */<br />/*  Result: AC(598ms, 34.2MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2011-11-28 22:16:22                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Arrays;<br />import java.util.Scanner;<br /><br />public class d153 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  int T = input.nextInt();<br />  while(T &gt; 0){<br />   int N = input.nextInt();<br />   int[] scores = new int[N];<br />   for(int i = 0; i &lt; scores.length; ++i){<br />    scores[i] = input.nextInt();<br />   }<br />   <br />   Arrays.sort(scores);<br />   <br />   if(N % 2 != 0){<br />    System.out.println(scores[N / 2]);<br />   }<br />   else{<br />    System.out.println(scores[(N / 2) - 1]);<br />   }<br />   <br />   --T;<br />  }<br /> }<br /><br />}<br /></pre>

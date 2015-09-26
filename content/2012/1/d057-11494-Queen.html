@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d057: 11494 - Queen
+date=2012-01-26 21:14
+full_date=2012-01-26T21:14:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d057">http://zerojudge.tw/ShowProblem?problemid=d057</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d057 "11494 - Queen" from UVa ACM 11494                              */<br />/*  Language: JAVA (618 Bytes)                                                    */<br />/*  Result: AC(564ms, 24.9MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-01-26 18:41:49                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d057 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int x1 = input.nextInt();<br />   int y1 = input.nextInt();<br />   int x2 = input.nextInt();<br />   int y2 = input.nextInt();<br />   if((x1 == 0) &amp;&amp; (y1 == 0) &amp;&amp; (x2 == 0) &amp;&amp; (y2 == 0)){<br />    break;<br />   }<br />   <br />   if((x1 == x2) &amp;&amp; (y1 == y2)){<br />    System.out.println("0");<br />   }<br />   else if((Math.abs(x1 - x2) == Math.abs(y1 - y2)) || (x1 == x2) || (y1 == y2)){<br />    System.out.println("1");<br />   }<br />   else{<br />    System.out.println("2");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

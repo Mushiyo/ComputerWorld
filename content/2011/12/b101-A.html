@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b101: A. 收集凱蒂貓
+date=2011-12-23 21:20
+full_date=2011-12-23T21:20:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b101">http://zerojudge.tw/ShowProblem?problemid=b101</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b101 "A. 收集凱蒂貓" from 2005 NPSC 國中組決賽             */<br />/*  Language: JAVA (651 Bytes)                                                    */<br />/*  Result: AC(556ms, 27.7MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2011-12-23 21:11:46                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b101 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   int[] collection = new int[42];<br />   <br />   if(N == 0){<br />    break;<br />   }<br />   <br />   while(N &gt; 0){<br />    int M = input.nextInt();<br />    while(M &gt; 0){<br />     ++collection[input.nextInt()];<br />     --M;<br />    }<br />    --N;<br />   }<br />   <br />   int mostCollect = Integer.MAX_VALUE;<br />   for(int i = 1; i &lt; collection.length; ++i){<br />    if(collection[i] &lt; mostCollect){<br />     mostCollect = collection[i];<br />    }<br />   }<br />   <br />   System.out.println(mostCollect);<br />  }<br /> }<br /><br />}<br /><br /></pre>

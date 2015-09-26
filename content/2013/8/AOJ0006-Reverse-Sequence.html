@@ -1,0 +1,10 @@
+title=〔AOJ〕0006:   Reverse Sequence
+date=2013-08-09 23:58
+full_date=2013-08-09T23:58:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0006">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0006</a><br /><!--more--><br />解題雜記：<br />　　&nbsp; 反序輸出字串即可。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0006.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> string str;<br /><br />    while(cin &gt;&gt; str){<br />        for(int i = str.size() - 1; i&gt;= 0; --i){<br />         cout &lt;&lt; str[i];<br />        }<br />        cout &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

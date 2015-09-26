@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d659: 11727 - Cost Cutting
+date=2011-07-31 14:36
+full_date=2011-07-31T14:36:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d659">http://zerojudge.tw/ShowProblem?problemid=d659</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d659 "11727 - Cost Cutting" from UVa 11727                           */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (116ms, 5712KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-17 15:18:30                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.*;<br /><br />public class d659 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  int caseNum = 1;<br />  int[] salary = new int[3];<br />  <br />  while(caseNum &lt;= T){<br />   for(int i = 0; i &lt; salary.length; ++i){<br />    salary[i] = input.nextInt();<br />   }<br />   <br />   Arrays.sort(salary);<br />   <br />   System.out.println("Case " + caseNum + ": " + salary[1]);<br />   <br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /></pre>

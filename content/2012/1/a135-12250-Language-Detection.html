@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a135: 12250 - Language Detection
+date=2012-01-13 21:58
+full_date=2012-01-13T21:58:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a135">http://zerojudge.tw/ShowProblem?problemid=a135</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a135 "12250 - Language Detection" from UVa ACM 12250                 */<br />/*  Language: JAVA (846 Bytes)                                                    */<br />/*  Result: AC(112ms, 3.5MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-13 21:54:15                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a135 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br />  <br />  while(input.hasNext()){<br />   String S = input.next();<br />   <br />   if(S.equals("#")){<br />    break;<br />   }<br />   <br />   System.out.print("Case " + caseNum + ": ");<br />   ++caseNum;<br />   <br />   if(S.equals("HELLO")){<br />    System.out.println("ENGLISH");<br />   }<br />   else if(S.equals("HOLA")){<br />    System.out.println("SPANISH");<br />   }<br />   else if(S.equals("HALLO")){<br />    System.out.println("GERMAN");<br />   }<br />   else if(S.equals("BONJOUR")){<br />    System.out.println("FRENCH");<br />   }<br />   else if(S.equals("CIAO")){<br />    System.out.println("ITALIAN");<br />   }<br />   else if(S.equals("ZDRAVSTVUJTE")){<br />    System.out.println("RUSSIAN");<br />   }<br />   else{<br />    System.out.println("UNKNOWN");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

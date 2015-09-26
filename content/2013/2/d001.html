@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d001: 字串反轉
+date=2013-02-16 23:33
+full_date=2013-02-16T23:33:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d001">http://judge.nccucs.org/ShowProblem?problemid=d001</a><br /><!--more--><br />解題雜記：<br />　　將字串依倒序輸出即可。<br /><br />C++： <br /><pre class="brush:c">#include &lt;iostream&gt;<br />#include &lt;string&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> string s;<br /> <br /> while(getline(cin, s)){<br />  for(string::reverse_iterator rit = s.rbegin(); rit != s.rend(); ++rit){<br />   cout &lt;&lt; *rit;<br />  }<br />  cout &lt;&lt; endl;<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

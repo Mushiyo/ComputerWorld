@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d073: SIG 2009 Winter Warmup 2 - 倍數判斷
+date=2013-07-27 23:48
+full_date=2013-07-27T23:48:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d073">http://judge.nccucs.org/ShowProblem?problemid=d073</a><br /><!--more--><br />解題雜記：<br />　　判斷是否a ≡ 0 (mod b)即可。<br /><br />C++： <br /><pre class="brush:c">/*Filename: d073.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int a, b;<br /><br />    while(cin &gt;&gt; a &gt;&gt; b){<br />        if(a % b == 0){<br />         cout &lt;&lt; "YES" &lt;&lt; endl;<br />        }<br />        else{<br />         cout &lt;&lt; "NO" &lt;&lt; endl;<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

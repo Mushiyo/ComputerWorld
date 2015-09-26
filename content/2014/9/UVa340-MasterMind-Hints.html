@@ -1,0 +1,10 @@
+title=〔UVa〕340 - Master-Mind Hints
+date=2014-09-04 23:28
+full_date=2014-09-04T23:28:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/3/340.html">http://uva.onlinejudge.org/external/3/340.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa340.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa340 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int gameNum = 1;<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br /><br />   if (N == 0) {<br />    break;<br />   }<br /><br />   int[] secretCode = new int[N];<br />   for (int i = 0; i &lt; secretCode.length; ++i) {<br />    secretCode[i] = input.nextInt();<br />   }<br /><br />   System.out.printf("Game %d:\n", gameNum);<br />   while (true) {<br />    int[] guess = new int[N];<br />    for (int i = 0; i &lt; guess.length; ++i) {<br />     guess[i] = input.nextInt();<br />    }<br /><br />    if (isAll0(guess)) {<br />     break;<br />    }<br /><br />    int strongMatch = 0;<br />    int[] countOther = new int[10];<br />    for (int i = 0; i &lt; secretCode.length; ++i) {<br />     if (guess[i] == secretCode[i]) {<br />      ++strongMatch;<br />     } else {<br />      ++countOther[secretCode[i]];<br />     }<br />    }<br /><br />    int weakMatch = 0;<br />    for (int i = 0; i &lt; secretCode.length; ++i) {<br />     if (guess[i] != secretCode[i]) {<br />      if (countOther[guess[i]] &gt; 0) {<br />       ++weakMatch;<br />      }<br />      --countOther[guess[i]];<br />     }<br />    }<br /><br />    System.out.printf("    (%d,%d)\n", strongMatch, weakMatch);<br />   }<br />   ++gameNum;<br />  }<br /> }<br /><br /> static boolean isAll0(int[] guess) {<br />  for (int i = 0; i &lt; guess.length; ++i) {<br />   if (guess[i] != 0) {<br />    return false;<br />   }<br />  }<br /><br />  return true;<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b035: D. 海加爾山之戰
+date=2011-08-06 15:31
+full_date=2011-08-06T15:31:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b035">http://zerojudge.tw/ShowProblem?problemid=b035</a><br /><!--more-->C： <br /><pre class="brush:cpp">/**********************************************************************************/<br />/*  Problem: b035 "D. 海加爾山之戰" from 2006 NPSC 國中組決賽          */<br />/*  Language: C                                                                   */<br />/*  Result: AC (28ms, 208KB) on ZeroJudge                                         */<br />/*  Author: mushiyo at 2011-08-02 16:57:24                                        */<br />/**********************************************************************************/<br /><br /><br />#include &lt;stdio.h&gt;<br /><br />int main(){<br />    int n = 0;<br />    int conqueredHour = 0;<br />    int sideLength = 0;<br />    int i = 1;<br /> <br />    scanf("%d", &amp;n);<br /> <br />    while(n != 0){<br />        for(i = 1; i &lt;= n; ++i) {<br />            scanf("%d", &amp;sideLength);<br />            conqueredHour += (sideLength * sideLength);<br />        }<br />        printf("%d\n", conqueredHour);<br />  <br />        conqueredHour = 0;<br />        scanf("%d", &amp;n);<br />    }<br />    <br />    return 0;<br />}<br /></pre>

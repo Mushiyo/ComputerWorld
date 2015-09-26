@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a224: 明明愛明明
+date=2013-03-17 13:44
+full_date=2013-03-17T13:44:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目： <a href="http://zerojudge.tw/ShowProblem?problemid=a224">http://zerojudge.tw/ShowProblem?problemid=a224</a><span class="ShowProblem"><span id="problem_title"></span></span><br /><!--more--><br />解題雜記：<br />　　輸出說明中的「重新安排順序」讓這題乍看之下很可怕。但經思考後就會發現這跟順序一點關係都沒有，只是基本的迴文概念題。仔細思考迴文的定義，我們可發現，若一個句子能構成迴文，則它裡面出現奇數次的字母最多只有一個。只要就這點做判斷就可順利AC。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a224 "明明愛明明" from                                          */<br />/*  Language: JAVA (731 Bytes)                                                    */<br />/*  Result: AC(84ms, 2MB) judge by this@ZeroJudge                                 */<br />/*  Author: mushiyo at 2013-03-17 12:23:57                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br /><br />public class a224 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String s= input.nextLine();<br />   s = s.toLowerCase();<br />   Set&lt;Character&gt; charSet = new HashSet&lt;Character&gt;();<br />   <br />   for(int i = 0; i &lt; s.length(); ++i){<br />    if(Character.isLowerCase(s.charAt(i))){<br />     if(charSet.contains(s.charAt(i))){<br />      charSet.remove(s.charAt(i));<br />     }<br />     else{<br />      charSet.add(s.charAt(i));<br />     }<br />    }<br />    <br />   }<br />   <br />   if(charSet.size() &gt; 1){<br />    System.out.println("no...");<br />   }<br />   else{<br />    System.out.println("yes !");<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

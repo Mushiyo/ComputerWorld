@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d471: 0 與 1 的遊戲
+date=2011-07-15 22:53
+full_date=2011-07-15T22:53:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d471">http://zerojudge.tw/ShowProblem?problemid=d471</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d471 "0 與 1 的遊戲" from 葆葆                                 */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (560ms, 6196KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-05 23:04:57                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d471 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  while (input.hasNext()) {<br />   int bit = input.nextInt();<br />   <br />   for(int i = 0; i &lt; Math.pow(2, bit); ++i){<br />    printZero(bit - Integer.toBinaryString(i).length());<br />    System.out.println(Integer.toBinaryString(i));<br />   }<br />  }<br /> }<br /> <br /> public static void printZero(int numOfZero){<br />  for(int i = 1; i &lt;= numOfZero; ++i){<br />   System.out.print(0);<br />  }  <br /> }<br /><br />}<br /></pre>

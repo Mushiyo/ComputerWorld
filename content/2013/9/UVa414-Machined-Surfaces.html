@@ -1,0 +1,10 @@
+title=〔UVa〕414 - Machined Surfaces
+date=2013-09-29 22:46
+full_date=2013-09-29T22:46:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/4/414.html">http://uva.onlinejudge.org/external/4/414.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u414 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   input.nextLine(); // eat change line<br />   <br />   if(N == 0){<br />    break;<br />   }<br />   <br />   char[][] img = new char[N][25];<br />   for(int i = 0; i &lt; N; ++i){<br />    img[i] = input.nextLine().toCharArray();<br />   }<br />      <br />   int[] voidCount = new int[N];<br />   int minVoid = Integer.MAX_VALUE;<br />   for(int i = 0; i &lt; N; ++i){<br />    for(int j = 0; j &lt; 25; ++j){<br />     if(img[i][j] == ' '){<br />      ++voidCount[i];<br />     }<br />    }<br />    <br />    if(voidCount[i] &lt; minVoid){<br />     minVoid = voidCount[i];<br />    }<br />   }<br />   <br />   int totalVoid = 0;<br />   for(int i = 0; i &lt; N; ++i){<br />    totalVoid += (voidCount[i] - minVoid);<br />   }<br />   <br />   System.out.println(totalVoid);<br />  }<br /> }<br /><br />}<br /><br /></pre>

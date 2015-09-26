@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b222: A. 犯人的編號
+date=2011-12-20 22:28
+full_date=2011-12-20T22:28:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b222">http://zerojudge.tw/ShowProblem?problemid=b222</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b222 "A. 犯人的編號" from 2008 NPSC 國中組決賽             */<br />/*  Language: JAVA (677 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2011-12-20 22:18:44                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b222 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String criminalID = input.next();<br />   int K = input.nextInt();<br />   <br />   while(K &gt; 0){<br />    String guessID = input.next();<br />    int numOfA = 0;<br />    int numOfB = 0;<br />    <br />    for(int i = 0; i &lt; guessID.length(); ++i){<br />     if(guessID.charAt(i) == criminalID.charAt(i)){<br />      ++numOfA;<br />     }<br />     else if(criminalID.contains(Character.toString(guessID.charAt(i)))){<br />      ++numOfB;      <br />     }<br />    }<br />    <br />    System.out.println(numOfA + "A" + numOfB + "B");<br />    <br />    --K;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

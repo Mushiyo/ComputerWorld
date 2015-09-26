@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d709: 判断质数（一）
+date=2014-12-07 22:54
+full_date=2014-12-07T22:54:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d709">http://zerojudge.tw/ShowProblem?problemid=d709</a> <br /><!--more--><br />解題雜記：<br />　　用篩法，然後以篩出的結果判斷是否為質數即可。<br /><br />Java：<br /><pre class="brush:java">/* Filename: d709.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Arrays;<br />import java.util.Scanner;<br /><br />public class d709 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final int upperBound = 1000000;<br />  boolean[] isPrime = sieve(upperBound);<br />  StringBuilder output = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br /><br />   if (N == 0) {<br />    break;<br />   }<br /><br />   if (isPrime[N]) {<br />    output.append("0\n");<br />   } else {<br />    output.append("1\n");<br />   }<br /><br />  }<br />  <br />  System.out.println(output);<br /> }<br /><br /> public static boolean[] sieve(int upperBound) {<br />  boolean[] isPrime = new boolean[upperBound];<br /><br />  Arrays.fill(isPrime, 2, upperBound, true);<br /><br />  int sqrtSize = (int) Math.sqrt(upperBound) + 1;<br /><br />  for (int i = 2; i &lt; sqrtSize; ++i) {<br />   if (isPrime[i] == true) {<br />    for (int j = i * i; j &lt; upperBound; j += i) {<br />     isPrime[j] = false;<br />    }<br />   }<br />  }<br /><br />  return isPrime;<br /> }<br /><br />}<br /><br /></pre>

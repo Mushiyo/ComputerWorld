@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a059: 完全平方和
+date=2013-03-16 20:19
+full_date=2013-03-16T20:19:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a059">http://zerojudge.tw/ShowProblem?problemid=a059</a><br /><!--more--><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a059 "完全平方和" from                                          */<br />/*  Language: JAVA (772 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-03-16 18:49:59                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class a059 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int T = input.nextInt();<br />   int caseNum = 1;<br />   <br />   while(T &gt; 0){<br />    int a = input.nextInt();<br />    int b = input.nextInt();<br />    <br />    long squareSum = 0;<br />    for(int i = a; i &lt;= b; ++i){<br />     if(isPerfectSquare(i)){<br />      squareSum += i;<br />     }<br />    }<br />    <br />    System.out.println("Case " + caseNum + ": " + squareSum);<br />    <br />    ++caseNum;<br />    --T;<br />   }<br />  }<br /> }<br /> <br /> public static boolean isPerfectSquare(int num){<br />  double squareRoot = Math.sqrt(num);<br />  <br />  if(Math.ceil(squareRoot) == Math.floor(squareRoot)){<br />   return true;<br />  }<br />  <br />  return false;<br /> }<br /><br />}<br /><br /></pre>

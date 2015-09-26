@@ -1,0 +1,10 @@
+title=〔Timus〕1243. Divorce of the Seven Dwarfs
+date=2015-03-28 22:06
+full_date=2015-03-28T22:06:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1243">http://acm.timus.ru/problem.aspx?space=1&amp;num=1243</a><br /><!--more--><br />Solution Description:<br />Mod the input number 7 and output the remainder. Since the input can be 10<sup>50</sup>, this is a big number problem. Java users can simply use the <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html" rel="nofollow" target="_blank">BigInteger</a> class.<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus1243.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class Timus1243 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  BigInteger seven = BigInteger.valueOf(7);<br /><br />  while (input.hasNext()) {<br />   BigInteger N = input.nextBigInteger();<br />   <br />   System.out.println(N.mod(seven));<br />  }<br /> }<br /><br />}<br /><br /></pre>

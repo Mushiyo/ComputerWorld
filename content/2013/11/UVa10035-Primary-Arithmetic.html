@@ -1,0 +1,10 @@
+title=〔UVa〕10035 - Primary Arithmetic
+date=2013-11-17 16:18
+full_date=2013-11-17T16:18:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/100/10035.html">http://uva.onlinejudge.org/external/100/10035.html</a><br /><!--more--><br />解題雜記：<br />待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++：<br /><pre class="brush:c">/*Filename: u10035.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int num1 = 0, num2 = 0;<br /><br /> while (cin &gt;&gt; num1 &gt;&gt; num2) {<br />  if (num1 == 0 &amp;&amp; num2 == 0) {<br />   break;<br />  }<br /><br />  int countCarry = 0;<br />  int carry = 0;<br />  while (num1 != 0 || num2 != 0) {<br />   int unitDigit1 = num1 % 10;<br />   int unitDigit2 = num2 % 10;<br /><br />   if (unitDigit1 + unitDigit2 + carry &gt; 9) {<br />    ++countCarry;<br />    carry = (unitDigit1 + unitDigit2 + carry) / 10;<br />   } else {<br />    carry = 0;<br />   }<br /><br />   num1 /= 10;<br />   num2 /= 10;<br />  }<br /><br />  if (countCarry &gt; 1) {<br />   cout &lt;&lt; countCarry &lt;&lt; " carry operations." &lt;&lt; endl;<br />  } else if (countCarry == 1) {<br />   cout &lt;&lt; "1 carry operation." &lt;&lt; endl;<br />  } else {<br />   cout &lt;&lt; "No carry operation." &lt;&lt; endl;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

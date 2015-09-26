@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.1 Your Ride Is Here
+date=2011-12-04 18:52
+full_date=2011-12-04T18:52:00.000+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br /> ID: mushiyo1<br /> LANG: JAVA<br /> PROG: ride<br /> */<br /><br />import java.util.Scanner;<br />import java.io.*;<br /><br />class ride {<br /> public static void main(String[] args) throws FileNotFoundException {<br />  Scanner input = new Scanner(new File("ride.in"));<br />  PrintWriter output = new PrintWriter(new File("ride.out"));<br />  <br />  while(input.hasNext()){<br />   String cometName = input.next();<br />   String groupName = input.next();<br />   <br />   int cNum = 1, gNum = 1;<br />   for(int i = 0; i &lt; cometName.length(); ++ i){<br />    cNum *= cometName.charAt(i) - 'A' + 1;<br />   }<br />   <br />   for(int i = 0; i &lt; groupName.length(); ++ i){<br />    gNum *= groupName.charAt(i) - 'A' + 1;<br />   }<br />   <br />   if((cNum % 47) == (gNum % 47)){<br />    output.println("GO");<br />   }<br />   else{<br />    output.println("STAY");<br />   }<br />   <br />  }<br />  <br />  input.close();<br />  output.close();<br /> }<br /><br />}<br /></pre>

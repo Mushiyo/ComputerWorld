@@ -1,0 +1,10 @@
+title=〔UVa〕484 - The Department of Redundancy Department
+date=2015-01-09 20:22
+full_date=2015-01-09T20:22:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/484.html">http://uva.onlinejudge.org/external/4/484.html</a><br /><!--more--><br />Solution Description:<br />Use LinkedHashMap to count how many entries there are. Since LinkedHashMap will keep the keys with their insertion order, just iterate and output each entry in the Map after finished counting.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa484.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Map;<br />import java.util.LinkedHashMap;<br /><br />public class UVa484 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  Map&lt;Integer, Integer&gt; freqRec = new LinkedHashMap&lt;Integer, Integer&gt;();<br /><br />  while (input.hasNext()) {<br />   int i = input.nextInt();<br />   if (freqRec.containsKey(i)) {<br />    int freq = freqRec.get(i);<br />    ++freq;<br /><br />    freqRec.put(i, freq);<br />   } else {<br />    freqRec.put(i, 1);<br />   }<br />  }<br /><br />  for (Map.Entry&lt;Integer, Integer&gt; record : freqRec.entrySet()) {<br />   int num = record.getKey();<br />   int freq = record.getValue();<br /><br />   System.out.println(num + " " + freq);<br />  }<br /> }<br /><br />}<br /><br /></pre>

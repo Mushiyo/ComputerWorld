@@ -1,0 +1,10 @@
+title=〔UVa〕10102 - The path in the colored fie
+date=2014-01-29 16:37
+full_date=2014-01-29T16:37:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/101/10102.html">http://uva.onlinejudge.org/external/101/10102.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10102.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.awt.Point;<br />import java.util.List;<br />import java.util.ArrayList;<br /><br />public class UVa10102 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   List&lt;Point&gt; onePos = new ArrayList&lt;Point&gt;();<br />   List&lt;Point&gt; threePos = new ArrayList&lt;Point&gt;();<br />   int M = input.nextInt();<br />   <br />   for(int i = 0; i &lt; M; ++i){<br />    String rowOfCell = input.next();<br />    for(int j = 0; j &lt; M; ++j){<br />     int cell = rowOfCell.charAt(j) - '0';<br />     <br />     if(cell == 1){<br />      onePos.add(new Point(i, j));<br />     }<br />     <br />     if(cell == 3){<br />      threePos.add(new Point(i, j));<br />     }<br />    }<br />   }<br />   <br />   int minStep = 0;<br />   for(int i = 0; i &lt; onePos.size(); ++i){<br />    Point cell1 = onePos.get(i);<br />    <br />    int nearestDist = Integer.MAX_VALUE;<br />    for(int j = 0; j &lt; threePos.size(); ++j){<br />     Point cell3 = threePos.get(j);<br />     <br />     nearestDist = Math.min(nearestDist, ManhattanDistance(cell1, cell3));<br />    }<br />    <br />    minStep = Math.max(minStep, nearestDist);<br />   }<br />   <br />   System.out.println(minStep);<br />  }<br /> }<br /> <br /> public static int ManhattanDistance(Point p1, Point p2){<br />  return Math.abs(p1.x - p2.x) + Math.abs(p1.y - p2.y);<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

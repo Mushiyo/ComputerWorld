@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b095: A. 測謊機
+date=2012-01-11 23:20
+full_date=2012-01-11T23:20:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b095">http://zerojudge.tw/ShowProblem?problemid=b095</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b095 "A. 測謊機" from 2005 NPSC 國中組初賽                   */<br />/*  Language: JAVA (841 Bytes)                                                    */<br />/*  Result: AC(104ms, 3.7MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-11 21:48:31                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b095 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int num1 = input.nextInt();<br />   int num2 = input.nextInt();<br />   int max = Math.max(num1, num2);<br />   <br />   int[] response = new int[30];<br />   for(int i = 0; i &lt; response.length; ++i){<br />    response[i] = input.nextInt();<br />   }<br />   <br />   int countWrong = 0;<br />   boolean correct = false;<br />   for(int i = 0; i &lt; response.length; ++i){<br />    if(response[i] == 0){<br />     continue;<br />    }<br />    else if(response[i] != max){<br />     ++countWrong;<br />     if(countWrong &gt;= 3){<br />      break;<br />     }<br />    }<br />    else{<br />     correct = true;<br />     break;<br />    }<br />   }<br />   <br />   if(correct){<br />    System.out.println("Y");<br />   }<br />   else{<br />    System.out.println("N");<br />   }<br />   <br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a244: 新手訓練 ~ for + if
+date=2011-12-06 20:08
+full_date=2011-12-06T20:08:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a244">http://zerojudge.tw/ShowProblem?problemid=a244</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a244 "新手訓練 ~ for + if" from 新手訓練系列 ~ 1           */<br />/*  Language: JAVA (593 Bytes)                                                    */<br />/*  Result: AC(776ms, 26.6MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2011-11-30 22:02:10                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a244 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int N = input.nextInt();<br />  <br />  while(N &gt; 0){<br />   int a = input.nextInt();<br />   long b = input.nextLong();<br />   long c = input.nextLong();<br />   <br />   switch(a){<br />    case 1:<br />     System.out.println(b + c);<br />     break;<br />     <br />    case 2:<br />     System.out.println(b - c);<br />     break;<br />     <br />    case 3:<br />     System.out.println(b * c);<br />     break;<br />     <br />    default:<br />     System.out.println(b / c);<br />     break;<br />   }<br />   <br />   --N;<br />  }<br />  <br /> }<br /><br />}<br /></pre>

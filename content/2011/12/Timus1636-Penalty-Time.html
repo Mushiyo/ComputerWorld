@@ -1,0 +1,10 @@
+title=〔Timus〕1636. Penalty Time
+date=2011-12-07 20:39
+full_date=2011-12-07T20:39:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1636">http://acm.timus.ru/problem.aspx?space=1&amp;num=1636</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1636 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int timeQXX = input.nextInt();<br />   int timeZZZ = input.nextInt();<br />   int[] rejectedRun = new int[10];<br />   <br />   for(int i = 0; i &lt; rejectedRun.length; ++i){<br />    rejectedRun[i] = input.nextInt();<br />    timeZZZ -= rejectedRun[i] * 20;<br />   }<br />   <br />   if(timeZZZ &lt; timeQXX){<br />    System.out.println("Dirty debug :(");<br />   }<br />   else{<br />    System.out.println("No chance.");<br />   }<br />  }<br /> }<br /><br />}<br /></pre>

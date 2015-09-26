@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d202: a+b??
+date=2013-12-31 20:58
+full_date=2013-12-31T20:58:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d202">http://zerojudge.tw/ShowProblem?problemid=d202</a><br /><!--more--><br />解題雜記：<br />　　大浮點數的加法和取精確度的問題。如果用Java的話，可以用API中內建的<a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html" target="_blank">BigDecimal</a>輕鬆過關。<br /><br />Java：<br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d202 "a+b??" from nanj???出題                                      */<br />/*  Language: JAVA (478 Bytes)                                                    */<br />/*  Result: AC(5s, 43.7MB) judge by this@ZeroJudge                                */<br />/*  Author: mushiyo at 2013-12-31 17:01:02                                        */<br />/**********************************************************************************/<br /><br /><br />/* Filename: d202.java<br /> * Author: Mushiyo<br /> */<br />package ORIGINAL;<br /><br />import java.util.Scanner;<br />import java.math.BigDecimal;<br />import java.math.MathContext;<br /><br />public class d202 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   BigDecimal a = input.nextBigDecimal();<br />   BigDecimal b = input.nextBigDecimal();<br />   <br />   System.out.println(a.add(b).setScale(200, BigDecimal.ROUND_HALF_UP));<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,51 @@
+title=〔Timus〕1545. Hieroglyphs
+date=2011-08-12 14:49
+full_date=2011-08-12T14:49:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1545">http://acm.timus.ru/problem.aspx?space=1&amp;num=1545</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.*;
+<br />
+<br />public class t1545 {
+<br />
+<br />	public static void main(String[] args) {
+<br />		Scanner input = new Scanner(System.in);
+<br />
+<br />		while (input.hasNext()) {
+<br />			Map&lt;Character, ArrayList&lt;String&gt;&gt; referenceBook = new HashMap&lt;Character, ArrayList&lt;String&gt;&gt;();
+<br />			int N = input.nextInt();
+<br />
+<br />			while (N &gt; 0) {
+<br />				String hieroglyph = input.next();
+<br />
+<br />				if (referenceBook.containsKey(hieroglyph.charAt(0))) {
+<br />					ArrayList&lt;String&gt; tmp = referenceBook.get(hieroglyph
+<br />							.charAt(0));
+<br />					tmp.add(hieroglyph);
+<br />					referenceBook.put(hieroglyph.charAt(0), tmp);
+<br />				} else {
+<br />					ArrayList&lt;String&gt; tmp = new ArrayList&lt;String&gt;();
+<br />					tmp.add(hieroglyph);
+<br />					referenceBook.put(hieroglyph.charAt(0), tmp);
+<br />				}
+<br />
+<br />				--N;
+<br />			}
+<br />
+<br />			char initialLetter = input.next().charAt(0);
+<br />			if (referenceBook.containsKey(initialLetter)) {
+<br />				String[] capital = (String[]) referenceBook.get(initialLetter).toArray(new String[0]);
+<br />
+<br />				for (String i : capital) {
+<br />					System.out.println(i);
+<br />				}
+<br />			}
+<br />
+<br />		}
+<br />	}
+<br />
+<br />}
+<br /></pre>

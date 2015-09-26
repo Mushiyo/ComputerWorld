@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d929: A. 迴文
+date=2012-01-28 17:57
+full_date=2012-01-28T17:57:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d929">http://zerojudge.tw/ShowProblem?problemid=d929</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d929 "A. 迴文" from 2010 NPSC 國中組初賽                      */<br />/*  Language: JAVA (594 Bytes)                                                    */<br />/*  Result: AC(136ms, 4.4MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-28 17:04:46                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d929 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  <br />  while(T &gt; 0){<br />   String str = input.next();<br />   <br />   if(isPalindrom(str)){<br />    System.out.println("yes");<br />   }<br />   else{<br />    System.out.println("no");<br />   }<br />   <br />   --T;<br />  }<br /> }<br /> <br /> public static boolean isPalindrom(String str){<br />  int strLen = str.length();<br />  <br />  for(int i = 0; i &lt; strLen / 2; ++i){<br />   if(str.charAt(i) != str.charAt(strLen - 1 - i)){<br />    return false;<br />   }<br />  }<br />  <br />  return true;<br /> }<br /><br />}<br /><br /></pre>

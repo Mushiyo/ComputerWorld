@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d693: 最小公倍數
+date=2012-02-12 21:49
+full_date=2012-02-12T21:49:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d693">http://zerojudge.tw/ShowProblem?problemid=d693</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d693 "最小公倍數" from GCD | Recursive                          */<br />/*  Language: JAVA (849 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.3MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-12 16:03:11                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d693 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   if(N == 0){<br />    break;<br />   }<br />   <br />   int[] num = new int[N];<br />   <br />   for(int i = 0; i &lt; num.length; ++i){<br />    num[i] = input.nextInt();<br />   }<br />   <br />   long lcmAll = num[0];<br />   for(int i = 1; i &lt; num.length; ++i){<br />    lcmAll = lcm(lcmAll, num[i]);<br />   }<br />   <br />   System.out.println(lcmAll);<br />  }<br /> }<br /><br /> public static long lcm(long a, long b){<br />  return Math.abs(a * b) / gcd(a, b);<br /> }<br /> <br /> public static int gcd(long a, long b) {<br />  while (Math.min(a, b) != 0) {<br />   if (a &gt;= b) {<br />    long r = a % b;<br />    a = b;<br />    b = r;<br />   }<br />   else {<br />    long r = b % a;<br />    b = a;<br />    a = r;<br />   }<br />  }<br />  <br />  return (int)Math.max(a, b);<br /> }<br />}<br /><br /></pre>

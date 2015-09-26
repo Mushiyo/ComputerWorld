@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a215: 明明愛數數
+date=2011-09-30 15:51
+full_date=2011-09-30T15:51:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a215">http://zerojudge.tw/ShowProblem?problemid=a215</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a215 "明明愛數數" from                                          */<br />/*  Language: JAVA (380 Bytes)                                                    */<br />/*  Result: AC judge by zeroserver@ZeroJudge                                      */<br />/*  Author: mushiyo at 2011-09-04 16:46:40                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a215 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int m = input.nextInt();<br />   int sum = n;<br />   int count = 1;<br />   <br />   while(!(sum &gt; m)){<br />    sum += (++n);<br />    ++count;<br />   }<br />   <br />   System.out.println(count);<br />  }<br /> }<br /><br />}<br /></pre>

@@ -1,0 +1,10 @@
+title= 〔UVa〕11287 - Pseudoprime Numbers
+date=2014-02-22 20:58
+full_date=2014-02-22T20:58:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/112/11287.html">http://uva.onlinejudge.org/external/112/11287.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11287.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa11287 {<br /><br /> public static void main(String[] args) {<br />  final int CERTAINTY = 10;<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   BigInteger p = input.nextBigInteger();<br />   BigInteger a = input.nextBigInteger();<br />   <br />   if(p.equals(BigInteger.ZERO) &amp;&amp; a.equals(BigInteger.ZERO)){<br />    break;<br />   }<br /><br />   if(!p.isProbablePrime(CERTAINTY) &amp;&amp; a.modPow(p, p).equals(a)){<br />    System.out.println("yes");<br />   }<br />   else{<br />    System.out.println("no");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

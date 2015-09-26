@@ -1,0 +1,10 @@
+title=〔UVa〕10327 - Flip Sort
+date=2015-01-25 20:11
+full_date=2015-01-25T20:11:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/103/10327.html">http://uva.onlinejudge.org/external/103/10327.html</a><br /><!--more--><br />Solution Description:<br />The minimum flip operations required is just the <a href="http://en.wikipedia.org/wiki/Inversion_%28discrete_mathematics%29" rel="nofollow" target="_blank">inversion number</a> of the sequence.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10327.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10327 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] element = new int[1000];<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   for(int i = 0; i &lt; N; ++i){<br />    element[i] = input.nextInt();<br />   }<br />   <br />   int countInversion = 0;<br />   for(int i = 0; i &lt; N; ++i){<br />    for(int j = i + 1; j &lt; N; ++j){<br />     if(element[i] &gt; element[j]){<br />      ++countInversion;<br />     }<br />    }<br />   }<br />   <br />   System.out.println("Minimum exchange operations : " + countInversion);<br />  }<br /> }<br /><br />}<br /><br /></pre>

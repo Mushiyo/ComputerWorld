@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d043: 最大公因數
+date=2013-02-17 23:45
+full_date=2013-02-17T23:45:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d043">http://judge.nccucs.org/ShowProblem?problemid=d043</a><br /><!--more--><br />解題雜記：<br />　　利用<a href="http://zh.wikipedia.org/wiki/輾轉相除法" target="_blank">輾轉相除法</a>求最大公因數。 <br /><br />C++： <br /><pre class="brush:c">#include &lt;iostream&gt;<br />using namespace std;<br /><br />int gcd(int m, int n);<br /><br />int main(){<br /> int m = 0;<br /> int n = 0;<br /><br />    while(cin &gt;&gt; m &gt;&gt; n){<br />     cout &lt;&lt; gcd(m, n) &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br />int gcd(int m, int n){<br /> if(n == 0){<br />  return m;<br /> }<br /> else{<br />  return gcd(n, m % n);<br /> }<br />}<br /><br /></pre>

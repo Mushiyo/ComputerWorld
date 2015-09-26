@@ -1,0 +1,10 @@
+title=〔AOJ〕0011:   Drawing Lots
+date=2013-08-28 23:20
+full_date=2013-08-28T23:20:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0011">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0011</a><br /><!--more--><br />解題雜記：<br />　　經過觀察後可發現，橫線會使在它兩端的數字交換。由於輸入已經將所有的橫線由上到下排好順序了，所以只要按照順序不斷交換兩端的數字就好。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0011.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;stdio.h&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int w = 0;<br /><br />    while(cin &gt;&gt; w){<br />     int num[w + 1];<br />     for(int i = 1; i &lt;= w; ++i){<br />      num[i] = i;<br />     }<br /><br />        int n = 0;<br />        cin &gt;&gt; n;<br /><br />        while(n &gt; 0){<br />         int a = 0, b = 0;<br />         scanf("%d, %d", &amp;a, &amp;b);<br /><br />         int tmp = num[a];<br />         num[a] = num[b];<br />         num[b] = tmp;<br /><br />         --n;<br />        }<br />        <br />        for(int i = 1; i &lt;= w; ++i){<br />         cout &lt;&lt; num[i] &lt;&lt; endl;<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

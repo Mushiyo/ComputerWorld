@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d018: 字串讀取練習
+date=2011-12-23 21:19
+full_date=2011-12-23T21:19:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d018">http://zerojudge.tw/ShowProblem?problemid=d018</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d018 "字串讀取練習"                                            */<br />/*  Language: JAVA (720 Bytes)                                                    */<br />/*  Result: AC(236ms, 6.8MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2011-12-23 20:52:16                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br />import java.math.BigDecimal;<br /><br />public class d018 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String aLine = input.nextLine();<br />   Scanner inputString = new Scanner(aLine).useDelimiter("[:\\s]");<br />   <br />   BigDecimal oddSum = new BigDecimal("0");<br />   while(inputString.hasNext()){<br />    int serialNum = inputString.nextInt();<br />    BigDecimal realNum = inputString.nextBigDecimal();<br />    <br />    if(serialNum % 2 == 1){<br />     oddSum = oddSum.add(realNum);<br />    }<br />    else{<br />     oddSum = oddSum.subtract(realNum);<br />    }<br />   }<br />   <br />   System.out.println(oddSum.stripTrailingZeros().toPlainString() );<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a015: 矩陣的翻轉
+date=2011-07-02 22:51
+full_date=2011-07-02T22:51:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a015">http://zerojudge.tw/ShowProblem?problemid=a015</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a015 "矩陣的翻轉"                                               */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (112ms, 5664KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-06-30 16:08:06                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a015 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int rows = input.nextInt();<br />   int columns = input.nextInt();<br />   <br />   int[][] array = new int[rows][columns];<br />   <br />   for(int r = 0 ; r &amp;lt; array.length; ++r){<br />    for(int c = 0 ; c &amp;lt; array[r].length; ++c){<br />     array[r][c] = input.nextInt();     <br />    }    <br />   }<br />      <br />   //印出轉置矩陣<br />   for(int r = 0 ; r &amp;lt; columns; ++r){<br />    System.out.print(array[0][r]);<br />    for(int c = 1 ; c &amp;lt; array.length; ++c){<br />     System.out.print(" " + array[c][r]);     <br />    }<br />    System.out.println();<br />   }<br />  }<br /><br /> }<br /><br />}<br /></pre>

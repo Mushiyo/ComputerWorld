@@ -1,0 +1,10 @@
+title=〔Timus〕1567. SMS-spam
+date=2012-05-05 16:22
+full_date=2012-05-05T16:22:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1567">http://acm.timus.ru/problem.aspx?space=1&amp;num=1567</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1567 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  int[] alphabetVal = new int[26];<br />  for(int i = 0; i &lt; alphabetVal.length; ++i){<br />   alphabetVal[i] = i % 3 + 1;<br />  }<br />  <br />  while(input.hasNext()){<br />   String slogan = input.nextLine();<br />   int cost = 0;<br />   <br />   for(int i = 0; i &lt; slogan.length(); ++i){<br />    if(Character.isLetter(slogan.charAt(i))){<br />     cost += alphabetVal[slogan.charAt(i) - 'a'];<br />    }<br />    else{<br />     switch(slogan.charAt(i)){<br />      case '.':<br />       cost += 1;<br />       break;<br />      case ',':<br />       cost += 2;<br />       break;<br />      case '!':<br />       cost += 3;<br />       break;<br />      case ' ':<br />       cost += 1;<br />       break;<br />      default:<br />       break;<br />     }<br />    }<br />   }<br />   <br />   System.out.println(cost);<br />  }<br /> }<br /><br />}<br /><br /></pre>

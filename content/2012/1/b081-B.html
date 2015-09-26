@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b081: B. 友好數
+date=2012-01-15 15:53
+full_date=2012-01-15T15:53:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b081">http://zerojudge.tw/ShowProblem?problemid=b081</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b081 "B. 友好數" from 2007 NPSC 國中組決賽                   */<br />/*  Language: JAVA (908 Bytes)                                                    */<br />/*  Result: AC(3.1s, 3.5MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-15 15:46:06                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b081 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   long n = input.nextLong();<br />   <br />   if(n == 0){<br />    break;<br />   }<br />   <br />   long sumOfProperDivisor = 0;<br />   for(long i = 1; i &lt; n; ++i){<br />    if(n % i == 0){<br />     sumOfProperDivisor += i;<br />    }<br />   }<br />   <br />   if(n == sumOfProperDivisor){<br />    System.out.println("=" + n);<br />    continue;<br />   }<br />   <br />   if(isAmicableNum(n, sumOfProperDivisor)){<br />    System.out.println(sumOfProperDivisor);<br />   }<br />   else{<br />    System.out.println(0);<br />   }<br />  }<br /> }<br /> <br /> public static boolean isAmicableNum(long a, long b){<br />  long sumOfProperDivisor = 0;<br />  <br />  for(long i = 1; i &lt; b; ++i){<br />   if(b % i == 0){<br />    sumOfProperDivisor += i;<br />   }<br />  }<br />  <br />  if(a != sumOfProperDivisor){<br />   return false;<br />  }<br />  else{<br />   return true;<br />  }<br /> }<br /><br />}<br /><br /></pre>

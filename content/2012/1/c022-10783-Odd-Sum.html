@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c022: 10783 - Odd Sum
+date=2012-01-25 20:07
+full_date=2012-01-25T20:07:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=c022">http://zerojudge.tw/ShowProblem?problemid=c022</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c022 "10783 - Odd Sum" from ACM 10783                                */<br />/*  Language: JAVA (482 Bytes)                                                    */<br />/*  Result: AC(100ms, 3.6MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-25 18:13:51                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class c022 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  int caseNum = 1;<br />  <br />  while(T &gt; 0){<br />   int a = input.nextInt();<br />   int b = input.nextInt();<br />   int sumOdd = 0;<br />   <br />   for(int i = a; i &lt;= b; ++i){<br />    if(i % 2 != 0){<br />     sumOdd += i;<br />    }<br />   }<br />   <br />   System.out.println("Case " + caseNum + ": " + sumOdd);<br />   <br />   ++caseNum;<br />   --T;<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10530 - Guessing Game
+date=2014-09-06 23:27
+full_date=2014-09-06T23:27:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/105/10530.html">http://uva.onlinejudge.org/external/105/10530.html</a><br /><!--more--><br />Solution Description:<br />Each time we get "too high"/"too low", we check if we should lower the upper bound / higher the lower bound. When received "right on", check if the guess falls between the upper bound and lower bound. If not, then Stan is dishonest.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10530.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10530 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int low = 0;<br />  int high = 11;<br /><br />  while (true) {<br />   int guess = input.nextInt();<br /><br />   if (guess == 0) {<br />    break;<br />   }<br /><br />   input.nextLine(); // eat change line<br />   String response = input.nextLine();<br /><br />   if (response.equals("right on")) {<br />    if(low &lt; guess &amp;&amp; guess &lt; high){<br />     System.out.println("Stan may be honest");<br />    }<br />    else{<br />     System.out.println("Stan is dishonest");<br />    }<br />    <br />    // reset value<br />    low = 0;<br />    high = 11;<br />   } else {<br />    if (response.equals("too high")) {<br />     high = Math.min(high, guess);<br />    }<br /><br />    if (response.equals("too low")) {<br />     low = Math.max(low, guess);<br />    }<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

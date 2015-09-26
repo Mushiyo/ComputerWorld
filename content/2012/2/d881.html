@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d881: 作業苦多
+date=2012-02-12 21:50
+full_date=2012-02-12T21:50:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d881">http://zerojudge.tw/ShowProblem?problemid=d881</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d881 "作業苦多" from CSDC                                        */<br />/*  Language: JAVA (618 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-12 16:30:13                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d881 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] arithSeq = new int[49];<br />  <br />  while(input.hasNext()){<br />   int d = input.nextInt();<br />   <br />   for(int i = 0; i &lt; arithSeq.length; ++i){<br />    arithSeq[i] = (1 + d * i);<br />   }<br />   <br />   int[] solSeq = new int[50];<br />   solSeq[0] = 1;<br />   for(int i = 1; i &lt; solSeq.length; ++i){<br />    solSeq[i] = solSeq[i - 1] + arithSeq[i - 1];<br />   }<br />   <br />   int sol = 0;<br />   for(int i = 0; i &lt; solSeq.length; ++i){<br />    sol += solSeq[i];<br />   }<br />   <br />   System.out.println(sol);<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a104: 排序
+date=2011-07-06 21:13
+full_date=2011-07-06T21:13:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a104">http://zerojudge.tw/ShowProblem?problemid=a104</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a104 "排序" from yoooooooo                                         */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (256ms, 6212KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-03 17:37:58                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a104 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int length = input.nextInt();<br />   int[] array = new int[length];<br />   <br />   for(int i = 0; i &lt; array.length; ++i){<br />    array[i] = input.nextInt();<br />   }<br />   <br />   java.util.Arrays.sort(array);<br />   <br />   System.out.print(array[0]);<br />   for(int i = 1; i &lt; array.length; ++i){<br />    System.out.print(" " + array[i]);<br />   }<br />   <br />   System.out.println();<br />  }<br /> }<br /><br />}<br /></pre>

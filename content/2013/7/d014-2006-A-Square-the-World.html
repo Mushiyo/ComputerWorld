@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d014: 2006 程式達人 A - Square the World
+date=2013-07-31 19:11
+full_date=2013-07-31T19:11:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d014">http://judge.nccucs.org/ShowProblem?problemid=d014</a><br /><!--more--><br />解題雜記：<br />　　宣告一個長、寬都跟輸入字串等長的矩陣，然後依照題目要求的方向，把字串放在這個陣矩的四個邊上。最後跑雙層的for迴圈輸出這個矩陣，就大功告成了。<br /><br />C++： <br /><pre class="brush:c">/*Filename: d014.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;string&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int n;<br /><br /> while (cin &gt;&gt; n) {<br />  string s;<br />  getline(cin, s); //eat empty line<br /><br />  while (n &gt; 0) {<br />   while (getline(cin, s)) {<br />    char ans[s.size()][s.size()];<br /><br />    for (int i = 1; i &lt; s.size() - 1; ++i) {<br />     for (int j = 1; j &lt; s.size() - 1; ++j) {<br />      ans[i][j] = ' ';<br />     }<br />    }<br /><br />    for (int i = 0; i &lt; s.size(); ++i) {<br />     ans[0][i] = s[i];<br />     ans[i][0] = s[i];<br />     ans[s.size() - 1][s.size() - i - 1] = s[i];<br />     ans[s.size() - i - 1][s.size() - 1] = s[i];<br />    }<br /><br />    for (int i = 0; i &lt; s.size(); ++i) {<br />     for (int j = 0; j &lt; s.size(); ++j) {<br />      cout &lt;&lt; ans[i][j];<br />     }<br />     cout &lt;&lt; endl;<br />    }<br />    cout &lt;&lt; endl;<br />   }<br /><br />   --n;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

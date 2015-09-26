@@ -1,0 +1,10 @@
+title=〔UVa〕410 - Station Balance
+date=2014-01-20 20:47
+full_date=2014-01-20T20:47:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/4/410.html">http://uva.onlinejudge.org/external/4/410.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa410.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Arrays;<br />import java.util.Scanner;<br /><br />public class UVa410 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder output = new StringBuilder();    <br />  final int MAX_S = 10;<br />  int [] specimen = new int[MAX_S];<br />  int setNum = 1;<br /><br />  while (input.hasNext()) {<br />   int C = input.nextInt();<br />   int C2 = 2 * C;<br />   int S = input.nextInt();<br />   int totalMass = 0;<br />   Arrays.fill(specimen, 0, C2, 0);<br />   for (int i = 0; i &lt; S; ++i) {<br />    specimen[i] = input.nextInt();<br />    totalMass += specimen[i];<br />   }<br />   Arrays.sort(specimen, 0, C2);<br /><br />   double AM = (double) totalMass / C;<br />   double imbalance = 0;<br />   output.append(String.format("Set #%d\n", setNum));<br />   for (int i = 0; i &lt; C; ++i) {<br />    output.append(String.format("%2d:", i));<br />    int CM = 0;<br />    <br />    if (specimen[i] &gt; 0) {<br />     output.append(" " + specimen[i]);<br />     CM += specimen[i];<br />    }<br />    <br />    if(specimen[C2 - i - 1] &gt; 0){<br />     output.append(" " + specimen[C2 - i - 1]);<br />     CM +=  specimen[C2 - i - 1];<br />    }<br />    output.append("\n");<br />    <br />    imbalance += Math.abs(AM - CM);<br />   }<br /><br />   output.append(String.format("IMBALANCE = %.5f\n", imbalance));<br />   output.append("\n");<br /><br />   ++setNum;<br />  }<br />  System.out.print(output);<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

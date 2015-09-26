@@ -1,0 +1,10 @@
+title=〔UVa〕10079 - Pizza Cutting
+date=2014-12-06 22:12
+full_date=2014-12-06T22:12:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/100/10079.html">http://uva.onlinejudge.org/external/100/10079.html</a><br /><!--more--><br />Solution Description:<br />Assume there are already n - 1 (n &gt; 1) straight line cuts on the pizza and the maximum number  of pizza pieces made by these cuts are a<sub>n-1</sub>. Now, consider the n<sup>th</sup> cut, it needs to cross all the previous cuts to make the maximum number  of pizza pieces, so we have \(a_n = a_{n-1} + n\). And we can get the closed form as follows:<br />\[\begin{eqnarray}<br /><br />a_n &amp;=&amp; n + a_{n-1} \\<br />&nbsp;&nbsp;&nbsp; &amp;=&amp; n + (n - 1) + a_{n - 2} \\<br />&nbsp;&nbsp;&nbsp; &amp;=&amp; n + (n - 1) + (n - 2) + \cdots + 1 + a_0<br />\end{eqnarray} \]<br />Since a<sub>0</sub> means the maximum number  of pizza pieces when there is no cut, we have a<sub>0</sub> = 1.<br />Replace a<sub>0</sub> into the previous equation, we have:<br />\[\begin{eqnarray}<br /><br />a_n &amp;=&amp; n + (n - 1) + (n - 2) + \cdots + 1 + 1 \\<br />&nbsp; &nbsp; &nbsp;&nbsp; &amp;=&amp; \frac{(n + 1) \times n}{2} + 1 <br />\end{eqnarray} \]<br />Just use the formula to compute n directly.<br />For more detail discussion of the problem, you can read section 1.2 of <a href="http://en.wikipedia.org/wiki/Concrete_Mathematics" rel="nofollow" target="_blank"><i>Concrete Mathematics:A Foundation for Computer Science</i></a> by Ronald Graham, Donald Knuth, and Oren Patashnik.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10079.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10079 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   long N = input.nextLong();<br />   <br />   if(N &lt; 0){    <br />    break;<br />   }else{<br />    System.out.println((N * (N + 1)) / 2 + 1);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d212: 東東爬階梯
+date=2015-04-01 22:09
+full_date=2015-04-01T22:09:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=d212">http://zerojudge.tw/ShowProblem?problemid=d212</a><br /><!--more--><br />解題雜記：<br />　　這題問的就是費氏數列的第n項是多少。不過因為n可以到100，所以要用大數來算。<br /><br />Java：<br /><pre class="brush:java">/* Filename: d212.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class d212 {<br /><br /> public static void main(String[] args) {<br />  BigInteger[] fib = new BigInteger[100];<br />  fib[0] = BigInteger.valueOf(1);<br />  fib[1] = BigInteger.valueOf(1);<br />  <br />  for(int i = 2; i &lt; fib.length; ++i){<br />   fib[i] = fib[i - 1].add(fib[i - 2]);<br />  }<br />  <br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   System.out.println(fib[n]);<br />  }<br /> }<br /><br />}<br /><br /></pre>

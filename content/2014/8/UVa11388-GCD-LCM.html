@@ -1,0 +1,10 @@
+title=〔UVa〕11388 - GCD LCM
+date=2014-08-13 23:13
+full_date=2014-08-13T23:13:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/113/11388.html">http://uva.onlinejudge.org/external/113/11388.html</a><br /><!--more--><br /><br />Solution Description:<br />By the definition of gcd and lcm, it is easy to find out that for any two number a and b,<br />\[ gcd(gcd(a,b), lcm(a,b)) = gcd(a,b) \]<br />Hence, given G and L, if \(gcd(G, L) \neq G \), there is no solution.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11388.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11388 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br /><br />   while (T &gt; 0) {<br />    int G = input.nextInt();<br />    int L = input.nextInt();<br /><br />    if (gcd(G, L) == G) {<br />     System.out.println(G + " " + L);<br />    } else {<br />     System.out.println(-1);<br />    }<br /><br />    --T;<br />   }<br />  }<br /> }<br /><br /> public static int gcd(int a, int b) {<br />  return b == 0 ? a : gcd(b, a % b);<br /> }<br />}<br /><br /></pre>

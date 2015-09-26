@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c079: Peter's Smokes
+date=2012-01-30 22:57
+full_date=2012-01-30T22:57:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=c079">http://zerojudge.tw/ShowProblem?problemid=c079</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c079 "Peter's Smokes" from ACM 10346                                 */<br />/*  Language: JAVA (378 Bytes)                                                    */<br />/*  Result: AC(240ms, 6MB) judge by this@ZeroJudge                                */<br />/*  Author: mushiyo at 2012-01-30 13:59:07                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class c079 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int k = input.nextInt();<br />   long smoked = n;<br />   <br />   while(n / k != 0){<br />    smoked += n / k;<br />    n = n / k + n % k;<br />   }<br />   <br />   System.out.println(smoked);<br />  }<br /> }<br /><br />}<br /><br /></pre>

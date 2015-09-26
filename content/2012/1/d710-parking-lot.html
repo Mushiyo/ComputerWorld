@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d710: parking lot
+date=2012-01-29 17:21
+full_date=2012-01-29T17:21:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=d710">http://www.zerojudge.tw/ShowProblem?problemid=d710</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d710 "parking lot" from 葆葆                                       */<br />/*  Language: JAVA (954 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.3MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-29 13:38:32                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d710 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int m = input.nextInt();<br />   String[] brands = new String[n];<br />   String[] colors = new String[n];<br />   <br />   for(int i = 0; i &lt; n; ++i){<br />    brands[i] = input.next();<br />    colors[i] = input.next();<br />   }<br />   <br />   while(m &gt; 0){<br />    String cmd = input.next();<br />    String cmdOffset = input.next();<br />    <br />    if(cmd.equals("brand")){<br />     for(int i = 0; i &lt; n; ++i){<br />      if(brands[i].equals(cmdOffset)){<br />       System.out.println(brands[i] + " " + colors[i]);<br />      }<br />     }<br />    }<br />    else{<br />     for(int i = 0; i &lt; n; ++i){<br />      if(colors[i].equals(cmdOffset)){<br />       System.out.println(brands[i] + " " + colors[i]);<br />      }<br />     }<br />    }<br />    <br />    --m;<br />   }<br />   <br />   if(input.hasNext()){<br />    System.out.println();<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕12405 - Scarecrow
+date=2013-11-24 14:33
+full_date=2013-11-24T14:33:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/124/12405.html">http://uva.onlinejudge.org/external/124/12405.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java：<br /><pre class="brush:java">待補，有需要請留言<br /></pre><br />C++：<br /><pre class="brush:c">/*Filename: u12405.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cstring&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> const char CROP = '.';<br /> const char INFERTILE = '#';<br /> int T = 0;<br /><br /> while (cin &gt;&gt; T) {<br />  for (int caseNum = 1; caseNum &lt;= T; ++caseNum) {<br />   int N = 0;<br />   cin &gt;&gt; N;<br /><br />   char field[N + 2];<br />   memset(field, INFERTILE, sizeof(field));<br />   for(int i = 0; i &lt; N; ++i){<br />    cin &gt;&gt; field[i];<br />   }<br /><br />   int scarecrowNum = 0;<br />   for(int i = 0; i &lt; N; ){<br />    if(field[i] == CROP){<br />     field[i] = field[i + 1] = field[i + 2] = INFERTILE;<br />     ++scarecrowNum;<br />     i += 3;<br />    }<br />    else{<br />     ++i;<br />    }<br />   }<br /><br />   cout &lt;&lt; "Case " &lt;&lt; caseNum &lt;&lt; ": " &lt;&lt; scarecrowNum &lt;&lt; endl;<br />  }<br /><br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

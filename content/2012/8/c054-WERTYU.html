@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c054: WERTYU
+date=2012-08-20 21:05
+full_date=2012-08-20T21:05:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=c054">http://zerojudge.tw/ShowProblem?problemid=c054</a><br /><!--more--><br />解題雜記：<br />　　這題不論是用if-else、switch-case或是把對應的字元先存在陣列中，這三種做法都可能讓人有種打字打到崩潰的感覺。為了節省打字的功天，這邊的做法是把鍵盤上所有的字元先打成字串存起來。然後每當有一個字元輸入，就找找看該字元在字串中的哪個位置，然後輸出字串中該位置-1的字元就結束了。<br />　　<br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c054 "WERTYU" from ACM 10082                                         */<br />/*  Language: JAVA (546 Bytes)                                                    */<br />/*  Result: AC(76ms, 2MB) judge by this@ZeroJudge                                 */<br />/*  Author: mushiyo at 2012-08-20 20:51:51                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d054 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  String keyboard = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";<br />  <br />  while(input.hasNext()){<br />   char[] str = input.nextLine().toCharArray();<br />   <br />   for(int i = 0; i &lt; str.length; ++i){<br />    for(int j = 0; j &lt; keyboard.length(); ++j){<br />     if(str[i] == keyboard.charAt(j)){<br />      str[i] = keyboard.charAt(j - 1);<br />     }<br />    }<br />   }<br />   <br />   System.out.println(new String(str));<br />  }<br /> }<br /><br />}<br /><br /></pre>

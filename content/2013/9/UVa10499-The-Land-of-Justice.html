@@ -1,0 +1,10 @@
+title=〔UVa〕10499 - The Land of Justice
+date=2013-09-20 23:06
+full_date=2013-09-20T23:06:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/104/10499.html">http://uva.onlinejudge.org/external/104/10499.html</a><br /><!--more--><br />解題雜記：<br />　　&nbsp; 解題思路請見程式碼中註解的地方。然後有一點我一定要該一下，那就是while的運行條件如果寫 n != -1&nbsp;的話就會莫名奇妙的RE。我因為這個原因吃了約十個RE，在接近<span style="font-size: 12pt;">◢▆▅▄▃ 崩╰(〒皿〒)╯潰 ▃▄▅▆◣的臨界點時突然想到改成 n &gt; -1 ，</span><span style="font-size: 12pt;"><span style="font-size: 12pt;">其他行都完全沒動，</span>然後送出去後就AC了0.0，你說奇怪不奇怪。</span><br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10499 {<br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  long n = input.nextLong();<br /><br />  while (n &gt; -1) {<br />   // the surface area of a sphere is 4πr^2<br />   // each part of the divided sphere will increase the surface area by<br />   // πr^2<br />   // , which is the area of the two hemicycle on each divided part.<br />   // so the profit is ((n * πr^2) / 4πr^2) * 100%, n ≧ 2<br />   // after simplified the equation, we got n * 25 %, n ≧ 2<br />   // NOTE that when n = 1, the profit is 0%<br /><br />   if (n &gt; 1) {<br />    System.out.println(n * 25 + "%");<br />   } else {<br />    System.out.println("0%");<br />   }<br /><br />   n = input.nextLong();<br />  }<br /> }<br /><br />}<br /><br /></pre>

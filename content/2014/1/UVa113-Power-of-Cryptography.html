@@ -1,0 +1,10 @@
+title=〔UVa〕113 - Power of Cryptography
+date=2014-01-10 17:12
+full_date=2014-01-10T17:12:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/1/113.html">http://uva.onlinejudge.org/external/1/113.html</a><br /><!--more--><br />解題雜記：<br />　　因為<a href="http://www.codecogs.com/eqnedit.php?latex=\inline&amp;space;\large&amp;space;\sqrt[n]{p}&amp;space;=&amp;space;p^{1/n}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\inline&amp;space;\large&amp;space;\sqrt[n]{p}&amp;space;=&amp;space;p^{1/n}" title="\large \sqrt[n]{p} = p^{1/n}" /></a>，所以利用library的pow算出p^(1/n)直接輸出即可。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; Since<a href="http://www.codecogs.com/eqnedit.php?latex=\inline&amp;space;\large&amp;space;\sqrt[n]{p}&amp;space;=&amp;space;p^{1/n}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\inline&amp;space;\large&amp;space;\sqrt[n]{p}&amp;space;=&amp;space;p^{1/n}" title="\large \sqrt[n]{p} = p^{1/n}" /></a>, we can use the pow function in STL to compute p^(1/n) and that's the solution.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa113.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa113 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   double n = input.nextDouble();<br />   double p = input.nextDouble();<br />   <br />   System.out.printf("%.0f\n",Math.pow(p, 1/n));<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

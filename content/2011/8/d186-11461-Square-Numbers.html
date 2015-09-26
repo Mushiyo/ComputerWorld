@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d186: 11461 - Square Numbers
+date=2011-08-02 14:30
+full_date=2011-08-02T14:30:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d186">http://zerojudge.tw/ShowProblem?problemid=d186</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d186 "11461 - Square Numbers" from UVa ACM 11461                     */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (468ms, 6908KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-30 22:52:50                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d186 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  int a = input.nextInt();<br />  int b = input.nextInt();<br />  while(a != 0 &amp;&amp; b != 0){<br />   int numOfSquare = 0;<br />   for(int i = a; i &lt;= b; ++i){<br />    Double sqrtI = Math.sqrt(i);<br />    <br />    if(sqrtI == sqrtI.intValue()){<br />     ++numOfSquare;<br />    }<br />   }<br />   <br />   System.out.println(numOfSquare);<br />   <br />   a = input.nextInt();<br />   b = input.nextInt();<br />  }<br /> }<br /><br />}<br /></pre>

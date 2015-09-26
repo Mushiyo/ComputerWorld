@@ -1,0 +1,10 @@
+title=〔UVa〕10026 - Shoemaker's Problem
+date=2013-11-24 14:35
+full_date=2013-11-24T14:35:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/100/10026.html">http://uva.onlinejudge.org/external/100/10026.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java：<br /><pre class="brush:java">待補，有需要請留言<br /></pre><br />C++：<br /><pre class="brush:c">/*Filename: u10026.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />struct Job{<br /> int id;<br /> int workday;<br /> int fine;<br />};<br /><br />bool jobCmp(const Job j1, const Job j2){<br /> double rate1 = (double) j1.fine / j1.workday;<br /> double rate2 = (double) j2.fine / j2.workday;<br /><br /> if(rate1 == rate2){<br />  return j1.id &lt; j2.id;<br /> }<br /><br /> return rate1 &gt; rate2;<br />}<br /><br />int main() {<br /> int T = 0;<br /><br /> while (cin &gt;&gt; T) {<br />  bool isFirstCase = true;<br />  while (T &gt; 0) {<br /><br />   int N = 0;<br />   cin &gt;&gt; N;<br /><br />   Job jobs[N];<br />   for(int i = 0; i &lt; N; ++i){<br />    jobs[i].id = i + 1;<br />    cin &gt;&gt; jobs[i].workday;<br />    cin &gt;&gt; jobs[i].fine;<br />   }<br /><br />   sort(jobs, jobs + N, jobCmp);<br /><br />   if (isFirstCase) {<br />    isFirstCase = false;<br />   } else {<br />    cout &lt;&lt; endl;<br />   }<br /><br />   cout &lt;&lt; jobs[0].id;<br />   for(int i = 1; i &lt; N; ++i){<br />    cout &lt;&lt; " " &lt;&lt; jobs[i].id;<br />   }<br />   cout &lt;&lt; endl;<br /><br />   --T;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

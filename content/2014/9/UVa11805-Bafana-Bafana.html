@@ -1,0 +1,10 @@
+title=〔UVa〕11805 - Bafana Bafana
+date=2014-09-08 23:52
+full_date=2014-09-08T23:52:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/118/11805.html">http://uva.onlinejudge.org/external/118/11805.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa11805.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11805 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   for(int caseNum = 1; caseNum &lt;= T; ++caseNum){<br />    int N = input.nextInt();<br />    int K = input.nextInt();<br />    int P = input.nextInt();<br />    int lastPalyerNum = ((K - 1) + P) % N + 1;<br />    <br />    System.out.printf("Case %d: %d\n", caseNum, lastPalyerNum);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

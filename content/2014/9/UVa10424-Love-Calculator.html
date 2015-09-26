@@ -1,0 +1,10 @@
+title=〔UVa〕10424 - Love Calculator
+date=2014-09-07 21:19
+full_date=2014-09-07T21:19:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/104/10424.html">http://uva.onlinejudge.org/external/104/10424.html</a><br /><!--more--><br />Solution Note:<br />Since the ratio is never more than 100%, take min( name1Val / name2Val, name2Val / name1Val) as output.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10424.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10424 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String name1 = input.nextLine();<br />   String name2 = input.nextLine();<br />   <br />   int name1Val = nameValue(name1);<br />   int name2Val = nameValue(name2);<br />   double love = Math.min((name1Val * 100) / (double) name2Val , (name2Val * 100) / (double) name1Val);<br />   <br />   System.out.printf("%.2f %%\n", love);<br />  }<br /> }<br /> <br /> static int nameValue(String name){<br />  int val = 0;<br />  <br />  name = name.toLowerCase();<br />  for(int i = 0; i &lt; name.length(); ++i){<br />   if(Character.isLetter(name.charAt(i))){<br />    val += name.charAt(i) - 'a' + 1;<br />   }<br />  }<br />  <br />  while(val &gt;= 10){<br />   val = digitSum(val);<br />  }<br />  <br />  return val;<br /> }<br /> <br /> static int digitSum(int n) {<br />  int sum = 0;<br /><br />  while (n != 0) {<br />   sum += n % 10;<br />   n /= 10;<br />  }<br /><br />  return sum;<br /> }<br />}<br /><br /></pre>

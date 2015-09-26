@@ -1,0 +1,10 @@
+title=〔UVa〕490 - Rotating Sentences
+date=2013-10-06 18:02
+full_date=2013-10-06T18:02:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/4/490.html">http://uva.onlinejudge.org/external/4/490.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br />import java.util.ArrayList;<br /><br />public class u490 {<br /><br /> public static void main(String[] args) {<br />  ArrayList<string> sentences = new ArrayList<string>();<br />  <br />  Scanner input = new Scanner(System.in);<br />  int maxLen = Integer.MIN_VALUE;<br />  while(input.hasNext()){<br />   sentences.add(input.nextLine());<br />   if(maxLen &lt; sentences.get(sentences.size() - 1).length()){<br />    maxLen = sentences.get(sentences.size() - 1).length();<br />   }<br />  }<br />  <br />  for(int j = 0; j &lt; maxLen; ++j){<br />   for(int i = sentences.size() - 1; i &gt;= 0; --i){<br />    if(j &lt; sentences.get(i).length()){<br />     System.out.print(sentences.get(i).charAt(j));<br />    }<br />    else{<br />     System.out.print(" ");<br />    }<br />   }<br />   System.out.println();<br />  }  <br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕623 - 500!
+date=2014-03-08 15:22
+full_date=2014-03-08T15:22:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/6/623.html">http://uva.onlinejudge.org/external/6/623.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa623.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa623 {<br /> static final int maxN = 1000 + 1;<br /> static BigInteger[] factorials = new BigInteger[maxN];<br /> <br /> public static void countFactorials(){<br />  factorials[0] = BigInteger.valueOf(1);<br />  <br />  for(int i = 1; i &lt; factorials.length; ++i){<br />   factorials[i] = factorials[i - 1].multiply(BigInteger.valueOf(i));<br />  }<br /> }<br /><br /> public static void main(String[] args) {<br />  countFactorials();<br />  <br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   System.out.printf("%d!\n", n);<br />   System.out.println(factorials[n]);<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

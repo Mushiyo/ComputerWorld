@@ -1,0 +1,10 @@
+title=〔UVa〕10487 - Closest Sums
+date=2014-01-20 20:42
+full_date=2014-01-20T20:42:00.005+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/104/10487.html">http://uva.onlinejudge.org/external/104/10487.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10478.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10487 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br />  final int MAX_N = 1000;<br />  int[] number = new int[MAX_N];<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   if(n == 0){<br />    break;<br />   }<br />   <br />   for(int i = 0; i &lt; n; ++i){<br />    number[i] = input.nextInt();<br />   }<br />   <br />   System.out.printf("Case %d:\n", caseNum);<br />   int m = input.nextInt();<br />   while(m &gt; 0){<br />    int query = input.nextInt();<br />    int closestSum = number[0] + number[1];<br />    <br />    for(int i = 0; i &lt; n; ++i){<br />     for(int j = i + 1; j &lt; n; ++j){<br />      int currentSum = number[i] + number[j];<br />      <br />      if(Math.abs(query - currentSum) &lt; Math.abs(query - closestSum)){<br />       closestSum = currentSum;<br />      }<br />     }<br />    }<br />    <br />    System.out.printf("Closest sum to %d is %d.\n", query, closestSum);<br />    <br />    --m;<br />   }<br />   <br />   <br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

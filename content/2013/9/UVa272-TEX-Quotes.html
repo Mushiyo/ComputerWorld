@@ -1,0 +1,10 @@
+title=〔UVa〕272 - TEX Quotes
+date=2013-09-20 22:49
+full_date=2013-09-20T22:49:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/2/272.html">http://uva.onlinejudge.org/external/2/272.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u272 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  boolean isLeftQuote = true;<br />  <br />  while(input.hasNext()){<br />   String s = input.nextLine();<br />   <br />   for(int i = 0; i &lt; s.length(); ++i){<br />    if(s.charAt(i) == '\"'){<br />     if(isLeftQuote){<br />      System.out.print("``");<br />      isLeftQuote = false;<br />     }<br />     else{<br />      System.out.print("''");<br />      isLeftQuote = true;<br />     }<br />    }<br />    else{<br />     System.out.print(s.charAt(i));<br />    }<br />   }<br />   System.out.println();<br />  }<br /> }<br /><br />}<br /><br /></pre>

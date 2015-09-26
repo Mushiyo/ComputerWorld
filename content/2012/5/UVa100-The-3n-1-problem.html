@@ -1,0 +1,10 @@
+title=〔UVa〕100 - The 3n + 1 problem
+date=2012-05-20 18:13
+full_date=2012-05-20T18:13:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=36">http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=36</a><br /><!--more--><br />解題雜記：<br />　　UVa真是太陰險了，i跟j大小竟然不一定是i≦j，害我WA了好多次= =。解題時若有注意的這點，應該不難AC。 <br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u100 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int i = input.nextInt();<br />   int j = input.nextInt();<br />   int beginNum = Math.min(i, j);<br />   int endNum = Math.max(i, j);<br />   <br />   long maxLen = 1;<br />   for(long s = beginNum; s &lt;= endNum; ++s){<br />    long currentLen = countCycleLen(s);<br />    <br />    maxLen = Math.max(maxLen, currentLen);<br />   }<br />   <br />   System.out.println(i + " " + j + " " + maxLen);<br />  }<br /> }<br /> <br /> public static long countCycleLen(long n){<br />  long cycleLen = 1;<br />  <br />  while(n != 1){<br />   if(n % 2 == 0){<br />    n = n / 2;<br />   }<br />   else{<br />    n = 3 * n + 1;<br />   }<br />   <br />   ++cycleLen;<br />  }<br />  <br />  return cycleLen;<br /> }<br /><br />}<br /><br /></pre>

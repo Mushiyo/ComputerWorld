@@ -1,0 +1,10 @@
+title=〔UVa〕10295 - Hay Points
+date=2015-01-09 20:28
+full_date=2015-01-09T20:28:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/102/10295.html">http://uva.onlinejudge.org/external/102/10295.html</a><br /><!--more--><br />Solution Description:<br />Use HashMap to build the dictionary. For each word in each job description, check if the word is in the dictionary. Sum up the values of every word found in the dictionary in each job description, then output the result.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10295.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Map;<br />import java.util.HashMap;<br /><br />public class UVa10295 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int m = input.nextInt();<br />   int n = input.nextInt();<br />   Map&lt;String, Integer&gt; HayPointDict = new HashMap&lt;String, Integer&gt;();<br />   <br />   while(m &gt; 0){<br />    HayPointDict.put(input.next(), input.nextInt());<br />    <br />    --m;<br />   }<br />   <br />   while(n &gt; 0){<br />    String word = input.next();<br />    long salary = 0;<br />    <br />    while(word.equals(".") == false){<br />     if(HayPointDict.containsKey(word)){<br />      salary += HayPointDict.get(word);<br />     }<br />     word = input.next();<br />    }<br />    System.out.println(salary);<br />    <br />    --n;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

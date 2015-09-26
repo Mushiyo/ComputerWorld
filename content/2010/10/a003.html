@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a003: 兩光法師占卜術
+date=2010-10-22 17:30
+full_date=2010-10-22T17:30:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a003">http://zerojudge.tw/ShowProblem?problemid=a003</a><br /><!--more-->Ｃ：<br /><br /><pre class="brush:c">/**********************************************************************************/<br />/*  Problem: a003 "兩光法師占卜術"                                         */<br />/*  Language: C                                                                   */<br />/*  Result: AC (4ms, 232KB) on ZeroJudge                                          */<br />/*  Author: mushiyo at 2010-02-08 13:36:30                                        */<br />/**********************************************************************************/<br /><br /><br />#include &lt;stdio.h&gt;<br /><br />int main(){<br />    int M,D,S;<br /><br />    while(scanf("%d%d",&amp;M,&amp;D)==2){<br />        S=(M*2+D)%3 ;<br />        if(S==2){<br />            printf("大吉\n");<br />        }<br />        else if(S==1){<br />            printf("吉\n");<br />        }<br />        else{<br />            printf("普通\n");<br />        }<br />    }<br />    return 0;<br />}</pre>

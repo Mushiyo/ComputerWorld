@@ -1,0 +1,10 @@
+title=〔UVa〕136 - Ugly Numbers
+date=2015-02-23 16:50
+full_date=2015-02-23T16:50:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/1/136.html">http://uva.onlinejudge.org/external/1/136.html</a><br /><!--more--><br />Solution Description:<br />Push the first ugly number, i.e. 1, into a priority queue.<br />Poll a number from the priority queue, if the number never appears in the queue (use a set to check and record), times it with 2, 3 and 5 respectively and push the results into the queue.<br />Repeat the above procedure 1500 times, then we get the 1500'th ugly number.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa136.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Set;<br />import java.util.HashSet;<br />import java.util.PriorityQueue;<br />import java.util.Arrays;<br /><br />public class UVa136 {<br /><br /> public static void main(String[] args) {<br />  final int[] factors = { 2, 3, 5 };<br />  PriorityQueue&lt;Long&gt; pq = new PriorityQueue&lt;Long&gt;(Arrays.asList(1L));<br />  Set&lt;Long&gt; apperedUglyNumbers = new HashSet&lt;Long&gt;();<br /><br />  int countUgly = 0;<br />  long currentUgly = 0;<br />  while (countUgly &lt; 1500) {<br />   currentUgly = pq.poll();<br /><br />   if (!apperedUglyNumbers.contains(currentUgly)) {<br />    ++countUgly;<br />    apperedUglyNumbers.add(currentUgly);<br />    for (int i = 0; i &lt; factors.length; ++i) {<br />     pq.add(currentUgly * factors[i]);<br />    }<br />   }<br />  }<br /><br />  System.out.printf("The 1500'th ugly number is %d.\n", currentUgly);<br /> }<br />}<br /><br /></pre>

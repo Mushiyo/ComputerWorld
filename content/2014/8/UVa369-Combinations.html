@@ -1,0 +1,10 @@
+title=〔UVa〕369 - Combinations
+date=2014-08-16 17:41
+full_date=2014-08-16T17:41:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/3/369.html">http://uva.onlinejudge.org/external/3/369.html</a><br /><!--more--><br />Solution Description:<br />Just calculate \(\binom{n}{m}\)<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa369.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa369 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = new BigInteger(input.next()).intValue();<br />   int M = new BigInteger(input.next()).intValue();<br />   <br />   if(N == 0 &amp;&amp; M == 0){<br />    break;<br />   }<br />   <br />   long C = combination(N, M);<br />   <br />   System.out.printf("%d things taken %d at a time is %d exactly.\n", N, M, C);<br />  }<br /> }<br /> <br /> private static long combination(int n, int m) {<br />  long c = 1;<br /><br />  for (int i = Math.max(m, n - m) + 1, j = 1; i &lt;= n; ++i, ++j) {<br />   c = (c * i) / j;<br />  }<br /><br />  return c;<br /> }<br />}<br />.<br /></pre>

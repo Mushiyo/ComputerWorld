@@ -1,0 +1,10 @@
+title=〔開發誌〕SyntaxHighlighter Easy Tool v0.75
+date=2014-08-04 00:41
+full_date=2014-08-04T00:41:00.000+08:00
+type=post
+allowComment=true
+tags=〔開發誌〕, 【程式設計】
+status=published
+~~~~~~
+
+把之前做給自己的<a href="http://web-mushiyo.rhcloud.com/SynPaste" rel="nofollow" target="_blank">懶人工具</a>升級了一下<br />更新的地方有：<br /><ol><li>把所有我可能會用到的語言都加入了</li><li>加入部份<a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/configuration/" rel="nofollow" target="_blank">configuration</a>，可以就某些地方調整顯示出的code（例如起始行號等）</li></ol>在加這些東西的時候，發現SyntaxHighlighter本身有些bug，例如說使用<a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/demo/collapse.html" rel="nofollow" target="_blank">collapse</a>的時候是不能關閉<a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/demo/toolbar.html" rel="nofollow" target="_blank">toolbar</a>的，不然code會整個消失。<br />還有3.0.83版所新增的<a href="http://alexgorbatchev.com/SyntaxHighlighter/whatsnew.html#blocktitle" rel="nofollow" target="_blank">程式碼標題功能</a>並沒有列在configuration裡，而是要在what’s new那邊才能看到，我差點因為找不到它而決定放棄做這部份。<br />（我記得之前我有試過，所以很確定有。最後是靠Google找到的）<br />另外<a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/demo/html-script.html" rel="nofollow" target="_blank">html-script</a>那邊又是一個累人故事了，SyntaxHighlighter本身沒設定對就根本看不出效果（但有趣的是，其它功能仍可正常運作，所以在沒試到之前你都不知道自己錯了）。<br />之前已經遇過一次，今天又再遇到，真的要寫一篇專門講這個。<br />不過最奇妙的bug還是這個：凡只輸入任意二個字元，最後的結果一定是什麼都沒有的一行。<br />我有試過少於二個或多於二個，結果都正常，真的很奇怪，考慮哪天向原作者提bug。<br /><br />最後是未來的待辦事項：<br /><ol><li>功能完整化，把所有的語言，configuration都加入</li><li>實踐選擇<a href="http://alexgorbatchev.com/SyntaxHighlighter/manual/themes/" rel="nofollow" target="_blank">佈景主題</a>的功能（這個還要試試有沒有可能）</li><li>整理版面。希望可以做成左邊input，右邊output，下面是結果，這樣。</li><li>開發多語系，最起碼會做出中文和英文二種語言</li><li>改用jsp實做，採用MVC架構<br />其實我覺得這比較適合用jsp寫。但我對jsp不熟，之前為了快點完成，所以是直接用servlet寫，也只開一個檔案而已，故code看起來有些混亂。等我對jsp熟了之後再來改寫。</li><li>設定cookie，記錄使用者default的程式語言</li></ol>－－－－－－－－－－－－－－<br />附記：<br />今天做到一半的時候，突然想到或許哪天也可以做一個google-code-prettify的。<br />然後又想到，像這樣的工具，其實原作者應該可以自己做一個給使用者。<br />像我對做網頁不怎麼熟，寫這個還花不到24hr，由原作者來做應該更快才是。<br />然而望遍目前所有做程式碼上色的，都只有提供使用說明，這是為什麼呢？<br />是覺得會用這個的都是coder，所以查說明，記住這些設定都沒什麼嗎？

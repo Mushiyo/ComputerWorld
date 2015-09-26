@@ -1,0 +1,10 @@
+title=〔AOJ〕0018:   Sorting Five Numbers
+date=2013-08-28 23:23
+full_date=2013-08-28T23:23:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0018">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0018</a><br /><!--more--><br />解題雜記：<br />　　利用&lt;algorithm&gt;中的sort，將輸入由大到小排序後依順輸出。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0018.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />const int SIZE = 5;<br /><br />int main(){<br /> int firstNum = 0;<br /><br />    while(cin &gt;&gt; firstNum){<br />        int num[SIZE];<br /><br />        num[0] = firstNum;<br />        for(int i = 1; i &lt; SIZE; ++i){<br />         cin &gt;&gt; num[i];<br />        }<br /><br />        sort(num, num + SIZE, greater&lt;int&gt;());<br />        <br />        cout &lt;&lt; num[0];<br />        for(int i = 1; i &lt; SIZE; ++i){<br />         cout &lt;&lt; " " &lt;&lt; num[i];<br />        }<br />        cout &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕11150 - Cola
+date=2013-10-27 14:20
+full_date=2013-10-27T14:20:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/111/11150.html">http://uva.onlinejudge.org/external/111/11150.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11150 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br /><br />   System.out.println(maxDrinkedCola(N));<br />  }<br /> }<br /><br /> public static int maxDrinkedCola(int initialCola) {<br />  int totalDrinked = 0;<br /><br />  while (initialCola &gt; 2) {<br />   int currentDrinked = initialCola / 3;<br />   totalDrinked += currentDrinked * 3;<br /><br />   initialCola %= 3;<br />   initialCola += currentDrinked;<br />  }<br /><br />  if (initialCola == 2) {<br />   totalDrinked += 3;<br />  } else {<br />   ++totalDrinked;<br />  }<br /><br />  return totalDrinked;<br /> }<br /><br />}<br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

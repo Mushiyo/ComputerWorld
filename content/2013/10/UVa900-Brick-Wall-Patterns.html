@@ -1,0 +1,10 @@
+title=〔UVa〕900 - Brick Wall Patterns
+date=2013-10-27 14:22
+full_date=2013-10-27T14:22:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/9/900.html">http://uva.onlinejudge.org/external/9/900.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u900 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  long[] lenPattern = new long[51];<br />  lenPattern[1] = 1;<br />  lenPattern[2] = 2;<br />  for (int i = 3; i &lt; lenPattern.length; ++i) {<br />   lenPattern[i] = lenPattern[i - 1] + lenPattern[i - 2];<br />  }<br /><br />  while (input.hasNext()) {<br />   int length = input.nextInt();<br /><br />   if (length == 0) {<br />    break;<br />   }<br /><br />   System.out.println(lenPattern[length]);<br />  }<br /> }<br /><br />}<br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

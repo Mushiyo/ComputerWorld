@@ -1,0 +1,10 @@
+title=〔UVa〕445 - Marvelous Mazes
+date=2014-09-04 23:27
+full_date=2014-09-04T23:27:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/445.html">http://uva.onlinejudge.org/external/4/445.html</a><br /><!--more--><br />Solution Note:<br />The sample output of this problem is a little bit weird.<br />When the input is a line without any character, output an empty line as the problem states, not a line with only one space as the sample output shows.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa445.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa445 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String mazeDescription = input.nextLine();  <br /><br />   if (mazeDescription.startsWith(" ")) {<br />    System.out.println();<br />    continue;<br />   }<br /><br />   int width = 0;<br />   for (int i = 0; i &lt; mazeDescription.length(); ++i) {<br />    char current = mazeDescription.charAt(i);<br />    if (Character.isDigit(current)) {<br />     width += current - '0';<br />    } else if (current == '!') {<br />     System.out.println();<br />    } else {<br />     if (current == 'b') {<br />      System.out.printf("%" + width + "c", ' ');<br />     } else {<br />      System.out.printf(String.format("%" + width + "c",<br />        current).replace(' ', current));<br />     }<br />     width = 0;<br />    }<br />   }<br />   System.out.println();<br />  }<br /> }<br /><br />}<br /><br /></pre>

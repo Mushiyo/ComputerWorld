@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a065: 提款卡密碼
+date=2013-05-13 11:28
+full_date=2013-05-13T11:28:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a065">http://zerojudge.tw/ShowProblem?problemid=a065</a><br /><!--more--><br />解題雜記：<br />　　對字串中相鄰的兩個char之間的ascii值的差取絕對值，印出來即可。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a065 &quot;提款卡密碼&quot; from 板橋高中教學題                    */<br />/*  Language: JAVA (394 Bytes)                                                    */<br />/*  Result: AC(860ms, 20.4MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2013-05-09 16:34:20                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class a065 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String cipher = input.nextLine();<br />   <br />   for(int i = 1; i &lt; cipher.length(); ++i){<br />    System.out.print(Math.abs(cipher.charAt(i) - cipher.charAt(i- 1)));<br />   }<br />   System.out.println();<br />  }<br /> }<br /><br />}<br /></pre>

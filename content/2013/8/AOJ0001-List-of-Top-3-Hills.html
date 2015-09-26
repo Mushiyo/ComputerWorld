@@ -1,0 +1,10 @@
+title=〔AOJ〕0001:   List of Top 3 Hills
+date=2013-08-28 23:10
+full_date=2013-08-28T23:10:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0001">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0001</a><br /><!--more--><br />解題雜記：<br />　　將input排序後取最大的前三個數即可。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0001.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> const int MOUNTAIN_NUM = 10;<br /> int mountain[MOUNTAIN_NUM];<br /><br />    for(int i = 0; i &lt; MOUNTAIN_NUM; ++i){<br />     cin &gt;&gt; mountain[i];<br />    }<br /><br />    sort(mountain, mountain + MOUNTAIN_NUM, greater&lt;int&gt;());<br /><br />    for(int i = 0; i &lt; 3; ++i){<br />     cout &lt;&lt; mountain[i] &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10260 - Soundex
+date=2014-09-01 23:40
+full_date=2014-09-01T23:40:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/102/10260.html">http://uva.onlinejudge.org/external/102/10260.html</a><br /><!--more--><br />Solution Description:<br />Just do replacement as the problem asked.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10260.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10260 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String word = input.next();<br />   <br />   <br />   word = word.replaceAll("[BFPV]", "1");<br />   word = word.replaceAll("[CGJKQSXZ]", "2");<br />   word = word.replaceAll("[DT]", "3");<br />   word = word.replaceAll("[L]", "4");<br />   word = word.replaceAll("[MN]", "5");<br />   word = word.replaceAll("[R]", "6");<br />   <br />   for(int i = 1; i &lt;= 6; ++i){<br />    String regex = String.format("%d+", i);<br />    word = word.replaceAll(regex, Integer.toString(i));<br />   }<br />   <br />   word = word.replaceAll("[AEIOUHWY]", "");<br />   <br />   System.out.println(word);<br />  }<br /> }<br /><br />}<br /><br /></pre>

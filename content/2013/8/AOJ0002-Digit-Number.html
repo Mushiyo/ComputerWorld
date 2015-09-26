@@ -1,0 +1,10 @@
+title=〔AOJ〕0002:   Digit Number
+date=2013-08-28 23:08
+full_date=2013-08-28T23:08:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0002">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0002</a><br /><!--more--><br />解題雜記：<br />　　對a+b的和取log，把小數的部份無條件捨去後再加1，即為所求。要注意的是，由於我們不能對0取log，所以當和是0的時候要特別處理。<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0002.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cmath&gt;<br /><br />using namespace std;<br /><br />int countDigit(int num){<br /> if(num == 0){<br />  return 1;<br /> }<br /><br /> int digit = (int)log10(num) + 1;<br /><br /> return digit;<br />}<br /><br />int main(){<br /> int a = 0, b = 0;<br /><br />    while(cin &gt;&gt; a &gt;&gt; b){<br />        cout &lt;&lt; countDigit(a + b) &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d044: 鐵路堆疊
+date=2013-07-31 19:30
+full_date=2013-07-31T19:30:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d044">http://judge.nccucs.org/ShowProblem?problemid=d044</a><br /><!--more--><br />解題雜記：<br />　　用stack來裝由A方向開進站的車廂，然後用一個數字（底下的程式碼用的是carriageInB，不過這邊為了方便，使用i來稱呼這個數字）記錄目前有多少個車廂進到B方向的鐵軌。檢查stack的top是不是第i個要進到B的車廂，如是的話就pop掉（表示進到B方向鐵軌了）；如果不是的話，從A方向再開一節車廂進來（push進stack）。重覆這樣的動作直到A方向沒車廂了。此時檢查stack是否為空，如果是的話，表示可以排出要求的排列；不是的話就不行。<br /><br />C++： <br /><pre class="brush:c">/*Filename: d044.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;stack&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int N = 0;<br /><br /> while (cin &gt;&gt; N) {<br />  if (N == 0) {<br />   break;<br />  }<br /><br />  while (true) {<br />   int firstCarriage = 0;<br />   cin &gt;&gt; firstCarriage;<br /><br />   if (firstCarriage == 0) {<br />    break;<br />   }<br /><br />   int targetOrder[N];<br />   targetOrder[0] = firstCarriage;<br />   for (int i = 1; i &lt; N; ++i) {<br />    cin &gt;&gt; targetOrder[i];<br />   }<br /><br />   int carriageInB = 0;<br />   stack&lt;int&gt; carriageLeaveA;<br />   for (int i = 1; i &lt;= N; ++i) {<br />    carriageLeaveA.push(i);<br /><br />    while (!carriageLeaveA.empty()<br />      &amp;&amp; targetOrder[carriageInB] == carriageLeaveA.top()) {<br />     carriageLeaveA.pop();<br />     ++carriageInB;<br />    }<br />   }<br /><br />   if (carriageInB == N) {<br />    cout &lt;&lt; "Yes" &lt;&lt; endl;<br />   } else {<br />    cout &lt;&lt; "No" &lt;&lt; endl;<br />   }<br />  }<br />  cout &lt;&lt; endl;<br /> }<br />}<br /><br /></pre>

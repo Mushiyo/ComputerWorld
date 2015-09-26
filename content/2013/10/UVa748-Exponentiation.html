@@ -1,0 +1,10 @@
+title=〔UVa〕748 - Exponentiation
+date=2013-10-20 21:17
+full_date=2013-10-20T21:17:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/7/748.html">http://uva.onlinejudge.org/external/7/748.html</a><br /><!--more--><br />解題雜記：<br />&nbsp;　　待補<br /><br />Java： <br /><pre class="brush:java">import java.math.BigDecimal;<br />import java.util.Scanner;<br /><br />public class u748 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String result = new BigDecimal(input.next()).pow(input.nextInt()).toPlainString().replaceAll("0+?$", "").replaceAll("[.]$", "");<br />   <br />   if(result.startsWith("0")){<br />    result = result.replaceFirst("0", "");<br />   }<br />   <br />   System.out.println(result);<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

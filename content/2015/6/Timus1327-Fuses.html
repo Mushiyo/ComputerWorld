@@ -1,0 +1,10 @@
+title=〔Timus〕1327. Fuses
+date=2015-06-06 16:15
+full_date=2015-06-06T16:15:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1327">http://acm.timus.ru/problem.aspx?space=1&amp;num=1327</a><br /><!--more--><br /><br />Solution Description:<br />Just output the number of odd numbers on interval [A, B].<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus1327.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class Timus1327 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int A = input.nextInt();<br />   int B = input.nextInt();<br />   <br />   System.out.println((B + B % 2) / 2 - (A - A % 2) / 2);<br />  }<br /> }<br /><br />}<br /><br /></pre>

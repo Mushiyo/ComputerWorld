@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d117: 10924 - Prime Words
+date=2012-01-25 20:07
+full_date=2012-01-25T20:07:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d117">http://zerojudge.tw/ShowProblem?problemid=d117</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d117 "10924 - Prime Words" from UVa ACM 10924                        */<br />/*  Language: JAVA (761 Bytes)                                                    */<br />/*  Result: AC(80ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-01-25 20:00:32                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d117 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String word = input.next();<br />   int value = 0;<br />   <br />   for(int i = 0; i &lt; word.length(); ++i){<br />    if(Character.isLowerCase(word.charAt(i))){<br />     value += word.charAt(i) - 'a' + 1;<br />    }<br />    else{<br />     value += word.charAt(i) - 'A' + 27;<br />    }<br />   }<br />   <br />   if(isPrime(value)){<br />    System.out.println("It is a prime word.");<br />   }<br />   else{<br />    System.out.println("It is not a prime word.");<br />   }<br />  }<br /> }<br /> <br /> public static boolean isPrime(int val){<br />  for(int i = 2; i &lt;= Math.sqrt(val); ++i){<br />   if(val % i == 0){<br />    return false;<br />   }<br />  }<br />  <br />  return true;<br /> }<br /><br />}<br /><br /></pre>

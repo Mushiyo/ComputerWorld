@@ -1,0 +1,10 @@
+title=〔ACM-ICPC Live Archive〕6047 - Perfect Matching
+date=2013-10-13 22:10
+full_date=2013-10-13T22:10:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔ACM-ICPC Live Archive〕
+status=published
+~~~~~~
+
+題目：<a href="https://icpcarchive.ecs.baylor.edu/external/60/6047.html">https://icpcarchive.ecs.baylor.edu/external/60/6047.html</a><br /><!--more--><br /><br />Java： <br /><pre class="brush:java">待補，有需要請留言<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: la6047.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;stdio.h&gt;<br />#include &lt;iostream&gt;<br />#include &lt;string&gt;<br />#include &lt;cstring&gt;<br /><br />using namespace std;<br /><br />bool isPalindrom(string a, string b) {<br /> string s = a + b;<br /> int halfLen = s.size();<br /><br /> for (int i = 0, j = s.size() - 1; i &lt; halfLen; ++i, --j) {<br />  if (s[i] != s[j]) {<br />   return false;<br />  }<br /> }<br /><br /> return true;<br />}<br /><br />int main() {<br /> int T = 0;<br /><br /> while (scanf("%d", &amp;T) == 1) {<br />  int caseNum = 1;<br />  while (T &gt; 0) {<br />   int N = 0;<br />   scanf("%d ", &amp;N);<br /><br />   string words[N];<br />   char tmp[500];<br />   for (int i = 0; i &lt; N; ++i) {<br />    scanf("%s", &amp;tmp);<br />    words[i] = string(tmp);<br />   }<br /><br />   int countPerfect = 0;<br />   for (int i = 0; i &lt; N; ++i) {<br />    for (int j = 0; j &lt; N; ++j) {<br />     if (i == j) {<br />      continue;<br />     } else {<br />      if (isPalindrom(words[i], words[j])) {<br />       ++countPerfect;<br />      }<br />     }<br /><br />    }<br />   }<br /><br />   printf("Case #%d: %d\n", caseNum, countPerfect);<br /><br />   ++caseNum;<br />   --T;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔Timus〕1131. Copying
+date=2015-06-06 17:39
+full_date=2015-06-06T17:39:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1131">http://acm.timus.ru/problem.aspx?space=1&amp;num=1131</a><br /><!--more--><br />Solution Description:<br />Let c<sub>i</sub> be the number of computers with the program after i<sup>th</sup> hour.<br />At the beginning, c<sub>0</sub> = 1. When i ≧ 1, if c<sub>i - 1</sub> &lt; K, , then c<sub>i</sub> = min(c<sub>i - 1</sub> * 2, N); if c<sub>i - 1</sub> ≧ K, then c<sub>i</sub> = min(c<sub>i - 1</sub> + K, N).<br />Hence, assum j is the smallest integer which satisfied c<sub>j</sub> ≧ K, the minimal time will be \(\lceil \log_2 (K) \rceil + \lceil \frac{N - c_j}{K} \rceil \).<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus1131.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class Timus1131 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   int K = input.nextInt();<br />   long copiedComputer = 1;<br />   int time = 0;<br />   <br />   while(copiedComputer &lt; N &amp;&amp; copiedComputer &lt; K){<br />    copiedComputer &lt;&lt;= 1;<br />    ++time;<br />   }<br />   <br />   N -= copiedComputer;<br />   if(N &gt; 0){<br />    time += N / K;<br />    <br />    if(N % K &gt; 0){<br />     ++time;<br />    }<br />   }<br />   <br />   System.out.println(time);<br />  }<br /> }<br /><br />}<br /><br /></pre>

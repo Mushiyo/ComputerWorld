@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b186: 97七區資訊學科1(改編)
+date=2011-08-06 15:33
+full_date=2011-08-06T15:33:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b186">http://zerojudge.tw/ShowProblem?problemid=b186</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b186 "97七區資訊學科1(改編)" from 97 七區資訊學科能力競賽*/<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (108ms, 2016KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-08-02 17:10:43                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b186 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int cookie = input.nextInt();<br />   int chocolate = input.nextInt();<br />   int cake = input.nextInt();<br />   chocolate += giftChocolate(cookie, cake);<br />   <br />   System.out.println(cookie + " 個餅乾，" + chocolate + " 盒巧克力，" + cake + " 個蛋糕。");<br />  }<br /> }<br /> <br /> public static int giftChocolate(int cookie, int cake){<br />  int cookie10 = cookie / 10;<br />  int cake2 = cake / 2;<br />  <br />  return Math.min(cookie10, cake2);<br /> }<br /><br />}<br /></pre>

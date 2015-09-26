@@ -1,0 +1,10 @@
+title=〔UVa〕11734 - Big Number of Teams will Solve This
+date=2013-10-20 21:14
+full_date=2013-10-20T21:14:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/117/11734.html">http://uva.onlinejudge.org/external/117/11734.html</a><br /><!--more--><br />解題雜記：<br />&nbsp;　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11734 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  final String AC = "Yes";<br />  final String WA = "Wrong Answer";<br />  final String PE = "Output Format Error";<br />  <br />  while(input.hasNext()){<br />   int t = input.nextInt();<br />   input.nextLine();//eat change line<br />   <br />   for(int i = 1; i &lt;= t; ++i){<br />    String outputTeam = input.nextLine();<br />    String outputJudge = input.nextLine();<br />    <br />    String result = "";<br />    <br />    if(outputJudge.equals(outputTeam)){<br />     result = AC;<br />    }else{<br />     if(outputJudge.equals(outputTeam.replaceAll(" ", ""))){<br />      result = PE;<br />     }<br />     else{<br />      result = WA;<br />     }<br />    }<br />    <br />    System.out.println("Case " + i + ": " + result);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕11728 - Alternate Task
+date=2014-08-24 00:41
+full_date=2014-08-24T00:41:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/117/11728.html">http://uva.onlinejudge.org/external/117/11728.html</a><br /><!--more--><br />Solution Description:<br />Count all the factor sum of all numbers between 1~1000.<br />Create an array, use factor sums as the index, record the which number produced the sum.<br />Then just output the number corresponds to the input.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11728.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.ArrayList;<br />import java.util.Arrays;<br />import java.util.Scanner;<br /><br />public class UVa11728 {<br /><br /> public static void main(String[] args) {<br />  int[] sumIsS = new int[1000 + 1];<br />  Arrays.fill(sumIsS, -1);<br />  <br />  for(int i = 1; i &lt; sumIsS.length; ++i){<br />   int S = sumOfFactor(i);<br />   if(S &lt;= 1000){<br />    sumIsS[S] = i;<br />   }<br />  }<br />  <br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br /><br />  while (input.hasNext()) {<br />   int S = input.nextInt();<br />   <br />   if(S == 0){<br />    break;<br />   }<br />   <br />   System.out.printf("Case %d: %d\n", caseNum, sumIsS[S]);<br />   <br />   ++caseNum;<br />  }<br /> }<br /><br /> public static int sumOfFactor(int n) {<br />  int sum = 0;<br /><br />  for (int i = 1; i &lt;= n; ++i) {<br />   if (n % i == 0) {<br />    sum += i;<br />   }<br />  }<br /><br />  return sum;<br /> }<br />}<br /><br /></pre>

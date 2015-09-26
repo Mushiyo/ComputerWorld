@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d636: 大爆炸bomb
+date=2014-12-07 22:57
+full_date=2014-12-07T22:57:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=d636">http://zerojudge.tw/ShowProblem?problemid=d636</a><br /><!--more--><br />解題雜記：<br />　　使用Java的話，用BigInteger的modPow即可。<br /><br />Java：<br /><pre class="brush:java">/* Filename: d636.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class d636 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final BigInteger mod = BigInteger.valueOf(10007); <br /><br />  while (input.hasNext()) {<br />   BigInteger a = input.nextBigInteger();<br />   BigInteger b = input.nextBigInteger();<br />   <br />   System.out.println(a.modPow(b, mod));<br />  }<br /> }<br /><br />}<br /><br /></pre>

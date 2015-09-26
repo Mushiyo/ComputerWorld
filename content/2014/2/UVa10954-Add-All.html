@@ -1,0 +1,10 @@
+title=〔UVa〕10954 - Add All
+date=2014-02-15 21:45
+full_date=2014-02-15T21:45:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/109/10954.html">http://uva.onlinejudge.org/external/109/10954.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10954.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.PriorityQueue;<br /><br />public class UVa10954 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   if(N == 0){<br />    break;<br />   }<br />   <br />   PriorityQueue&lt;Long&gt; priorityQueue = new PriorityQueue&lt;Long&gt;();<br />   <br />   while(N &gt; 0){<br />    priorityQueue.add(input.nextLong());<br />    <br />    --N;<br />   }<br />   <br />   long cost = 0;<br />   while(priorityQueue.size() &gt;= 2){<br />    long num1 = priorityQueue.poll();<br />    long num2 = priorityQueue.poll();<br />    <br />    cost += num1 + num2;<br />    <br />    priorityQueue.add(num1 + num2);<br />   }<br />   <br />   System.out.println(cost);<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

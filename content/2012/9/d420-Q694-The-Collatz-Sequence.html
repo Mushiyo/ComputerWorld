@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d420: Q694: The Collatz Sequence
+date=2012-09-08 15:28
+full_date=2012-09-08T15:28:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d420">http://zerojudge.tw/ShowProblem?problemid=d420</a><br /><!--more-->解題雜記：<br />　　這題根本就是3n+1延伸出來的XD。只要會解3n+1，應該不難AC。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d420 "Q694: The Collatz Sequence" from ACM 694                       */<br />/*  Language: JAVA (760 Bytes)                                                    */<br />/*  Result: AC(620ms, 21.2MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-08-21 16:05:56                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d420 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int A = input.nextInt();<br />  int L = input.nextInt();<br />  int caseNum = 1;<br />  <br />  while(A &gt; 0 &amp;&amp; L &gt; 0){<br />   <br />   System.out.println("Case " + caseNum + ": A = " + A + ", limit = " + L + ", number of terms = " + countTerm(A, L));<br />   <br />   ++caseNum;<br />   A = input.nextInt();<br />   L = input.nextInt();<br />  }<br /> }<br /> <br /> public static int countTerm(int A, int L){<br />  int numOfTerms = 0;<br />  long aTerm = A;<br />  <br />  while(aTerm &lt;= L){<br />   ++numOfTerms;<br />   <br />   if(aTerm == 1){<br />    break;<br />   }<br />   <br />   if(aTerm % 2 != 1){<br />    aTerm /= 2;<br />   }<br />   else{<br />    aTerm = 3 * aTerm + 1;<br />   }<br />  }<br />  <br />  return numOfTerms;<br /> }<br /><br />}<br /><br /></pre>

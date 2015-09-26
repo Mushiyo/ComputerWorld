@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d097: 10038 - Jolly Jumpers
+date=2012-01-25 20:06
+full_date=2012-01-25T20:06:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d097">http://zerojudge.tw/ShowProblem?problemid=d097</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d097 "10038 - Jolly Jumpers" from Uva ACM 10038                      */<br />/*  Language: JAVA (855 Bytes)                                                    */<br />/*  Result: AC(420ms, 21.2MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-01-25 16:43:37                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d097 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int[] series = new int[n];<br />   <br />   for(int i = 0; i &lt; series.length; ++i){<br />    series[i] = input.nextInt();<br />   }<br />   <br />   boolean[] diff = new boolean[n];<br />   boolean isJolly = true;<br />   for(int i = 1; i &lt; series.length; ++i){<br />    int diffAbs = Math.abs(series[i] - series[i - 1]);<br />    if((diffAbs &lt; n) &amp;&amp; (diffAbs &gt; 0)){<br />     diff[diffAbs] = true;<br />    }<br />    else{<br />     isJolly = false;<br />     break;<br />    }<br />   }<br />   <br />   for(int i = 1; i &lt; diff.length; ++i){<br />    if(!diff[i]){<br />     isJolly = false;<br />    }<br />   }<br />   <br />   if(isJolly){<br />    System.out.println("Jolly");<br />   }<br />   else{<br />    System.out.println("Not jolly");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

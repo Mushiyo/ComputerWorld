@@ -1,0 +1,10 @@
+title=〔UVa〕10041 - Vito's Family
+date=2014-01-26 22:42
+full_date=2014-01-26T22:42:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/100/10041.html">http://uva.onlinejudge.org/external/100/10041.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10041.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Arrays;<br /><br />public class UVa10041 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int totalCase = input.nextInt();<br />   while (totalCase &gt; 0) {<br />    int r = input.nextInt();<br />    int[] s = new int[r];<br /><br />    for (int i = 0; i &lt; s.length; ++i) {<br />     s[i] = input.nextInt();<br />    }<br /><br />    Arrays.sort(s);<br /><br />    int median = s[r / 2];<br />    int distanceSum = 0;<br />    for (int i = 0; i &lt; s.length; ++i) {<br />     distanceSum += Math.abs(median - s[i]);<br />    }<br /><br />    System.out.println(distanceSum);<br /><br />    --totalCase;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕579 - ClockHands
+date=2013-09-20 23:09
+full_date=2013-09-20T23:09:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/5/579.html">http://uva.onlinejudge.org/external/5/579.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br />import java.util.StringTokenizer;<br /><br />public class u579 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String time = input.next();<br />   <br />   if(time.equals("0:00")){<br />    break;<br />   }<br />   <br />   StringTokenizer tok = new StringTokenizer(time, ":");<br />   int H = Integer.parseInt(tok.nextToken());<br />   int M = Integer.parseInt(tok.nextToken());<br />   <br />            //let 12 be 0°, 3 be 90° ...<br />   double angleBetweenHM = Math.abs(M * 6 - ((H % 12) * 30 + 0.5 * M));<br />   if(angleBetweenHM &gt; 180){<br />    System.out.printf("%.3f\n", 360 - angleBetweenHM);<br />   }<br />   else{<br />    System.out.printf("%.3f\n", angleBetweenHM);<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

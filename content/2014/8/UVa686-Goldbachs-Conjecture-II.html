@@ -1,0 +1,10 @@
+title=〔UVa〕686 - Goldbach's Conjecture (II)
+date=2014-08-13 23:17
+full_date=2014-08-13T23:17:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/6/686.html">http://uva.onlinejudge.org/external/6/686.html</a><br /><!--more--><br />Solution Description:<br />Build prime list, then iterate through it to find the solution.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa686.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.ArrayList;<br />import java.util.Scanner;<br /><br />public class UVa686 {<br /> private static boolean[] isPrime = new boolean[1 &lt;&lt; 16 + 1];<br /><br /> public static ArrayList&lt;Integer&gt; primeList(int upperBound) {<br />  for (int i = 2; i &lt; upperBound; ++i) {<br />   isPrime[i] = true;<br />  }<br /><br />  int sqrtSize = (int) Math.sqrt(upperBound) + 1;<br /><br />  for (int i = 2; i &lt; sqrtSize; ++i) {<br />   if (isPrime[i] == true) {<br />    for (int j = i * i; j &lt; upperBound; j += i) {<br />     isPrime[j] = false;<br />    }<br />   }<br />  }<br /><br />  ArrayList&lt;Integer&gt; prime = new ArrayList&lt;Integer&gt;();<br />  for (int i = 2; i &lt; upperBound; ++i) {<br />   if (isPrime[i]) {<br />    prime.add(i);<br />   }<br />  }<br /><br />  return prime;<br /> }<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  final ArrayList&lt;Integer&gt; prime = primeList(1 &lt;&lt; 16 + 1);<br /><br />  while (input.hasNext()) {<br />   int num = input.nextInt();<br /><br />   if (num == 0) {<br />    break;<br />   }<br /><br />   int countPair = 0;<br />   for (int i = 0; i &lt; prime.size() &amp;&amp; num - prime.get(i) &gt;= prime.get(i); ++i) {<br />    if (isPrime[num - prime.get(i)]) {<br />     ++countPair;<br />    }<br />   }<br />   <br />   System.out.println(countPair);<br />  }<br /> }<br /><br />}<br /><br /></pre><br /> 

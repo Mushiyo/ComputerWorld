@@ -1,0 +1,10 @@
+title=〔UVa〕10919 - Prerequisites?
+date=2014-03-08 15:21
+full_date=2014-03-08T15:21:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/109/10919.html">http://uva.onlinejudge.org/external/109/10919.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10919.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10919 {<br /><br /> public static void main(String[] args) {<br />  final int maxK = 100;<br />  final int maxC = 100;<br />  final int maxM = 100;<br />  int[] choosedCourse = new int[maxC];<br />  int[][] category = new int[maxM][maxC];<br />  <br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int k = input.nextInt();<br />   <br />   if(k == 0){<br />    break;<br />   }<br />   <br />   int m = input.nextInt();<br />   <br />   for(int i = 0; i &lt; k; ++i){<br />    choosedCourse[i] = input.nextInt();<br />   }<br />   <br />   boolean canGraduate = true;<br />   for(int i = 0; i &lt; m; ++i){<br />    int c = input.nextInt();<br />    int r = input.nextInt();<br />    int choosed = 0;<br />    <br />    for(int j = 0; j &lt; c; ++j){<br />     category[i][j] = input.nextInt();<br />     <br />     for(int l = 0; l &lt; k; ++l){<br />      if(category[i][j] == choosedCourse[l]){<br />       ++choosed;<br />       break;<br />      }<br />     }<br />    }<br />    <br />    if(choosed &lt; r){<br />     canGraduate = false;<br />    }<br />   }<br />   <br />   if(canGraduate){<br />    System.out.println("yes");<br />   }<br />   else{<br />    System.out.println("no");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

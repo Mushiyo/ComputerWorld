@@ -1,0 +1,10 @@
+title=〔UVa〕12626 - I ❤ Pizza
+date=2014-10-26 17:11
+full_date=2014-10-26T17:11:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/126/12626.html">http://uva.onlinejudge.org/external/126/12626.html</a><br /><!--more--><br />Solution Description:<br />Count the frequencies of letters M, A, R, G, I and T respectively. Since it takes one M, three A's, two R's, one G, one I and one T to make a MARGARITA, so we need to divided the frequencies of A by 3 and the frequencies of R by two after counting. Then, get minimum among all the letters, that the number of MARGARITAs we can make.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12626.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12626 {<br /> final static int M_INDEX = 'M' - 'A';<br /> final static int A_INDEX = 'A' - 'A';<br /> final static int R_INDEX = 'R' - 'A';<br /> final static int G_INDEX = 'G' - 'A';<br /> final static int I_INDEX = 'I' - 'A';<br /> final static int T_INDEX = 'T' - 'A';<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   while(N &gt; 0){<br />    String ingredients = input.next().replaceAll("[^MARGARITA]", "");<br />    int[] count = new int[26];<br />    <br />    for(int i = 0; i &lt; ingredients.length(); ++i){<br />     ++count[ingredients.charAt(i) - 'A'];<br />    }<br />    <br />    // in the word "MARGARITA", we have 3 'A' and 2 'R'<br />    count[A_INDEX] /= 3;<br />    count[R_INDEX] /= 2;<br />    <br />    int pizzaMade = Math.min(Math.min(Math.min(Math.min(Math.min(count[M_INDEX], count[A_INDEX]), count[R_INDEX]), count[G_INDEX]) , count[I_INDEX]), count[T_INDEX]);<br />    <br />    System.out.println(pizzaMade);<br />    <br />    --N;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

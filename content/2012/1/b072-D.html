@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b072: D. 打不倒的空氣人
+date=2012-01-13 21:58
+full_date=2012-01-13T21:58:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b072">http://zerojudge.tw/ShowProblem?problemid=b072</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b072 "D. 打不倒的空氣人" from 2007 NPSC 高中組初賽       */<br />/*  Language: JAVA (551 Bytes)                                                    */<br />/*  Result: AC(1.3s, 81.5MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-13 17:35:53                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b072 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int m = input.nextInt();<br />   <br />   if(n == 0 &amp;&amp; m == 0){<br />    break;<br />   }<br />   <br />   StringBuilder code = new StringBuilder();;<br />   <br />   while(n &gt; 0){<br />    code = code.append(input.next());<br />    <br />    --n;<br />   }<br /><br />   for(int i = 0; i &lt; m; ++i){<br />    System.out.print(code.charAt(input.nextInt() - 1));<br />   }<br />   System.out.println();   <br />  }<br /> }<br /><br />}<br /><br /></pre>

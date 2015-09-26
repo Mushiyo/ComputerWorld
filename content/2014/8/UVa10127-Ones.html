@@ -1,0 +1,10 @@
+title=〔UVa〕10127 - Ones
+date=2014-08-24 14:46
+full_date=2014-08-24T14:46:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/101/10127.html">http://uva.onlinejudge.org/external/101/10127.html</a><br /><!--more--><br />Solution Description:<br />One simple though is to let the number be 1, and test if it is 0 under modulo n. If it's true, then we are done, else use 10 * number + 1 then do the test again, and so on. However, since overflow may happen, it may become infinite loop. Luckily, with modular arithmetic, we can still solve this problem with this thought.<br />We know that in modular arithmetic, the following property holds<br />\[ a \times b \equiv (a \bmod n) \times (b \bmod n) \pmod{n} \\<br /> a + b \equiv (a \bmod n) + (b \bmod n) \pmod{n}&nbsp; \]<br />So, we have<br />\[ 10 \times number + 1 \equiv (10 \bmod n) \times (number \bmod n) + 1 \bmod n \pmod{n}\]<br />Just remember to mod n after you increase the digit each time.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10127_sol2.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10127 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   int digit = 1;<br />   int currentMod = 1;<br />   final int tenModN = 10 % n;<br />   while(currentMod % n != 0){<br />    currentMod *= tenModN;<br />    ++currentMod;<br />    currentMod %= n;<br />    ++digit;<br />   }<br />   <br />   System.out.println(digit);<br />  }<br /> }<br /><br />}<br /><br /></pre>

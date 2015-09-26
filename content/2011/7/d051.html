@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d051: 糟糕，我發燒了！
+date=2011-07-07 23:54
+full_date=2011-07-07T23:54:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d051">http://zerojudge.tw/ShowProblem?problemid=d051</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d051 "糟糕，我發燒了！" from 板橋高中                    */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (116ms, 5878KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-04 23:26:30                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d051 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int Fahrenheit = input.nextInt();<br />   double Celsius = (5.0 / 9) * (Fahrenheit - 32);<br />   <br />   System.out.printf("%.3f\n",Celsius);<br />  }<br /> }<br /><br />}<br /></pre>

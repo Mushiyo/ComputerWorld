@@ -1,0 +1,10 @@
+title=〔UVa〕10945 - Mother bear
+date=2014-03-08 15:19
+full_date=2014-03-08T15:19:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/109/10945.html">http://uva.onlinejudge.org/external/109/10945.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10945.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10945 {<br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String sentence = input.nextLine();<br />   <br />   if(sentence.equals("DONE")){<br />    break;<br />   }<br />   <br />   if(isPalindrome(sentence)){<br />    System.out.println("You won't be eaten!");<br />   }<br />   else{<br />    System.out.println("Uh oh..");<br />   }<br />  }<br /> }<br /><br /> public static boolean isPalindrome(String s){<br />  s = s.replaceAll("\\W", "").toLowerCase();<br />  <br />  for(int i = 0, j = s.length() - 1; i &lt; j; ++i, --j){<br />   if(s.charAt(i) != s.charAt(j)){<br />    return false;<br />   }<br />  }<br />  <br />  return true;<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

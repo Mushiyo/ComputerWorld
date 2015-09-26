@@ -1,0 +1,10 @@
+title=〔AOJ〕0019:   Factorial
+date=2013-08-28 23:27
+full_date=2013-08-28T23:27:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔AOJ〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0019">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0019</a><br /><!--more--><br />解題雜記：<br />　　由於題目中有限定n ≦ 20，所以不用擔心溢位的問題。勇敢的從1乘到n就好:D<br /><br />C++： <br /><pre class="brush:c">/*Filename: aoj0019.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />long long factorial(int n){<br /> long long result = 1;<br /><br /> for(int i = 1; i &lt;= n; ++i){<br />  result *= i;<br /> }<br /><br /> return result;<br />}<br /><br />int main(){<br /> int n = 0;<br /><br />    while(cin &gt;&gt; n){<br />        cout &lt;&lt; factorial(n) &lt;&lt; endl;<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a890: E. 數位文獻修復
+date=2015-03-21 22:37
+full_date=2015-03-21T22:37:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=a890">http://zerojudge.tw/ShowProblem?problemid=a890</a><br /><!--more--><br />解題雜記：<br />　　一一比對二個字串中相同位置的char，如果同時有個位置都是"?"，輸出"No"；否則，把是"?"地方改填入另一個字串中相同位置的char，輸出互相填補後的結果。<br /><br />Java：<br /><pre class="brush:java">/* Filename: a890.java<br /> * Author: Mushiyo<br /> */<br />package NPSC;<br /><br />import java.util.Scanner;<br /><br />public class a890 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   while(T &gt; 0){<br />    String s1 = input.next();<br />    String s2 = input.next();<br />    <br />    boolean canFix = true;<br />    char[] s = new char[s1.length()];   <br />    for(int i = 0; i &lt; s.length; ++i){<br />     s[i] = (s1.charAt(i) == '?') ? s2.charAt(i) : s1.charAt(i);<br />     <br />     if(s[i] == '?'){<br />      canFix = false;<br />      break;<br />     }<br />    }<br />    <br />    if(canFix){<br />     System.out.print("Yes:");<br />     System.out.println(s);<br />    } else {<br />     System.out.println("No");<br />    }<br />    <br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

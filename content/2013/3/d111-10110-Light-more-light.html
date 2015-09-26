@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d111: 10110 - Light, more light
+date=2013-03-13 22:10
+full_date=2013-03-13T22:10:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d111">http://zerojudge.tw/ShowProblem?problemid=d111</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d111 "10110 - Light, more light" from UVa ACM 10110                  */<br />/*  Language: JAVA (425 Bytes)                                                    */<br />/*  Result: AC(108ms, 3.7MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-09-08 14:09:15                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d111 {<br /><br />	public static void main(String[] args) {<br />		Scanner input = new Scanner(System.in);<br />		<br />		while(input.hasNext()){<br />			int n = input.nextInt();<br />			<br />			if(n == 0){<br />				break;<br />			}<br />			<br />			double sqrtN = Math.sqrt(n);<br />			<br />			if(Math.floor(sqrtN) == Math.ceil(sqrtN)){<br />				System.out.println("yes");<br />			}<br />			else{<br />				System.out.println("no");<br />			}<br />		}<br />	}<br /><br />}<br /><br /></pre>

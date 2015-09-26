@@ -1,0 +1,58 @@
+title=〔Timus〕1585. Penguins
+date=2011-08-12 14:48
+full_date=2011-08-12T14:48:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1585">http://acm.timus.ru/problem.aspx?space=1&amp;num=1585</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;
+<br />
+<br />public class t1585 {
+<br />
+<br />	public static void main(String[] args) {
+<br />		Scanner input = new Scanner(System.in);
+<br />
+<br />		while (input.hasNext()) {
+<br />			int emperorPenguin = 0;
+<br />			int littlePenguin = 0;
+<br />			int macaroniPenguin = 0;
+<br />			int max = 0;
+<br />			String mostNumerousPenguin = "";
+<br />			
+<br />			int n = input.nextInt();
+<br />			input.nextLine();//吃掉換行符號
+<br />			while (n &gt; 0) {
+<br />				String nameOfPenguin = input.nextLine();
+<br />
+<br />				if (nameOfPenguin.startsWith("E")) {
+<br />					++emperorPenguin;
+<br />					if(max &lt; emperorPenguin){
+<br />						max = emperorPenguin;
+<br />						mostNumerousPenguin = "Emperor Penguin";
+<br />					}
+<br />				}
+<br />				else if (nameOfPenguin.startsWith("L")) {
+<br />					++littlePenguin;
+<br />					if(max &lt; littlePenguin){
+<br />						max = littlePenguin;
+<br />						mostNumerousPenguin = "Little Penguin";
+<br />					}
+<br />				}
+<br />				else {
+<br />					++macaroniPenguin;
+<br />					if(max &lt; macaroniPenguin){
+<br />						max = macaroniPenguin;
+<br />						mostNumerousPenguin = "Macaroni Penguin";
+<br />					}
+<br />				}
+<br />				
+<br />				--n;
+<br />			}
+<br />			
+<br />			System.out.println(mostNumerousPenguin);
+<br />		}
+<br />	}
+<br />}
+<br /></pre>

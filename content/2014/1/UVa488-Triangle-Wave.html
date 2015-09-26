@@ -1,0 +1,10 @@
+title=〔UVa〕488 - Triangle Wave
+date=2014-01-20 20:45
+full_date=2014-01-20T20:45:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/4/488.html">http://uva.onlinejudge.org/external/4/488.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa488.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa488 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  String[] paritalWave = {"", "1", "22", "333", "4444", "55555", "666666", "7777777", "88888888", "999999999"};<br />  <br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   while (n &gt; 0) {<br />    int amplitude = input.nextInt();<br />    int frequency = input.nextInt();<br />    StringBuilder output = new StringBuilder();<br /><br />    for(int f = 1; f &lt;= frequency; ++f) {<br />     for (int i = 1; i &lt;= amplitude; ++i) {<br />      output.append(paritalWave[i]+"\n");<br />      <br />     }<br />     for (int i = amplitude - 1; i &gt; 0; --i) {<br />      output.append(paritalWave[i]+"\n");<br />     }<br />     <br />     if(f &lt; frequency){<br />      output.append("\n");<br />     }<br />    }<br />    <br />    System.out.print(output);<br />    if(n != 1){<br />     System.out.println();<br />    }<br />    <br />    --n;<br />   }<br />  }<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

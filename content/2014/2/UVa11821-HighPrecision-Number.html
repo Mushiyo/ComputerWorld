@@ -1,0 +1,10 @@
+title=〔UVa〕11821 - High-Precision Number
+date=2014-02-22 21:01
+full_date=2014-02-22T21:01:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/118/11821.html">http://uva.onlinejudge.org/external/118/11821.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11821.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigDecimal;<br /><br />public class UVa11821 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   while (n &gt; 0) {<br />    BigDecimal sum = BigDecimal.valueOf(0);<br />    BigDecimal num = BigDecimal.valueOf(0);<br /><br />    do {<br />     num = input.nextBigDecimal();<br />     sum = sum.add(num);<br />    } while (num.equals(BigDecimal.ZERO) == false);<br /><br />    // There's a bug in BigDecimal.stripTrailingZeros()<br />    // which will not make 0.0 to be output as 0<br />    // reference: http://bugs.java.com/bugdatabase/view_bug.do?bug_id=6480539<br />    if (sum.compareTo(BigDecimal.ZERO) == 0) {<br />     System.out.println(0);<br />    } else {<br />     System.out.println(sum.stripTrailingZeros().toPlainString());<br />    }<br /><br />    --n;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

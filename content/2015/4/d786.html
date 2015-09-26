@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d786: 平均值
+date=2015-04-01 22:12
+full_date=2015-04-01T22:12:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+Problem：<a href="http://zerojudge.tw/ShowProblem?problemid=d786">http://zerojudge.tw/ShowProblem?problemid=d786</a><br /><!--more--><br />解題雜記：<br />　　基本題。直接照題目要求做就好。記得在算平均值的時候，除數或被除數有一者要是double，不然若二者都是int的話，不管到底除不除得盡，算出來的結果都不會有小數點。<br /><br />Java：<br /><pre class="brush:java">/* Filename: d786.java<br /> * Author: Mushiyo<br /> */<br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class d786 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int totalCase = input.nextInt();<br />   <br />   while(totalCase &gt; 0){<br />    int n = input.nextInt();<br />    <br />    int sum = 0;<br />    for(int i = 0; i &lt; n; ++i){<br />     sum += input.nextInt();<br />    }<br />    <br />    System.out.printf("%.2f\n", sum / (double)n);<br />    <br />    --totalCase;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

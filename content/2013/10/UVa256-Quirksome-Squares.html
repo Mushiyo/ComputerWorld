@@ -1,0 +1,10 @@
+title= 〔UVa〕256 - Quirksome Squares
+date=2013-10-20 21:20
+full_date=2013-10-20T21:20:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/2/256.html">http://uva.onlinejudge.org/external/2/256.html</a><br /><!--more--><br />解題雜記：<br />&nbsp;　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u256 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   int halfBound = (int) Math.pow(10, N / 2);<br /><br />   for (int i = 0; i &lt; halfBound; ++i) {<br />    int squareI = i * i;<br />    int leftHalf = squareI / halfBound;<br />    int rightHalf = squareI % halfBound;<br /><br />    if (Math.pow(leftHalf + rightHalf, 2) == squareI) {<br />     System.out.println(String.format("%" + N + "d", squareI)<br />       .replace(' ', '0'));<br />    }<br />   }<br /><br />  }<br /> }<br /><br />}<br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

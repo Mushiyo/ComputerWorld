@@ -1,0 +1,10 @@
+title=〔UVa〕10235 - Simply Emirp
+date=2014-02-22 21:00
+full_date=2014-02-22T21:00:00.006+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/102/10235.html">http://uva.onlinejudge.org/external/102/10235.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10235.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa10235 {<br /><br /> public static void main(String[] args) {<br />  final int CERTAINTY = 10;<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   BigInteger N = input.nextBigInteger();<br />   <br />   if(N.isProbablePrime(CERTAINTY)){<br />    BigInteger revN =  new BigInteger(new StringBuilder(N.toString()).reverse().toString());<br />    <br />    if(revN.equals(N) == false &amp;&amp; revN.isProbablePrime(CERTAINTY)){<br />     System.out.println(N + " is emirp.");<br />    }<br />    else{<br />     System.out.println(N + " is prime.");<br />    }<br />   }<br />   else{<br />    System.out.println(N + " is not prime.");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕499 - What's The Frequency, Kenneth?
+date=2014-09-06 23:20
+full_date=2014-09-06T23:20:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/499.html">http://uva.onlinejudge.org/external/4/499.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa499.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa499 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String str = input.nextLine();<br />   int[] upperCount = new int[26];<br />   int[] lowerCount = new int[26];<br />   <br />   for(int i = 0; i &lt; str.length(); ++i){<br />    if(Character.isUpperCase(str.charAt(i))){<br />     ++upperCount[str.charAt(i) - 'A'];<br />    }<br />    <br />    if(Character.isLowerCase(str.charAt(i))){<br />     ++lowerCount[str.charAt(i) - 'a'];<br />    }<br />   }<br />   <br />   int mostFreq = 0;<br />   for(int i = 0; i &lt; upperCount.length; ++i){<br />    mostFreq = Math.max(mostFreq, upperCount[i]);<br />    mostFreq = Math.max(mostFreq, lowerCount[i]);<br />   }<br />   <br />   for(int i = 0; i &lt; upperCount.length; ++i){<br />    if(upperCount[i] == mostFreq){<br />     System.out.print((char)(i + 'A'));<br />    }<br />   }<br />   <br />   for(int i = 0; i &lt; lowerCount.length; ++i){<br />    if(lowerCount[i] == mostFreq){<br />     System.out.print((char)(i + 'a'));<br />    }<br />   }<br />   <br />   System.out.println(" " + mostFreq);<br />  }<br /> }<br /><br />}<br /><br /></pre>

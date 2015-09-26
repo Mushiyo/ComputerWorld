@@ -1,0 +1,10 @@
+title=〔Timus〕1723. Sandro's Book
+date=2011-12-17 14:51
+full_date=2011-12-17T14:51:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1723">http://acm.timus.ru/problem.aspx?space=1&amp;num=1723</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class t1723 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String universalSpell = input.nextLine();<br />   <br />   int[] countLetter = new int[26];<br />   <br />   for(int i = 0; i &lt; universalSpell.length(); ++i){<br />    ++countLetter[universalSpell.charAt(i) - 'a'];<br />   }<br />   <br />   int max = 0;<br />   for(int i = 0; i &lt; countLetter.length; ++i){<br />    if(countLetter[i] &gt; countLetter[max]){<br />     max = i;<br />    }<br />   }<br />   <br />   System.out.println((char)('a' + max));<br />  }<br /> }<br /><br />}<br /></pre>

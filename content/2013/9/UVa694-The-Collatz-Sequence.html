@@ -1,0 +1,10 @@
+title=〔UVa〕694 - The Collatz Sequence
+date=2013-09-20 22:54
+full_date=2013-09-20T22:54:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/6/694.html">http://uva.onlinejudge.org/external/6/694.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u694 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int A = input.nextInt();<br />  int L = input.nextInt();<br />  int caseNum = 1;<br /><br />  while (A &gt; 0 &amp;&amp; L &gt; 0) {<br /><br />   System.out.println("Case " + caseNum + ": A = " + A + ", limit = "<br />     + L + ", number of terms = " + countTerm(A, L));<br /><br />   ++caseNum;<br />   A = input.nextInt();<br />   L = input.nextInt();<br />  }<br /> }<br /><br /> public static int countTerm(int A, int L) {<br />  int numOfTerms = 0;<br />  long aTerm = A;<br /><br />  while (aTerm &lt;= L) {<br />   ++numOfTerms;<br /><br />   if (aTerm == 1) {<br />    break;<br />   }<br /><br />   if (aTerm % 2 != 1) {<br />    aTerm /= 2;<br />   } else {<br />    aTerm = 3 * aTerm + 1;<br />   }<br />  }<br /><br />  return numOfTerms;<br /> }<br /><br />}<br /><br /></pre>

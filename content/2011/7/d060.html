@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d060: 還要等多久啊？
+date=2011-07-09 23:18
+full_date=2011-07-09T23:18:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d060">http://zerojudge.tw/ShowProblem?problemid=d060</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d060 "還要等多久啊？" from 板橋高中                       */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (110ms, 5616KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-04 23:43:46                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d060 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int currentMinutes = input.nextInt();<br />   int waitingMinutes = (60 + 25 - currentMinutes) % 60;<br />   <br />   System.out.println(waitingMinutes);<br />  }<br /> }<br /><br />}<br /></pre>

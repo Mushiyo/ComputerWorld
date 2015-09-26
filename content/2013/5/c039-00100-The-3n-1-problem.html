@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c039: 00100 - The 3n + 1 problem
+date=2013-05-15 15:05
+full_date=2013-05-15T15:05:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=c039">http://www.zerojudge.tw/ShowProblem?problemid=c039</a><a href="http://www.zerojudge.tw/ShowProblem?problemid=d189"></a><br /><!--more--><br />解題雜記：<br />　　同<a href="http://computerworld.mushiyo.uni.me/2012/05/uva100-3n-1-problem.html" target="_blank">UVa100</a>。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c039 "00100 - The 3n + 1 problem" from ACM 100                       */<br />/*  Language: JAVA (773 Bytes)                                                    */<br />/*  Result: AC(168ms, 3.4MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2013-05-12 14:10:15                                        */<br />/**********************************************************************************/<br /><br /><br />package UVa;<br /><br />import java.util.Scanner;<br /><br />public class c039 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int i = input.nextInt();<br />   int j = input.nextInt();<br />   int beginNum = Math.min(i, j);<br />   int endNum = Math.max(i, j);<br />   <br />   long maxLen = 1;<br />   for(long s = beginNum; s &lt;= endNum; ++s){<br />    long currentLen = countCycleLen(s);<br />    <br />    maxLen = Math.max(maxLen, currentLen);<br />   }<br />   <br />   System.out.println(i + " " + j + " " + maxLen);<br />  }<br /> }<br /> <br /> public static long countCycleLen(long n){<br />  long cycleLen = 1;<br />  <br />  while(n != 1){<br />   if(n % 2 == 0){<br />    n = n / 2;<br />   }<br />   else{<br />    n = 3 * n + 1;<br />   }<br />   <br />   ++cycleLen;<br />  }<br />  <br />  return cycleLen;<br /> }<br /><br />}<br /><br /></pre>

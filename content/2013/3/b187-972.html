@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b187: 97七區資訊學科2(改編)
+date=2013-03-14 20:59
+full_date=2013-03-14T20:59:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b187">http://zerojudge.tw/ShowProblem?problemid=b187</a><br /><!--more--><br />解題雜記：<br />　　這題是進制轉換問題，用Java的話這邊靠API就可以解決了。比較值得注意的是輸出格式，記得第一行是中文，之後才是針對輸人做進制轉換的部份。（某人就是這邊沒看清楚WA了一次= =）<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b187 "97七區資訊學科2(改編)" from 97 七區資訊學科能力競賽*/<br />/*  Language: JAVA (444 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-03-14 15:13:49                                        */<br />/**********************************************************************************/<br /><br /><br />package CONTEST;<br /><br />import java.util.Scanner;<br /><br />public class b187 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  System.out.println("十六進位表示法  相對應的十進位表示法");<br />  while(input.hasNext()){<br />   String num16s = input.nextLine();<br />   int num10 = Integer.parseInt(num16s, 16);<br />   <br />   System.out.println("      " + num16s + "                 " + num10);<br />  }<br /> }<br /><br />}<br /><br /><br /></pre>

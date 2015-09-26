@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d950: A. 帕斯卡三角形
+date=2012-02-09 20:03
+full_date=2012-02-09T20:03:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d950">http://zerojudge.tw/ShowProblem?problemid=d950</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d950 "A. 帕斯卡三角形" from 2010 NPSC 國中組決賽          */<br />/*  Language: JAVA (665 Bytes)                                                    */<br />/*  Result: AC(100ms, 3.6MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-02-01 17:12:39                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d950 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int T = input.nextInt();<br />  <br />  while(T &gt; 0){<br />   int M = input.nextInt();<br />   int N = input.nextInt();<br />   <br />   System.out.println(combination(M - 1, N - 1));<br />   <br />   --T;<br />  }<br /> }<br /><br /> public static long factorial(long n) {<br />  long nFac = 1;<br />  if (n == 0) {<br />   return 1;<br />  }<br />  else {<br />   for (int i = 1; i &lt;= n; ++i) {<br />    nFac *= (long) i;<br />   }<br />   return nFac;<br />  }<br /><br /> }<br /><br /> public static long combination(long m, long n) {<br />  long comb = factorial(m) / (factorial(n) * factorial(m - n));<br /><br />  return comb;<br /> }<br />}<br /><br /></pre>

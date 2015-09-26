@@ -1,0 +1,10 @@
+title=〔UVa〕11364 - Parking
+date=2013-11-10 14:23
+full_date=2013-11-10T14:23:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/113/11364.html">http://uva.onlinejudge.org/external/113/11364.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11364 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int t = input.nextInt();<br /><br />   while (t &gt; 0) {<br />    int n = input.nextInt();<br /><br />    int[] x = new int[n];<br />    int min = Integer.MAX_VALUE;<br />    int max = Integer.MIN_VALUE;<br />    for (int i = 0; i &lt; n; ++i) {<br />     x[i] = input.nextInt();<br /><br />     if (x[i] &lt; min) {<br />      min = x[i];<br />     }<br /><br />     if (x[i] &gt; max) {<br />      max = x[i];<br />     }<br />    }<br /><br />    System.out.println((max - min) * 2);<br />    <br />    --t;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11364.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;climits&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int t = 0;<br /><br />    while(cin &gt;&gt; t){<br />        while(t &gt; 0){<br />         int n = 0;<br />         cin &gt;&gt; n;<br /><br />         int x[n];<br />         int min = INT_MAX;<br />         int max = INT_MIN;<br />         for(int i = 0; i &lt; n; ++i){<br />          cin &gt;&gt; x[i];<br /><br />          if(x[i] &lt; min){<br />           min = x[i];<br />          }<br /><br />          if(x[i] &gt; max){<br />           max = x[i];<br />          }<br />         }<br /><br />         cout &lt;&lt; (max - min) * 2 &lt;&lt; endl;<br /><br />         --t;<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

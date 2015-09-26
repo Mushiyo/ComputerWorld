@@ -1,0 +1,10 @@
+title=〔C++〕STL的map的使用
+date=2013-10-13 22:21
+full_date=2013-10-13T22:21:00.000+08:00
+type=post
+allowComment=true
+tags=STL, 〔C++〕, 【程式設計】
+status=published
+~~~~~~
+
+底下的程式碼簡單的展示了STL map的操作方式<br /><br />C++： <br /><pre class="brush:c">/*Filename: stl_map.cpp<br /> *Author: Mushiyo<br /> *Usage: demostrating how to use the STL map<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;map&gt;<br />#include &lt;utility&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> map&lt;string, int&gt; myMap;<br /><br /> // insert into the map<br /> myMap.insert(pair&lt;string, int&gt;("def", 2)); // insert by the insert member function<br /> myMap["abc"] = 1; // insert by operator []<br /><br /> // check if the key is in the map;<br /> string key = "abc";<br /> if(myMap.find(key) != myMap.end()){<br />  cout &lt;&lt; "The key \"" &lt;&lt; key &lt;&lt; "\" is in the map." &lt;&lt; endl;<br /> }<br /> else{<br />  cout &lt;&lt; "The key \"" &lt;&lt; key &lt;&lt; "\" is NOT in the map." &lt;&lt; endl;<br /> }<br /> cout &lt;&lt; endl;<br /><br /><br /> // iterate through the map and print out the map<br /> // the result is ordered by the natural order of the key<br /> cout &lt;&lt; "The whole content of the map (ordered):" &lt;&lt; endl;<br /> map&lt;string, int&gt;::iterator it = myMap.begin();<br /> while (it != myMap.end()) {<br />  cout &lt;&lt; it -&gt; first &lt;&lt; " " &lt;&lt; it -&gt; second &lt;&lt; endl;<br /><br />  ++it;<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

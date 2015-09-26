@@ -1,0 +1,10 @@
+title=〔UVa〕10474 - Where is the Marble?
+date=2014-01-29 16:35
+full_date=2014-01-29T16:35:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/104/10474.html">http://uva.onlinejudge.org/external/104/10474.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10474.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.util.Arrays;<br /><br />public class UVa10474 {<br /><br /> public static void main(String[] args) {<br />  final int MAX_N = 10000 + 1;<br />  int[] marble = new int[MAX_N];<br />  int caseNum = 1;<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder output = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   int Q = input.nextInt();<br />   <br />   if(N == 0 &amp;&amp; Q == 0){<br />    break;<br />   }<br />   <br />   for(int i = 1; i &lt;= N; ++i){<br />    marble[i] = input.nextInt();<br />   }<br />   <br />   Arrays.sort(marble, 1, N + 1);<br />   <br />   output.append(String.format("CASE# %d:\n", caseNum));<br />   for(int i = 0; i &lt; Q; ++i){<br />    int queryMarble = input.nextInt();<br />    int index = upperBound(marble, 1, N + 1, queryMarble);<br />    <br />    if(index &lt; 0){<br />     output.append(queryMarble + " not found\n");<br />    }<br />    else{<br />     output.append(queryMarble + " found at " + index + "\n");<br />    }<br />   }<br />   <br />   ++caseNum;<br />  }<br />  <br />  System.out.print(output);<br /> }<br /><br /> public static int upperBound(int[] a, int fromIndex, int toIndex, int key){<br />  int index = Arrays.binarySearch( a, fromIndex, toIndex, key);<br />  <br />  if(index &lt; 0){<br />   return index;<br />  }<br />  <br />  while(index &gt; 0 &amp;&amp; a[index] == a[index - 1]){<br />   --index;<br />  }<br />  <br />  return index;<br /> }<br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

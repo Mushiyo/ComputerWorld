@@ -1,0 +1,10 @@
+title=〔UVa〕11687 - Digits
+date=2014-03-08 15:20
+full_date=2014-03-08T15:20:00.007+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/116/11687.html">http://uva.onlinejudge.org/external/116/11687.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11687.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11687 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String xi = input.nextLine();<br />   <br />   if(xi.equals("END")){<br />    break;<br />   }<br />   <br />   String xi_1 = Long.toString(xi.length());<br />   int i = 1;<br />   while(!xi_1.equals(xi)){<br />    ++i;<br />    xi = xi_1;<br />    xi_1 = Long.toString(xi.length());<br />   }<br />   <br />   System.out.println(i);<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕152 - Tree's a Crowd
+date=2014-09-04 23:29
+full_date=2014-09-04T23:29:00.006+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/1/152.html">http://uva.onlinejudge.org/external/1/152.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa152.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa152 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  Point[] tree = new Point[5000];<br /><br />  int countTree = 0;<br /><br />  while (true) {<br />   double x = input.nextDouble();<br />   double y = input.nextDouble();<br />   double z = input.nextDouble();<br /><br />   if (x == 0 &amp;&amp; y == 0 &amp;&amp; z == 0) {<br />    break;<br />   }<br /><br />   tree[countTree] = new Point(x, y, z);<br />   ++countTree;<br />  }<br /><br />  int[] histogram = new int[10];<br /><br />  for (int i = 0; i &lt; countTree; ++i) {<br />   double closestDist = Double.MAX_VALUE;<br /><br />   for (int j = 0; j &lt; countTree; ++j) {<br />    if (i == j) {<br />     continue;<br />    }<br /><br />    closestDist = Math.min(closestDist, tree[i].dist(tree[j]));<br />   }<br /><br />   if (closestDist &lt; 10) {<br />    ++histogram[(int) Math.floor(closestDist)];<br />   }<br />  }<br /><br />  for (int i : histogram) {<br />   System.out.printf("%4d", i);<br />  }<br />  System.out.println();<br /> }<br /><br /> private static class Point {<br />  double x;<br />  double y;<br />  double z;<br /><br />  public Point(double x, double y, double z) {<br />   this.x = x;<br />   this.y = y;<br />   this.z = z;<br />  }<br /><br />  public double dist(Point p) {<br />   return Math.sqrt((x - p.x) * (x - p.x) + (y - p.y) * (y - p.y)<br />     + (z - p.z) * (z - p.z));<br />  }<br /> }<br /><br />}<br /><br /></pre>

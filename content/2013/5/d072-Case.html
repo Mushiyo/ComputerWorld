@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d072: 文文的求婚--續集 (Case 版)
+date=2013-05-12 15:11
+full_date=2013-05-12T15:11:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d072">http://zerojudge.tw/ShowProblem?problemid=d072</a><br /><!--more--><br />解題雜記：<br />　　類似<a href="http://computerworld.mushiyo.uni.me/2013/05/d069-n.html" target="_blank">d069</a>，只是輸出時要輸出這是第幾個case。<br /><br />Java： <br /><pre class="brush:java"><br />/**********************************************************************************/<br />/*  Problem: d072 &quot;文文的求婚--續集 (Case 版)&quot; from 板橋高中          */<br />/*  Language: JAVA (537 Bytes)                                                    */<br />/*  Result: AC(140ms, 4.3MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2013-05-08 22:00:43                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class d072 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   for (int caseNum = 1; caseNum &lt;= n; ++caseNum) {<br />    int y = input.nextInt();<br /><br />    System.out.print(&quot;Case &quot; + caseNum + &quot;: &quot;);<br />    if ((y % 4 == 0) &amp;&amp; ((y % 100 != 0) || (y % 400 == 0))) {<br />     System.out.println(&quot;a leap year&quot;);<br />    } else {<br />     System.out.println(&quot;a normal year&quot;);<br />    }<br />   }<br />  }<br /> }<br />}<br /></pre>

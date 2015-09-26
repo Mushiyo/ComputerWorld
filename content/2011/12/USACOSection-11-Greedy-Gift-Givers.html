@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.1 Greedy Gift Givers
+date=2011-12-05 21:28
+full_date=2011-12-05T21:28:00.001+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：  見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br />ID: mushiyo1<br />LANG: JAVA<br />TASK: gift1<br />*/<br /><br />import java.util.Iterator;<br />import java.util.LinkedHashMap;<br />import java.util.Scanner;<br />import java.util.Map;<br />import java.io.*;<br /><br />public class gift1 {<br /><br /> public static void main(String[] args) throws FileNotFoundException {<br />  Scanner input = new Scanner(new File("gift1.in"));<br />  PrintWriter output = new PrintWriter(new File("gift1.out"));<br />  <br />  while(input.hasNext()){<br />   int NP = input.nextInt();<br />   Map&lt;String, Integer&gt; group = new LinkedHashMap&lt;String, Integer&gt;(NP);<br />   <br />   for(int i = 0; i &lt; NP; ++i){<br />    group.put(input.next(), 0);<br />   }<br />   <br />   <br />   for(int i = 0; i &lt; NP; ++i){<br />    String giverName = input.next();<br />    int totalGivingMoney = input.nextInt();<br />    int NGi = input.nextInt();<br />    <br />    if(NGi == 0){<br />     continue;<br />    }<br />    <br />    int moneyRemain = totalGivingMoney % NGi;<br />    int moneyGive = totalGivingMoney / NGi;<br />    <br />    Integer giverMoney = group.get(giverName);<br />    group.put(giverName, giverMoney + moneyRemain - totalGivingMoney);<br />    <br />    while(NGi &gt; 0){<br />     String receiverName = input.next();<br />     Integer receiverMoney = group.get(receiverName);<br />     <br />     group.put(receiverName, receiverMoney + moneyGive);<br />     --NGi;<br />    }    <br />   }<br />   <br />   Iterator&lt;String&gt; iterate = group.keySet().iterator();<br />   <br />   while(iterate.hasNext()){<br />    String out = iterate.next();<br />    output.println(out + " " + group.get(out));<br />   }<br />   <br />  }<br />  <br />  input.close();<br />  output.close();  <br /> }<br /><br />}<br /></pre>

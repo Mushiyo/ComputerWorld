@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.2 Palindromic Squares
+date=2012-01-28 17:47
+full_date=2012-01-28T17:47:00.002+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br />ID: mushiyo1<br />LANG: JAVA<br />TASK: palsquare<br />*/<br />import java.util.Scanner;<br />import java.io.*;<br /><br />public class palsquare {<br /><br /> public static void main(String[] args) throws Exception {<br />  Scanner input = new Scanner(new File("palsquare.in"));<br />  PrintWriter output = new PrintWriter(new File("palsquare.out"));<br />  <br />  while(input.hasNext()){<br />   int B = input.nextInt();<br />   <br />   for(int i = 1; i &lt;= 300; ++i){<br />    if(isPalindrom(Integer.toString(i * i, B))){<br />     output.println(Integer.toString(i, B).toUpperCase() + " " + Integer.toString(i * i, B).toUpperCase());<br />    }<br />   }<br />  }<br />  <br />  input.close();<br />  output.close();<br /> }<br /> <br /> public static boolean isPalindrom(String str){<br />  int strLen = str.length();<br />  <br />  for(int i = 0; i &lt; strLen / 2; ++i){<br />   if(str.charAt(i) != str.charAt(strLen - 1 - i)){<br />    return false;<br />   }<br />  }<br />  <br />  return true;<br /> }<br /><br />}<br /><br /></pre>

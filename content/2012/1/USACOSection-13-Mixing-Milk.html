@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.3 Mixing Milk
+date=2012-01-29 17:32
+full_date=2012-01-29T17:32:00.000+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br />ID: mushiyo1<br />LANG: JAVA<br />TASK: milk<br />*/<br /><br />import java.util.Scanner;<br />import java.io.*;<br /><br />public class milk {<br /><br /> public static void main(String[] args) throws Exception{<br />  Scanner input = new Scanner(new File("milk.in"));<br />  PrintWriter output = new PrintWriter(new File("milk.out"));<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   int M = input.nextInt();<br />   <br />   int[] amountOffered = new int[1001];<br />   while(M &gt; 0){<br />    int price = input.nextInt();<br />    int amount = input.nextInt();<br />    <br />    amountOffered[price] += amount;<br />    <br />    --M;<br />   }<br />   <br />   int amountCollected = 0;<br />   int cost = 0;<br />   for(int i = 0; i &lt; amountOffered.length; ++i){<br />    if(amountCollected &lt; N){<br />     if(amountCollected + amountOffered[i] &lt; N){<br />      cost += i * amountOffered[i];<br />      amountCollected += amountOffered[i];<br />     }<br />     else{<br />      cost += i * (N - amountCollected);<br />      amountCollected += N - amountCollected;<br />     }<br />    }<br />    else{<br />     break;<br />    }<br />   }<br />   <br />   output.println(cost);<br />  }<br />  <br />  input.close();<br />  output.close();<br /> }<br /><br />}<br /><br /></pre>

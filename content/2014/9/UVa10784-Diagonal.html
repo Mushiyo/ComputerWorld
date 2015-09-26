@@ -1,0 +1,10 @@
+title=〔UVa〕10784 - Diagonal
+date=2014-09-01 23:32
+full_date=2014-09-01T23:32:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/107/10784.html">http://uva.onlinejudge.org/external/107/10784.html</a><br /><!--more--><br />Solution Description:<br />The number of diagonals of an n-gon is \( \frac{n(n - 3)}{2} \).<br />The problem ask us that given N, find the minimal of n, which satisfy \( N \leq \frac{n(n - 3)}{2} \).<br />Since n must be positive, after solved this equation, we have \( n = \lceil \frac{3 + \sqrt{9 + 8N}}{2} \rceil \).<br />Just use the equation to find out n.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10784.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10784 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int caseNum = 1;<br /><br />  while (input.hasNext()) {<br />   long N = input.nextLong();<br />   <br />   if(N == 0){<br />    break;<br />   }<br />   <br />   // The number of diagonals of an n-gon is n(n - 3) / 2<br />   // The problem ask us that given N, find the minimal of n, <br />   // which satisfy N &lt;= n(n - 3) / 2<br />   // Since n must be positive, after solved this equation,<br />   // we have n = ceiling((3 + sqrt(9 + 8N)) / 2)<br />   int n = (int)Math.ceil((3 + Math.sqrt(9 + 8 * N)) / 2);<br />   <br />   System.out.printf("Case %d: %d\n", caseNum, n);<br />   ++caseNum;<br />  }<br /> }<br /><br />}<br /><br /></pre>

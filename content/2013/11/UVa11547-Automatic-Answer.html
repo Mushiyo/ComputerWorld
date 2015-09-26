@@ -1,0 +1,10 @@
+title=〔UVa〕11547 - Automatic Answer
+date=2013-11-10 13:58
+full_date=2013-11-10T13:58:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/115/11547.html">http://uva.onlinejudge.org/external/115/11547.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11547 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int t = input.nextInt();<br />   <br />   while(t &gt; 0){<br />          int n = input.nextInt();<br /><br />          int ansPre = (n * 567 / 9 + 7492) * 235 / 47 - 498;<br />          ansPre /= 10;<br />          int ans = ansPre %= 10;<br /><br />          System.out.println(Math.abs(ans));<br /><br />          --t;<br />         }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11547.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cmath&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int t = 0;<br /><br />    while(cin &gt;&gt; t){<br />        while(t &gt; 0){<br />         int n = 0;<br />         cin &gt;&gt; n;<br /><br />         int ansPre = (n * 567 / 9 + 7492) * 235 / 47 - 498;<br />         ansPre /= 10;<br />         int ans = ansPre %= 10;<br /><br />         cout &lt;&lt; abs(ans) &lt;&lt; endl;<br /><br />         --t;<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

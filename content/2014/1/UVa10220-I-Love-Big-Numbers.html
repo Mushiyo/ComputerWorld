@@ -1,0 +1,10 @@
+title=〔UVa〕10220 - I Love Big Numbers !
+date=2014-01-10 17:26
+full_date=2014-01-10T17:26:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/102/10220.html">http://uva.onlinejudge.org/external/102/10220.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10220.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa10220 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   <br />   BigInteger factorial = BigInteger.valueOf(1);<br />   for(int i = 2; i &lt;= n; ++i){<br />    factorial = factorial.multiply(BigInteger.valueOf(i));<br />   }<br />   <br />   int sumDigit = 0;<br />   String factorialStr = factorial.toString();<br />   for(int i = 0; i &lt; factorialStr.length(); ++i){<br />    sumDigit += factorialStr.charAt(i) - '0';<br />   }<br />   <br />   System.out.println(sumDigit);<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

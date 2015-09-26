@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d038: 00900 - Brick Wall Patterns
+date=2013-05-15 15:13
+full_date=2013-05-15T15:13:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://www.zerojudge.tw/ShowProblem?problemid=d038">http://www.zerojudge.tw/ShowProblem?problemid=d038</a><br /><!--more--><br />解題雜記： <br />　　經由仔細觀察，可發現磚牆存在遞回關係。令p(n)表示長度為n的磚牆的花樣種類，則p(1) = 1，p(2) = 2， p(n) = p(n - 1) + p(n - 2)，n ≧ 3。先建表算出所有可能的p(n)，再根據測資的要求，一一輸出對應p(n)就行了。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d038 "00900 - Brick Wall Patterns" from UVa ACM 900                  */<br />/*  Language: JAVA (522 Bytes)                                                    */<br />/*  Result: AC(80ms, 1.3MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-05-12 15:20:42                                        */<br />/**********************************************************************************/<br /><br /><br />package UVa;<br /><br />import java.util.Scanner;<br /><br />public class d038 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  long[] lenPattern = new long [51];<br />  lenPattern[1] = 1;<br />  lenPattern[2] = 2;<br />  for(int i = 3; i &lt; lenPattern.length; ++i){<br />   lenPattern[i] = lenPattern[i - 1] + lenPattern[i - 2];<br />  }<br />  <br />  <br />  while(input.hasNext()){<br />   int length = input.nextInt();<br />   <br />   if(length == 0){<br />    break;<br />   }<br />   <br />   System.out.println(lenPattern[length]);<br />  }<br /> }<br /><br />}<br /><br /></pre>

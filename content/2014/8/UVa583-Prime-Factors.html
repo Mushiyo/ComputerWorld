@@ -1,0 +1,10 @@
+title=〔UVa〕583 - Prime Factors
+date=2014-08-20 18:01
+full_date=2014-08-20T18:01:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/5/583.html">http://uva.onlinejudge.org/external/5/583.html</a><br /><!--more--><br />Solution Description:<br />Just factorize each g, then print out the result as the problem asked.<br />Note when g is negative, factorize it with its absolute value.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa583.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.ArrayList;<br />import java.util.Scanner;<br /><br />public class UVa583 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder out = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   int g = input.nextInt();<br /><br />   if (g == 0) {<br />    break;<br />   }<br /><br />   ArrayList&lt;Integer&gt; factorG = factorization(Math.abs(g));<br />   if (g &lt; 0) {<br /><br />    out.append(g + " = -1");<br />    for (int i = 0; i &lt; factorG.size(); ++i) {<br />     out.append(" x " + factorG.get(i));<br />    }<br />    out.append('\n');<br />   } else {<br />    out.append(g + " = " + factorG.get(0));<br />    for (int i = 1; i &lt; factorG.size(); ++i) {<br />     out.append(" x " + factorG.get(i));<br />    }<br />    out.append('\n');<br />   }<br />  }<br /><br />  System.out.print(out);<br /> }<br /><br /> private static ArrayList&lt;Integer&gt; factorization(int n) {<br />  int sqrtN = (int) Math.sqrt(n);<br />  ArrayList&lt;Integer&gt; factor = new ArrayList&lt;Integer&gt;();<br /><br />  for (int i = 2; i &lt;= sqrtN &amp;&amp; n != 1; ++i) {<br />   while (n % i == 0) {<br />    factor.add(i);<br />    n /= i;<br />   }<br />  }<br /><br />  if (n != 1) {<br />   factor.add(n);<br />  }<br /><br />  return factor;<br /> }<br /><br />}<br /><br /></pre>

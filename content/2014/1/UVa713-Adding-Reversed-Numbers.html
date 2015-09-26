@@ -1,0 +1,10 @@
+title=〔UVa〕713 - Adding Reversed Numbers
+date=2014-01-02 18:46
+full_date=2014-01-02T18:46:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/7/713.html">http://uva.onlinejudge.org/external/7/713.html</a><br /><!--more--><br />解題雜記：<br />　　因為數字最大可達200位數，所以做加法的時候要用大數來處理。注意輸出的時候，如果數字開頭都是零的話，要把那些零去掉。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; Since the problem told us that the numbers will be at most 200 characters long, we must using big number to do addition. Note that the result of addition might contain leading zeros, you must not output them in your output.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12289.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12289 {<br /><br /> public static void main(String[] args) {<br />  final String one = "one";<br />  final String two = "two";<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int wordNum = input.nextInt();<br />   <br />   while(wordNum &gt; 0){<br />    String word = input.next();<br />    <br />    if(word.length() == 5){ // only three is 5 digits<br />     System.out.println(3);<br />    }<br />    else{<br />     int diff1 = 0;<br />     for(int i = 0; i &lt; one.length(); ++i){<br />      if(word.charAt(i) != one.charAt(i)){<br />       ++diff1;<br />      }<br />     }<br />     <br />     int diff2 = 0;<br />     for(int i = 0; i &lt; two.length(); ++i){<br />      if(word.charAt(i) != two.charAt(i)){<br />       ++diff2;<br />      }<br />     }<br />     <br />     if(diff1 &lt;= diff2){<br />      System.out.println(1);<br />     }<br />     else{<br />      System.out.println(2);      <br />     }<br />    }<br />    <br />    --wordNum;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

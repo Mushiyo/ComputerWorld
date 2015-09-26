@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d006: 2006 程式達人 E - 出團GoGoGo
+date=2013-07-29 22:00
+full_date=2013-07-29T22:00:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d006">http://judge.nccucs.org/ShowProblem?problemid=d006</a><br /><!--more--><br />解題雜記：<br />　　將輸入的字串排序好，然後再利用STL的<a href="http://www.cplusplus.com/reference/algorithm/next_permutation/" target="_blank">next_permutation</a>來輸出所有的排序。<br /><br />C++： <br /><pre class="brush:c">/*Filename: d006.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;string&gt;<br />#include &lt;algorithm&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int n = 0;<br /> string s;<br /><br /> while (cin &gt;&gt; n) {<br />  while (n &gt; 0) {<br />   cin &gt;&gt; s;<br /><br />   sort(s.begin(), s.end());<br /><br />   do {<br />    cout &lt;&lt; s &lt;&lt; endl;<br />   } while (next_permutation(s.begin(), s.end()));<br />   cout &lt;&lt; endl;<br /><br />   --n;<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

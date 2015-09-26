@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b115: TOI2008 2. 大數運算
+date=2011-12-04 14:55
+full_date=2011-12-04T14:55:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b115">http://zerojudge.tw/ShowProblem?problemid=b115</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b115 "TOI2008 2. 大數運算" from 2008 TOI 研習營初選         */<br />/*  Language: JAVA (505 Bytes)                                                    */<br />/*  Result: AC(80ms, 1.3MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2011-11-28 22:25:20                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br />import java.math.*;<br /><br />public class b115 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   BigInteger operand1 = input.nextBigInteger();<br />   char operator = input.next().charAt(0);<br />   BigInteger operand2 = input.nextBigInteger();<br />   <br />   if(operator == '*'){<br />    System.out.println(operand1.multiply(operand2));<br />   }<br />   else{<br />    System.out.println(operand1.divide(operand2));<br />   }<br />  }<br /> }<br /><br />}<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕11827 - Maximum GCD
+date=2013-10-13 15:02
+full_date=2013-10-13T15:02:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/118/11827.html">http://uva.onlinejudge.org/external/118/11827.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11827 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] num = new int[100];<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   input.nextLine(); // eat change line<br /><br />   while (N &gt; 0) {<br />    Scanner numIn = new Scanner(input.nextLine());<br /><br />    int M = 0;<br />    while (numIn.hasNext()) {<br />     num[M] = numIn.nextInt();<br />     ++M;<br />    }<br /><br />    int maxGCD = 0;<br />    for (int i = 0; i &lt; M; ++i) {<br />     for (int j = i + 1; j &lt; M; ++j) {<br />      int currentGCD = gcd(num[i], num[j]);<br /><br />      if (currentGCD &gt; maxGCD) {<br />       maxGCD = currentGCD;<br />      }<br />     }<br />    }<br /><br />    System.out.println(maxGCD);<br /><br />    --N;<br />   }<br />  }<br /> }<br /><br /> public static int gcd(int a, int b) {<br />  if (b == 0) {<br />   return a;<br />  } else {<br />   return gcd(b, a % b);<br />  }<br /> }<br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">待補，有需要請留言<br /></pre>

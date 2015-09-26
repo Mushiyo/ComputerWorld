@@ -1,0 +1,10 @@
+title=〔UVa〕11044 - Searching for Nessy
+date=2013-11-10 14:42
+full_date=2013-11-10T14:42:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/110/11044.html">http://uva.onlinejudge.org/external/110/11044.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u11044 {<br /><br /> public static void main(String[] args) {<br />  final int sonarCellW = 3, sonarCellH = 3;<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int t = input.nextInt();<br />   <br />   while(t &gt; 0){<br />    int n = input.nextInt();<br />    int m = input.nextInt();<br />    <br />    int horizontalSonarNum = (n - 2) / sonarCellW;<br />    if((n - 2) % sonarCellW &gt; 0){<br />     ++horizontalSonarNum;<br />    }<br />    <br />    int verticalSonarNum = (m - 2) / sonarCellH;<br />    if((m - 2) % sonarCellH &gt; 0){<br />     ++verticalSonarNum;<br />    }<br />    <br />    System.out.println(horizontalSonarNum * verticalSonarNum);<br />    <br />    --t;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11044.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> int t = 0;<br /> const int sonarCellW = 3, sonarCellH = 3;<br /><br />    while(cin &gt;&gt; t){<br />        while(t &gt; 0){<br />         int n = 0, m = 0;<br />         cin &gt;&gt; n &gt;&gt; m;<br /><br />         int horizontalSonarNum = (n - 2) / sonarCellW;<br />         if((n - 2) % sonarCellW &gt; 0){<br />          ++horizontalSonarNum;<br />         }<br /><br />         int verticalSonarNum = (m - 2) / sonarCellH;<br />         if((m - 2) % sonarCellH &gt; 0){<br />          ++verticalSonarNum;<br />         }<br /><br />         cout &lt;&lt; horizontalSonarNum * verticalSonarNum &lt;&lt; endl;<br /><br />         --t;<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

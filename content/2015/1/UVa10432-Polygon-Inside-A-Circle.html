@@ -1,0 +1,10 @@
+title=〔UVa〕10432 - Polygon Inside A Circle
+date=2015-01-03 15:50
+full_date=2015-01-03T15:50:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/104/10432.html">http://uva.onlinejudge.org/external/104/10432.html</a><br /><!--more--><br />Solution Description:<br />Connecting the center of the circle with the vertices of polygon, we can disassemble the regular n-gon into n isosceles triangles with the length of the two legs equal to the radius of the circle, which is r. The area of such triangle is \(\frac{1}{2} \times r \times r \times sin(\frac{360^\circ}{n})\). Hence the area of the polygon is \(n \times \frac{1}{2} \times r \times r \times sin(\frac{360^\circ}{n})\).<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10432.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10432 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   double r = input.nextDouble();<br />   double n = input.nextDouble();<br />   double rad = Math.toRadians(360 / n);<br />   <br />   System.out.printf("%.3f\n", n * r * r * Math.sin(rad) * 0.5);<br />  }<br /> }<br /><br />}<br /><br /></pre>

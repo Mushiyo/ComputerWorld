@@ -1,0 +1,10 @@
+title=〔UVa〕10071 - Back to High School Physics
+date=2012-09-08 15:43
+full_date=2012-09-08T15:43:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1012">http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=1012</a><br /><!--more-->解題雜記：<br />　　老實說，我覺得這題用到的物理比程式還難(誤)<br /><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10071 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int v = input.nextInt();<br />   int t = input.nextInt();<br />   <br />   //when time is 2t, velocity will become 2v<br />   //so the displacement wiil be (1/2) * 2v * 2t = 2 * v * t<br />   System.out.println(2 * v * t);<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10219 - Find the ways !
+date=2014-09-01 23:24
+full_date=2014-09-01T23:24:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/102/10219.html">http://uva.onlinejudge.org/external/102/10219.html</a><br /><!--more--><br />Solution Description:<br />The problem only ask for digits, so when computing the combinations, use '+' instead of '*', '-' instead of '/' and 'log(i)' instead of 'i'.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10219.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10219 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   int k = input.nextInt();<br />   <br />   System.out.println(combinationDigit(n, k));<br />  }<br /> }<br /> <br /> public static int combinationDigit(int n, int m) {<br />  double c = 0;<br /><br />  for (int i = Math.max(m, n - m) + 1, j = 1; i &lt;= n; ++i, ++j) {<br />   c += Math.log10(i) - Math.log10(j);<br />  }<br /><br />  return (int)Math.floor(c) + 1;<br /> }<br /><br />}<br /><br /></pre>

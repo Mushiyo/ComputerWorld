@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a216: 數數愛明明
+date=2013-03-17 13:53
+full_date=2013-03-17T13:53:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a216">http://zerojudge.tw/ShowProblem?problemid=a216</a><br /><!--more-->解題雜記：<br />　　經觀察可發現f(n) = n + (n - 1) + (n - 2) + … + 2 + 1，故用梯形公式就可算出。<br />而g(n) = f(n) + f(n - 1) + f(n - 2) + … + f(2) + f(1)<br />　　　=&nbsp; n * 1 + (n - 1) * 2 + (n - 2) * 3 + …… + (n - (n - 2)) * (n - 1) + (n - (n - 1)) * n<br />　　　=&nbsp; n * 1 + (n - 1) * 2 + (n - 2) * 3 + …… + 2 * (n - 1) + 1 * n<br />因為我推不出公式，所以直接跑迴圈算。理論上公式應當推得出來，有與趣的人不妨試試！<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a216 "數數愛明明" from                                          */<br />/*  Language: JAVA (489 Bytes)                                                    */<br />/*  Result: AC(78ms, 1.8MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-03-17 13:38:01                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class a216 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   <br />   System.out.println(f(n) + " " + g(n));<br />  }<br /> }<br /> <br /> public static int f(int n){<br />  return ((1 + n) * n) / 2;<br /> }<br /> <br /> public static long g(int n){<br />  long sum = 0;<br />  <br />  for(int i = 1 ; i &lt;= n; ++i){<br />   sum += ((n + 1) - i) * i;<br />  }<br />  <br />  return sum;<br /> }<br /><br />}<br /><br /></pre>

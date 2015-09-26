@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c067: Box of Bricks
+date=2012-01-25 20:03
+full_date=2012-01-25T20:03:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=c067">http://zerojudge.tw/ShowProblem?problemid=c067</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c067 "Box of Bricks" from ACM 591                                    */<br />/*  Language: JAVA (812 Bytes)                                                    */<br />/*  Result: AC(124ms, 4MB) judge by this@ZeroJudge                                */<br />/*  Author: mushiyo at 2012-01-25 15:06:06                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class c067 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int setNum = 1;<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   if(n == 0){<br />    break;<br />   }<br />   <br />   int[] brickHeight = new int[n];<br />   int brickSum = 0;<br />   <br />   for(int i = 0; i &lt; brickHeight.length; ++i){<br />    brickHeight[i] = input.nextInt();<br />    brickSum += brickHeight[i];<br />   }<br />   <br />   int brickAvg = brickSum / n;<br />   <br />   int brickMove = 0;<br />   for(int i = 0; i &lt; brickHeight.length; ++i){<br />    if(brickHeight[i] &gt; brickAvg){<br />     brickMove += brickHeight[i] - brickAvg;<br />    }<br />   }<br />   <br />   System.out.println("Set #" + setNum);<br />   System.out.println("The minimum number of moves is " + brickMove + ".");<br />   <br />   ++setNum;<br />  }<br /> }<br /><br />}<br /><br /></pre>

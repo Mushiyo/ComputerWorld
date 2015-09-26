@@ -1,0 +1,10 @@
+title=〔UVa〕11936 - The Lazy Lumberjacks
+date=2014-09-21 17:50
+full_date=2014-09-21T17:50:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/119/11936.html">http://uva.onlinejudge.org/external/119/11936.html</a><br /><!--more--><br />Solution Description:<br />Let a, b and c be the three sides. If \( a + b &gt; c \) and \(\left| a - b \right| &lt; c\), then they can form a triangle.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11936.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11936 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   while(N &gt; 0){<br />    int a = input.nextInt();<br />    int b = input.nextInt();<br />    int c = input.nextInt();<br />    <br />    if(isTriangle(a, b, c)){<br />     System.out.println("OK");<br />    }<br />    else{<br />     System.out.println("Wrong!!");<br />    }<br />    <br />    --N;<br />   }<br />  }<br /> }<br /><br /> static boolean isTriangle(int a, int b, int c){<br />  return a + b &gt; c &amp;&amp; Math.abs(a - b) &lt; c;<br /> }<br />}<br /><br /></pre>

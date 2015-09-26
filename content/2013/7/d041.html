@@ -1,0 +1,10 @@
+title=〔大學生程式解題系統〕d041: 排序
+date=2013-07-30 22:16
+full_date=2013-07-30T22:16:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔大學生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://judge.nccucs.org/ShowProblem?problemid=d041">http://judge.nccucs.org/ShowProblem?problemid=d041</a>  <br /><!--more--><br />解題雜記：<br />　　這題基本上就是用STL的<a href="http://www.cplusplus.com/reference/algorithm/sort/" target="_blank">sort</a>，再加上自己自定義的排序function就好。寫排序function時要注意它的回傳值的意思是「參數1是否小於參數2」，這部份如果寫錯的話很可能會導致RE。我就是因為這個關係吃了一堆RE，而且很久都不明白為什麼會RE，直到看到<a href="http://stackoverflow.com/questions/1541817/sort-function-c-segmentation-fault" target="_blank">這篇</a>才終於結束RE惡夢……<br /><br />C++： <br /><pre class="brush:c">/*Filename: d041.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;stdio.h&gt;<br />#include &lt;iostream&gt;<br />#include &lt;algorithm&gt;<br />#include &lt;cstring&gt;<br /><br />using namespace std;<br /><br />bool lexicographicalCmp(const char &amp;c1, const char &amp;c2) {<br /> char lowerC1 = tolower(c1);<br /> char lowerC2 = tolower(c2);<br /><br /> if (lowerC1 == lowerC2) {<br />  if (c1 &gt;= 'a' &amp;&amp; c2 &lt; 'a') { // c1 between a - z, c2 between A - Z<br />   return true;<br />  } else {<br />   return false;<br />  }<br /> }<br /><br /> return lowerC1 &lt; lowerC2;<br />}<br /><br />int main() {<br /> string s;<br /><br /> while (getline(cin, s)) {<br />  int len = s.size();<br /><br />  if (len == 0) {<br />   printf("\n");<br />   continue;<br />  }<br /><br />  sort(s.begin(), s.end(), lexicographicalCmp);<br /><br />  printf("%s\n", s.c_str());<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

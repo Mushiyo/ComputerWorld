@@ -1,0 +1,10 @@
+title=〔UVa〕10170 - The Hotel with Infinite Rooms
+date=2015-03-21 22:30
+full_date=2015-03-21T22:30:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/101/10170.html">http://uva.onlinejudge.org/external/101/10170.html</a><br /><!--more--><br />Solution Description:<br />Just simulate the process to find the size of the group on the D-th day.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10170.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10170 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   long S = input.nextLong();<br />   long D = input.nextLong();<br />   <br />   long d = 0;<br />   while(d &lt; D){<br />    d += S;<br />    ++S;<br />   }<br />   <br />   System.out.println(S - 1);<br />  }<br /> }<br /><br />}<br /><br /></pre>

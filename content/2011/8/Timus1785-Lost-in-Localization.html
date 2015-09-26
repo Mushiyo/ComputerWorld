@@ -1,0 +1,65 @@
+title=〔Timus〕1785. Lost in Localization
+date=2011-08-08 14:08
+full_date=2011-08-08T14:08:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+題目：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1785">http://acm.timus.ru/problem.aspx?space=1&amp;num=1785</a><br /><!--more-->Java： <br /><pre class="brush:java">import java.util.Scanner;
+<br />
+<br />public class t1785 {
+<br />
+<br />	public static void main(String[] args) {
+<br />		Scanner input = new Scanner(System.in);
+<br />		
+<br />		while(input.hasNext()){
+<br />			int n = input.nextInt();
+<br />			
+<br />			if(n &lt; 100){
+<br />				if(n &lt; 20){
+<br />					if(n &lt; 10){
+<br />						if(n &lt; 5){
+<br />							System.out.println("few");
+<br />						}
+<br />						else{
+<br />							System.out.println("several");
+<br />						}
+<br />					}
+<br />					else{
+<br />						System.out.println("pack");
+<br />					}
+<br />				}
+<br />				else{
+<br />					if(n &lt; 50){
+<br />						System.out.println("lots");
+<br />					}
+<br />					else{
+<br />						System.out.println("horde");
+<br />					}					
+<br />				}
+<br />			}
+<br />			else{
+<br />				if(n &lt; 500){
+<br />					if(n &lt; 250){
+<br />						System.out.println("throng");
+<br />					}
+<br />					else{
+<br />						System.out.println("swarm");
+<br />					}
+<br />				}
+<br />				else{
+<br />					if(n &lt; 1000){
+<br />						System.out.println("zounds");
+<br />					}
+<br />					else{
+<br />						System.out.println("legion");
+<br />					}
+<br />				}				
+<br />			}
+<br />		}
+<br />	}
+<br />
+<br />}
+<br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10370 - Above Average
+date=2013-11-17 16:19
+full_date=2013-11-17T16:19:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/103/10370.html">http://uva.onlinejudge.org/external/103/10370.html</a><br /><!--more--><br />解題雜記：<br />待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++：<br /><pre class="brush:c">/*Filename: u10370.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;cstdio&gt;<br /><br />using namespace std;<br /><br />int main() {<br /> int C = 0;<br /><br /> while (cin &gt;&gt; C) {<br />  for (int testCase = 0; testCase &lt; C; ++testCase) {<br />   int N = 0;<br />   cin &gt;&gt; N;<br /><br />   int grade[N];<br />   int sum = 0;<br />   for (int i = 0; i &lt; N; ++i) {<br />    cin &gt;&gt; grade[i];<br />    sum += grade[i];<br />   }<br /><br />   double avg = sum / (double) N;<br />   int countAboveAvg = 0;<br />   for (int i = 0; i &lt; N; ++i) {<br />    if(grade[i] &gt; avg){<br />     ++countAboveAvg;<br />    }<br />   }<br /><br />   printf("%.3lf%%\n", (100 * countAboveAvg) / (double)N);<br />  }<br /> }<br /><br /> return 0;<br />}<br /><br /></pre>

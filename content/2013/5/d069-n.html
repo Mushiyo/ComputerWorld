@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d069: 文文的求婚--續集 (n 行版)
+date=2013-05-09 16:47
+full_date=2013-05-09T16:47:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d069">http://zerojudge.tw/ShowProblem?problemid=d069</a><br /><!--more--><br />解題雜記：<br />　　同<a href="http://computerworld.mushiyo.uni.me/2013/05/d067-1.html" target="_blank">d067</a>，只是抓輸入時要抓n次。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d069 "文文的求婚--續集 (n 行版)" from 板橋高中          */<br />/*  Language: JAVA (465 Bytes)                                                    */<br />/*  Result: AC(120ms, 3.8MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2013-05-08 21:55:13                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class d069 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   while (n &gt; 0) {<br />    int y = input.nextInt();<br /><br />    if ((y % 4 == 0) &amp;&amp; ((y % 100 != 0) || (y % 400 == 0))) {<br />     System.out.println("a leap year");<br />    } else {<br />     System.out.println("a normal year");<br />    }<br />    --n;<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

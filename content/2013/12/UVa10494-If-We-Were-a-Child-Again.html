@@ -1,0 +1,10 @@
+title=〔UVa〕10494 - If We Were a Child Again
+date=2013-12-28 23:14
+full_date=2013-12-28T23:14:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/104/10494.html">http://uva.onlinejudge.org/external/104/10494.html</a><br /><!--more--><br />解題雜記：<br />　　這題要用大數除法和大數模運算來解。用Java寫這題的話，可以直接用內建的<a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html" target="_blank">BigInteger</a> class輕鬆的AC。<br /><br />Solution Description:<br />&nbsp;&nbsp;&nbsp; The key to solve this problem is to use bignumber to do division and modular calculation. Java users can easily solve this problem by using the <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html" target="_blank">BigInteger</a> class.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10494.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class UVa10494 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   BigInteger num1 = input.nextBigInteger();<br />   char operator = input.next().charAt(0);<br />   BigInteger num2 = input.nextBigInteger();<br />   <br />   switch(operator){<br />   case '/':<br />    System.out.println(num1.divide(num2));<br />    break;<br />   case '%':<br />    System.out.println(num1.mod(num2));<br />    break;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

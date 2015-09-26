@@ -1,0 +1,10 @@
+title=〔UVa〕455 - Periodic Strings
+date=2014-12-06 22:23
+full_date=2014-12-06T22:23:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/4/455.html">http://uva.onlinejudge.org/external/4/455.html</a><br /><!--more--><br />Solution Description:<br />Enumerate all the possible periods k from 1, then check if the input string can be formed by repeating the first k characters of the string. Once a feasible period is found, output that period.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa455.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa455 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  boolean isFirstOutput = true;<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br /><br />   while (N &gt; 0) {<br />    if (isFirstOutput) {<br />     isFirstOutput = false;<br />    } else {<br />     System.out.println();<br />    }<br /><br />    String s = input.next();<br /><br />    int period = 1;<br />    for (; period &lt; s.length(); ++period) {<br />     if (s.length() % period == 0) {<br />      int shift = period;<br />      boolean isPeriod = true;<br />      <br />      while (shift &lt; s.length() &amp;&amp; isPeriod) { <br />       for (int i = 0; i &lt; period; ++i) {<br />        if (s.charAt(i) != s.charAt(i + shift)) {<br />         isPeriod = false;<br />         break;<br />        }<br />       }<br />       shift += period;<br />      }<br />      <br />      if(isPeriod){<br />       break;<br />      }<br />     }<br />    }<br />    <br />    System.out.println(period);<br /><br />    --N;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

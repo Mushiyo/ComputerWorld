@@ -1,0 +1,10 @@
+title=〔UVa〕10815 - Andy's First Dictionary
+date=2015-02-23 15:48
+full_date=2015-02-23T15:48:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/108/10815.html">http://uva.onlinejudge.org/external/108/10815.html</a><br /><!--more--><br />Solution Description:<br />Replace all the non alphabet characters into empty space and convert all uppercase characters into lower case. Use a <a href="http://docs.oracle.com/javase/6/docs/api/java/util/TreeSet.html" rel="nofollow" target="_blank">TreeSet</a> to collect all the words, Since elements in TreeSet is sorted and every distinct element has only one instance, just poll out the first element in the set and print it out, then it's done.<br /><br />Java：<br /><pre class="brush:java">import java.util.Scanner;<br />import java.util.StringTokenizer;<br />import java.util.TreeSet;<br /><br />public class UVa10815 {<br /><br /> public static void main(String[] args) {<br />  TreeSet&lt;String&gt; dictionary = new TreeSet&lt;String&gt;();<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   char[] line = input.nextLine().toLowerCase().toCharArray();<br />   removeNonAlpha(line);<br />   <br />   StringTokenizer token = new StringTokenizer(new String(line));<br />   <br />   while(token.hasMoreTokens()){<br />    dictionary.add(token.nextToken());<br />   }   <br />  }<br />  <br />  while(!dictionary.isEmpty()){<br />   System.out.println(dictionary.pollFirst());<br />  }<br /> }<br /> <br /> private static void removeNonAlpha(char[] string){<br />  for(int i = 0; i &lt; string.length; ++i){<br />   if(Character.isAlphabetic(string[i]) == false){<br />    string[i] = ' ';<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a621: 1. Powers of Two
+date=2014-06-22 23:39
+full_date=2014-06-22T23:39:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a621">http://zerojudge.tw/ShowProblem?problemid=a621</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java：<br /><pre class="brush:java">/* Filename: a621.java<br /> * Author: Mushiyo<br /> */<br />package CONTEST;<br /><br />import java.util.Scanner;<br /><br />public class a621 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  final int maxN = 20 + 1;<br />  int[] power2 = new int[maxN];<br />  <br />  for(int i = 0, twoN = 1; i &lt; power2.length; ++i, twoN &lt;&lt;= 1){<br />   power2[i] = twoN;<br />  }<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   for(int i = 0; i &lt;= N; ++i){<br />    System.out.println("2^" + i + " = " + power2[i]);<br />   }<br />  }<br /> }<br /><br />}<br /></pre>

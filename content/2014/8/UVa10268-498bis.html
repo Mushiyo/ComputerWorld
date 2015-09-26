@@ -1,0 +1,10 @@
+title=〔UVa〕10268 - 498-bis
+date=2014-08-18 18:18
+full_date=2014-08-18T18:18:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/102/10268.html">http://uva.onlinejudge.org/external/102/10268.html</a><br /><!--more--><br />Solution Note:<br />Note there might be more then one space between a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>n-1</sub>, a<sub>n</sub>, these extra spaces must be handled in order to get the inputs correctly.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10268.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10268 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int x = input.nextInt();<br />   input.nextLine(); // eat '\n'<br />   String[] a = input.nextLine().split("\\s+");<br /><br />   int n = a.length;<br />   <br />   int derivative = 0;<br />   int xPow = 1;<br />   for (int i = a.length - 2; i &gt;= 0; --i, xPow *= x) {<br />    derivative += Integer.valueOf(a[i]) * (n - i - 1) * xPow;<br />   }<br />   <br />   System.out.println(derivative);<br />  }<br /> }<br />}<br /><br /></pre>

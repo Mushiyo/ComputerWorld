@@ -1,0 +1,10 @@
+title=〔UVa〕568 - Just the Facts
+date=2014-08-13 23:04
+full_date=2014-08-13T23:04:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/5/568.html">http://uva.onlinejudge.org/external/5/568.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa568.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.math.BigInteger;<br />import java.util.Scanner;<br /><br />public class UVa568 {<br /> static final int maxN = 10000 + 1;<br /> static BigInteger[] factorials = new BigInteger[maxN];<br /> <br /> public static void countFactorials(){<br />  factorials[0] = BigInteger.valueOf(1);<br />  <br />  for(int i = 1; i &lt; factorials.length; ++i){<br />   factorials[i] = factorials[i - 1].multiply(BigInteger.valueOf(i));<br />  }<br /> }<br /> <br /> public static char lastNonZeroDigit(BigInteger num){<br />  String numStr = num.toString();<br />  <br />  for(int i = numStr.length() - 1; i &gt;= 0; --i){<br />   if(numStr.charAt(i) != '0'){<br />    return numStr.charAt(i);<br />   }<br />  }<br />  <br />  return 0;<br /> }<br /><br /> public static void main(String[] args) {<br />  countFactorials();<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int num = input.nextInt();<br />   <br />   System.out.printf("%5d -&gt; %c\n", num, lastNonZeroDigit(factorials[num]));<br />  }<br /> }<br /> <br />}<br /><br /></pre><br />

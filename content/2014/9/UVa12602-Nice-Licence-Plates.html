@@ -1,0 +1,10 @@
+title=〔UVa〕12602 - Nice Licence Plates
+date=2014-09-21 17:53
+full_date=2014-09-21T17:53:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/126/12602.html">http://uva.onlinejudge.org/external/126/12602.html</a><br /><!--more--><br />Java：<br /><pre class="brush:java">/* Filename: UVa12602.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12602 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   while(N &gt; 0){<br />    String licencePlate = input.next();<br />    int firstPart = toBase10(licencePlate.substring(0, 3));<br />    int secondPart = Integer.parseInt(licencePlate.substring(4));<br />    <br />    if(Math.abs(firstPart - secondPart) &lt;= 100){<br />     System.out.println("nice");<br />    }<br />    else{<br />     System.out.println("not nice");<br />    }<br />    <br />    --N;<br />   }<br />  }<br /> }<br /><br /> static int toBase10(String base26){<br />  return (base26.charAt(0) - 'A') * 26 * 26 + (base26.charAt(1) - 'A') * 26 + (base26.charAt(2) - 'A');<br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕494 - Kindergarten Counting Game
+date=2012-08-20 20:22
+full_date=2012-08-20T20:22:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=435">http://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=435</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u494 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String s = input.nextLine();<br />   int count = 0;<br /><br />   for (int i = 0; i &lt; s.length() - 1; ++i) {<br />    if (!Character.isLetter(s.charAt(i + 1))) {<br />     if (Character.isLetter(s.charAt(i))) {<br />      ++count;<br />     }<br />    }<br />   }<br /><br />   if (Character.isLetter(s.charAt(s.length() - 1))) {<br />    if (Character.isLetter(s.charAt(s.length() - 2))) {<br />     ++count;<br />    }<br />   }<br /><br />   if (!Character.isLetter(s.charAt(s.length() - 2))) {<br />    if (Character.isLetter(s.charAt(s.length() - 1))) {<br />     ++count;<br />    }<br />   }<br /><br />   System.out.println(count);<br />  }<br /> }<br />}<br /><br /></pre>

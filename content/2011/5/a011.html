@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a011: 幼稚園的算數遊戲
+date=2011-05-21 10:45
+full_date=2011-05-21T10:45:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a011">http://zerojudge.tw/ShowProblem?problemid=a011</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a011 "幼稚園的算數遊戲" from ACM 494                         */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (116ms, 5488KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-05-09 23:15:20                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a011 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   String s = input.nextLine();<br />   int count = 0;<br />   <br />   for(int i = 0; i &lt; s.length() - 1; ++i){<br />    if(!Character.isLetter(s.charAt(i+1))){<br />     if(Character.isLetter(s.charAt(i))){<br />      ++count;     <br />     }<br />    }<br />   }<br />   <br />   if(Character.isLetter(s.charAt(s.length() - 1))){<br />    if(Character.isLetter(s.charAt(s.length() - 2))){<br />     ++count;<br />    }<br />   }<br />   <br />   if(!Character.isLetter(s.charAt(s.length() - 2))){<br />    if(Character.isLetter(s.charAt(s.length() - 1))){<br />     ++count;<br />    }<br />   }<br />   <br />   System.out.println(count);<br />  }<br /> }<br /><br />}<br /><br /></pre>

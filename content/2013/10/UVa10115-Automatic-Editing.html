@@ -1,0 +1,10 @@
+title=〔UVa〕10115 - Automatic Editing
+date=2013-10-06 22:24
+full_date=2013-10-06T22:24:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/101/10115.html">http://uva.onlinejudge.org/external/101/10115.html</a><br /><!--more--><br /><br />Java： <br /><pre class="brush:java"><br />import java.util.Scanner;<br /><br />public class u10115 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int ruleNum = input.nextInt();<br />   <br />   if(ruleNum == 0){<br />    break;<br />   }<br />   <br />   input.nextLine(); // eat change line<br />   <br />   String[] find = new String[ruleNum];<br />   String[] replace = new String[ruleNum];<br />   for(int i = 0; i &lt; ruleNum; ++i){<br />    find[i] = input.nextLine();<br />    replace[i] = input.nextLine();<br />   }<br />   <br />   StringBuilder text = new StringBuilder(input.nextLine());<br />   <br />   for(int i = 0; i &lt; ruleNum; ++i){<br />    int indexOfFind = text.indexOf(find[i]);<br />    <br />    while(indexOfFind != -1){<br />     text.delete(indexOfFind, indexOfFind + find[i].length());<br />     text.insert(indexOfFind, replace[i]);<br />     indexOfFind = text.indexOf(find[i]);<br />    }<br />   }<br />   <br />   System.out.println(text);<br />  }<br /> }<br /><br />}<br /><br /></pre>

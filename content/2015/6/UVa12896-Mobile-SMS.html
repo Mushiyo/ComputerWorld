@@ -1,0 +1,10 @@
+title=〔UVa〕12896 - Mobile SMS
+date=2015-06-06 18:06
+full_date=2015-06-06T18:06:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/128/12896.html">http://uva.onlinejudge.org/external/128/12896.html</a><br /><!--more--><br />Solution Description:<br />Build an array where a cell with row i and column j corresponds to the character obtained by pressing key i of the keypad j times, then the answer can be output easily.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12896.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12896 {<br /> static final String[] keypad = {" ",".,?\"","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   while(T &gt; 0){<br />    int L = input.nextInt();<br />    int[] N = new int[L];<br />    <br />    for(int i = 0; i &lt; N.length; ++i){<br />     N[i] = input.nextInt();<br />    }<br />    <br />    int[] P = new int[L];<br />    for(int i = 0; i &lt; P.length; ++i){<br />     P[i] = input.nextInt();<br />    }<br />    <br />    StringBuilder message = new StringBuilder();<br />    <br />    for(int i = 0; i &lt; L; ++i){<br />     message.append(keypad[N[i]].charAt((P[i] - 1) % keypad[N[i]].length()));<br />    }<br />    <br />    System.out.println(message);<br />    <br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

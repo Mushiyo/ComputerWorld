@@ -1,0 +1,10 @@
+title=〔Timus〕2012. About Grisha N.
+date=2015-03-28 21:11
+full_date=2015-03-28T21:11:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=2012">http://acm.timus.ru/problem.aspx?space=1&amp;num=2012</a><br /><!--more--><br />Solution Description:<br />Grisha needs to solve 12 - f problems in the remaining 4 hours to make the plan success.<br />Since each problem takes Grisha 45 minutes, Grisha needs (12 - f) x 45 minutes to solve them all. If (12 - f) x 45 minutes ≦ 4 hours (240 minutes), then Grisha succeeds; else he fails.<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus2012.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class Timus2012 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int f = input.nextInt();<br />   if((12 - f) * 45 &lt;= 240){<br />    System.out.println("YES");<br />   } else {<br />    System.out.println("NO");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

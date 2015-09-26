@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕c007: TeX Quotes
+date=2012-08-20 18:04
+full_date=2012-08-20T18:04:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=c007">http://zerojudge.tw/ShowProblem?problemid=c007</a><br /><!--more--><br />解題雜記：<br />　　把奇數的＂換成 ``，偶數的＂換成''，就OＫ了。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: c007 "TeX Quotes" from ACM 272                                       */<br />/*  Language: JAVA (584 Bytes)                                                    */<br />/*  Result: AC(560ms, 11.8MB) judge by this@ZeroJudge                             */<br />/*  Author: mushiyo at 2012-08-20 17:57:06                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class c007 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  boolean isLeftQuote = true;<br />  <br />  while(input.hasNext()){<br />   String s = input.nextLine();<br />   <br />   for(int i = 0; i &lt; s.length(); ++i){<br />    if(s.charAt(i) == '\"'){<br />     if(isLeftQuote){<br />      System.out.print("``");<br />      isLeftQuote = false;<br />     }<br />     else{<br />      System.out.print("''");<br />      isLeftQuote = true;<br />     }<br />    }<br />    else{<br />     System.out.print(s.charAt(i));<br />    }<br />   }<br />   System.out.println();<br />  }<br /> }<br /><br />}<br /><br /><br /></pre>

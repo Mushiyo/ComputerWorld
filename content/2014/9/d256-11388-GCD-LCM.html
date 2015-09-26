@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d256: 11388 - GCD LCM
+date=2014-09-03 21:05
+full_date=2014-09-03T21:05:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d256">http://zerojudge.tw/ShowProblem?problemid=d256</a><br /><!--more--><br />解題雜記：<br />　　雖然題目跟UVa上的一樣，但是在這邊用while(input.hasNext())的寫法會OLE或RE，所以推測有效的T只有一個，拿掉那個迴圈就可以過了。<br /><br /><br />Java：<br /><pre class="brush:java">/* Filename: d256.java<br /> * Author: Mushiyo<br /> */<br />package UVa;<br /><br />import java.util.Scanner;<br /><br />public class d256 {<br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  int T = input.nextInt();<br /><br />  while (T &gt; 0) {<br />   int G = input.nextInt();<br />   int L = input.nextInt();<br /><br />   if (gcd(G, L) == G) {<br />    System.out.println(G + " " + L);<br />   } else {<br />    System.out.println(-1);<br />   }<br /><br />   --T;<br />  }<br /><br /> }<br /><br /> public static int gcd(int a, int b) {<br />  return b == 0 ? a : gcd(b, a % b);<br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d590: C. 一定中大樂透
+date=2011-10-01 14:34
+full_date=2011-10-01T14:34:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d590">http://zerojudge.tw/ShowProblem?problemid=d590</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d590 &quot;C. 一定中大樂透&quot; from 2009 NPSC 國中組初賽          */<br />/*  Language: JAVA (410 Bytes)                                                    */<br />/*  Result: AC judge by zeroserver@ZeroJudge                                      */<br />/*  Author: mushiyo at 2011-09-04 17:20:58                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d590 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int n = input.nextInt();<br />   int m = input.nextInt();<br />   <br />   if(n == 0 &amp;&amp; m == 0){<br />    break;<br />   }<br />   <br />   if(((n + m) % 2) != 0){<br />    System.out.println(&quot;Loss&quot;);<br />   }<br />   else{<br />    System.out.println(&quot;Win&quot;);<br />   }<br />  }<br /> }<br /><br />}<br /></pre>

@@ -1,0 +1,10 @@
+title=〔Timus〕1197. Lonesome Knight
+date=2015-05-31 23:25
+full_date=2015-05-31T23:25:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1197">http://acm.timus.ru/problem.aspx?space=1&amp;num=1197</a><br /><!--more--><br />Solution Description:<br />Just count all legal possible  next position of the knight.<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus1197.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class Timus1197 {<br /> static final int[] dx = { 1, 2, 2, 1, -1, -2, -2, -1 };<br /> static final int[] dy = { 2, 1, -1, -2, -2, -1, 1, 2 };<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int N = input.nextInt();<br />   <br />   while(N &gt; 0){<br />    String pos = input.next();<br />    int x = pos.charAt(0) - 'a' + 1;<br />    int y = pos.charAt(1) - '0';<br />    <br />    int countAttackable = 0;<br />    for(int d = 0; d &lt; dx.length; ++d){<br />     if(x + dx[d] &gt; 0 &amp;&amp; x + dx[d] &lt;= 8 &amp;&amp; y + dy[d] &gt; 0 &amp;&amp; y + dy[d] &lt;= 8){<br />      ++countAttackable;<br />     }<br />    }<br />    <br />    System.out.println(countAttackable);<br />    <br />    --N;<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

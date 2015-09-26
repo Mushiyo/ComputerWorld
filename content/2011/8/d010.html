@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d010: 盈數、虧數和完全數
+date=2011-08-06 15:36
+full_date=2011-08-06T15:36:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d010">http://zerojudge.tw/ShowProblem?problemid=d010</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d010 "盈數、虧數和完全數" from Sagit's C++ 程式設計     */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (152ms, 4912KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-08-05 21:13:45                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d010 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   int S = sumOfDivisors(N);<br />   <br />   if(S &gt; N){<br />    System.out.println("盈數");<br />   }<br />   else if(S &lt; N){<br />    System.out.println("虧數");<br />   }<br />   else{<br />    System.out.println("完全數");<br />   }<br />  }<br /> }<br /> <br /> public static int sumOfDivisors(int N){<br />  int divisorSum = 0;<br />  <br />  for(int i = 1; i &lt; N; ++i){<br />   if(N % i == 0){<br />    divisorSum += i;<br />   }<br />  }<br />  <br />  return divisorSum;<br /> }<br /><br />}<br /></pre>

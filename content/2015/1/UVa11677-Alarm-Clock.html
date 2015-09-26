@@ -1,0 +1,10 @@
+title=〔UVa〕11677 - Alarm Clock
+date=2015-01-31 13:38
+full_date=2015-01-31T13:38:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/116/11677.html">http://uva.onlinejudge.org/external/116/11677.html</a><br /><!--more--><br />Solution Description:<br />This is an easy problem. The answer is H2 * 60 + M2 - (H1 * 60 + M1). If the answer is negative, add 24 * 60. The following is different from this description but the idea behind it is the same.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11677.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11677 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int H1 = input.nextInt();<br />   int M1 = input.nextInt();<br />   int H2 = input.nextInt();<br />   int M2 = input.nextInt();<br />   <br />   if(H1 == 0 &amp;&amp; M1 == 0 &amp;&amp; H2 == 0 &amp;&amp; M2 == 0){<br />    break;<br />   }<br />   <br />   if(H2 &lt; H1){<br />    H2 += 24;<br />   }<br />   <br />   if(H2 == H1 &amp;&amp; M2 &lt; M1){<br />    H2 += 24;<br />   }<br />   <br />   int sleepMinute = 60 * H2 + M2 - (60 * H1 + M1);<br />   <br />   System.out.println(sleepMinute);<br />  }<br /> }<br /><br />}<br /><br /></pre>

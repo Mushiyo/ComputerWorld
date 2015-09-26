@@ -1,0 +1,10 @@
+title=〔UVa〕12502 - Three Families
+date=2014-09-14 23:47
+full_date=2014-09-14T23:47:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/125/12502.html">http://uva.onlinejudge.org/external/125/12502.html</a><br /><!--more--><br />Solution Description:<br />Note the problem told us that the three families usually clean the garden together, which means weather family C is out or not, both family A and B have do the cleaning job. So, if the working hour of family A is x and working hour of B is y, family C only needs to pay for \( \frac {x + y} {3}\) hours, and what family A will get is<br />\[ z \times \frac{x - \frac {x + y} {3}}{\frac {x + y} {3}} \]<br />and after simplified, we have<br />\[ z \times \frac{2x - y} {x + y} \]<br />It seems the inputs was generated carefully, so the result is always an integer, there's no needs to use float point number. <br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa12502.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa12502 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br /><br />   while (T &gt; 0) {<br />    int x = input.nextInt();<br />    int y = input.nextInt();<br />    int z = input.nextInt();   <br />    <br />    int paidA = (2 * x - y) * z / (x + y) ;<br />    <br />    System.out.println(paidA);<br />    <br />    --T;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

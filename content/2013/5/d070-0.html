@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d070: 文文的求婚--續集 (0 尾版)
+date=2013-05-12 14:31
+full_date=2013-05-12T14:31:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d070">http://zerojudge.tw/ShowProblem?problemid=d070</a><br /><!--more--><br />解題雜記：<br />　　類似<a href="http://computerworld.mushiyo.uni.me/2013/05/d071-eof.html" target="_blank">d071</a>，只是抓到0時就break。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d070 "文文的求婚--續集 (0 尾版)" from 板橋高中          */<br />/*  Language: JAVA (437 Bytes)                                                    */<br />/*  Result: AC(120ms, 3.8MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2013-05-08 21:57:25                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class d070 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int y = input.nextInt();<br />   <br />   if(y == 0){<br />    break;<br />   }<br />   <br />   if((y % 4 == 0) &amp;&amp; ((y % 100 != 0) || (y % 400 == 0))){<br />    System.out.println("a leap year");<br />   }<br />   else{<br />    System.out.println("a normal year");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

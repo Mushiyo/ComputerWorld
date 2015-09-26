@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d122: Oh! My Zero!!
+date=2012-02-12 21:51
+full_date=2012-02-12T21:51:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d122">http://zerojudge.tw/ShowProblem?problemid=d122</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d122 "Oh! My Zero!!" from liouzhou_101                               */<br />/*  Language: JAVA (375 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2012-02-12 21:45:36                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class d122 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   long n = input.nextLong();<br />   long zeroNum = 0;<br />   long fives = 5;<br />   <br />   while(n / fives != 0){<br />    zeroNum += n / fives;<br />    fives *= 5;<br />   }<br />   <br />   System.out.println(zeroNum);<br />  }<br /> }<br /><br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10340 - All in All
+date=2013-11-17 16:22
+full_date=2013-11-17T16:22:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/103/10340.html">http://uva.onlinejudge.org/external/103/10340.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u10340.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br /><br />using namespace std;<br /><br />int main(){<br /> string s, t;<br /><br />    while(cin &gt;&gt; s &gt;&gt; t){<br />        int matchedChar = 0;<br />        bool isSubOfT = false;<br />        <br />        for(int i = 0; i &lt; t.size(); ++i){<br />         if(s[matchedChar] == t[i]){<br />          ++matchedChar;<br />         }<br /><br />         if(matchedChar == s.size()){<br />          isSubOfT = true;<br />          break;<br />         }<br />        }<br /><br />        if(isSubOfT){<br />         cout &lt;&lt; "Yes" &lt;&lt; endl;<br />        }<br />        else{<br />         cout &lt;&lt; "No" &lt;&lt; endl;<br />        }<br /><br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕a053: Sagit's 計分程式
+date=2011-07-05 14:54
+full_date=2011-07-05T14:54:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=a053">http://zerojudge.tw/ShowProblem?problemid=a053</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: a053 "Sagit's 計分程式" from Sagit's 教學題                   */<br />/*  Language: JAVA                                                                */<br />/*  Result: AC (102ms, 5630KB) on ZeroJudge                                       */<br />/*  Author: mushiyo at 2011-07-03 16:23:47                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class a053 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int solvedProblem = input.nextInt();<br />   int grades;<br />   <br />   if(solvedProblem &lt;= 10){<br />    grades = solvedProblem * 6; <br />   }<br />   else if(solvedProblem &lt;= 20){<br />    solvedProblem -= 10;<br />    grades = 60 + solvedProblem * 2;<br />   }<br />   else if(solvedProblem &lt;= 40){<br />    solvedProblem -= 20;<br />    grades = 80 + solvedProblem;<br />   }<br />   else{<br />    grades = 100;<br />   }<br />   <br />   System.out.println(grades);<br />  }<br /> }<br /><br />}<br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕b098: D. 秘密
+date=2012-01-11 23:19
+full_date=2012-01-11T23:19:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=b098">http://zerojudge.tw/ShowProblem?problemid=b098</a><br /><!--more-->Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: b098 "D. 秘密" from 2005 NPSC 國中組初賽                      */<br />/*  Language: JAVA (622 Bytes)                                                    */<br />/*  Result: AC(496ms, 7.9MB) judge by this@ZeroJudge                              */<br />/*  Author: mushiyo at 2012-01-11 21:20:14                                        */<br />/**********************************************************************************/<br /><br /><br />import java.util.Scanner;<br /><br />public class b098 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  char[] key = new char[26];<br />  int n = input.nextInt();<br />  <br />  while(n &gt; 0){<br />   int K = input.nextInt();<br />   for(int i = 0; i &lt; key.length; ++i){<br />    if(i &lt; K){<br />     key[i] = (char) ('A' + (26 - K) + i);<br />    }<br />    else{<br />     key[i] = (char) ('A' + i - K);<br />    }<br />   }<br />   <br />   String cipher = input.next();<br />   <br />   for(int i = 0; i &lt; cipher.length(); ++i){<br />    System.out.print(key[cipher.charAt(i) - 'A']);<br />   }<br />   System.out.println();<br />   <br />   --n;<br />  }<br />  <br /><br /> }<br /><br />}<br /><br /></pre>

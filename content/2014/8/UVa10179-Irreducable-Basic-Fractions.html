@@ -1,0 +1,10 @@
+title=〔UVa〕10179 - Irreducable Basic Fractions
+date=2014-08-20 00:49
+full_date=2014-08-20T00:49:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/101/10179.html">http://uva.onlinejudge.org/external/101/10179.html</a><br /><!--more--><br />Solution Description:<br />This problem is same as finding the number of n's coprime between 1~n.<br />So just solve it with the <a href="http://en.wikipedia.org/wiki/Euler%27s_totient_function" target="_blank">Euler's totient function </a>:)<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10179.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.ArrayList;<br />import java.util.Scanner;<br /><br />public class UVa10179 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   if (n == 0) {<br />    break;<br />   }<br /><br />   System.out.println(eulersTotient(n));<br />  }<br /> }<br /><br /> public static int eulersTotient(int n) {<br />  int sqrtN = (int) Math.sqrt(n);<br />  int relPrimeNum = n;<br /><br />  if (n % 2 == 0) {<br />   relPrimeNum -= relPrimeNum / 2;<br /><br />   while (n % 2 == 0) {<br />    n /= 2;<br />   }<br />  }<br /><br />  for (int i = 3; i &lt;= sqrtN &amp;&amp; n != 1; i += 2) {<br />   if (n % i == 0) {<br />    relPrimeNum -= relPrimeNum / i;<br /><br />    while (n % i == 0) {<br />     n /= i;<br />    }<br />   }<br />  }<br />  <br />  if(n != 1){<br />   relPrimeNum -= relPrimeNum / n;<br />  }<br /><br />  return relPrimeNum;<br /> }<br />}<br /><br /></pre>

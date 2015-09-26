@@ -1,0 +1,10 @@
+title=〔Timus〕2001. Mathematicians and Berries
+date=2015-03-28 20:50
+full_date=2015-03-28T20:50:00.001+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=2001">http://acm.timus.ru/problem.aspx?space=1&amp;num=2001</a><br /><!--more--><br />Solution Description:<br />From the problem statement, we know that<br /><ol><li>a<sub>1</sub> is the weight of mathematician<sub>1</sub>'s basket + berries, a<sub>3</sub> is the weight of mathematician<sub>1</sub>'s basket</li><li>b<sub>1</sub> is the weight of  mathematician<sub>2</sub>'s  basket + berries, b<sub>2</sub> is the weight of mathematician<sub>2</sub>'s basket</li></ol>Hence,&nbsp; a<sub>1</sub> - a<sub>3</sub> is the weight of mathematician<sub>1</sub>'s berries and b<sub>1</sub> - b<sub>2</sub> is the weight of mathematician<sub>2</sub>'s berries<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus2001.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class Timus2001 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int[] a = new int[4];<br />  int[] b = new int[4];<br /><br />  while (input.hasNext()) {<br />   for(int i = 1; i &lt; a.length; ++i){<br />    a[i] = input.nextInt();<br />    b[i] = input.nextInt();<br />   }<br />   <br />   System.out.printf("%d %d\n", a[1] - a[3], b[1] - b[2]);<br />  }<br /> }<br /><br />}<br /><br /></pre>

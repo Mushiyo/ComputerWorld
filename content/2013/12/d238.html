@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d238: "<<"運算子真好用
+date=2013-12-31 21:07
+full_date=2013-12-31T21:07:00.000+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d238">http://zerojudge.tw/ShowProblem?problemid=d238</a><br /><!--more--><br />解題雜記：<br />　　大數指數運算的問題。把指定的值算出後，再把它每一位的數值加總起來即可。如果用Java的話，可以用內建的<a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html" target="_blank">BigInteger</a>輕鬆過關。<br /><br />Java：<br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d238 ""&lt;&lt;"運算子真好用" from Project Euler                     */<br />/*  Language: JAVA (431 Bytes)                                                    */<br />/*  Result: AC(52ms, 260KB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-12-31 17:18:50                                        */<br />/**********************************************************************************/<br /><br /><br />/* Filename: d238.java<br /> * Author: Mushiyo<br /> */<br />package ORIGINAL;<br /><br />import java.util.Scanner;<br />import java.math.BigInteger;<br /><br />public class d238 {<br /><br /> public static void main(String[] args) {<br />  String twoPow1000 = BigInteger.valueOf(2).pow(1000).toString();<br />   <br />  int digitSum = 0;<br />  for(int i = 0; i &lt; twoPow1000.length(); ++i){<br />   digitSum += twoPow1000.charAt(i) - '0';<br />  }<br />  <br />  System.out.println(digitSum);<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

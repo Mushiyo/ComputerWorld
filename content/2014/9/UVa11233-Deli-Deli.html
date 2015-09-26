@@ -1,0 +1,10 @@
+title=〔UVa〕11233 - Deli Deli
+date=2014-09-11 23:45
+full_date=2014-09-11T23:45:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/112/11233.html">http://uva.onlinejudge.org/external/112/11233.html</a><br /><!--more--><br />Solution Description:<br />Use a map to record irregular word. When input is an irregular word, output its counterpart in the map. For other word, do the replacement as the problem states.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11233.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.security.Signature;<br />import java.util.Scanner;<br />import java.util.Map;<br />import java.util.HashMap;<br /><br />public class UVa11233 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int L = input.nextInt();<br />   int N = input.nextInt();<br />   Map&lt;String, String&gt; irregularWord = new HashMap&lt;String, String&gt;(L);<br /><br />   while (L &gt; 0) {<br />    irregularWord.put(input.next(), input.next());<br /><br />    --L;<br />   }<br /><br />   while (N &gt; 0) {<br />    String singular = input.next();<br /><br />    if (irregularWord.containsKey(singular)) {<br />     System.out.println(irregularWord.get(singular));<br />    } else if (singular.endsWith("y")<br />      &amp;&amp; singular.matches("\\w*[aeiou]y") == false) {<br />     System.out.println(singular.substring(0,<br />       singular.length() - 1) + "ies");<br />    } else if (singular.endsWith("o") || singular.endsWith("s")<br />      || singular.endsWith("x") || singular.endsWith("ch")<br />      || singular.endsWith("sh")) {<br />     System.out.println(singular + "es");<br />    } else {<br />     System.out.println(singular + "s");<br />    }<br /><br />    --N;<br />   }<br /><br />  }<br /> }<br /><br />}<br /><br /></pre>

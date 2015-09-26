@@ -1,0 +1,10 @@
+title=〔UVa〕10361 - Automatic Poetry
+date=2014-01-29 16:35
+full_date=2014-01-29T16:35:00.006+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/103/10361.html">http://uva.onlinejudge.org/external/103/10361.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10361.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10361 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br />   input.nextLine(); // eat change line<br />   <br /><br />   while (n &gt; 0) {<br />    String l1 = input.nextLine();<br />    String l2 = input.nextLine();<br /><br />    int leftBracket1 = l1.indexOf('&lt;');<br />    int rightBracket1 = l1.indexOf('&gt;', leftBracket1);<br />    int leftBracket2 = l1.indexOf('&lt;', rightBracket1);<br />    int rightBracket2 = l1.indexOf('&gt;', leftBracket2);<br /><br />    String s2 = l1.substring(leftBracket1 + 1, rightBracket1);<br />    String s3 = l1.substring(rightBracket1 + 1, leftBracket2);<br />    String s4 = l1.substring(leftBracket2 + 1, rightBracket2);<br />    String s5 = l1.substring(rightBracket2 + 1);<br />    <br />    String c1 = l1.replaceAll("&lt;|&gt;", "");<br />    String c2 = l2.replaceAll("\\.\\.\\.", s4 + s3 + s2 + s5);<br />    <br />    System.out.println(c1);<br />    System.out.println(c2);<br /><br />    --n;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

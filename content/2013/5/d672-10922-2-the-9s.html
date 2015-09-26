@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d672: 10922 - 2 the 9s
+date=2013-05-16 22:12
+full_date=2013-05-16T22:12:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d672">http://zerojudge.tw/ShowProblem?problemid=d672</a><br /><!--more--><br />解題雜記：<br />　　凡是9的倍數，其數字和也是9的倍數。因此不斷的重覆計算數字和，直到9或不是9的倍數，並過程中記錄總共經過多少輪的計算。<br /><br />Java： <br /><pre class="brush:java">/**********************************************************************************/<br />/*  Problem: d672 "10922 - 2 the 9s" from UVa ACM 10922                           */<br />/*  Language: JAVA (853 Bytes)                                                    */<br />/*  Result: AC(80ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-05-16 17:00:38                                        */<br />/**********************************************************************************/<br /><br /><br />package UVa;<br /><br />import java.util.Scanner;<br /><br />public class d672 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String N = input.nextLine();<br /><br />   if (N.equals("0")) {<br />    break;<br />   }<br /><br />   int digitSum = 0;<br />   for (int i = 0; i &lt; N.length(); ++i) {<br />    digitSum += N.charAt(i) - '0';<br />   }<br /><br />   if (digitSum % 9 != 0) {<br />    System.out.println(N + " is not a multiple of 9.");<br />   } else {<br />    int nineDegree = 1;<br /><br />    while ((digitSum % 9 == 0) &amp;&amp; (digitSum &gt; 10)){<br />     String S = String.valueOf(digitSum);<br /><br />     digitSum = 0;<br />     for (int i = 0; i &lt; S.length(); ++i) {<br />      digitSum += S.charAt(i) - '0';<br />     }<br /><br />     ++nineDegree;<br />    }<br /><br />    System.out.println(N + " is a multiple of 9 and has 9-degree "<br />      + nineDegree + ".");<br />   }<br />  }<br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔UVa〕10299 - Relatives
+date=2014-08-23 23:52
+full_date=2014-08-23T23:52:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/102/10299.html">http://uva.onlinejudge.org/external/102/10299.html</a><br /><!--more--><br />Solution Description:<br />Use <a href="http://en.wikipedia.org/wiki/Euler%27s_totient_function" target="_blank">Euler's totient function</a>, but remember to output 0 when n is 1.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa10299.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa10299 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  StringBuilder out = new StringBuilder();<br /><br />  while (input.hasNext()) {<br />   int n = input.nextInt();<br /><br />   if (n == 0) {<br />    break;<br />   }<br /><br />   if (n == 1) {<br />    out.append(0 + "\n");<br />   } else {<br />    out.append(eulersTotient(n) + "\n");<br />   }<br />  }<br />  <br />  System.out.print(out);<br /> }<br /><br /> public static int eulersTotient(int n) {<br />  int sqrtN = (int) Math.sqrt(n);<br />  int relPrimeNum = n;<br /><br />  if (n % 2 == 0) {<br />   relPrimeNum -= relPrimeNum / 2;<br /><br />   while (n % 2 == 0) {<br />    n /= 2;<br />   }<br />  }<br /><br />  for (int i = 3; i &lt;= sqrtN &amp;&amp; n != 1; i += 2) {<br />   if (n % i == 0) {<br />    relPrimeNum -= relPrimeNum / i;<br /><br />    while (n % i == 0) {<br />     n /= i;<br />    }<br />   }<br />  }<br /><br />  if (n != 1) {<br />   relPrimeNum -= relPrimeNum / n;<br />  }<br /><br />  return relPrimeNum;<br /> }<br />}<br /><br /></pre>

@@ -1,0 +1,10 @@
+title=〔高中生程式解題系統〕d532: 文文的求婚 (三)
+date=2013-05-13 11:31
+full_date=2013-05-13T11:31:00.003+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔高中生程式解題系統〕
+status=published
+~~~~~~
+
+題目：<a href="http://zerojudge.tw/ShowProblem?problemid=d532">http://zerojudge.tw/ShowProblem?problemid=d532</a><br /><!--more--><br />解題雜記：<br />　　用暴力法跑迴圈，統計給定的區間內有多少個閏年。<br /><br />Java： <br /><pre class="brush:java"><br />/**********************************************************************************/<br />/*  Problem: d532 &quot;文文的求婚 (三)&quot; from 板橋高中教學題              */<br />/*  Language: JAVA (627 Bytes)                                                    */<br />/*  Result: AC(76ms, 1.2MB) judge by this@ZeroJudge                               */<br />/*  Author: mushiyo at 2013-05-10 15:21:58                                        */<br />/**********************************************************************************/<br /><br /><br />package BASIC;<br /><br />import java.util.Scanner;<br /><br />public class d532 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int a = input.nextInt();<br />   int b = input.nextInt();<br />   <br />   int leapYearNum = 0;<br />   for(int year = a; year &lt;= b; ++year){<br />    if(isLeapYear(year)){<br />     ++leapYearNum;<br />    }<br />   }<br />   <br />   System.out.println(leapYearNum);<br />  }<br /> }<br /><br /> public static boolean isLeapYear(int year) {<br />  if (year % 400 == 0)<br />   return true;<br />  if (year % 100 == 0)<br />   return false;<br />  if (year % 4 == 0)<br />   return true;<br /><br />  return false;<br /> }<br /><br />}<br /><br /></pre>

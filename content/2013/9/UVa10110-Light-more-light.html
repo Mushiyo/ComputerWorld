@@ -1,0 +1,10 @@
+title=〔UVa〕10110 - Light, more light
+date=2013-09-20 23:08
+full_date=2013-09-20T23:08:00.004+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/101/10110.html">http://uva.onlinejudge.org/external/101/10110.html</a><br /><!--more--><br />Java： <br /><pre class="brush:java">import java.util.Scanner;<br /><br />public class u10110 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   long n = input.nextLong();<br />   <br />   if(n == 0){<br />    break;<br />   }<br />   <br />   double sqrtN = Math.sqrt(n);<br />   <br />   if(Math.floor(sqrtN) == Math.ceil(sqrtN)){<br />    System.out.println("yes");<br />   }<br />   else{<br />    System.out.println("no");<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

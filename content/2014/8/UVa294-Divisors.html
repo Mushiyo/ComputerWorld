@@ -1,0 +1,10 @@
+title=〔UVa〕294 - Divisors
+date=2014-08-20 18:05
+full_date=2014-08-20T18:05:00.000+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/2/294.html">http://uva.onlinejudge.org/external/2/294.html</a><br /><!--more--><br />Solution Description:<br />Since U - L is not large, brute force method is enough.<br />Just factorize every number between [L, U], then find the one with the most divisors.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa294.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa294 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  <br />  while(input.hasNext()){<br />   int N = input.nextInt();<br />   <br />   while(N &gt; 0){<br />    int L = input.nextInt();<br />    int U = input.nextInt();<br />    <br />    int D = 1;<br />    int P = L;<br />    for(int i = L; i &lt;= U; ++i){<br />     int divisorNum = 1;<br />     int currentI = i;<br />     int sqrtI = (int)Math.sqrt(i);<br />     <br />     for(int j = 2; j &lt;= sqrtI &amp;&amp; currentI != 1; ++j){<br />      int countCurrentDivisor = 0;<br />      <br />      while(currentI % j == 0){<br />       ++countCurrentDivisor;<br />       currentI /= j;<br />      }<br />      <br />      divisorNum *= countCurrentDivisor + 1;<br />     }<br />     <br />     if(currentI != 1){<br />      divisorNum *= 2;<br />     }<br />     <br />     if(divisorNum &gt; D){<br />      D = divisorNum;<br />      P = i;<br />     }<br />    }<br />    <br />    <br />    System.out.printf("Between %d and %d, %d has a maximum of %d divisors.\n", L, U, P, D);<br />    <br />    --N;<br />   }<br />  }<br /> }<br /><br /> <br /><br />}<br /><br /></pre>

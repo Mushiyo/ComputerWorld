@@ -1,0 +1,10 @@
+title=〔UVa〕11984 - A Change in Thermal Unit
+date=2014-09-11 23:41
+full_date=2014-09-11T23:41:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/119/11984.html">http://uva.onlinejudge.org/external/119/11984.html</a><br /><!--more--><br />Solution Description:<br />Convert C to Fahrenheit, after add d, convert back to Celsius than output. <br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11984.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11984 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int T = input.nextInt();<br />   <br />   for(int caseNum = 1; caseNum &lt;= T; ++caseNum){<br />    int C = input.nextInt();<br />    int d = input.nextInt();<br />    double originalF = toFahrenheit(C);<br />    double newC = toCelsius(originalF + d);<br />    <br />    System.out.printf("Case %d: %.2f\n", caseNum, newC);<br />   }<br />  }<br /> }<br /> <br /> static double toFahrenheit(double C){<br />  return 9 * C / 5 + 32;<br /> }<br /> <br /> static double toCelsius(double F){<br />  return (F - 32) * 5 / 9;<br /> }<br />}<br /><br /></pre>

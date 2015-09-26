@@ -1,0 +1,10 @@
+title=〔UVa〕11878 - Homework Checker
+date=2014-09-21 16:15
+full_date=2014-09-21T16:15:00.002+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+Problem：<a href="http://uva.onlinejudge.org/external/118/11878.html">http://uva.onlinejudge.org/external/118/11878.html</a><br /><!--more--><br />Solution Description:<br />Just parse the numbers and the sign of the operation, then check if the result is correct or not.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa11878.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa11878 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br />  int correctCount = 0;<br /><br />  while (input.hasNext()) {<br />   String question = input.nextLine();<br />   <br />   if(question.charAt(question.length() - 1) == '?'){<br />    continue;<br />   }<br />   <br />   boolean isPlusQuestion = question.contains("+");<br />   <br />   if(isPlusQuestion){<br />    int indexOfPlus = question.indexOf("+");<br />    int indexOfEq = question.indexOf("=");<br />    int a = Integer.parseInt(question.substring(0, indexOfPlus));<br />    int b = Integer.parseInt(question.substring(indexOfPlus + 1, indexOfEq));<br />    int c = Integer.parseInt(question.substring(indexOfEq + 1));<br />    <br />    if(a + b == c){<br />     ++correctCount;<br />    }<br />   }<br />   else{<br />    int indexOfMinus = question.indexOf("-");<br />    int indexOfEq = question.indexOf("=");<br />    int a = Integer.parseInt(question.substring(0, indexOfMinus));<br />    int b = Integer.parseInt(question.substring(indexOfMinus + 1, indexOfEq));<br />    int c = Integer.parseInt(question.substring(indexOfEq + 1));<br />    <br />    if(a - b == c){<br />     ++correctCount;<br />    }<br />   }<br />  }<br />  <br />  System.out.println(correctCount);<br /> }<br /><br />}<br /><br /></pre>

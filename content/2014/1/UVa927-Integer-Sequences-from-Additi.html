@@ -1,0 +1,10 @@
+title=〔UVa〕927 - Integer Sequences from Additi
+date=2014-01-20 20:48
+full_date=2014-01-20T20:48:00.003+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/9/927.html">http://uva.onlinejudge.org/external/9/927.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Solution Description:<br />To be written.<br /><br />Java：<br /><pre class="brush:java">/* Filename: UVa927.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class UVa927 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   int C = input.nextInt();<br />   <br />   while (C &gt; 0) {<br />    int i = input.nextInt();<br />    int[] c = new int[i + 1];<br /><br />    for (int j = 0; j &lt; c.length; ++j) {<br />     c[j] = input.nextInt();<br />    }<br /><br />    int d = input.nextInt();<br />    int k = input.nextInt();<br />    int n = 0;<br />    int term = 0;<br /><br />    while (term &lt; k) {<br />     ++n;<br />     term += d * n;<br />    }<br /><br />    long bm = 0;<br />    long n_j = 1;<br />    for (int j = 0; j &lt; c.length; ++j) {<br />     bm += c[j] * n_j;<br />     n_j *= n;     <br />    }<br /><br />    System.out.println(bm);<br />    <br />    --C;<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre><br />C++：<br /><pre class="brush:c">待補。To be written.<br /></pre>

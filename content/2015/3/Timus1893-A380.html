@@ -1,0 +1,10 @@
+title=〔Timus〕1893. A380
+date=2015-03-28 21:55
+full_date=2015-03-28T21:55:00.002+08:00
+type=post
+allowComment=true
+tags=【競賽＆解題】, 〔Timus〕
+status=published
+~~~~~~
+
+Problem：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;num=1893">http://acm.timus.ru/problem.aspx?space=1&amp;num=1893</a><br /><!--more--><br />Solution Description:<br />This problem seems to test your reading ability rather than coding skill.<br />First, we need to find which class the input seat belongs to. If it is a&nbsp; first class seat, then seat A and D are window seats and all other seats are&nbsp; aisle seats. If it is a business class seat, then seat A and F are window seats and all other seats are aisle seats. If it is a economy class seat, then seat A and K are window seat and seat C, D, G and H are aisle seats.<br /><br />Java：<br /><pre class="brush:java">/* Filename: Timus1893.java<br /> * Author: Mushiyo<br /> */<br /><br />import java.util.Scanner;<br /><br />public class Timus1893 {<br /><br /> public static void main(String[] args) {<br />  Scanner input = new Scanner(System.in);<br /><br />  while (input.hasNext()) {<br />   String seat = input.next();<br />   int row = Integer.parseInt(seat.substring(0, seat.length() - 1));<br />   char pos = seat.charAt(seat.length() - 1);<br />   <br />   if(row &lt; 3){<br />    if(pos == 'A' || pos == 'D'){<br />     System.out.println("window");<br />    } else {<br />     System.out.println("aisle");<br />    }<br />   } else if(row &lt; 21){<br />    if(pos == 'A' || pos == 'F'){<br />     System.out.println("window");<br />    } else{<br />     System.out.println("aisle");<br />    }<br />   } else {<br />    if(pos == 'A' || pos == 'K'){<br />     System.out.println("window");<br />    } else if (pos == 'C' || pos == 'D' || pos == 'G' || pos == 'H'){<br />     System.out.println("aisle");<br />    } else {<br />     System.out.println("neither");<br />    }<br />   }<br />  }<br /> }<br /><br />}<br /><br /></pre>

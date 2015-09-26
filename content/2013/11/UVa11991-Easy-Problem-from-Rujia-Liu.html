@@ -1,0 +1,10 @@
+title=〔UVa〕11991 - Easy Problem from Rujia Liu?
+date=2013-11-17 14:57
+full_date=2013-11-17T14:57:00.001+08:00
+type=post
+allowComment=true
+tags=〔UVa〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：<a href="http://uva.onlinejudge.org/external/119/11991.html">http://uva.onlinejudge.org/external/119/11991.html</a><br /><!--more--><br />解題雜記：<br />　　待補<br /><br />Java： <br /><pre class="brush:java">待補<br /></pre><br />C++： <br /><pre class="brush:c">/*Filename: u11991.cpp<br /> *Author: Mushiyo<br /> */<br /><br />#include &lt;iostream&gt;<br />#include &lt;vector&gt;<br /><br />using namespace std;<br /><br />const int size = 1000000 + 1;<br />vector&lt;int&gt; position[size];<br /><br />void clearPosition(){<br /> for(int i = 0; i &lt; size; ++i){<br />  position[i].clear();<br /> }<br />}<br /><br />int main(){<br /> int n = 0, m = 0;<br /><br />    while(cin &gt;&gt; n &gt;&gt; m){<br />     clearPosition();<br /><br />        for(int pos = 1; pos &lt;= n; ++pos){<br />         int number = 0;<br />         cin &gt;&gt; number;<br /><br />         position[number].push_back(pos);<br />        }<br />        <br />        for(int i = 0; i &lt; m; ++i){<br />         int k = 0, v = 0;<br />         cin &gt;&gt; k &gt;&gt; v;<br /><br />         if(position[v].size() &lt; k){<br />          cout &lt;&lt; 0 &lt;&lt; endl;<br />         }<br />         else{<br />          cout &lt;&lt; position[v][k - 1] &lt;&lt; endl;<br />         }<br />        }<br />    }<br /><br /> return 0;<br />}<br /><br /></pre>

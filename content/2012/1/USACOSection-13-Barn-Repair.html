@@ -1,0 +1,10 @@
+title=〔USACO〕Section 1.3 Barn Repair
+date=2012-01-30 23:04
+full_date=2012-01-30T23:04:00.000+08:00
+type=post
+allowComment=true
+tags=〔USACO〕, 【競賽＆解題】
+status=published
+~~~~~~
+
+題目：見<a href="http://ace.delos.com/usacogate">USACO Training Program</a><br /><!--more-->Java： <br /><pre class="brush:java">/*<br />ID: mushiyo1<br />LANG: JAVA<br />TASK: barn1<br />*/<br /><br />import java.util.Scanner;<br />import java.util.Arrays;<br />import java.io.*;<br /><br />public class barn1 {<br /><br /> public static void main(String[] args) throws Exception{<br />  Scanner input = new Scanner(new File("barn1.in"));<br />  PrintWriter output = new PrintWriter(new File("barn1.out"));<br />  <br />  while(input.hasNext()){<br />   int M = input.nextInt();<br />   int S = input.nextInt();<br />   int C = input.nextInt();<br />   int[] cowStall = new int[C];//record of stalls which have cows in them<br />   int[] stallDist = new int[C - 1];<br />   <br />   for(int i = 0; i &lt; C; ++i){<br />    cowStall[i] = input.nextInt();<br />   }<br />   <br />   if(M &gt;= C){<br />    output.println(C);<br />    continue;<br />   }<br />   <br />   Arrays.sort(cowStall);<br />   <br />   for(int i = 0; i &lt; C - 1; ++i){<br />    stallDist[i] = cowStall[i + 1] - cowStall[i] - 1;<br />   }<br />   Arrays.sort(stallDist);<br />   <br />   int longestBoardLen = cowStall[cowStall.length - 1] - cowStall[0] + 1;<br />   int boardBlocked = longestBoardLen;<br />   for(int i = stallDist.length - 1; i &gt; stallDist.length - M; --i){<br />    boardBlocked -= stallDist[i];<br />   }<br />   <br />   output.println(boardBlocked);<br />  }<br />  <br />  input.close();<br />  output.close();<br /> }<br /><br />}<br /><br /></pre>
