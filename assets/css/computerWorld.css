@@ -113,6 +113,10 @@
 	color: #DCAD83;
 }
 
+.night .tag-alert{
+   background: #222;
+}
+
 .night .blog-body {
     background: #000;
     background: rgba(0,0,0,0.8);
